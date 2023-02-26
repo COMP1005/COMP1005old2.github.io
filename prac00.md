@@ -1,5 +1,5 @@
 ---
-title: "Prac00: Introduction to Linux"
+title: "Introduction to Linux"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -20,18 +20,21 @@ title: "Prac00: Introduction to Linux"
 
 ## Introduction
 
-This practical will give a gentle introduction to Linux. It can be done before 
-or after the first lecture - but do not delay as we'll need everything from 
-this lesson to build on in future weeks.
+This is a lesson created via The Carpentries Workbench. It is written in
+[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
+[R Markdown][r-markdown] for dynamic files that can render code into output. 
+Please refer to the [Introduction to The Carpentries 
+Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
 
-In class you will be accessing a Linux environment (operating system) through
-a web browser. We will connect to a Virtual Machine - using servers in
-the cloud which can run multiple "virtual" machines at once. These, in turn, 
-connect to fileservers where you can store your files and access them from
-any Curtin computer, or from your home machine(s).
+What you need to know is that there are three sections required for a valid
+Carpentries lesson template:
 
-That may be too much information for right now... so let's dive in and find out 
-how to use Linux!
+ 1. `questions` are displayed at the beginning of the episode to prime the
+    learner for the content.
+ 2. `objectives` are the learning objectives for an episode displayed with
+    the questions.
+ 3. `keypoints` are displayed at the end of the episode to reinforce the
+    objectives.
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
