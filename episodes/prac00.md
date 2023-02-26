@@ -74,7 +74,7 @@ There are a lot of commands you can use in Linux, but you only need a few
 to get started. A sample of the Unix commands available to
 you have been provided below. We will learn more commands as we go through the unit.
 
-Try typing the following commands one at a time and check what they do...
+Try typing the following commands (one at a time) and check what they do...
 
 ```
 ls
@@ -87,49 +87,179 @@ ls
 ls –la
 ```
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
+Here are a few of the most common commands... the < > braces are a convention to 
+indicate text that you replace. Note that in Unix/Linux folders are referred to as directories.
 
-Now it's time for you to do some coding!
+| Command | Description | Examples | 
+|---------|-------------|----------|
+| ls | Lists all files in the current directory, if an argument is provided lists all files in the specified directory. | ls, ls –l, ls –la |
+| cp <src> <dest> | Copies the file from source to destination. | cp Downloads/test.py ., cp test.py test2.py |
+|mv <src> <dest> | Moves the file from source to destination. If the destination ends in a file name it will rename the file. | mv test.py Prac1, mv test.py mytest.py |
+| pwd  | Lists the directory you are currently in (Print Working Directory) | pwd |
+| cd <dir>  | Moves to <dir> | |
+| mkdir <dir> | Creates a new directory | mkdir Prac1 |
+| rm <filename> | Removes a file | rm fireballs.py |
+| rmdir <dir> | Removes a directory (must be empty first) | rmdir Prac12 |
+ 
+Using these commands create the following directory structure within your home
+directory. A *How to use Unix* and cheatsheet document has been uploaded to
+Blackboard, it will be helpful if you get stuck. Note you can use the arrow keys to get 
+back to previous commands, and can use <tab> to complete long filenames.
+ 
+* FOP
+  * Prac00
+  * Prac01
+  * Prac02
+  * Prac03
+  * Prac04
+  * Prac05
+  * Prac06
+  * Prac07
+  * Prac08
+  * Prac09
+  * Prac10
+  * Prac11
+ 
+The current directory is referenced by a single fullstop (.), the parent directory is
+referenced by two fullstops (..) and all pathways are relative to the current location.
+ 
+```
+cd FOP/Prac01
+cd ../Prac00
+```
+
+...takes you into FOP/Prac01, then on the second line, back up and into Prac00
+
+
+### Activity 3 - Introduction to the Text Editor (vim)
+ 
+We are going to use the vim text editor to create your README file for Prac01. Vim
+is an enhanced version of vi – a visual, interactive editor. There is an Introduction to
+Vi document and a “cheat-sheet” on Blackboard, but you should work through this prac before 
+try ing it.
+ 
+If you're not already there, change directory into the Prac00 directory and create the README file:
+
+```
+> cd Prac00
+> vim README
+```
+ 
+You will now be in the vim text editor with an empty file. Vim has two modes –
+command mode (where you can move around the file and use commands) and insert
+text mode. Type “i” to go into insert mode and type in the following README
+information for Practical 1.
+ 
+```
+## Synopsis
+Practical 1 of Fundamentals of Programming COMP1005/5005
+ 
+## Contents
+README – readme file for Practical 1
+ 
+## Dependencies
+none
+ 
+## Version information
+<today’s date> - initial version of Practical 1 programs
+```
+ 
+Press <esc> to exit insert mode, then :wq to save the file (w) and exit vim (q).
+Type 
+```
+ls -l
+```
+ 
+(-l for long listing) and you will see that you have created a file called README, and it has
+a size and a date. We will make README files for all of our practicals to hold
+information about the files in that directory.
+
+### Activity 4 - Welcome to Python!
+ 
+Below is a simple program to get you used to the editor and running python scripts.
+To create a file for the program, type:
+ 
+```
+vim hello.py
+```
+ 
+Then type in the following code... It is important to type it yourself and not copy/paste
+– this is how you will learn and remember!
 
 ```python
-print("Hello world!")
+#
+# hello.py: Print out greetings in various languages
+#
+print('Hello')
+print("G'day")
+print('Bula')
+print("Kia ora")
 ```
 
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-the < > braces are just a convention to show something that you
-fill in. Note that in Unix/Linux folders are referred to as directories.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Challenge 1: Can you do it?
-
-What is the output of this command?
-
-```r
-paste("This", "new", "lesson", "looks", "good")
-```
-
-:::::::::::::::::::::::: solution 
-
-## Output
+To run the program, type:
  
-```output
-[1] "This new lesson looks good"
 ```
+python3 hello.py
+```
+ 
+You will probably get an error message as a response (unless you typed it in
+perfectly). Don’t worry, check through your code for the error and try running it again.
+Go back into the file and make corrections – use the cursor keys to get to the position
+(<lineno>G). Some handy editing commands are:
+ 
+* to delete a character type “x”
+* to delete a line “dd”
+* to delete a word “dw”
+* to change a word “cw”
+* to insert/append after the end of the current line, type “A”
+* to undo the last command, type “u”
+* to redo the last command, type “.”
 
-:::::::::::::::::::::::::::::::::
+Save the file and try to run it again. If you’re having trouble, ask your tutor, or even
+the person next to you, to see if they can find what’s wrong. Sometimes it takes
+someone else’s fresh and/or experienced eyes to see an error. This is called
+“debugging” and the reward comes when the code finally runs!
 
+Try adding some more greetings of your own...
 
-## Challenge 2: how do you nest solutions within challenge blocks?
+ 
+### Activity 5 - Updating the README
+ 
+You now have five programs in the Prac1 directory. Enter the name of each of them
+along with a description under “Contents” in the README file.
 
-:::::::::::::::::::::::: solution 
+### Activity 6 - Making and submitting a zip file
+ 
+To bundle up and compress files we can use zip/unzip. Similar programs are tar
+(Tape Archive) and gzip (GNU zip).
+ 
+To make a zipped file for Practical 1, go to the Prac1 directory inside your FOP
+directory. Type pwd to check that you are in the right place.
+ 
+Create the zip file by typing:
 
-You can add a line with at least three colons and a `solution` tag.
+```
+zip Prac1_<your_student_ID> *
+```
+ 
+This will create a file **Prac1_<your_student_ID>.zip** which includes
+everything in your current directory – four programs and the README. You can check the
+contents of the zip file by typing:
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+```
+unzip –l Prac1_<your_student_ID>.zip
+```
+ 
+### Activity 7 - Submission
+
+All of your work for this week’s practical should be submitted via Blackboard using
+the Practical 0 link. This should be done as a single "zipped" file.
+This is the file to submit through Blackboard. 
+ 
+There are no direct marks for these
+submissions, but they may be taken into account when finalising your mark.
+Go to the Assessment link on Blackboard and click on Practical 0 for the submission
+page.
 
 ### And that's the end of Practical 0!
 
@@ -143,3 +273,31 @@ You can add a line with at least three colons and a `solution` tag.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::: checklist
+
+### Reflection
+ 
+1. **Knowledge:** What are the two modes in vi / vim?
+2. **Comprehension:** What is the name of the lab machine you are working on?
+Hint: use the hostname command or look at the prompt.
+3. **Application:** What series of commands would you need to go to the directory
+FOP/assignment in your home directory and compress all the files?
+4. **Analysis:** What variable would you change in growth.py to have more
+iterations (steps) per hour?
+5. **Synthesis:** How would you code a for loop to print “Hello World!” 15 times?
+6. **Evaluation:** What part of the prac did you find most challenging? (You can
+give feedback to the lecturer/tutor...)
+ 
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::::::::::: challenge
+
+For those who want to explore a bit more of the topics covered in this practical.
+
+1. Have a look at other problems from the text book:
+http://press.princeton.edu/titles/10291.html
+2. Work through a Linux tutorial
+3. Work through a vi/vim tutorial
+4. Read some samples of README files for large projects -
+https://github.com/matiassingers/awesome-readme
+ 
