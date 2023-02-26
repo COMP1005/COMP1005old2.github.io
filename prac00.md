@@ -43,10 +43,23 @@ how to use Linux!
 
 ### Activity 0 - Accessing Linux
 
-In the laboratory, login to the machines with your Oasis login. Once you're connected, 
-open a web browser and go to [mydesktop.curtin.edu.au](https://mydesktop.curtin.edu.au).
-You can choose either the install or HTML option, but for the labs we will 
-use **VMware Horizon HTML Access**. You'll be 
+In the laboratory:
+
+1. login to the machines with your Oasis login. 
+2. Once you're connected, open a web browser and go to [mydesktop.curtin.edu.au](https://mydesktop.curtin.edu.au).
+3. You can choose either the install or HTML option, but for the labs we will 
+use **VMware Horizon HTML Access**. You'll need to login again, making sure to select
+**STUDENT**. 
+4. Choose either **Computer Science Linux Lab** or **Curtin Global Linux** - this tells 
+the system which flavour of operating system you want to use. (they are both the same, 
+but can be useful as options when we have technical issues)
+5. It will take a few minutes for all the icons to arrive, so this is a good time to get 
+your screens setup - one for the prac sheet/page and the other for working in Linux 
+is recommended.
+6. Your screen should look something like this...
+
+![Starting screen for Linux](desktop.jpg){alt="Starting screen for Linux with
+icons loaded"}
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 
