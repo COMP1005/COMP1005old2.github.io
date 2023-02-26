@@ -59,9 +59,9 @@ contact: 'COMP1005@curtin.edu.au'
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.Rmd
-- practical-0.Rmd
-- practical-1.Rmd
+- introduction.md
+- practical-00.md
+- practical-01.md
 
 # Information for Learners
 learners: 
