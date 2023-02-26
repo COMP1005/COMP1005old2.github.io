@@ -41,7 +41,7 @@ Activity 0.
 That may be too much information for right now... so let's dive in and find out 
 how to use Linux!
 
-### Activity 0 - Accessing Linux
+### Activity 1 - Accessing Linux
 
 In the laboratory:
 
@@ -61,6 +61,32 @@ is recommended.
 ![Starting screen for Linux](desktop.jpg){alt="Starting screen for Linux with
 icons loaded"}
 
+### Activity 2 - The Command Line
+
+Now we need to open a **terminal window** to interact with the Linux computer. There is
+a graphical (GUI) interface, however the command line is more powerful (eventually).
+
+The terminal application is on the left of the screen (a black rectangle). We can make 
+sure it points to the correct area for your files by opening the **I: drive** icon and
+then right-clicking to get a pop-up menu and select **open in terminal**.
+
+There are a lot of commands you can use in Linux, but you only need a few 
+to get started. A sample of the Unix commands available to
+you have been provided below. We will learn more commands as we go through the unit.
+
+Try typing the following commands one at a time and check what they do...
+
+```
+ls
+ls –l
+pwd
+mkdir test
+ls
+cd test
+ls
+ls –la
+```
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 
 Now it's time for you to do some coding!
@@ -70,6 +96,10 @@ print("Hello world!")
 ```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+the < > braces are just a convention to show something that you
+fill in. Note that in Unix/Linux folders are referred to as directories.
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
