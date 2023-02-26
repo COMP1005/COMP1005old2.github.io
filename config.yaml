@@ -11,10 +11,10 @@
 carpentry: 'incubator'
 
 # Overall title for pages.
-title: 'Lesson Title'
+title: 'Fundamentals of Programming - Curtin University'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~
+created: 2023-02-27
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries'
@@ -33,7 +33,7 @@ source: 'https://github.com/carpentries/workbench-template-rmd'
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org'
+contact: 'COMP1005@curtin.edu.au'
 
 # Navigation ------------------------------------------------
 #
