@@ -1,19 +1,20 @@
 ---
-title: "Using RMarkdown"
-teaching: 10
-exercises: 2
+title: "Introduction to Linux"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How do you write a lesson using R Markdown and `{sandpaper}`?
-
+- How do I login in to the Virtual Machines?
+- Where do I find and access files in Linux?
+- How do I create and run a program using Linux?
+ 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Explain how to use markdown with the new lesson template
-- Demonstrate how to include pieces of code, figures, and nested challenge blocks
+- Define and use key commands in the Linux operating system
+- Edit files using vim
+- Run simple Python code in a Linux environment 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -76,8 +77,7 @@ You can add a line with at least three colons and a `solution` tag.
 
 You can also include figures generated from R Markdown:
 
-
-```r
+```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
 pie(
   c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
   init.angle = 315, 
@@ -85,11 +85,6 @@ pie(
   border = FALSE
 )
 ```
-
-<div class="figure" style="text-align: center">
-<img src="fig/introduction-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid"  />
-<p class="caption">Sun arise each and every morning</p>
-</div>
 
 Or you can use standard markdown for static figures with the following syntax:
 
