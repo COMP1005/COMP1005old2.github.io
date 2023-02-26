@@ -144,20 +144,12 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Prac00: Introduction to Linux
         </span>
-      </button>
+      
     </div><!--/div.accordion-header-->
-        
-    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
-      <div class="accordion-body">
-        <ul><li><a href="#introduction">Introduction</a></li>
-<li><a href="#activity-0---accessing-linux">Activity 0 - Accessing Linux</a></li>
-        </ul></div><!--/div.accordion-body-->
-    </div><!--/div.accordion-collapse-->
         
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -270,9 +262,9 @@
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width"><p>This practical will give a gentle introduction to Linux. It can be
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a></h3>
+<p>This practical will give a gentle introduction to Linux. It can be
 done before or after the first lecture - but do not delay as we’ll need
 everything from this lesson to build on in future weeks.</p>
 <p>In class you will be accessing a Linux environment (operating system)
@@ -281,31 +273,26 @@ servers in the cloud which can run multiple “virtual” machines at once.
 These, in turn, connect to fileservers where you can store your files
 and access them from any Curtin computer, or from your home
 machine(s).</p>
+<div class="Note">
+<p><strong>Note:</strong> If you are working remotely, or are not on
+Bentley Campus, you may have an alternative setup to access Linux. Your
+Lecturer will guide you through Activity 0.</p>
+</div>
+<p>That may be too much information for right now… so let’s dive in and
+find out how to use Linux!</p>
+</div>
+<div class="section level3">
+<h3 id="activity-0---accessing-linux">Activity 0 - Accessing Linux<a class="anchor" aria-label="anchor" href="#activity-0---accessing-linux"></a></h3>
+<p>In the laboratory, login to the machines with your Oasis login. Once
+you’re connected, open a web browser and go to <a href="https://mydesktop.curtin.edu.au" class="external-link">mydesktop.curtin.edu.au</a>. You
+can choose either the install or HTML option, but for the labs we will
+use <strong>VMware Horizon HTML Access</strong>. You’ll be</p>
 <div id="callout1" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
-<div class="callout-content">
-<p>Note: If you are working remotely, or are not on Bentley Campus, you
-may have an alternative setup to access Linux. Your Lecturer will guide
-you through Activity 0.</p>
-</div>
-</div>
-</div>
-<p>That may be too much information for right now… so let’s dive in and
-find out how to use Linux!</p>
-</section><section id="activity-0---accessing-linux"><h2 class="section-heading">Activity 0 - Accessing Linux<a class="anchor" aria-label="anchor" href="#activity-0---accessing-linux"></a>
-</h2>
-<hr class="half-width"><p>In the laboratory</p>
-<div id="callout2" class="callout callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>Now it’s time for you to do some coding!</p>
@@ -342,7 +329,7 @@ find out how to use Linux!</p>
   Output
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -373,10 +360,11 @@ challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge2"></a>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
+</div>
 </div>
 </div>
 </div>
@@ -410,7 +398,10 @@ Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
 </div>
-</section></div> <!-- / div.lesson-content -->
+
+
+
+      </div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/practical-00.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
