@@ -1,10 +1,5 @@
-# The Carpentries Workbench Template R Markdown Lesson
+# COMP1005 Fundamentals of Programming Practicals
 
-This lesson is a template lesson that uses [The Carpentries Workbench][workbench].
-
-To get started using this template, make sure you're logged into Github and visit https://github.com/carpentries/workbench-template-rmd/generate
-and follow the instructions.
-
-If you have any questions, contact [@zkamvar](https://github.com/zkamvar)
+These lessons use the template from [The Carpentries Workbench][workbench].
 
 [workbench]: https://carpentries.github.io/sandpaper-docs/
