@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Linux"
+title: "Prac00: Introduction to Linux"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -20,26 +20,33 @@ title: "Introduction to Linux"
 
 ## Introduction
 
-This is a lesson created via The Carpentries Workbench. It is written in
-[Pandoc-flavored Markdown](https://pandoc.org/MANUAL.txt) for static files and
-[R Markdown][r-markdown] for dynamic files that can render code into output. 
-Please refer to the [Introduction to The Carpentries 
-Workbench](https://carpentries.github.io/sandpaper-docs/) for full documentation.
+This practical will give a gentle introduction to Linux. It can be done before 
+or after the first lecture - but do not delay as we'll need everything from 
+this lesson to build on in future weeks.
 
-What you need to know is that there are three sections required for a valid
-Carpentries lesson template:
+In class you will be accessing a Linux environment (operating system) through
+a web browser. We will connect to a Virtual Machine - using servers in
+the cloud which can run multiple "virtual" machines at once. These, in turn, 
+connect to fileservers where you can store your files and access them from
+any Curtin computer, or from your home machine(s).
 
- 1. `questions` are displayed at the beginning of the episode to prime the
-    learner for the content.
- 2. `objectives` are the learning objectives for an episode displayed with
-    the questions.
- 3. `keypoints` are displayed at the end of the episode to reinforce the
-    objectives.
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+Note: If you are working remotely, or are not on Bentley Campus, you may have 
+an alternative setup to access Linux. Your Lecturer will guide you through
+Activity 0.
 
-Inline instructor notes can help inform instructors of timing challenges
-associated with the lessons. They appear in the "Instructor View"
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+That may be too much information for right now... so let's dive in and find out 
+how to use Linux!
+
+## Activity 0 - Accessing Linux
+
+In the laboratory 
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
+
+Now it's time for you to do some coding!
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -73,42 +80,15 @@ You can add a line with at least three colons and a `solution` tag.
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Figures
-
-You can also include figures generated from R Markdown:
-
-```{r pyramid, fig.alt = "pie chart illusion of a pyramid", fig.cap = "Sun arise each and every morning"}
-pie(
-  c(Sky = 78, "Sunny side of pyramid" = 17, "Shady side of pyramid" = 5), 
-  init.angle = 315, 
-  col = c("deepskyblue", "yellow", "yellow3"), 
-  border = FALSE
-)
-```
-
-Or you can use standard markdown for static figures with the following syntax:
-
-`![optional caption that appears below the figure](figure url){alt='alt text for
-accessibility purposes'}`
-
-![You belong in The Carpentries!](https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg){alt='Blue Carpentries hex person logo with no text.'}
-
-## Math
-
-One of our episodes contains $\LaTeX$ equations when describing how to create
-dynamic reports with {knitr}, so we now use mathjax to describe this:
-
-`$\alpha = \dfrac{1}{(1 - \beta)^2}$` becomes: $\alpha = \dfrac{1}{(1 - \beta)^2}$
-
-Cool, right?
+And that's the end of Practical 0!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Use `.md` files for episodes when you want static content
-- Use `.Rmd` files for episodes when you need to generate output
-- Run `sandpaper::check_lesson()` to identify any issues with your lesson
-- Run `sandpaper::build_lesson()` to preview your lesson locally
+- We will be using Linux as our operating system for this unit
+- You can access Linux through [mydesktop.curtin.edu.au](https://mydesktop.curtin.edu.au) or install Python and a "Linux" shell on your home machine
+- Working on the command line, we will type in commands at the prompt, press enter, and wait for the computer's response
+- To create and edit a text file, we will be using vim - a program for editing text files
+- Once we have entered a Python program as a text file, with a ".py" extension, we can run the program by typing `python3 myprog.py`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-[r-markdown]: https://rmarkdown.rstudio.com/
