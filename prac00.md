@@ -44,9 +44,14 @@ how to use Linux!
 ## Activity 0 - Accessing Linux
 
 In the laboratory 
+
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 
 Now it's time for you to do some coding!
+
+```python
+print("Hello world!")
+```
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -80,7 +85,7 @@ You can add a line with at least three colons and a `solution` tag.
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-And that's the end of Practical 0!
+### And that's the end of Practical 0!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
