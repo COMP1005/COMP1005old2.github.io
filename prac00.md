@@ -18,7 +18,7 @@ title: "Prac00: Introduction to Linux"
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Introduction
+### Introduction
 
 This practical will give a gentle introduction to Linux. It can be done before 
 or after the first lecture - but do not delay as we'll need everything from 
@@ -30,9 +30,9 @@ the cloud which can run multiple "virtual" machines at once. These, in turn,
 connect to fileservers where you can store your files and access them from
 any Curtin computer, or from your home machine(s).
 
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: Note
 
-Note: If you are working remotely, or are not on Bentley Campus, you may have 
+**Note:** If you are working remotely, or are not on Bentley Campus, you may have 
 an alternative setup to access Linux. Your Lecturer will guide you through
 Activity 0.
 
@@ -41,9 +41,12 @@ Activity 0.
 That may be too much information for right now... so let's dive in and find out 
 how to use Linux!
 
-## Activity 0 - Accessing Linux
+### Activity 0 - Accessing Linux
 
-In the laboratory 
+In the laboratory, login to the machines with your Oasis login. Once you're connected, 
+open a web browser and go to [mydesktop.curtin.edu.au](https://mydesktop.curtin.edu.au).
+You can choose either the install or HTML option, but for the labs we will 
+use **VMware Horizon HTML Access**. You'll be 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: callout
 
