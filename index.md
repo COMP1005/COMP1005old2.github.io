@@ -6,7 +6,7 @@ This site holds the Practical "worksheets" for COMP1005 Fundamentals of Programm
 
 COMP1005 Practical Worksheets are being updated, and will be linked below:
 
-* [Practical 00][practical-00.html]
+- [Practical 00 - Introduction to Linux][practical-00.html]
 
 ---
 These lessons have been built with [The Carpentries Workbench][workbench]. 
