@@ -59,7 +59,7 @@ contact: 'COMP1005@curtin.edu.au'
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.Rmd
+- prac00.md
 - practical-00.Rmd
 - practical-01.Rmd
 
