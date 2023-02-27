@@ -154,16 +154,16 @@ information for Practical 1.
  
 ```
 ## Synopsis
-Practical 1 of Fundamentals of Programming COMP1005/5005
+Practical 0 of Fundamentals of Programming COMP1005/5005
  
 ## Contents
-README – readme file for Practical 1
+README – readme file for Practical 0
  
 ## Dependencies
 none
  
 ## Version information
-<today’s date> - initial version of Practical 1 programs
+<today’s date> - initial version of Practical 0 programs
 ```
  
 Press ```<esc>``` to exit insert mode, then :wq to save the file (w) and exit vim (q).
