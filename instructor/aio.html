@@ -455,6 +455,7 @@ can use <tab> to complete long filenames.</tab></p>
 <p>The current directory is referenced by a single fullstop (.), the
 parent directory is referenced by two fullstops (..) and all pathways
 are relative to the current location.</p>
+<p>For example…</p>
 <pre><code>cd FOP/Prac01
 cd ../Prac00</code></pre>
 <p>…takes you into FOP/Prac01, then on the second line, back up and into
@@ -552,11 +553,14 @@ programs are tar (Tape Archive) and gzip (GNU zip).</p>
 inside your FOP directory. Type pwd to check that you are in the right
 place.</p>
 <p>Create the zip file by typing:</p>
-<pre><code>zip Prac1_&lt;your_student_ID&gt; *</code></pre>
-<p>This will create a file <strong>Prac0_<your_student_id>.zip</your_student_id></strong>
+<pre><code>zip Prac00_&lt;your_student_ID&gt; *
+ 
+e.g. zip Prac00_12345678 *
+</code></pre>
+<p>This will create a file <strong>Prac00_<your_student_id>.zip</your_student_id></strong>
 which includes everything in your current directory – four programs and
 the README. You can check the contents of the zip file by typing:</p>
-<pre><code>unzip –l Prac0_&lt;your_student_ID&gt;.zip</code></pre>
+<pre><code>unzip –l Prac00_&lt;your_student_ID&gt;.zip</code></pre>
 </div>
 <div class="section level3">
 <h3 id="activity-7---submission">Activity 7 - Submission<a class="anchor" aria-label="anchor" href="#activity-7---submission"></a>
@@ -719,7 +723,7 @@ reinforce the objectives.</li>
   Instructor Note
   </h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
 <div class="accordion-body">
 <p>Inline instructor notes can help inform instructors of timing
 challenges associated with the lessons. They appear in the “Instructor
@@ -753,7 +757,7 @@ View”</p>
   Output
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -784,7 +788,7 @@ challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge2"></a>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>You can add a line with at least three colons and a
 <code>solution</code> tag.</p>
