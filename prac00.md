@@ -122,6 +122,8 @@ back to previous commands, and can use <tab> to complete long filenames.
  
 The current directory is referenced by a single fullstop (.), the parent directory is
 referenced by two fullstops (..) and all pathways are relative to the current location.
+
+For example...
  
 ```
 cd FOP/Prac01
@@ -239,15 +241,18 @@ directory. Type pwd to check that you are in the right place.
 Create the zip file by typing:
 
 ```
-zip Prac1_<your_student_ID> *
+zip Prac00_<your_student_ID> *
+ 
+e.g. zip Prac00_12345678 *
+
 ```
  
-This will create a file **Prac0_<your_student_ID>.zip** which includes
+This will create a file **Prac00_<your_student_ID>.zip** which includes
 everything in your current directory – four programs and the README. You can check the
 contents of the zip file by typing:
 
 ```
-unzip –l Prac0_<your_student_ID>.zip
+unzip –l Prac00_<your_student_ID>.zip
 ```
  
 ### Activity 7 - Submission
