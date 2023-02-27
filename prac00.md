@@ -166,7 +166,7 @@ none
 <today’s date> - initial version of Practical 1 programs
 ```
  
-Press <esc> to exit insert mode, then :wq to save the file (w) and exit vim (q).
+Press ```<esc>``` to exit insert mode, then :wq to save the file (w) and exit vim (q).
 Type 
 ```
 ls -l
