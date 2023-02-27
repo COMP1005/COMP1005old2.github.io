@@ -225,7 +225,7 @@ Try adding some more greetings of your own...
  
 ### Activity 5 - Updating the README
  
-You now have five programs in the Prac1 directory. Enter the name of each of them
+You now have a program and a README in the Prac00 directory. Enter the name of each of them
 along with a description under “Contents” in the README file.
 
 ### Activity 6 - Making and submitting a zip file
@@ -233,7 +233,7 @@ along with a description under “Contents” in the README file.
 To bundle up and compress files we can use zip/unzip. Similar programs are tar
 (Tape Archive) and gzip (GNU zip).
  
-To make a zipped file for Practical 1, go to the Prac1 directory inside your FOP
+To make a zipped file for Practical 0, go to the Prac00 directory inside your FOP
 directory. Type pwd to check that you are in the right place.
  
 Create the zip file by typing:
@@ -242,12 +242,12 @@ Create the zip file by typing:
 zip Prac1_<your_student_ID> *
 ```
  
-This will create a file **Prac1_<your_student_ID>.zip** which includes
+This will create a file **Prac0_<your_student_ID>.zip** which includes
 everything in your current directory – four programs and the README. You can check the
 contents of the zip file by typing:
 
 ```
-unzip –l Prac1_<your_student_ID>.zip
+unzip –l Prac0_<your_student_ID>.zip
 ```
  
 ### Activity 7 - Submission
