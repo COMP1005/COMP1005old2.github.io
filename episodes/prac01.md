@@ -147,7 +147,14 @@ Change directory to ```The/Holy/Grail```. In the Grail directory, type in the fo
 
 ```python
 print("What is your name?")
-input()
+name = input()
+print("What is your quest?")
+quest = input()
+print("What is your favourite colour?")
+colour = input()
+print()
+print("Hello,", name, "good luck with", quest, "!")
+print("Perhaps wearing", colour, "socks would help :)")
 ```
 
 
