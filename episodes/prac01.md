@@ -33,13 +33,13 @@ a program to implement a simple systems dynamics model.
 
 ## Customising the mydesktop environment
 
-You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep...
+You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep... this will need to be done each time you use the virual machines as they go back to the defaults every time.
 
 :::::::::::::::::::::::: solution 
 
 ## Terminal window themes
 
-There is a lot of customisation possible with the terminal window in Linux, but we will just look at "light" and "dark" themes. In the terminal menu, select edit/prefs"}
+There is a lot of customisation possible with the terminal window in Linux, but we will just look at "light" and "dark" themes. In the terminal menu, select edit/prefs.
 
 ![Changing preferences for theme 1/2](P01prefs.jpg){alt="Select edit/prefs in the terminal menu"}
 
@@ -47,9 +47,26 @@ Then choose
 
 ![Changing preferences for theme 2/2](P01theme.jpg){alt="Select dark then close"}
 
+To go from dark to light...
 
+![Changing preferences for theme 1/2](P01prefs_d.jpg){alt="Select edit/prefs in the terminal menu"}
+
+Then choose 
+
+![Changing preferences for theme 2/2](P01theme_d.jpg){alt="Select dark then close"}
 
 :::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+
+## Changing the sleep settings
+
+It may get annoying to keep putting the password in each time the virtual machine goes to sleep. The default timeout is 5 minutes, which can be increased to 15 minutes, or to "never". Select preferences and then Power at the top right of the Virtual Machine to change this setting.
+
+![Changing preferences for timeout](P01timeout.jpg){alt="Select preferences and then Power at the top right of the Virtual Machine"}
+
+:::::::::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::
 
 ### Activity 1 - Setting up for the practical
