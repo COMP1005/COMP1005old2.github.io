@@ -33,7 +33,7 @@ a program to implement a simple systems dynamics model.
 
 ## Customising the mydesktop environment
 
-You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep... this will need to be done each time you use the virual machines as they go back to the defaults every time.
+You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep... this will need to be done each time you use the virtual machines as they go back to the defaults every time.
 
 :::::::::::::::::::::::: solution 
 
@@ -74,21 +74,24 @@ It may get annoying to keep putting the password in each time the virtual machin
 We're going to make a complex directory structure for this practical. This will exercise 
 your Linux skills for creating and traversing directories. The overall structure will be
 
-- FOP
-  - Prac00
-  - Prac01
-    - The
-      - Holy
-        - Grail
-    - Life
-      - of 
-        - Brian
-    - And
-      - Now
-        - for 
-          - Something
-            - Completely
-              - Different
+```
+FOP
+ |-- Prac00
+ |-- Prac01
+   |-- The
+   |   |-- Holy
+   |   |   |-- Grail
+   |   |
+   |   |-- Life
+   |       |-- of 
+   |           |-- Brian
+   |-- And
+       |-- Now
+           |-- for 
+               |-- Something
+                   |-- Completely
+                       |-- Different
+```
 
 Each indent is a subdirectory. You might create each directory, then ```cd``` into it, then create the subdirectory:
 
@@ -101,13 +104,16 @@ cd Holy
 mkdir Grail
 cd ../..
 ```
+
 ...or you can stay in the original directory and give the path to each new directory:
+
 ```
 cd FOP/Prac01
 mkdir The
 mkdir The/Holy
 mkdir The/Holy/Grail
 ```
+
 To see the overall directory structure, type ```ls -R``` and you should have the output shown below:
 
 ![Directory structure](P01directoires.jpg){alt="output of ls -R on the Activity 1 directory structure"}
@@ -181,7 +187,8 @@ none
 ```
  
 Press ```<esc>``` to exit insert mode, then :wq to save the file (w) and exit vim (q).
-Type 
+Type:
+
 ```
 ls -l
 ```
