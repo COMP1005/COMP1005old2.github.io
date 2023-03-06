@@ -690,67 +690,11 @@ condition?</li>
 </h3>
 <p>In this practical you will continue to use Linux and the vim text
 editor - look back to <a href="prac00.html">Practical 00</a> to refresh
-yourself on those commands.</p>
-<p>A With these skills, you can write your first few Python programs. In
-this case we will write a program to implement a simple systems dynamics
-model.</p>
-<div id="challenge1" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="customising-the-mydesktop-environment" class="callout-inner">
-<h3 class="callout-title">Customising the mydesktop environment<a class="anchor" aria-label="anchor" href="#challenge1"></a>
-</h3>
-<div class="callout-content">
-<p>You may prefer to have a black backgournd for your terminal, or to
-increase the time before the virtual machine goes to sleep… this will
-need to be done each time you use the virtual machines as they go back
-to the defaults every time.</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Terminal window themes
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<p>There is a lot of customisation possible with the terminal window in
-Linux, but we will just look at “light” and “dark” themes. In the
-terminal menu, select edit/prefs.</p>
-<p><a href="fig/P01pref.jpg" alt="Select edit/prefs in the terminal menu">Changing preferences for
-theme 1/2</a></p>
-<p>Then choose</p>
-<figure><img src="fig/P01theme.jpg" alt="Select dark then close" class="figure mx-auto d-block"><figcaption>Changing preferences for theme 2/2</figcaption></figure><p>To go from dark to light…</p>
-<figure><img src="fig/P01pref_d.jpg" alt="Select edit/prefs in the terminal menu" class="figure mx-auto d-block"><figcaption>Changing preferences for theme 1/2</figcaption></figure><p>Then choose</p>
-<figure><img src="fig/P01theme_d.jpg" alt="Select dark then close" class="figure mx-auto d-block"><figcaption>Changing preferences for theme 2/2</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Changing the sleep settings
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>It may get annoying to keep putting the password in each time the
-virtual machine goes to sleep. The default timeout is 5 minutes, which
-can be increased to 15 minutes, or to “never”. Select preferences and
-then Power at the top right of the Virtual Machine to change this
-setting.</p>
-<figure><img src="fig/P01timeout.jpg" alt="Select preferences and then Power at the top right of the Virtual Machine" class="figure mx-auto d-block"><figcaption>Changing preferences for timeout</figcaption></figure>
-</div>
-</div>
-</div>
-</div>
-<figure><img src="fig/P01theme_d.jpg" alt="Select dark then close" class="figure mx-auto d-block"><figcaption>Changing preferences for theme 2/2</figcaption></figure>
+yourself on those commands. The first activity sets up the directory
+structure for the practical.</p>
+<p>We will be looking at accepting user input (Activity 2) and control
+structures (Activities 3-6). Finally, in Activity 7 we will write a
+program to implement a simple systems dynamics model.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-1---setting-up-for-the-practical">Activity 1 - Setting up for the practical<a class="anchor" aria-label="anchor" href="#activity-1---setting-up-for-the-practical"></a>
@@ -793,7 +737,7 @@ mkdir The/Holy
 mkdir The/Holy/Grail</code></pre>
 <p>To see the overall directory structure, type <code>ls -R</code> and
 you should have the output shown below:</p>
-<figure><img src="P01directories.jpg" title="Directory structure" alt="" class="figure mx-auto d-block"><figcaption>Output of ls -R on the Activity 1 directory
+<figure><img src="fig/P01directories.png" title="Directory structure" alt="" class="figure mx-auto d-block"><figcaption>Output of ls -R on the Activity 1 directory
 structure</figcaption></figure><p>If you make a mistake, you can delete a directory with
 <code>rmdir &lt;dir_name</code>, but it must be empty first. Note that
 directories have to be empty before they can be deleted - so work from
@@ -801,12 +745,12 @@ the “leaf” of the directory tree, back to the “root”.</p>
 <p>There are ways to delete a directory tree in one command, but it is
 too <strong>dangerous</strong> to teach at this point. For now, we’ll do
 things the slow and safe way.</p>
-<div id="challenge2" class="callout challenge">
+<div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge1"></a>
 </h3>
 <div class="callout-content">
 <p>From the Prac01 directory, how would you cnange into the Grail
@@ -814,14 +758,14 @@ directory <strong>with one command</strong>?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -921,7 +865,8 @@ and choose a path through the code.</p>
 <p>The indenting indicates the start and end of each
 <code>if_elif_else</code> clause. Reducing the indent closes the clause,
 continuing the indent extends the included block.</p>
-<p>As an example, enter the following code, <code>bruces.py</code>:</p>
+<p>As an example, enter the following code, <code>bruces.py</code>, in
+the directory <code>Monty/Pythons/Flying/Circus</code>:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -951,12 +896,12 @@ called Bruce… update the code as below.</p>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Excellent! That saves a lot of confusion!"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name)</span></code></pre>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2-testing-testing" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Testing… testing…<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge 2: Testing… testing…<a class="anchor" aria-label="anchor" href="#challenge2"></a>
 </h3>
 <div class="callout-content">
 <p>Looking at the above code, what inputs might you use to test it is
@@ -964,14 +909,14 @@ working correctly?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Enter “Bruce” and something other than “Bruce” to test both paths
 through the code. Note that “Bruce” and “bruce” are not equal.</p>
@@ -1017,8 +962,10 @@ the members of Monty Python:</p>
 </tr>
 </tbody>
 </table>
-<p>Indenting must be correct for this code to work! It can help to draw
-a <code>flowchart</code> to see/plan the flow of logic in your code.</p>
+<p>For this exercise, enter your code as <code>whichone.py</code> in the
+<code>Monty/Python</code> directory. Indenting must be correct for this
+code to work! It can help to draw a <code>flowchart</code> to see/plan
+the flow of logic in your code.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1063,6 +1010,8 @@ the Pythons.</p>
 <p>When we take input from the user, it is read in as a string. These
 are characters - so we need to convert them to actually use them as
 numbers. The following code demonstrates this conversion.</p>
+<p>Type it in as <code>num_convert.py</code> in the <code>Prac01</code>
+directory.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1081,7 +1030,7 @@ numbers. The following code demonstrates this conversion.</p>
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>Notice how the two <span class="bu">print</span> statements <span class="bu">print</span> the same number (well, it looks the same), but their variable types are different? Everything you read <span class="kw">in</span> will be a string. If you want a number, you<span class="st">'ll need to convert it with the int() or float() functions.</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="er">Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop.</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="er">Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.</span></span>
 <span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="er"> </span></span>
 <span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="er">```python</span></span>
 <span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="er">#</span></span>
@@ -1112,6 +1061,8 @@ know when we get there - we can test a condition (similar to an
 <code>if</code> control structure). In this code we will enter numbers,
 and type in a negative number to exit the loop. This is called a
 <strong>sentinal value</strong>.</p>
+<p>Type it in as <code>num_while.py</code> in the <code>Prac01</code>
+directory.</p>
 </div>
 <div class="section level1">
 <h1 id="section"></h1>
@@ -1143,13 +1094,14 @@ instead of negative numbers?</p>
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
 </h3>
 <div class="callout-content">
-<p>From the “Introduction to Computational Science” text: “Many
+<p>From the “Introduction to Computational Science” text: <em>“Many
 situations exist where the rate at which an amount is changing is
 proportional to the amount present. Such might be the case for a
 population, say of people, deer, or bacteria. When money is compounded
 continuously, the rate of change of the amount is also proportional to
 the amount present. For a radioactive element, the amount of
-radioactivity decays at a rate proportional to the amount present.”</p>
+radioactivity decays at a rate proportional to the amount
+present.”</em></p>
 </div>
 </div>
 </div>
@@ -1173,11 +1125,14 @@ rate initialise (length of) time step number of iterations = simulation
 length / time step growth rate (per step) = growth rate * time step for
 i = 0 to number of iterations-1 do growth = growth rate (per step) *
 population population = population + growth time = i * time step display
-time, growth, population Compare this to the following code. We are
-implementing the scenario which follows the Algorithm on page 25.</p>
+time, growth, population</p>
 </div>
 </div>
 </div>
+<p>Compare this to the following code. We are implementing the scenario
+which follows the Algorithm on page 25.</p>
+<p>Enter the code as <code>growth.py</code> in the
+<code>And/Now/for/Something/Completely/Different</code> directory.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
