@@ -189,19 +189,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="practical-00.html">2. Practical 00</a>
-    </div>
-<!--/div.accordion-header-->
-        
-  </div>
-<!--/div.accordion-item-->
-</div>
-<!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush4">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading4">
-        <a href="practical-01.html">3. Practical 01</a>
+        <a href="prac01.html">2. Prac01: Introduction to Linux</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -656,11 +644,11 @@ this practical.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div></section><section id="aio-practical-00"><p>Content from <a href="practical-00.html">Practical 00</a></p>
+</div></section><section id="aio-prac01"><p>Content from <a href="prac01.html">Prac01: Introduction to Linux</a></p>
 <hr>
 <p> Last updated on 2023-03-06 | 
         
-        <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/practical-00.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+        <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac01.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -672,8 +660,11 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
+<li>How do I interact with a Python program?</li>
+<li>How can I get Python to run different pieces of code, based on a
+condition?</li>
+<li>What ways can I have Python repeat code?</li>
+<li>How do I apply this to a real-world problem?</li>
 </ul>
 </div>
 </div>
@@ -683,115 +674,279 @@ any links that you are not going to use.
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
+<li>Define and use control structures in Python</li>
+<li>Continue to use key commands in the Linux operating system</li>
+<li>Use Python in a Linux environment to model simple systems</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 </div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files (with extension <code>.md</code>) and <a href="https://rmarkdown.rstudio.com/" class="external-link">R Markdown</a> for dynamic files
-that can render code into output (with extension <code>.Rmd</code>).
-Please refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson template:</p>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
+<p>In this practical you will continue to use Linux and the vim text
+editor - look back to <a href="prac00.html">Practical 00</a> to refresh
+yourself on those commands.</p>
+<p>A With these skills, you can write your first few Python programs. In
+this case we will write a program to implement a simple systems dynamics
+model.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-1---accessing-linux">Activity 1 - Accessing Linux<a class="anchor" aria-label="anchor" href="#activity-1---accessing-linux"></a>
+</h3>
+<p>In the laboratory:</p>
 <ol style="list-style-type: decimal">
-<li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
-<li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
-<li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
+<li>login to the machines with your Oasis login.</li>
+<li>Once you’re connected, open a web browser and go to <a href="https://mydesktop.curtin.edu.au" class="external-link">mydesktop.curtin.edu.au</a>.</li>
+<li>You can choose either the install or HTML option, but for the labs
+we will use <strong>VMware Horizon HTML Access</strong>. You’ll need to
+login again, making sure to select <strong>STUDENT</strong>.</li>
+<li>Choose either <strong>Computer Science Linux Lab</strong> or
+<strong>Curtin Global Linux</strong> - this tells the system which
+flavour of operating system you want to use. (they are both the same,
+but can be useful as options when we have technical issues)</li>
+<li>It will take a few minutes for all the icons to arrive, so this is a
+good time to get your screens setup - one for the prac sheet/page and
+the other for working in Linux is recommended.</li>
+<li>Your screen should look something like this…</li>
 </ol>
-<div id="challenge1" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<figure><img src="desktop.jpg" alt="Starting screen for Linux with icons loaded" class="figure mx-auto d-block"><figcaption>Starting screen for Linux</figcaption></figure>
 </div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<div class="section level3">
+<h3 id="activity-2---the-command-line">Activity 2 - The Command Line<a class="anchor" aria-label="anchor" href="#activity-2---the-command-line"></a>
 </h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<p>Now we need to open a <strong>terminal window</strong> to interact
+with the Linux computer. There is a graphical (GUI) interface, however
+the command line is more powerful (eventually).</p>
+<p>The terminal application is on the left of the screen (a black
+rectangle). We can make sure it points to the correct area for your
+files by opening the <strong>I: drive</strong> icon and then
+right-clicking to get a pop-up menu and select <strong>open in
+terminal</strong>.</p>
+<p>There are a lot of commands you can use in Linux, but you only need a
+few to get started. A sample of the Unix commands available to you have
+been provided below. We will learn more commands as we go through the
+unit.</p>
+<p>Try typing the following commands (one at a time) and check what they
+do…</p>
+<pre><code>ls
+ls –l
+pwd
+mkdir test
+ls
+cd test
+ls
+ls –la</code></pre>
+<p>Here are a few of the most common commands… the &lt; &gt; braces are
+a convention to indicate text that you replace. Note that in Unix/Linux
+folders are referred to as directories.</p>
+<table class="table">
+<colgroup>
+<col width="28%">
+<col width="40%">
+<col width="31%">
+</colgroup>
+<thead><tr class="header">
+<th>Command</th>
+<th>Description</th>
+<th>Examples</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>ls</td>
+<td>Lists all files in the current directory, if an argument is provided
+lists all files in the specified directory.</td>
+<td>ls, ls –l, ls –la</td>
+</tr>
+<tr class="even">
+<td>cp <src><dest></dest></src>
+</td>
+<td>Copies the file from source to destination.</td>
+<td>cp Downloads/test.py ., cp test.py test2.py</td>
+</tr>
+<tr class="odd">
+<td>mv <src><dest></dest></src>
+</td>
+<td>Moves the file from source to destination. If the destination ends
+in a file name it will rename the file.</td>
+<td>mv test.py Prac1, mv test.py mytest.py</td>
+</tr>
+<tr class="even">
+<td>pwd</td>
+<td>Lists the directory you are currently in (Print Working
+Directory)</td>
+<td>pwd</td>
+</tr>
+<tr class="odd">
+<td>cd </td>
+<td>Moves to </td>
+<td></td>
+</tr>
+<tr class="even">
+<td>mkdir </td>
+<td>Creates a new directory</td>
+<td>mkdir Prac1</td>
+</tr>
+<tr class="odd">
+<td>rm <filename></filename>
+</td>
+<td>Removes a file</td>
+<td>rm fireballs.py</td>
+</tr>
+<tr class="even">
+<td>rmdir </td>
+<td>Removes a directory (must be empty first)</td>
+<td>rmdir Prac12</td>
+</tr>
+</tbody>
+</table>
+<p>Using these commands create the following directory structure within
+your home directory. A <em>How to use Unix</em> and cheatsheet document
+has been uploaded to Blackboard, it will be helpful if you get stuck.
+Note you can use the arrow keys to get back to previous commands, and
+can use <tab> to complete long filenames.</tab></p>
+<ul>
+<li>FOP
+<ul>
+<li>Prac00</li>
+<li>Prac01</li>
+<li>Prac02</li>
+<li>Prac03</li>
+<li>Prac04</li>
+<li>Prac05</li>
+<li>Prac06</li>
+<li>Prac07</li>
+<li>Prac08</li>
+<li>Prac09</li>
+<li>Prac10</li>
+<li>Prac11</li>
+</ul>
+</li>
+</ul>
+<p>The current directory is referenced by a single fullstop (.), the
+parent directory is referenced by two fullstops (..) and all pathways
+are relative to the current location.</p>
+<p>For example…</p>
+<pre><code>cd FOP/Prac01
+cd ../Prac00</code></pre>
+<p>…takes you into FOP/Prac01, then on the second line, back up and into
+Prac00</p>
+</div>
+<div class="section level3">
+<h3 id="activity-3---introduction-to-the-text-editor-vim">Activity 3 - Introduction to the Text Editor (vim)<a class="anchor" aria-label="anchor" href="#activity-3---introduction-to-the-text-editor-vim"></a>
 </h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
+<p>We are going to use the vim text editor to create your README file
+for Prac01. Vim is an enhanced version of vi – a visual, interactive
+editor. There is an Introduction to Vi document and a “cheat-sheet” on
+Blackboard, but you should work through this prac before try ing it.</p>
+<p>If you’re not already there, change directory into the Prac00
+directory and create the README file:</p>
+<pre><code>&gt; cd Prac00
+&gt; vim README</code></pre>
+<p>You will now be in the vim text editor with an empty file. Vim has
+two modes – command mode (where you can move around the file and use
+commands) and insert text mode. Type “i” to go into insert mode and type
+in the following README information for Practical 1.</p>
+<pre><code>## Synopsis
+Practical 0 of Fundamentals of Programming COMP1005/5005
+ 
+## Contents
+README – readme file for Practical 0
+ 
+## Dependencies
+none
+ 
+## Version information
+&lt;today’s date&gt; - initial version of Practical 0 programs</code></pre>
+<p>Press <code>&lt;esc&gt;</code> to exit insert mode, then :wq to save
+the file (w) and exit vim (q). Type</p>
+<pre><code><span><span class="va">ls</span> <span class="op">-</span><span class="va">l</span></span></code></pre>
+<p>(-l for long listing) and you will see that you have created a file
+called README, and it has a size and a date. We will make README files
+for all of our practicals to hold information about the files in that
+directory.</p>
 </div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Output
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<div class="section level3">
+<h3 id="activity-4---welcome-to-python">Activity 4 - Welcome to Python!<a class="anchor" aria-label="anchor" href="#activity-4---welcome-to-python"></a>
 </h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge2" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<p>Below is a simple program to get you used to the editor and running
+python scripts. To create a file for the program, type:</p>
+<pre><code>vim hello.py</code></pre>
+<p>Then type in the following code… It is important to type it yourself
+and not copy/paste – this is how you will learn and remember!</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<div class="callout-content">
-
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># hello.py: Print out greetings in various languages</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bula'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kia ora"</span>)</span></code></pre>
 </div>
+<p>To run the program, type:</p>
+<pre><code>python3 hello.py</code></pre>
+<p>You will probably get an error message as a response (unless you
+typed it in perfectly). Don’t worry, check through your code for the
+error and try running it again. Go back into the file and make
+corrections – use the cursor keys to get to the position (<lineno>G).
+Some handy editing commands are:</lineno></p>
+<ul>
+<li>to delete a character type “x”</li>
+<li>to delete a line “dd”</li>
+<li>to delete a word “dw”</li>
+<li>to change a word “cw”</li>
+<li>to insert/append after the end of the current line, type “A”</li>
+<li>to undo the last command, type “u”</li>
+<li>to redo the last command, type “.”</li>
+</ul>
+<p>Save the file and try to run it again. If you’re having trouble, ask
+your tutor, or even the person next to you, to see if they can find
+what’s wrong. Sometimes it takes someone else’s fresh and/or experienced
+eyes to see an error. This is called “debugging” and the reward comes
+when the code finally runs!</p>
+<p>Try adding some more greetings of your own…</p>
 </div>
+<div class="section level3">
+<h3 id="activity-5---updating-the-readme">Activity 5 - Updating the README<a class="anchor" aria-label="anchor" href="#activity-5---updating-the-readme"></a>
+</h3>
+<p>You now have a program and a README in the Prac00 directory. Enter
+the name of each of them along with a description under “Contents” in
+the README file.</p>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Show me the solution
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
+<div class="section level3">
+<h3 id="activity-6---making-and-submitting-a-zip-file">Activity 6 - Making and submitting a zip file<a class="anchor" aria-label="anchor" href="#activity-6---making-and-submitting-a-zip-file"></a>
+</h3>
+<p>To bundle up and compress files we can use zip/unzip. Similar
+programs are tar (Tape Archive) and gzip (GNU zip).</p>
+<p>To make a zipped file for Practical 0, go to the Prac00 directory
+inside your FOP directory. Type pwd to check that you are in the right
+place.</p>
+<p>Create the zip file by typing:</p>
+<pre><code>zip Prac00_&lt;your_student_ID&gt; *
+ 
+e.g. zip Prac00_12345678 *</code></pre>
+<p>This will create a file <strong>Prac00_<your_student_id>.zip</your_student_id></strong>
+which includes everything in your current directory – four programs and
+the README. You can check the contents of the zip file by typing:</p>
+<pre><code>unzip –l Prac00_&lt;your_student_ID&gt;.zip</code></pre>
 </div>
+<div class="section level3">
+<h3 id="activity-7---submission">Activity 7 - Submission<a class="anchor" aria-label="anchor" href="#activity-7---submission"></a>
+</h3>
+<p>All of your work for this week’s practical should be submitted via
+Blackboard using the Practical 0 link. This should be done as a single
+“zipped” file. This is the file to submit through Blackboard.</p>
+<p>There are no direct marks for these submissions, but they may be
+taken into account when finalising your mark. Go to the Assessment link
+on Blackboard and click on Practical 0 for the submission page.</p>
 </div>
-</div>
-</div>
-</section><section id="figures"><h2 class="section-heading">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>Or you can use pandoc markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><figcaption>You belong in The Carpentries!</figcaption></figure></section><section id="math"><h2 class="section-heading">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
+<div class="section level3">
+<h3 id="and-thats-the-end-of-practical-0">And that’s the end of Practical 0!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-0"></a>
+</h3>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -801,190 +956,71 @@ this:</p>
 </h3>
 <div class="callout-content">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
+<li>We will be using Linux as our operating system for this unit</li>
+<li>You can access Linux through <a href="https://mydesktop.curtin.edu.au" class="external-link">mydesktop.curtin.edu.au</a> or
+install Python and a “Linux” shell on your home machine</li>
+<li>Working on the command line, we will type in commands at the prompt,
+press enter, and wait for the computer’s response</li>
+<li>To create and edit a text file, we will be using vim - a program for
+editing text files</li>
+<li>Once we have entered a Python program as a text file, with a “.py”
+extension, we can run the program by typing
+<code>python3 myprog.py</code>
+</li>
 </ul>
 </div>
 </div>
 </div>
-<!-- 
-Place links that you need to refer to multiple times across pages here. Delete
-any links that you are not going to use. 
- -->
-</section></section><section id="aio-practical-01"><p>Content from <a href="practical-01.html">Practical 01</a></p>
-<hr>
-<p> Last updated on 2023-03-06 | 
-        
-        <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/practical-01.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-<div class="text-end">
-          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
-        </div>
-<div class="overview card">
-<h2 class="card-header">Overview</h2>
-<div class="row g-0">
-<div class="col-md-4">
-<div class="card-body">
-<div class="inner">
-<h3 class="card-title">Questions</h3>
-<ul>
-<li>How do you write a lesson using R Markdown and
-<a href="https://carpentries.github.io/sandpaper/" class="external-link">sandpaper</a>?</li>
-</ul>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
 </div>
-</div>
-</div>
-<div class="col-md-8">
-<div class="card-body">
-<div class="inner bordered">
-<h3 class="card-title">Objectives</h3>
-<ul>
-<li>Explain how to use markdown with the new lesson template</li>
-<li>Demonstrate how to include pieces of code, figures, and nested
-challenge blocks</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<section id="introduction"><h2 class="section-heading">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
-</h2>
-<hr class="half-width">
-<p>This is a lesson created via The Carpentries Workbench. It is written
-in <a href="https://pandoc.org/MANUAL.html" class="external-link">Pandoc-flavored Markdown</a>
-for static files (with extension <code>.md</code>) and <a href="https://rmarkdown.rstudio.com/" class="external-link">R Markdown</a> for dynamic files
-that can render code into output (with extension <code>.Rmd</code>).
-Please refer to the <a href="https://carpentries.github.io/sandpaper-docs/" class="external-link">Introduction to The
-Carpentries Workbench</a> for full documentation.</p>
-<p>What you need to know is that there are three sections required for a
-valid Carpentries lesson template:</p>
+<div id="reflection" class="callout-inner">
+<h3 class="callout-title">Reflection<a class="anchor" aria-label="anchor" href="#checklist1"></a>
+</h3>
+<div class="callout-content">
 <ol style="list-style-type: decimal">
 <li>
-<code>questions</code> are displayed at the beginning of the episode
-to prime the learner for the content.</li>
+<strong>Knowledge:</strong> What are the two modes in vi / vim?</li>
 <li>
-<code>objectives</code> are the learning objectives for an episode
-displayed with the questions.</li>
+<strong>Comprehension:</strong> What is the name of the lab machine
+you are working on? Hint: use the hostname command or look at the
+prompt.</li>
 <li>
-<code>keypoints</code> are displayed at the end of the episode to
-reinforce the objectives.</li>
+<strong>Application:</strong> What series of commands would you need
+to go to the directory FOP/assignment in your home directory and
+compress all the files?</li>
+<li>
+<strong>Analysis:</strong> What variable would you change in
+growth.py to have more iterations (steps) per hour?</li>
+<li>
+<strong>Synthesis:</strong> How would you code a for loop to print
+“Hello World!” 15 times?</li>
+<li>
+<strong>Evaluation:</strong> What part of the prac did you find most
+challenging? (You can give feedback to the lecturer/tutor…)</li>
 </ol>
-<div id="challenge1" class="callout challenge">
+</div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-1-can-you-do-it" class="callout-inner">
-<h3 class="callout-title">Challenge 1: Can you do it?<a class="anchor" aria-label="anchor" href="#challenge1"></a>
-</h3>
-<div class="callout-content">
-<p>What is the output of this command?</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">paste</span><span class="op">(</span><span class="st">"This"</span>, <span class="st">"new"</span>, <span class="st">"lesson"</span>, <span class="st">"looks"</span>, <span class="st">"good"</span><span class="op">)</span></span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">
-  Output
-  </h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>[1] "This new lesson looks good"</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge2" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-2-how-do-you-nest-solutions-within-challenge-blocks" class="callout-inner">
-<h3 class="callout-title">Challenge 2: how do you nest solutions within
-challenge blocks?<a class="anchor" aria-label="anchor" href="#challenge2"></a>
-</h3>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">
-  Show me the solution
-  </h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
-<p>You can add a line with at least three colons and a
-<code>solution</code> tag.</p>
-</div>
-</div>
-</div>
-</div>
-</section><section id="figures"><h2 class="section-heading">Figures<a class="anchor" aria-label="anchor" href="#figures"></a>
-</h2>
-<hr class="half-width">
-<p>You can include figures generated from R Markdown:</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">pie</span><span class="op">(</span></span>
-<span>  <span class="fu">c</span><span class="op">(</span>Sky <span class="op">=</span> <span class="fl">78</span>, <span class="st">"Sunny side of pyramid"</span> <span class="op">=</span> <span class="fl">17</span>, <span class="st">"Shady side of pyramid"</span> <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>, </span>
-<span>  init.angle <span class="op">=</span> <span class="fl">315</span>, </span>
-<span>  col <span class="op">=</span> <span class="fu">c</span><span class="op">(</span><span class="st">"deepskyblue"</span>, <span class="st">"yellow"</span>, <span class="st">"yellow3"</span><span class="op">)</span>, </span>
-<span>  border <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span><span class="op">)</span></span></code></pre>
-</div>
-<figure style="text-align: center"><img src="fig/practical-01-rendered-pyramid-1.png" alt="pie chart illusion of a pyramid" class="figure mx-auto d-block"><figcaption>
-Sun arise each and every morning
-</figcaption></figure><p>Or you can use pandoc markdown for static figures with the following
-syntax:</p>
-<p><code>![optional caption that appears below the figure](figure url){alt='alt text for accessibility purposes'}</code></p>
-<figure><img src="https://raw.githubusercontent.com/carpentries/logo/master/Badge_Carpentries.svg" alt="Blue Carpentries hex person logo with no text." class="figure mx-auto d-block"><figcaption>You belong in The Carpentries!</figcaption></figure></section><section id="math"><h2 class="section-heading">Math<a class="anchor" aria-label="anchor" href="#math"></a>
-</h2>
-<hr class="half-width">
-<p>One of our episodes contains <span class="math inline">\(\LaTeX\)</span> equations when describing how to
-create dynamic reports with {knitr}, so we now use mathjax to describe
-this:</p>
-<p><code>$\alpha = \dfrac{1}{(1 - \beta)^2}$</code> becomes: <span class="math inline">\(\alpha = \dfrac{1}{(1 - \beta)^2}\)</span></p>
-<p>Cool, right?</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
 </h3>
 <div class="callout-content">
-<ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul>
+<p>For those who want to explore a bit more of the topics covered in
+this practical.</p>
+<ol style="list-style-type: decimal">
+<li>Have a look at other problems from the text book: <a href="http://press.princeton.edu/titles/10291.html" class="external-link uri">http://press.princeton.edu/titles/10291.html</a>
+</li>
+<li>Work through a Linux tutorial</li>
+<li>Work through a vi/vim tutorial</li>
+<li>Read some samples of README files for large projects - <a href="https://github.com/matiassingers/awesome-readme" class="external-link uri">https://github.com/matiassingers/awesome-readme</a>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -992,7 +1028,7 @@ locally</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</section></section>
+</div></section>
 </div>
     </main>
 </div>

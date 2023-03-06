@@ -145,8 +145,7 @@
         
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#data-sets">Data Sets</a></li>
-<li><a href="#software-setup">Software Setup</a></li>
+        <ul><li><a href="#software-setup">Software Setup</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -165,16 +164,7 @@
 <div class="accordion accordion-flush" id="accordionFlush3">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading3">
-        <a href="practical-00.html">2. Practical 00</a>
-    </div><!--/div.accordion-header-->
-        
-  </div><!--/div.accordion-item-->
-</div><!--/div.accordion-flush-->
-
-<div class="accordion accordion-flush" id="accordionFlush4">
-  <div class="accordion-item">
-    <div class="accordion-header" id="flush-heading4">
-        <a href="practical-01.html">3. Practical 01</a>
+        <a href="prac01.html">2. Prac01: Introduction to Linux</a>
     </div><!--/div.accordion-header-->
         
   </div><!--/div.accordion-item-->
@@ -248,11 +238,7 @@ any links that you are not going to use.
 
       <section id="setup"><p>Setup instructions live in this document. Please specify the tools
 and the data sets the Learner needs to have installed.</p>
-<section id="data-sets"><h2 class="section-heading">Data Sets<a class="anchor" aria-label="anchor" href="#data-sets"></a>
-</h2>
-<hr class="half-width"><p>Download the <a href="data/data.zip">data zip file</a> and unzip it
-to your Desktop</p>
-</section><section id="software-setup"><h2 class="section-heading">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a>
+<section id="software-setup"><h2 class="section-heading">Software Setup<a class="anchor" aria-label="anchor" href="#software-setup"></a>
 </h2>
 <hr class="half-width"><div id="discussion1" class="callout discussion">
 <div class="callout-square">
@@ -262,11 +248,11 @@ to your Desktop</p>
 <h3 class="callout-title">Details<a class="anchor" aria-label="anchor" href="#discussion1"></a>
 </h3>
 <div class="callout-content">
-<p>Setup for different systems can be presented in dropdown menus via a
-<code>solution</code> tag. They will join to this discussion block, so
-you can give a general overview of the software used in this lesson here
-and fill out the individual operating systems (and potentially add more,
-e.g. online setup) in the solutions blocks.</p>
+<p>During class, we provide access to Virtual Machines <a href="https://mydesktop.curtin.edu.au" class="external-link">https://mydesktop.curtin.edu.au</a>.
+You can also use these from home via any web browser (Firefox, Chrome,
+Safari etc.).</p>
+<p>A local setup is often faster, and does not rely on using the
+Internet. See below for options…</p>
 </div>
 </div>
 </div>
@@ -279,8 +265,39 @@ e.g. online setup) in the solutions blocks.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>Use PuTTY</p>
-</div>
+<p>You will need a terminal emulator - an application that looks and
+works like the termainl in Linux. We recommend Gitbash, but you have
+quite a few options:</p>
+<ul><li>
+<a href="https://gitforwindows.org/" class="external-link">Gitbash</a> - an interface for
+the git version control system, but also a highly functional terminal
+program</li>
+<li>
+<a href="https://learn.microsoft.com/en-us/windows/wsl/install" class="external-link">Windows
+Sybsystem for Linux</a> - Developers can access the power of both
+Windows and Linux at the same time on a Windows machine. Requires
+Windows 10 or higher</li>
+<li>
+<a href="https://mobaxterm.mobatek.net/" class="external-link">mobaxterm</a> - MobaXterm
+provides all the important remote network tools (SSH, X11, RDP, VNC,
+FTP, MOSH, …) and Unix commands (bash, ls, cat, sed, grep, awk, rsync,
+…) to Windows desktop, in a single portable exe file which works out of
+the box.</li>
+<li>
+<a href="https://learn.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.3" class="external-link">Powershell</a>
+- PowerShell is a modern command shell that includes the best features
+of other popular shells. Unlike most shells that only accept and return
+text, PowerShell accepts and returns .NET objects. <em>(I found the
+autocomplete unpredictable, so stopped using it)</em>
+</li>
+</ul><p>If you don’t have Python version 3 installed, visit either of:</p>
+<ul><li>
+<a href="https://www.python.org/" class="external-link">Python Software Foundation</a> -
+the official home of Python</li>
+<li>
+<a href="https://www.anaconda.com/products/distribution" class="external-link">Anaconda
+Distribution</a> - a curated set of Python tools</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -293,8 +310,17 @@ e.g. online setup) in the solutions blocks.</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>Use Terminal.app</p>
-</div>
+<p>Use Terminal.app (type <code>terminal</code> in search/spotlight) and
+check to see that you have python installed, by typing
+<code>python</code> or <code>python3</code>.</p>
+<p>If you don’t have Python version 3 installed, visit either of:</p>
+<ul><li>
+<a href="https://www.python.org/" class="external-link">Python Software Foundation</a> -
+the official home of Python</li>
+<li>
+<a href="https://www.anaconda.com/products/distribution" class="external-link">Anaconda
+Distribution</a> - a curated set of Python tools</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -307,8 +333,16 @@ e.g. online setup) in the solutions blocks.</p>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
-<p>Use Terminal</p>
-</div>
+<p>Use Terminal and check to see that you have python installed, by
+typing <code>python</code> or <code>python3</code>.</p>
+<p>If you don’t have Python version 3 installed, visit either of:</p>
+<ul><li>
+<a href="https://www.python.org/" class="external-link">Python Software Foundation</a> -
+the official home of Python</li>
+<li>
+<a href="https://www.anaconda.com/products/distribution" class="external-link">Anaconda
+Distribution</a> - a curated set of Python tools</li>
+</ul></div>
 </div>
 </div>
 </div>
