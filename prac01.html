@@ -285,7 +285,7 @@ to the defaults every time.</p>
   Terminal window themes
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is a lot of customisation possible with the terminal window in
 Linux, but we will just look at “light” and “dark” themes. In the
@@ -306,7 +306,7 @@ theme 1/2</a></p>
   Changing the sleep settings
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>It may get annoying to keep putting the password in each time the
 virtual machine goes to sleep. The default timeout is 5 minutes, which
@@ -386,7 +386,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -481,6 +481,9 @@ every time it runs. The if_elif_else control structure can choose
 between different pieces of code. We need to put a Boolean condition
 into the <code>if</code> or <code>elif</code> which Python will evaluate
 and choose a path through the code.</p>
+<p>The indenting indicates the start and end of each
+<code>if_elif_else</code> clause. Reducing the indent closes the clause,
+continuing the indent extends the included block.</p>
 <p>As an example, enter the following code, <code>bruces.py</code>:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -511,25 +514,34 @@ called Bruce… update the code as below.</p>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Excellent! That saves a lot of confusion!"</span>)</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name)</span></code></pre>
 </div>
-<div id="discussion1" class="callout discussion">
+<div id="challenge3" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2-testing-testing" class="callout-inner">
-<h3 class="callout-title">Challenge 2: Testing… testing…<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge 2: Testing… testing…<a class="anchor" aria-label="anchor" href="#challenge3"></a>
 </h3>
 <div class="callout-content">
 <p>Looking at the above code, what inputs might you use to test it is
-working correctly? :::::::::::::::::::::::: solution</p>
-<div class="section level2">
-<h2 id="solution-1">Solution<a class="anchor" aria-label="anchor" href="#solution-1"></a></h2>
+working correctly?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
+  Show me the solution
+  </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
 <p>Enter “Bruce” and something other than “Bruce” to test both paths
 through the code. Note that “Bruce” and “bruce” are not equal.</p>
 </div>
 </div>
 </div>
 </div>
-<p>:::::::::::::::::::::::::::::::::::::</p>
 </div>
 <div class="section level3">
 <h3 id="activity-4---control-structures-1b-if_elif_else-guess-who">Activity 4 - Control Structures (1b) if_elif_else (Guess who?)<a class="anchor" aria-label="anchor" href="#activity-4---control-structures-1b-if_elif_else-guess-who"></a></h3>
@@ -549,9 +561,8 @@ the members of Monty Python:</p>
 <td>died 2020, dementia</td>
 </tr><tr class="even"><td>Michael Palin</td>
 <td>traveller, clean-shaven</td>
-</tr></tbody></table><p>The indenting indicates the start and end of each
-``if_elif_else<code>clause. Reducing the indent closes the clause, continuing the indent extends the included block. It can help to draw a</code>flowchart```
-to see/plan the flow of logic in your code.</p>
+</tr></tbody></table><p>Indenting must be correct for this code to work! It can help to draw
+a <code>flowchart</code> to see/plan the flow of logic in your code.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -668,12 +679,12 @@ challenging? (You can give feedback to the lecturer/tutor…)</li>
 </ol></div>
 </div>
 </div>
-<div id="discussion2" class="callout discussion">
+<div id="discussion1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
 </h3>
 <div class="callout-content">
 <p>For those who want to explore a bit more of the topics covered in
