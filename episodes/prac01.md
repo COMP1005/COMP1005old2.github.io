@@ -372,15 +372,19 @@ print("Total is ", total, " and count is ", count)
 
 Save and exit and then run ```num_while.py```. 
 
-::::: challenge
+:::::: challenge
+
 How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
-:::: solution
+
+::::: solution
+
 ```
 while number != 0:
 ```
-::::
 
 :::::
+
+::::::
 
 ### Activity 7 - And Now For Something Completely Different 
  
@@ -391,6 +395,7 @@ Now for a simple systems model... Unconstrained Growth and Decay.
 ## From the "Introduction to Computational Science" text:
 
 *“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”*
+
 :::::
 
 So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). 
@@ -412,6 +417,7 @@ We are going to write Python code for simulating unconstrained growth based on t
    - growth = growth rate (per step) * population population = population + growth
    - time = i * time step
    - display time, growth, population
+
 :::::
 
 Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
@@ -450,15 +456,19 @@ print("\nPROCESSING COMPLETE.\n")
 
 Type in the code and run it. 
 
-::::: challenge
+:::::: challenge
+
 Can you see why the for loop was changed from ```0``` to ```num_iter``` to ```1``` to ```num_iter+1```?
-:::: solution
+
+::::: solution
+
 Time step 0 is the initial step, before the loop. Our loop will go through num_iter times, starting at one. 
 Loops usually go from 0 to maximum-1 to have maximum iterations. If we shift the start up by 1, we also have to 
 shift the stop value by 1.
-::::
 
 :::::
+
+::::::
 
 
 ### Activity 8 - Making and submitting a zip file
@@ -476,8 +486,8 @@ e.g. zip -r Prac01_12345678 Prac01
 ```
  
 This will create a file **Prac01_<your_student_ID>.zip** which includes
-everything in the Prac01 directory – including the directories, programs and the README. You can check the
-contents of the zip file by typing:
+everything in the Prac01 directory – including the directories, programs 
+and the README. As before, you can check the contents of the zip file by typing:
 
 ```
 unzip –l Prac01_<your_student_ID>.zip
@@ -505,7 +515,7 @@ page.
 - ```for loops``` repeat a set number of times, so we should use them when we know how many iterations we want
 - We can **nest** control strucures by indenting them inside each other
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::: checklist
 
@@ -514,11 +524,9 @@ page.
 1. **Knowledge:** What are the three control structures we've learned?
 2. **Comprehension:** What is the difference between the control structures?
 3. **Application:** Give an example of where you might use each of the control structures?
-4. **Analysis:** What variable would you change in growth.py to have more
-iterations (steps) per hour?
+4. **Analysis:** What variable would you change in growth.py to have more iterations (steps) per hour?
 5. **Synthesis:** How would you code a for loop to print “Hello World!” 15 times?
-6. **Evaluation:** What part of the prac did you find most challenging? (You can
-give feedback to the lecturer/tutor...)
+6. **Evaluation:** What part of the prac did you find most challenging? (You can give feedback to the lecturer/tutor...)
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
