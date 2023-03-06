@@ -119,7 +119,7 @@ mkdir The/Holy/Grail
 
 To see the overall directory structure, type ```ls -R``` and you should have the output shown below:
 
-![Directory structure](P01directories.jpg){alt="output of ls -R on the Activity 1 directory structure"}
+![Output of ls -R on the Activity 1 directory structure](P01directories.jpg "Directory structure")
 
 If you make a mistake, you can delete a directory with ```rmdir <dir_name```, but it must be empty first. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
 
@@ -214,7 +214,8 @@ print("Perhaps wearing", colour, "socks would help :)\n")
 ```
 
 We always want to use the value collected in an ```input()``` call, so we can combine the ```print``` and ```input```
-into a single line. Also, the ```print()``` calls can be absorbed into the strings being printed out, by including a ```\n``` to give a blank line. More on that in lecture and practical 2.
+into a single line. Also, the ```print()``` calls can be absorbed into the strings being printed out, by 
+including a ```\n``` to give a blank line. More on that in Lecture and Practical 2.
 
 ### Activity 3 - Introduction to the Text Editor (vim)
  
