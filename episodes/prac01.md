@@ -119,7 +119,7 @@ mkdir The/Holy/Grail
 
 To see the overall directory structure, type ```ls -R``` and you should have the output shown below:
 
-![Directory structure](P01directoires.jpg){alt="output of ls -R on the Activity 1 directory structure"}
+![Directory structure](P01directories.jpg){alt="output of ls -R on the Activity 1 directory structure"}
 
 If you make a mistake, you can delete a directory with ```rmdir <dir_name```, but it must be empty first. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
 
