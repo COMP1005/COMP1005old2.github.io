@@ -81,13 +81,15 @@ your Linux skills for creating and traversing directories. The overall structure
 FOP
  |-- Prac00
  |-- Prac01
+   |
    |-- The
    |   |-- Holy
    |   |   |-- Grail
-   |   |
-   |   |-- Life
-   |       |-- of 
-   |           |-- Brian
+   |
+   |-- Monty
+   |   |-- Pythons
+   |       |-- Flying 
+   |           |-- Circus
    |-- And
        |-- Now
            |-- for 
