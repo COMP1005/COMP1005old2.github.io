@@ -89,7 +89,7 @@ cd The/Holy/Grail
 ```
 
 :::::::::::::::::::::::::::::::::
-
+:::::::::::::::::::::::::::::::::::::
 
 ### Activity 2 - Interacting with Python Programs
 
