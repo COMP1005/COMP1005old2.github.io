@@ -17,7 +17,7 @@ title: "Prac01: Introduction to Python"
 - Request user input in Python
 - Create and work with variables and values of different types
 - Define and use control structures
-- Use Python to model simple systems
+- Use Python to model a simple system
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -26,12 +26,12 @@ title: "Prac01: Introduction to Python"
 In this practical you will continue to use Linux and the vim text editor - look back to [Practical 00](prac00.html)
 to refresh yourself on those commands. The first activity sets up the directory structure for the practical.
 
-We will be looking at accepting user input (Activity 2) and control structures (Activities 3-6). Finally, in Activity 7 
+We will be looking at accepting user input (Activity 2) and control structures (Activities 3-6). In Activity 7 
 we will write a program to implement a simple systems dynamics model.
 
 ### Activity 1 - Setting up for the practical
 
-We're going to make a complex directory structure for this practical. This will exercise 
+We're going to make a more complex directory structure for this practical. This will exercise 
 your Linux skills for creating and traversing directories. The overall structure will be
 
 ```
@@ -80,7 +80,7 @@ To see the overall directory structure, type ```ls -R``` and you should have the
 
 ![Output of ls -R on the Activity 1 directory structure](fig/P01directories.png "Directory structure")
 
-If you make a mistake, you can delete a directory with ```rmdir <dir_name```, but it must be empty first. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
+If you make a mistake, you can delete a directory with ```rmdir <dir_name>```. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
 
 There are ways to delete a directory tree in one command, but it is too **dangerous** to teach at this point. For now, we'll do things the slow and safe way. 
 
@@ -94,7 +94,7 @@ From the Prac01 directory, how would you cnange into the Grail directory **with 
 
 ## Solution
 
-```output
+```
 cd The/Holy/Grail
 ```
 
@@ -103,7 +103,7 @@ cd The/Holy/Grail
 
 ### Activity 2 - Interacting with Python Programs
 
-Change directory to ```The/Holy/Grail```. We are going to write a program matching a scene from the movie "The holy Grail".
+Change directory to ```The/Holy/Grail```. We are going to write a program matching a scene from the movie "The Holy Grail".
 
 In the Grail directory, type in:
 
@@ -132,7 +132,10 @@ prompt for the user to enter text on the keyboard. To store the input in a varia
 we assign in using an "=" sign: ```name = input()```. We do similar for the quest 
 and favourite colour.
 
-We can then ouptut these variables using print statements. 
+We can then output these variables using print statements. 
+
+Have you noticed that the code changes colour as you type? This is syntax highlighting. When you’re 
+in command mode in vim you can type ```:syntax off``` and ```:syntax on``` to turn it off/on.
 
 Once you have that working, we can improve on the code and make it a bit friendlier. 
 Edit the code again and make the changes below:
@@ -156,7 +159,7 @@ print("Perhaps wearing", colour, "socks would help :)")
 print()
 ```
 
-There are many ways to solve a coding problem. Copy your code ```bridge.py``` to ```bridge2.py``` and then change the code to match the example below:
+There are many ways to solve a coding problem. Copy your code ```bridge.py``` to ```bridge2.py``` and then change the code to match the example below. The required commands are:
 
 ```
 cp bridge.py bridge2.py
@@ -175,17 +178,19 @@ print("\nHello,", name, "good luck with your", quest, "quest!")
 print("Perhaps wearing", colour, "socks would help :)\n")
 ```
 
-We always want to use the value collected in an ```input()``` call, so we can combine the ```print``` and ```input```
-into a single line. Also, the ```print()``` calls can be absorbed into the strings being printed out, by 
+We always want to make use of the value collected in an ```input()``` call, so we can combine the ```print``` and ```input```
+into a single line. Also, the empty ```print()``` calls can be absorbed into the strings being printed out, by 
 including a ```\n``` to give a blank line. More on that in Lecture and Practical 2.
 
 ### Activity 3 - Control Structures: if_else
  
-The previous code ran from the first line to the end, and will do so every time it runs. The if_elif_else
-control structure can choose between different pieces of code. We need to put a Boolean condition into the 
-```if``` or ```elif``` which Python will evaluate and choose a path through the code.
+The previous code ran from the first line to the end, executing every line, 
+and will do so every time it runs. The ```if_elif_else```
+control structure allows us to choose between different pieces of code to run. We just need to put a Boolean 
+condition (```True/False```) into the ```if``` or ```elif``` and Python will evaluate it and choose a path through the code.
 
-The indenting indicates the start and end of each ```if_elif_else``` clause. Reducing the indent closes the clause, continuing the indent extends the included block. 
+The indenting indicates the start and end of each ```if_elif_else``` clause. Reducing the indent 
+closes the clause, continuing the indent extends the included block. 
 
 As an example, enter the following code, ```bruces.py```, in the directory ```Monty/Pythons/Flying/Circus```:
 
@@ -205,6 +210,9 @@ print("G'day", name, "!!!\n")
 We can enhance the program to congratulate anyone who is actually called Bruce... update the code as below.
 
 ```python
+#
+# bruces.py - let's call everyone "Bruce", to avoid confusion
+#
 name = input("What is your name? ")
 if name != "Bruce":
    print("Sorry,", name,"- your name's not Bruce?")
@@ -226,15 +234,16 @@ Looking at the above code, what inputs might you use to test it is working corre
 
 ## Solution
 
-Enter "Bruce" and something other than "Bruce" to test both paths through the code. Note that "Bruce" and "bruce" are not equal. 
+Enter "Bruce" **and then** something other than "Bruce" to test both paths through the code. 
+Note that "Bruce" and "bruce" are not equal. Testing requires at least every path through the code is executed.
 
 :::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::
 
-### Activity 4 - Control Structures: if_elif_else
+### Activity 4 - Control Structures: if_elif_else + nesting
  
-To work through some more complex if_elif_else code, we'll identify the members of Monty Python:
+To work through some more complex if_elif_else code, we'll write a program to identify the members of Monty Python:
 
 | Name           | Description | 
 |----------------|-------------|
@@ -246,19 +255,16 @@ To work through some more complex if_elif_else code, we'll identify the members 
 | Michael Palin  | not dead yet, traveller, clean-shaven |
 
 
-For this exercise, enter your code as ```whichone.py``` in the ```Monty/Python``` directory. Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
+For this exercise, enter your code as ```which.py``` in the ```Monty/Python``` directory. Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
 
 ```python
 #
-# whichone.py - asks questions to find your Python
+# which.py - asks questions to find your Python
 #
 print("\nFind the mystery Python!\n")
 print("Enter Y/N to the following questions...")
 male = input("Are you male? ")
-if male != "Y":
-    print("Not *technically* a python, however...")
-    mystery = "Carole Cleveland"
-else:
+if male == "Y":
     beard = input("Do you have a beard? ")
     if beard == "Y":
         mystery = "Terry Gilliam"
@@ -279,6 +285,9 @@ else:
                 mystery = "Michael Palin"
             else:
                 mystery = "Eric Idle"
+else:
+    print("Not *technically* a python, however...")
+    mystery = "Carole Cleveland"
 print("\nYour mystery Python is: ", mystery, "\n")
 ```
 
@@ -301,10 +310,14 @@ numint = int(numberstr)
 print('Number =', number, ' Type : ', str(type(number)))
 numfloat = float(numberstr)
 print('Number =', number, ' Type : ', str(type(number)))
+```
 
+Notice how the two print statements print the same number (well, it looks the same), 
+but their variable types are different? Everything you read in will be a string. If 
+you want a number, you'll need to convert it with the int() or float() functions.
 
-Notice how the two print statements print the same number (well, it looks the same), but their variable types are different? Everything you read in will be a string. If you want a number, you'll need to convert it with the int() or float() functions.
-
+Testing this code will show you some easy ways to break a program. We'll learn later how to make the code more robust 
+(spoiler - it's exception handling).
 
 Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
  
@@ -325,8 +338,9 @@ print('Total is ', total)
 Save and exit the file and try running it. What are the values that variable "i" holds each time 
 through the loop? How would you change the for loop in the program to request five numbers be entered.
 
-Have you noticed that the code changes colour as you type? This is syntax highlighting. When you’re 
-in command mode in vim you can type ```:syntax off``` and ```:syntax on``` to turn it off/on.
+These ```for``` loops will **start** at zero and go up to, but not including, the **stop** value. 
+```for i in range(10):``` will give us ```i = 0,1,2,3,4,5,6,7,8,9```, 
+```for i in range(5):``` will give us ```i = 0,1,2,3,4```.
 
 ### Activity 6 - Control Structures: While loops 
 
@@ -336,6 +350,7 @@ type in a negative number to exit the loop. This is called a **sentinal value**.
 
 Type it in as ```num_while.py``` in the ```Prac01``` directory.
 
+```
 #
 # num_while.py: Read in a list of numbers (negative to exit) and
 #               give the sum of the numbers
@@ -349,19 +364,34 @@ while number >= 0:
     print("Next number...")
     number = int(input())
 print("Total is ", total, " and count is ", count)
- 
-Save and exit and then run num_while.py. How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
+```
+
+Save and exit and then run ```num_while.py````. 
+
+::: challenge
+How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
+::: solution
+```
+while number != 0:
+```
+:::
+
+:::
 
 ### Activity 7 - And Now For Something Completely Different 
  
 Now for a simple systems model... Unconstrained Growth and Decay.
 
 ::: callout
-From the "Introduction to Computational Science" text:
+
+## From the "Introduction to Computational Science" text:
+
 *“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”*
 :::
 
-So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and provides background to these types of models.
+So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). 
+Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and 
+provides background to these types of models.
 
 We are going to write Python code for simulating unconstrained growth based on the following pseudocode from the text:
  
@@ -369,15 +399,15 @@ We are going to write Python code for simulating unconstrained growth based on t
 
 ## Algorithm 2 - simulation of unconstrained growth
 
-initialise simulation length
-initialise population
-initialise growth rate
-initialise (length of) time step
-number of iterations = simulation length / time step growth rate (per step) = growth rate * time step
-for i = 0 to number of iterations-1 do
-growth = growth rate (per step) * population population = population + growth
-time = i * time step
-display time, growth, population
+- initialise simulation length
+- initialise population
+- initialise growth rate
+- initialise (length of) time step
+- number of iterations = simulation length / time step growth rate (per step) = growth rate * time step
+- for i = 0 to number of iterations-1 do
+   - growth = growth rate (per step) * population population = population + growth
+   - time = i * time step
+   - display time, growth, population
 :::
 
 Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
@@ -410,12 +440,21 @@ for i in range(1, int(num_iter) + 1 ):
     growth = growth_step * population
     population = population + growth
     time = i * time_step
-    print("Time: ", time, " \tGrowth: ", growth,
-          " \tPopulation: ", population)
+    print("Time: ", time, " \tGrowth: ", growth, "\tPopulation: ", population)
 print("\nPROCESSING COMPLETE.\n")
 ```
 
-Type in the code and run it. Can you see why the for loop was changed from 0 to num_iter to 1 to num_iter+1?
+Type in the code and run it. 
+
+::: challenge
+Can you see why the for loop was changed from ```0``` to ```num_iter```` to ```1``` to ````num_iter+1```?
+::::solution
+Time step 0 is the initial step, before the loop. Our loop will go through num_iter times, starting at one. 
+Loops usually go from 0 to maximum-1 to have maximum iterations. If we shift the start up by 1, we also have to 
+shift the stop value by 1.
+::::
+
+:::
 
 
 ### Activity 8 - Making and submitting a zip file
@@ -455,11 +494,12 @@ page.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- input
-- if_elif_else
-- while loops
-- for loops
-- nesting control strucures
+- We use ```input()``` to get the user's input from the keyboard, and ```print()``` to output to the screen
+- To choose between parts of the code to run, we can use the ```if_elif_else``` control structure
+- If we want to repeat code, we can use ```for loops``` and ```while loops```
+- ```while loops``` continue until a condition is false - we don't know at the start how many times they will run
+- ```for loops``` repeat a set number of times, so we should use them when we know how many iterations we want
+- We can **nest** control strucures by indenting them inside each other
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
