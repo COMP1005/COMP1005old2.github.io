@@ -32,7 +32,7 @@ we will write a program to implement a simple systems dynamics model.
 ### Activity 1 - Setting up for the practical
 
 We're going to make a more complex directory structure for this practical. This will exercise 
-your Linux skills for creating and traversing directories. The overall structure will be
+your Linux skills for creating and traversing directories. The overall structure will be:
 
 ```
 FOP
@@ -67,7 +67,7 @@ mkdir Grail
 cd ../..
 ```
 
-...or you can stay in the original directory and give the path to each new directory:
+Or you can stay in the original directory and give the path to each new directory:
 
 ```
 cd FOP/Prac01
@@ -237,7 +237,7 @@ Looking at the above code, what inputs might you use to test it is working corre
 Enter "Bruce" **and then** something other than "Bruce" to test both paths through the code. 
 Note that "Bruce" and "bruce" are not equal. Testing requires at least every path through the code is executed.
 
-:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -295,7 +295,8 @@ This one is a bit harder to test - see if you can get to every one of the Python
 
 ### Activity 5 - Control Structures: For loops 
  
-When we take input from the user, it is read in as a string. These are characters - so we need to convert them to actually use them as numbers. The following code demonstrates this conversion.
+When we take input from the user, it is read in as a string. These are characters - so we need to 
+convert them to actually use them as numbers. The following code demonstrates this conversion.
 
 Type it in as ```num_convert.py``` in the ```Prac01``` directory.
 
@@ -312,14 +313,15 @@ numfloat = float(numberstr)
 print('Number =', number, ' Type : ', str(type(number)))
 ```
 
-Notice how the two print statements print the same number (well, it looks the same), 
+Notice how the first two print statements print the same number (well, it looks the same), 
 but their variable types are different? Everything you read in will be a string. If 
 you want a number, you'll need to convert it with the int() or float() functions.
 
 Testing this code will show you some easy ways to break a program. We'll learn later how to make the code more robust 
 (spoiler - it's exception handling).
 
-Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
+Now we are going to read in ten numbers and add up their total. As we know in advance how many 
+of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
  
 ```python
 #
@@ -361,14 +363,14 @@ total = 0
 print("Enter a list of numbers, negative to exit...")
 number = int(input())
 while number >= 0:
-    count += 1           #equivalent to count = count + 1
-    total += number      #equivalent to total = total + number
+    count += 1           # equivalent to count = count + 1
+    total += number      # equivalent to total = total + number
     print("Next number...")
     number = int(input())
 print("Total is ", total, " and count is ", count)
 ```
 
-Save and exit and then run ```num_while.py````. 
+Save and exit and then run ```num_while.py```. 
 
 ::::: challenge
 How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
@@ -449,7 +451,7 @@ print("\nPROCESSING COMPLETE.\n")
 Type in the code and run it. 
 
 ::::: challenge
-Can you see why the for loop was changed from ```0``` to ```num_iter```` to ```1``` to ````num_iter+1```?
+Can you see why the for loop was changed from ```0``` to ```num_iter``` to ```1``` to ```num_iter+1```?
 :::: solution
 Time step 0 is the initial step, before the loop. Our loop will go through num_iter times, starting at one. 
 Loops usually go from 0 to maximum-1 to have maximum iterations. If we shift the start up by 1, we also have to 
