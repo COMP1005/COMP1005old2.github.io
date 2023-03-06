@@ -339,8 +339,10 @@ Save and exit the file and try running it. What are the values that variable "i"
 through the loop? How would you change the for loop in the program to request five numbers be entered.
 
 These ```for``` loops will **start** at zero and go up to, but not including, the **stop** value. 
-```for i in range(10):``` will give us ```i = 0,1,2,3,4,5,6,7,8,9```, 
-```for i in range(5):``` will give us ```i = 0,1,2,3,4```.
+
+- ```for i in range(10):``` will give us ```i = 0,1,2,3,4,5,6,7,8,9```
+- ```for i in range(5):``` will give us ```i = 0,1,2,3,4```
+- ```for i in range(1,6):``` will give us ```i = 1,2,3,4,5```
 
 ### Activity 6 - Control Structures: While loops 
 
@@ -368,26 +370,26 @@ print("Total is ", total, " and count is ", count)
 
 Save and exit and then run ```num_while.py````. 
 
-::: challenge
+::::: challenge
 How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
-::: solution
+:::: solution
 ```
 while number != 0:
 ```
-:::
+::::
 
-:::
+:::::
 
 ### Activity 7 - And Now For Something Completely Different 
  
 Now for a simple systems model... Unconstrained Growth and Decay.
 
-::: callout
+::::: callout
 
 ## From the "Introduction to Computational Science" text:
 
 *“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”*
-:::
+:::::
 
 So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). 
 Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and 
@@ -395,7 +397,7 @@ provides background to these types of models.
 
 We are going to write Python code for simulating unconstrained growth based on the following pseudocode from the text:
  
-::: callout
+::::: callout
 
 ## Algorithm 2 - simulation of unconstrained growth
 
@@ -408,7 +410,7 @@ We are going to write Python code for simulating unconstrained growth based on t
    - growth = growth rate (per step) * population population = population + growth
    - time = i * time step
    - display time, growth, population
-:::
+:::::
 
 Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
 
@@ -446,15 +448,15 @@ print("\nPROCESSING COMPLETE.\n")
 
 Type in the code and run it. 
 
-::: challenge
+::::: challenge
 Can you see why the for loop was changed from ```0``` to ```num_iter```` to ```1``` to ````num_iter+1```?
-::::solution
+:::: solution
 Time step 0 is the initial step, before the loop. Our loop will go through num_iter times, starting at one. 
 Loops usually go from 0 to maximum-1 to have maximum iterations. If we shift the start up by 1, we also have to 
 shift the stop value by 1.
 ::::
 
-:::
+:::::
 
 
 ### Activity 8 - Making and submitting a zip file
@@ -479,7 +481,7 @@ contents of the zip file by typing:
 unzip –l Prac01_<your_student_ID>.zip
 ```
  
-### Activity 9 - Submission
+### Submission
 
 All of your work for this week’s practical should be submitted via Blackboard using
 the Practical 01 link. This should be done as a single "zipped" file.
@@ -490,7 +492,7 @@ submissions, but they may be taken into account when finalising your mark.
 Go to the Assessment link on Blackboard and click on Practical 0 for the submission
 page.
 
-### And that's the end of Practical 1!
+### And that's the end of Practical 01!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
