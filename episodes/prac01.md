@@ -13,9 +13,11 @@ title: "Prac01: Introduction to Python"
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Define and use control structures in Python
 - Continue to use key commands in the Linux operating system
-- Use Python in a Linux environment to model simple systems
+- Request user input in Python
+- Create and work with variables and values of different types
+- Define and use control structures
+- Use Python to model simple systems
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -26,6 +28,29 @@ to refresh yourself on those commands.
 
 A With these skills, you can write your first few Python programs. In this case we will write 
 a program to implement a simple systems dynamics model.
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Customising the mydesktop environment
+
+You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep...
+
+:::::::::::::::::::::::: solution 
+
+## Terminal window themes
+
+There is a lot of customisation possible with the terminal window in Linux, but we will just look at "light" and "dark" themes. In the terminal menu, select edit/prefs"}
+
+![Changing preferences for theme 1/2](P01prefs.jpg){alt="Select edit/prefs in the terminal menu"}
+
+Then choose 
+
+![Changing preferences for theme 2/2](P01theme.jpg){alt="Select dark then close"}
+
+
+
+:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
 
 ### Activity 1 - Setting up for the practical
 
