@@ -259,7 +259,7 @@ print("G'day", name)
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
-## Challenge 2: Testing, testing...
+## Challenge 2: Testing... testing...
 
 Looking at the above code, what inputs might you use to test it is working correctly?
 :::::::::::::::::::::::: solution 
@@ -269,18 +269,22 @@ Looking at the above code, what inputs might you use to test it is working corre
 Enter "Bruce" and something other than "Bruce" to test both paths through the code. Note that "Bruce" and "bruce" are not equal. 
 
 :::::::::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::
 
 ### Activity 4 - Control Structures (1b) if_elif_else (Guess who?)
  
 To work through some more complex if_elif_else code, we'll identify the members of Monty Python:
 
-- Graham Chapman - died 1989, cancer
-- John Cleese - moustached
-- Terry Gilliam - animator, bearded
-- Eric Idle - composer, clean-shaven
-- Terry Jones - died 2020, dementia
-- Michael Palin - traveller, clean-shaven
+| Name           | Description | 
+|----------------|-------------|
+| Graham Chapman | died 1989, cancer |
+| John Cleese | not dead yet, moustached |
+| Terry Gilliam | animator, bearded |
+| Eric Idle | composer, clean-shaven |
+| Terry Jones | died 2020, dementia |
+| Michael Palin | traveller, clean-shaven |
+
 
 The indenting indicates the start and end of each ``if_elif_else``` clause. Reducing the indent closes the clause, continuing the indent extends the included block. It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
 
