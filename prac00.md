@@ -58,7 +58,7 @@ your screens setup - one for the prac sheet/page and the other for working in Li
 is recommended.
 6. Your screen should look something like this...
 
-![Starting screen for Linux](desktop.jpg){alt="Starting screen for Linux with
+![Starting screen for Linux](fig/P00desktop.jpg){alt="Starting screen for Linux with
 icons loaded"}
 
 ### Activity 2 - The Command Line
