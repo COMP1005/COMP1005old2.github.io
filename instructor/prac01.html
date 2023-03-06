@@ -288,7 +288,7 @@ to the defaults every time.</p>
   Terminal window themes
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is a lot of customisation possible with the terminal window in
 Linux, but we will just look at “light” and “dark” themes. In the
@@ -309,7 +309,7 @@ theme 1/2</a></p>
   Changing the sleep settings
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>It may get annoying to keep putting the password in each time the
 virtual machine goes to sleep. The default timeout is 5 minutes, which
@@ -387,7 +387,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -476,110 +476,146 @@ into the strings being printed out, by including a <code>\n</code> to
 give a blank line. More on that in Lecture and Practical 2.</p>
 </div>
 <div class="section level3">
-<h3 id="activity-3---introduction-to-the-text-editor-vim">Activity 3 - Introduction to the Text Editor (vim)<a class="anchor" aria-label="anchor" href="#activity-3---introduction-to-the-text-editor-vim"></a></h3>
-<p>We are going to use the vim text editor to create your README file
-for Prac01. Vim is an enhanced version of vi – a visual, interactive
-editor. There is an Introduction to Vi document and a “cheat-sheet” on
-Blackboard, but you should work through this prac before try ing it.</p>
-<p>If you’re not already there, change directory into the Prac00
-directory and create the README file:</p>
-<pre><code>&gt; cd Prac00
-&gt; vim README</code></pre>
-<p>You will now be in the vim text editor with an empty file. Vim has
-two modes – command mode (where you can move around the file and use
-commands) and insert text mode. Type “i” to go into insert mode and type
-in the following README information for Practical 1.</p>
-<pre><code>## Synopsis
-Practical 0 of Fundamentals of Programming COMP1005/5005
- 
-## Contents
-README – readme file for Practical 0
- 
-## Dependencies
-none
- 
-## Version information
-&lt;today’s date&gt; - initial version of Practical 0 programs</code></pre>
-<p>Press <code>&lt;esc&gt;</code> to exit insert mode, then :wq to save
-the file (w) and exit vim (q). Type:</p>
-<pre><code><span><span class="va">ls</span> <span class="op">-</span><span class="va">l</span></span></code></pre>
-<p>(-l for long listing) and you will see that you have created a file
-called README, and it has a size and a date. We will make README files
-for all of our practicals to hold information about the files in that
-directory.</p>
-</div>
-<div class="section level3">
-<h3 id="activity-4---welcome-to-python">Activity 4 - Welcome to Python!<a class="anchor" aria-label="anchor" href="#activity-4---welcome-to-python"></a></h3>
-<p>Below is a simple program to get you used to the editor and running
-python scripts. To create a file for the program, type:</p>
-<pre><code>vim hello.py</code></pre>
-<p>Then type in the following code… It is important to type it yourself
-and not copy/paste – this is how you will learn and remember!</p>
-<div class="codewrapper sourceCode" id="cb13">
+<h3 id="activity-3---control-structures-1a-if_elif_else-bruce">Activity 3 - Control Structures (1a) if_elif_else (Bruce)<a class="anchor" aria-label="anchor" href="#activity-3---control-structures-1a-if_elif_else-bruce"></a></h3>
+<p>The previous code ran from the first line to the end, and will do so
+every time it runs. The if_elif_else control structure can choose
+between different pieces of code. We need to put a Boolean condition
+into the <code>if</code> or <code>elif</code> which Python will evaluate
+and choose a path through the code.</p>
+<p>As an example, enter the following code, <code>bruces.py</code>:</p>
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># hello.py: Print out greetings in various languages</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Hello'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>)</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bula'</span>)</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Kia ora"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bruces.py - let's call everyone "Bruce", to avoid confusion</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hey cobber, what's your name? "</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">!=</span> <span class="st">"Bruce"</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Sorry,"</span>, name,<span class="st">"- your name's not Bruce?"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"That's goin to cause a little confusion."</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Mind if we call you 'Bruce' to keep it clear?"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>   name <span class="op">=</span> <span class="st">"Bruce"</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name, <span class="st">"!!!</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
 </div>
-<p>To run the program, type:</p>
-<pre><code>python3 hello.py</code></pre>
-<p>You will probably get an error message as a response (unless you
-typed it in perfectly). Don’t worry, check through your code for the
-error and try running it again. Go back into the file and make
-corrections – use the cursor keys to get to the position (<lineno>G).
-Some handy editing commands are:</lineno></p>
-<ul><li>to delete a character type “x”</li>
-<li>to delete a line “dd”</li>
-<li>to delete a word “dw”</li>
-<li>to change a word “cw”</li>
-<li>to insert/append after the end of the current line, type “A”</li>
-<li>to undo the last command, type “u”</li>
-<li>to redo the last command, type “.”</li>
-</ul><p>Save the file and try to run it again. If you’re having trouble, ask
-your tutor, or even the person next to you, to see if they can find
-what’s wrong. Sometimes it takes someone else’s fresh and/or experienced
-eyes to see an error. This is called “debugging” and the reward comes
-when the code finally runs!</p>
-<p>Try adding some more greetings of your own…</p>
+<p>We can enhance the program to congratulate anyone who is actually
+called Bruce… update the code as below.</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your name? "</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">!=</span> <span class="st">"Bruce"</span>:</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Sorry,"</span>, name,<span class="st">"- your name's not Bruce?"</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"That's going to cause a little confusion."</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Mind if we call you 'Bruce' to keep it clear?"</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>   name <span class="op">=</span> <span class="st">"Bruce"</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Excellent! That saves a lot of confusion!"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name)</span></code></pre>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="challenge-2-testing-testing" class="callout-inner">
+<h3 class="callout-title">Challenge 2: Testing, testing…<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>Looking at the above code, what inputs might you use to test it is
+working correctly? :::::::::::::::::::::::: solution</p>
+<div class="section level2">
+<h2 id="solution-1">Solution<a class="anchor" aria-label="anchor" href="#solution-1"></a></h2>
+<p>Enter “Bruce” and something other than “Bruce” to test both paths
+through the code. Note that “Bruce” and “bruce” are not equal.</p>
+</div>
+</div>
+</div>
+</div>
+<p>:::::::::::::::::::::::::::::::::::::</p>
 </div>
 <div class="section level3">
-<h3 id="activity-5---updating-the-readme">Activity 5 - Updating the README<a class="anchor" aria-label="anchor" href="#activity-5---updating-the-readme"></a></h3>
+<h3 id="activity-4---control-structures-1b-if_elif_else-guess-who">Activity 4 - Control Structures (1b) if_elif_else (Guess who?)<a class="anchor" aria-label="anchor" href="#activity-4---control-structures-1b-if_elif_else-guess-who"></a></h3>
+<p>To work through some more complex if_elif_else code, we’ll identify
+the members of Monty Python:</p>
+<ul><li>Graham Chapman - died 1989, cancer</li>
+<li>John Cleese - moustached</li>
+<li>Terry Gilliam - animator, bearded</li>
+<li>Eric Idle - composer, clean-shaven</li>
+<li>Terry Jones - died 2020, dementia</li>
+<li>Michael Palin - traveller, clean-shaven</li>
+</ul><p>The indenting indicates the start and end of each
+``if_elif_else<code>clause. Reducing the indent closes the clause, continuing the indent extends the included block. It can help to draw a</code>flowchart```
+to see/plan the flow of logic in your code.</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># whichone.py - asks questions to find your Python</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Find the mystery Python!</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter Y/N to the following questions..."</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>male <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you male? "</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> male <span class="op">!=</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not *technically* a python, however..."</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    mystery <span class="op">=</span> <span class="st">"Carole Cleveland"</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    beard <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Do you have a beard? "</span>)</span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> beard <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        mystery <span class="op">=</span> <span class="st">"Terry Gilliam"</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>        alive <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you still alive? "</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> alive <span class="op">!=</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>            dementia <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Did you have dementia? "</span>)</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> dementia <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Terry Jones"</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Graham Chapman"</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>            mo <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Do you have a moustache? "</span>)</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>            traveller <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you a traveller? "</span>)</span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> mo <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"John Cleese"</span></span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> traveller <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Michael Palin"</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Eric Idle"</span></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Your mystery Python is: "</span>, mystery, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
+</div>
+<p>This one is a bit harder to test - see if you can get to every one of
+the Pythons.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-5---control-structures-2-while-loops">Activity 5 - Control Structures (2) while loops<a class="anchor" aria-label="anchor" href="#activity-5---control-structures-2-while-loops"></a></h3>
 <p>You now have a program and a README in the Prac00 directory. Enter
 the name of each of them along with a description under “Contents” in
 the README file.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-6---making-and-submitting-a-zip-file">Activity 6 - Making and submitting a zip file<a class="anchor" aria-label="anchor" href="#activity-6---making-and-submitting-a-zip-file"></a></h3>
-<p>To bundle up and compress files we can use zip/unzip. Similar
-programs are tar (Tape Archive) and gzip (GNU zip).</p>
-<p>To make a zipped file for Practical 0, go to the Prac00 directory
-inside your FOP directory. Type pwd to check that you are in the right
-place.</p>
+<p>This Practical includes a directory structure, so we will use a
+<strong>recursive</strong> option on our zip command. To make a zipped
+file for Practical 01, go to FOP directory. Type pwd to check that you
+are in the right place.</p>
 <p>Create the zip file by typing:</p>
-<pre><code>zip Prac00_&lt;your_student_ID&gt; *
+<pre><code>zip -r Prac01_&lt;your_student_ID&gt; Prac01
  
-e.g. zip Prac00_12345678 *</code></pre>
-<p>This will create a file <strong>Prac00_<your_student_id>.zip</your_student_id></strong>
-which includes everything in your current directory – four programs and
-the README. You can check the contents of the zip file by typing:</p>
-<pre><code>unzip –l Prac00_&lt;your_student_ID&gt;.zip</code></pre>
+e.g. zip -r Prac01_12345678 Prac01</code></pre>
+<p>This will create a file <strong>Prac01_<your_student_id>.zip</your_student_id></strong>
+which includes everything in the Prac01 directory – including the
+directories, programs and the README. You can check the contents of the
+zip file by typing:</p>
+<pre><code>unzip –l Prac01_&lt;your_student_ID&gt;.zip</code></pre>
 </div>
 <div class="section level3">
-<h3 id="activity-7---submission">Activity 7 - Submission<a class="anchor" aria-label="anchor" href="#activity-7---submission"></a></h3>
+<h3 id="activity-8---submission">Activity 8 - Submission<a class="anchor" aria-label="anchor" href="#activity-8---submission"></a></h3>
 <p>All of your work for this week’s practical should be submitted via
-Blackboard using the Practical 0 link. This should be done as a single
+Blackboard using the Practical 01 link. This should be done as a single
 “zipped” file. This is the file to submit through Blackboard.</p>
 <p>There are no direct marks for these submissions, but they may be
 taken into account when finalising your mark. Go to the Assessment link
 on Blackboard and click on Practical 0 for the submission page.</p>
 </div>
 <div class="section level3">
-<h3 id="and-thats-the-end-of-practical-0">And that’s the end of Practical 0!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-0"></a></h3>
+<h3 id="and-thats-the-end-of-practical-1">And that’s the end of Practical 1!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-1"></a></h3>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -588,17 +624,11 @@ on Blackboard and click on Practical 0 for the submission page.</p>
 <h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>We will be using Linux as our operating system for this unit</li>
-<li>You can access Linux through <a href="https://mydesktop.curtin.edu.au" class="external-link">mydesktop.curtin.edu.au</a> or
-install Python and a “Linux” shell on your home machine</li>
-<li>Working on the command line, we will type in commands at the prompt,
-press enter, and wait for the computer’s response</li>
-<li>To create and edit a text file, we will be using vim - a program for
-editing text files</li>
-<li>Once we have entered a Python program as a text file, with a “.py”
-extension, we can run the program by typing
-<code>python3 myprog.py</code>
-</li>
+<ul><li>input</li>
+<li>if_elif_else</li>
+<li>while loops</li>
+<li>for loops</li>
+<li>nesting control strucures</li>
 </ul></div>
 </div>
 </div>
@@ -611,15 +641,14 @@ extension, we can run the program by typing
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>
-<strong>Knowledge:</strong> What are the two modes in vi / vim?</li>
+<strong>Knowledge:</strong> What are the three control structures
+we’ve learned?</li>
 <li>
-<strong>Comprehension:</strong> What is the name of the lab machine
-you are working on? Hint: use the hostname command or look at the
-prompt.</li>
+<strong>Comprehension:</strong> What is the difference between the
+control structures?</li>
 <li>
-<strong>Application:</strong> What series of commands would you need
-to go to the directory FOP/assignment in your home directory and
-compress all the files?</li>
+<strong>Application:</strong> Give an example of where you might use
+each of the control structures?</li>
 <li>
 <strong>Analysis:</strong> What variable would you change in
 growth.py to have more iterations (steps) per hour?</li>
@@ -632,22 +661,21 @@ challenging? (You can give feedback to the lecturer/tutor…)</li>
 </ol></div>
 </div>
 </div>
-<div id="discussion1" class="callout discussion">
+<div id="discussion2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
 </h3>
 <div class="callout-content">
 <p>For those who want to explore a bit more of the topics covered in
 this practical.</p>
 <ol style="list-style-type: decimal"><li>Have a look at other problems from the text book: <a href="http://press.princeton.edu/titles/10291.html" class="external-link uri">http://press.princeton.edu/titles/10291.html</a>
 </li>
-<li>Work through a Linux tutorial</li>
-<li>Work through a vi/vim tutorial</li>
-<li>Read some samples of README files for large projects - <a href="https://github.com/matiassingers/awesome-readme" class="external-link uri">https://github.com/matiassingers/awesome-readme</a>
-</li>
+<li>Write a similar program to whichone.py, to determine a mystery
+animal/sport/food</li>
+<li>How would growth.py change to be calculating compound interest?</li>
 </ol></div>
 </div>
 </div>
