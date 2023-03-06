@@ -144,11 +144,44 @@ cd The/Holy/Grail
 
 ### Activity 2 - Interacting with Python Programs
 
-Change directory to ```The/Holy/Grail```. In the Grail directory, type in the following code. To go into the editor, type this at the command line:
+Change directory to ```The/Holy/Grail```. We are going to write a program matching a scene from the movie "The holy Grail".
+
+In the Grail directory, type in:
 
 ```vim bridge.py```
 
+then type in the following code:
+
 ```python
+#
+# bridge.py - a scene from The Holy Grail
+#
+print("Welcome to the Bridge of Death")
+print("What is your name?")
+name = input()
+print("What is your quest?")
+quest = input()
+print("What is your favourite colour?")
+colour = input()
+print(name)
+print(quest)
+print(colour)
+```
+
+Run the program a few times to see how it works. The ```input()``` call puts up a prompt for the user to enter text on the keyboard. To store the input in a variable, we assign in using an "=" sign: ```name = input()```. We do similar for the quest and favourite colour.
+
+We can then ouptut these variables using print statements. 
+
+Once you have that working, we can improve on the code and make it a bit friendlier. Edit the code again and make the 
+changes below:
+
+```python
+#
+# bridge.py - a scene from The Holy Grail
+#
+print()
+print("Welcome to the Bridge of Death")
+print()
 print("What is your name?")
 name = input()
 print("What is your quest?")
@@ -156,12 +189,32 @@ quest = input()
 print("What is your favourite colour?")
 colour = input()
 print()
-print("Hello,", name, "good luck with", quest, "!")
+print("Hello,", name, "good luck with your", quest, "quest!")
 print("Perhaps wearing", colour, "socks would help :)")
+print()
 ```
 
+There are many ways to solve a coding problem. Copy your code ```bridge.py``` to ```bridge2.py``` and then change the code to match the example below:
 
+```
+cp bridge.py bridge2.py
+vim bridge2.py
+```
 
+```python
+#
+# bridge2.py - a scene from The Holy Grail, re-coded
+#
+print("\nWelcome to the Bridge of Death\n")
+name = input("What is your name?")
+quest = input("What is your quest?")
+colour = input("What is your favourite colour?")
+print("\nHello,", name, "good luck with your", quest, "quest!")
+print("Perhaps wearing", colour, "socks would help :)\n")
+```
+
+We always want to use the value collected in an ```input()``` call, so we can combine the ```print``` and ```input```
+into a single line. Also, the ```print()``` calls can be absorbed into the strings being printed out, by including a ```\n``` to give a blank line. More on that in lecture and practical 2.
 
 ### Activity 3 - Introduction to the Text Editor (vim)
  
