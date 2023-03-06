@@ -228,6 +228,8 @@ The previous code ran from the first line to the end, and will do so every time 
 control structure can choose between different pieces of code. We need to put a Boolean condition into the 
 ```if``` or ```elif``` which Python will evaluate and choose a path through the code.
 
+The indenting indicates the start and end of each ```if_elif_else``` clause. Reducing the indent closes the clause, continuing the indent extends the included block. 
+
 As an example, enter the following code, ```bruces.py```:
 
 ```python
@@ -262,6 +264,7 @@ print("G'day", name)
 ## Challenge 2: Testing... testing...
 
 Looking at the above code, what inputs might you use to test it is working correctly?
+
 :::::::::::::::::::::::: solution 
 
 ## Solution
@@ -286,7 +289,7 @@ To work through some more complex if_elif_else code, we'll identify the members 
 | Michael Palin | traveller, clean-shaven |
 
 
-The indenting indicates the start and end of each ``if_elif_else``` clause. Reducing the indent closes the clause, continuing the indent extends the included block. It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
+Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
 
 ```python
 #
