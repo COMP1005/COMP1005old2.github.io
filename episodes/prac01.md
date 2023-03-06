@@ -41,7 +41,7 @@ You may prefer to have a black backgournd for your terminal, or to increase the 
 
 There is a lot of customisation possible with the terminal window in Linux, but we will just look at "light" and "dark" themes. In the terminal menu, select edit/prefs.
 
-![Changing preferences for theme 1/2](P01pref.jpg){alt="Select edit/prefs in the terminal menu"}
+[Changing preferences for theme 1/2](P01pref.jpg){alt="Select edit/prefs in the terminal menu"}
 
 Then choose 
 
