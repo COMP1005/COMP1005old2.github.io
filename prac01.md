@@ -88,7 +88,7 @@ There are ways to delete a directory tree in one command, but it is too **danger
 
 ## Challenge 1: Can you do it?
 
-From the Prac01 directory, how would you cnange into the Grail directory **with one command**?
+From the Prac01 directory, how would you change into the Grail directory **with one command**?
 
 :::::::::::::::::::::::: solution 
 
