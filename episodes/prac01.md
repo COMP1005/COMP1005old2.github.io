@@ -72,7 +72,7 @@ To see the overall directory structure, type ```ls -R``` and you should have the
 
 If you make a mistake, you can delete a directory with ```rmdir <dir_name```, but it must be empty first. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
 
-There are ways to delete a directory tree in one command, but it is too **dangerous** to teach att his point. For now, we'll do things the slow and safe way. 
+There are ways to delete a directory tree in one command, but it is too **dangerous** to teach at this point. For now, we'll do things the slow and safe way. 
 
 ::::::::::::::::::::::::::::::::::::: challenge 
 
