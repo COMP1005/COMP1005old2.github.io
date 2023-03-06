@@ -24,53 +24,10 @@ title: "Prac01: Introduction to Python"
 ### Introduction
 
 In this practical you will continue to use Linux and the vim text editor - look back to [Practical 00](prac00.html)
-to refresh yourself on those commands.
+to refresh yourself on those commands. The first activity sets up the directory structure for the practical.
 
-A With these skills, you can write your first few Python programs. In this case we will write 
-a program to implement a simple systems dynamics model.
-
-::::::::::::::::::::::::::::::::::::: challenge 
-
-## Customising the mydesktop environment
-
-You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep... this will need to be done each time you use the virtual machines as they go back to the defaults every time.
-
-:::::::::::::::::::::::: solution 
-
-## Terminal window themes
-
-There is a lot of customisation possible with the terminal window in Linux, but we will just look at "light" and "dark" themes. In the terminal menu, select edit/prefs.
-
-[Changing preferences for theme 1/2](fig/P01pref.jpg){alt="Select edit/prefs in the terminal menu"}
-
-Then choose 
-
-![Changing preferences for theme 2/2](fig/P01theme.jpg){alt="Select dark then close"}
-
-To go from dark to light...
-
-![Changing preferences for theme 1/2](fig/P01pref_d.jpg){alt="Select edit/prefs in the terminal menu"}
-
-Then choose 
-
-![Changing preferences for theme 2/2](fig/P01theme_d.jpg){alt="Select dark then close"}
-
-:::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::: solution 
-
-## Changing the sleep settings
-
-It may get annoying to keep putting the password in each time the virtual machine goes to sleep. The default timeout is 5 minutes, which can be increased to 15 minutes, or to "never". Select preferences and then Power at the top right of the Virtual Machine to change this setting.
-
-![Changing preferences for timeout](fig/P01timeout.jpg){alt="Select preferences and then Power at the top right of the Virtual Machine"}
-
-:::::::::::::::::::::::::::::::::
-
-:::::::::::::::::::::::::::::::::::::
-
-![Changing preferences for theme 2/2](fig/P01theme_d.jpg){alt="Select dark then close"}
-
+We will be looking at accepting user input (Activity 2) and control structures (Activities 3-6). Finally, in Activity 7 
+we will write a program to implement a simple systems dynamics model.
 
 ### Activity 1 - Setting up for the practical
 
@@ -121,7 +78,7 @@ mkdir The/Holy/Grail
 
 To see the overall directory structure, type ```ls -R``` and you should have the output shown below:
 
-![Output of ls -R on the Activity 1 directory structure](P01directories.jpg "Directory structure")
+![Output of ls -R on the Activity 1 directory structure](fig/P01directories.png "Directory structure")
 
 If you make a mistake, you can delete a directory with ```rmdir <dir_name```, but it must be empty first. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
 
@@ -230,7 +187,7 @@ control structure can choose between different pieces of code. We need to put a 
 
 The indenting indicates the start and end of each ```if_elif_else``` clause. Reducing the indent closes the clause, continuing the indent extends the included block. 
 
-As an example, enter the following code, ```bruces.py```:
+As an example, enter the following code, ```bruces.py```, in the directory ```Monty/Pythons/Flying/Circus```:
 
 ```python
 #
@@ -289,7 +246,7 @@ To work through some more complex if_elif_else code, we'll identify the members 
 | Michael Palin  | not dead yet, traveller, clean-shaven |
 
 
-Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
+For this exercise, enter your code as ```whichone.py``` in the ```Monty/Python``` directory. Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
 
 ```python
 #
@@ -331,6 +288,8 @@ This one is a bit harder to test - see if you can get to every one of the Python
  
 When we take input from the user, it is read in as a string. These are characters - so we need to convert them to actually use them as numbers. The following code demonstrates this conversion.
 
+Type it in as ```num_convert.py``` in the ```Prac01``` directory.
+
 ```python
 #
 # num_convert.py: Read in number and convert to int and float
@@ -347,7 +306,7 @@ print('Number =', number, ' Type : ', str(type(number)))
 Notice how the two print statements print the same number (well, it looks the same), but their variable types are different? Everything you read in will be a string. If you want a number, you'll need to convert it with the int() or float() functions.
 
 
-Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop.
+Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
  
 ```python
 #
@@ -363,13 +322,19 @@ for i in range(10):
 print('Total is ', total)
 ```
  
-Save and exit the file and try running it. What are the values that variable "i" holds each time through the loop? How would you change the for loop in the program to request five numbers be entered.
+Save and exit the file and try running it. What are the values that variable "i" holds each time 
+through the loop? How would you change the for loop in the program to request five numbers be entered.
 
-Have you noticed that the code changes colour as you type? This is syntax highlighting. When you’re in command mode in vim you can type ```:syntax off``` and ```:syntax on``` to turn it off/on.
+Have you noticed that the code changes colour as you type? This is syntax highlighting. When you’re 
+in command mode in vim you can type ```:syntax off``` and ```:syntax on``` to turn it off/on.
 
 ### Activity 6 - Control Structures: While loops 
 
-Sometimes we don't know how many loops we want to make, but we will know when we get there - we can test a condition (similar to an ```if``` control structure). In this code we will enter numbers, and type in a negative number to exit the loop. This is called a **sentinal value**.
+Sometimes we don't know how many loops we want to make, but we will know when we get there - we can 
+test a condition (similar to an ```if``` control structure). In this code we will enter numbers, and 
+type in a negative number to exit the loop. This is called a **sentinal value**.
+
+Type it in as ```num_while.py``` in the ```Prac01``` directory.
 
 #
 # num_while.py: Read in a list of numbers (negative to exit) and
@@ -393,7 +358,7 @@ Now for a simple systems model... Unconstrained Growth and Decay.
 
 ::: callout
 From the "Introduction to Computational Science" text:
-“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”
+*“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”*
 :::
 
 So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and provides background to these types of models.
@@ -413,8 +378,11 @@ for i = 0 to number of iterations-1 do
 growth = growth rate (per step) * population population = population + growth
 time = i * time step
 display time, growth, population
-Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
 :::
+
+Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
+
+Enter the code as ```growth.py``` in the ```And/Now/for/Something/Completely/Different``` directory.
 
 ```python
 #
