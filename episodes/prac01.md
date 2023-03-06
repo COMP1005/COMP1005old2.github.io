@@ -59,6 +59,9 @@ Then choose
 
 :::::::::::::::::::::::: solution 
 
+![Changing preferences for theme 2/2](/episodes/P01theme_d.jpg){alt="Select dark then close"}
+
+
 ## Changing the sleep settings
 
 It may get annoying to keep putting the password in each time the virtual machine goes to sleep. The default timeout is 5 minutes, which can be increased to 15 minutes, or to "never". Select preferences and then Power at the top right of the Virtual Machine to change this setting.
