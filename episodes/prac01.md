@@ -45,7 +45,7 @@ There is a lot of customisation possible with the terminal window in Linux, but 
 
 Then choose 
 
-![Changing preferences for theme 2/2](/episodes/P01theme.jpg){alt="Select dark then close"}
+![Changing preferences for theme 2/2](./episodes/P01theme.jpg){alt="Select dark then close"}
 
 To go from dark to light...
 
@@ -53,13 +53,13 @@ To go from dark to light...
 
 Then choose 
 
-![Changing preferences for theme 2/2](/episodes/P01theme_d.jpg){alt="Select dark then close"}
+![Changing preferences for theme 2/2](/P01theme_d.jpg){alt="Select dark then close"}
 
 :::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::: solution 
 
-![Changing preferences for theme 2/2](/episodes/P01theme_d.jpg){alt="Select dark then close"}
+![Changing preferences for theme 2/2](./P01theme_d.jpg){alt="Select dark then close"}
 
 
 ## Changing the sleep settings
