@@ -64,9 +64,11 @@ episodes:
 
 # Information for Learners
 learners: 
+- setup.md
 
 # Information for Instructors
 instructors: 
+- instructor-notes.Rmd
 
 # Learner Profiles
 profiles: 

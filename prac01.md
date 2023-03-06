@@ -1,5 +1,5 @@
 ---
-title: "Prac01: Introduction to Linux"
+title: "Prac01: Introduction to Python"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -13,9 +13,11 @@ title: "Prac01: Introduction to Linux"
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Define and use control structures in Python
 - Continue to use key commands in the Linux operating system
-- Use Python in a Linux environment to model simple systems
+- Request user input in Python
+- Create and work with variables and values of different types
+- Define and use control structures
+- Use Python to model simple systems
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -27,96 +29,128 @@ to refresh yourself on those commands.
 A With these skills, you can write your first few Python programs. In this case we will write 
 a program to implement a simple systems dynamics model.
 
-### Activity 1 - Accessing Linux
+::::::::::::::::::::::::::::::::::::: challenge 
 
-In the laboratory:
+## Customising the mydesktop environment
 
-1. login to the machines with your Oasis login. 
-2. Once you're connected, open a web browser and go to [mydesktop.curtin.edu.au](https://mydesktop.curtin.edu.au).
-3. You can choose either the install or HTML option, but for the labs we will 
-use **VMware Horizon HTML Access**. You'll need to login again, making sure to select
-**STUDENT**. 
-4. Choose either **Computer Science Linux Lab** or **Curtin Global Linux** - this tells 
-the system which flavour of operating system you want to use. (they are both the same, 
-but can be useful as options when we have technical issues)
-5. It will take a few minutes for all the icons to arrive, so this is a good time to get 
-your screens setup - one for the prac sheet/page and the other for working in Linux 
-is recommended.
-6. Your screen should look something like this...
+You may prefer to have a black backgournd for your terminal, or to increase the time before the virtual machine goes to sleep... this will need to be done each time you use the virtual machines as they go back to the defaults every time.
 
-![Starting screen for Linux](desktop.jpg){alt="Starting screen for Linux with
-icons loaded"}
+:::::::::::::::::::::::: solution 
 
-### Activity 2 - The Command Line
+## Terminal window themes
 
-Now we need to open a **terminal window** to interact with the Linux computer. There is
-a graphical (GUI) interface, however the command line is more powerful (eventually).
+There is a lot of customisation possible with the terminal window in Linux, but we will just look at "light" and "dark" themes. In the terminal menu, select edit/prefs.
 
-The terminal application is on the left of the screen (a black rectangle). We can make 
-sure it points to the correct area for your files by opening the **I: drive** icon and
-then right-clicking to get a pop-up menu and select **open in terminal**.
+![Changing preferences for theme 1/2](P01prefs.jpg){alt="Select edit/prefs in the terminal menu"}
 
-There are a lot of commands you can use in Linux, but you only need a few 
-to get started. A sample of the Unix commands available to
-you have been provided below. We will learn more commands as we go through the unit.
+Then choose 
 
-Try typing the following commands (one at a time) and check what they do...
+![Changing preferences for theme 2/2](P01theme.jpg){alt="Select dark then close"}
+
+To go from dark to light...
+
+![Changing preferences for theme 1/2](P01prefs_d.jpg){alt="Select edit/prefs in the terminal menu"}
+
+Then choose 
+
+![Changing preferences for theme 2/2](P01theme_d.jpg){alt="Select dark then close"}
+
+:::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+
+## Changing the sleep settings
+
+It may get annoying to keep putting the password in each time the virtual machine goes to sleep. The default timeout is 5 minutes, which can be increased to 15 minutes, or to "never". Select preferences and then Power at the top right of the Virtual Machine to change this setting.
+
+![Changing preferences for timeout](P01timeout.jpg){alt="Select preferences and then Power at the top right of the Virtual Machine"}
+
+:::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::
+
+### Activity 1 - Setting up for the practical
+
+We're going to make a complex directory structure for this practical. This will exercise 
+your Linux skills for creating and traversing directories. The overall structure will be
 
 ```
-ls
-ls –l
-pwd
-mkdir test
-ls
-cd test
-ls
-ls –la
+FOP
+ |-- Prac00
+ |-- Prac01
+   |-- The
+   |   |-- Holy
+   |   |   |-- Grail
+   |   |
+   |   |-- Life
+   |       |-- of 
+   |           |-- Brian
+   |-- And
+       |-- Now
+           |-- for 
+               |-- Something
+                   |-- Completely
+                       |-- Different
 ```
 
-Here are a few of the most common commands... the < > braces are a convention to 
-indicate text that you replace. Note that in Unix/Linux folders are referred to as directories.
+Each indent is a subdirectory. You might create each directory, then ```cd``` into it, then create the subdirectory:
 
-| Command | Description | Examples | 
-|---------|-------------|----------|
-| ls | Lists all files in the current directory, if an argument is provided lists all files in the specified directory. | ls, ls –l, ls –la |
-| cp <src> <dest> | Copies the file from source to destination. | cp Downloads/test.py ., cp test.py test2.py |
-|mv <src> <dest> | Moves the file from source to destination. If the destination ends in a file name it will rename the file. | mv test.py Prac1, mv test.py mytest.py |
-| pwd  | Lists the directory you are currently in (Print Working Directory) | pwd |
-| cd <dir>  | Moves to <dir> | |
-| mkdir <dir> | Creates a new directory | mkdir Prac1 |
-| rm <filename> | Removes a file | rm fireballs.py |
-| rmdir <dir> | Removes a directory (must be empty first) | rmdir Prac12 |
- 
-Using these commands create the following directory structure within your home
-directory. A *How to use Unix* and cheatsheet document has been uploaded to
-Blackboard, it will be helpful if you get stuck. Note you can use the arrow keys to get 
-back to previous commands, and can use <tab> to complete long filenames.
- 
-* FOP
-  * Prac00
-  * Prac01
-  * Prac02
-  * Prac03
-  * Prac04
-  * Prac05
-  * Prac06
-  * Prac07
-  * Prac08
-  * Prac09
-  * Prac10
-  * Prac11
- 
-The current directory is referenced by a single fullstop (.), the parent directory is
-referenced by two fullstops (..) and all pathways are relative to the current location.
-
-For example...
- 
 ```
 cd FOP/Prac01
-cd ../Prac00
+mkdir The
+cd The
+mkdir Holy
+cd Holy
+mkdir Grail
+cd ../..
 ```
 
-...takes you into FOP/Prac01, then on the second line, back up and into Prac00
+...or you can stay in the original directory and give the path to each new directory:
+
+```
+cd FOP/Prac01
+mkdir The
+mkdir The/Holy
+mkdir The/Holy/Grail
+```
+
+To see the overall directory structure, type ```ls -R``` and you should have the output shown below:
+
+![Directory structure](P01directoires.jpg){alt="output of ls -R on the Activity 1 directory structure"}
+
+If you make a mistake, you can delete a directory with ```rmdir <dir_name```, but it must be empty first. Note that directories have to be empty before they can be deleted - so work from the "leaf" of the directory tree, back to the "root".
+
+There are ways to delete a directory tree in one command, but it is too **dangerous** to teach at this point. For now, we'll do things the slow and safe way. 
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 1: Can you do it?
+
+From the Prac01 directory, how would you cnange into the Grail directory **with one command**?
+
+:::::::::::::::::::::::: solution 
+
+## Solution
+
+```output
+cd The/Holy/Grail
+```
+
+:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
+
+### Activity 2 - Interacting with Python Programs
+
+Change directory to ```The/Holy/Grail```. In the Grail directory, type in the following code. To go into the editor, type this at the command line:
+
+```vim bridge.py```
+
+```python
+print("What is your name?")
+input()
+```
+
+
 
 
 ### Activity 3 - Introduction to the Text Editor (vim)
@@ -153,7 +187,8 @@ none
 ```
  
 Press ```<esc>``` to exit insert mode, then :wq to save the file (w) and exit vim (q).
-Type 
+Type:
+
 ```
 ls -l
 ```
