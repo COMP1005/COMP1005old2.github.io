@@ -718,7 +718,7 @@ to the defaults every time.</p>
   Terminal window themes
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>There is a lot of customisation possible with the terminal window in
 Linux, but we will just look at “light” and “dark” themes. In the
@@ -740,7 +740,7 @@ theme 1/2</a></p>
   Changing the sleep settings
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>It may get annoying to keep putting the password in each time the
 virtual machine goes to sleep. The default timeout is 5 minutes, which
@@ -823,7 +823,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -913,7 +913,7 @@ into the strings being printed out, by including a <code>\n</code> to
 give a blank line. More on that in Lecture and Practical 2.</p>
 </div>
 <div class="section level3">
-<h3 id="activity-3---control-structures-1a-if_elif_else-bruce">Activity 3 - Control Structures (1a) if_elif_else (Bruce)<a class="anchor" aria-label="anchor" href="#activity-3---control-structures-1a-if_elif_else-bruce"></a>
+<h3 id="activity-3---control-structures-if_else">Activity 3 - Control Structures: if_else<a class="anchor" aria-label="anchor" href="#activity-3---control-structures-if_else"></a>
 </h3>
 <p>The previous code ran from the first line to the end, and will do so
 every time it runs. The if_elif_else control structure can choose
@@ -973,7 +973,7 @@ working correctly?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Enter “Bruce” and something other than “Bruce” to test both paths
 through the code. Note that “Bruce” and “bruce” are not equal.</p>
@@ -983,7 +983,7 @@ through the code. Note that “Bruce” and “bruce” are not equal.</p>
 </div>
 </div>
 <div class="section level3">
-<h3 id="activity-4---control-structures-1b-if_elif_else-guess-who">Activity 4 - Control Structures (1b) if_elif_else (Guess who?)<a class="anchor" aria-label="anchor" href="#activity-4---control-structures-1b-if_elif_else-guess-who"></a>
+<h3 id="activity-4---control-structures-if_elif_else">Activity 4 - Control Structures: if_elif_else<a class="anchor" aria-label="anchor" href="#activity-4---control-structures-if_elif_else"></a>
 </h3>
 <p>To work through some more complex if_elif_else code, we’ll identify
 the members of Monty Python:</p>
@@ -1003,11 +1003,11 @@ the members of Monty Python:</p>
 </tr>
 <tr class="odd">
 <td>Terry Gilliam</td>
-<td>animator, bearded</td>
+<td>animator, not dead yet, bearded</td>
 </tr>
 <tr class="even">
 <td>Eric Idle</td>
-<td>composer, clean-shaven</td>
+<td>composer, not dead yet, clean-shaven</td>
 </tr>
 <tr class="odd">
 <td>Terry Jones</td>
@@ -1015,7 +1015,7 @@ the members of Monty Python:</p>
 </tr>
 <tr class="even">
 <td>Michael Palin</td>
-<td>traveller, clean-shaven</td>
+<td>not dead yet, traveller, clean-shaven</td>
 </tr>
 </tbody>
 </table>
@@ -1060,14 +1060,163 @@ a <code>flowchart</code> to see/plan the flow of logic in your code.</p>
 the Pythons.</p>
 </div>
 <div class="section level3">
-<h3 id="activity-5---control-structures-2-while-loops">Activity 5 - Control Structures (2) while loops<a class="anchor" aria-label="anchor" href="#activity-5---control-structures-2-while-loops"></a>
+<h3 id="activity-5---control-structures-for-loops">Activity 5 - Control Structures: For loops<a class="anchor" aria-label="anchor" href="#activity-5---control-structures-for-loops"></a>
 </h3>
-<p>You now have a program and a README in the Prac00 directory. Enter
-the name of each of them along with a description under “Contents” in
-the README file.</p>
+<p>When we take input from the user, it is read in as a string. These
+are characters - so we need to convert them to actually use them as
+numbers. The following code demonstrates this conversion.</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># num_convert.py: Read in number and convert to int and float</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter a number...'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>numstr <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numberstr, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numberstr)))</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>numint <span class="op">=</span> <span class="bu">int</span>(numberstr)</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, number, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(number)))</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>numfloat <span class="op">=</span> <span class="bu">float</span>(numberstr)</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, number, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(number)))</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>Notice how the two <span class="bu">print</span> statements <span class="bu">print</span> the same number (well, it looks the same), but their variable types are different? Everything you read <span class="kw">in</span> will be a string. If you want a number, you<span class="st">'ll need to convert it with the int() or float() functions.</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a><span class="er">Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop.</span></span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a><span class="er"> </span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a><span class="er">```python</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a><span class="er">#</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="er"># num_for.py: Read in ten numbers and give sum of numbers </span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="er">#</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="er">print('Enter ten numbers...')</span></span>
+<span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="er">total = 0</span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a><span class="er"> </span></span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="er">for i in range(10):</span></span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a><span class="er">    print('Enter a number (', i, ')...')</span></span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="er">    number = int(input())</span></span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a><span class="er">    total = total + number</span></span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a><span class="er">print('Total is ', total)</span></span></code></pre>
+</div>
+<p>Save and exit the file and try running it. What are the values that
+variable “i” holds each time through the loop? How would you change the
+for loop in the program to request five numbers be entered.</p>
+<p>Have you noticed that the code changes colour as you type? This is
+syntax highlighting. When you’re in command mode in vim you can type
+<code>:syntax off</code> and <code>:syntax on</code> to turn it
+off/on.</p>
 </div>
 <div class="section level3">
-<h3 id="activity-6---making-and-submitting-a-zip-file">Activity 6 - Making and submitting a zip file<a class="anchor" aria-label="anchor" href="#activity-6---making-and-submitting-a-zip-file"></a>
+<h3 id="activity-6---control-structures-while-loops">Activity 6 - Control Structures: While loops<a class="anchor" aria-label="anchor" href="#activity-6---control-structures-while-loops"></a>
+</h3>
+<p>Sometimes we don’t know how many loops we want to make, but we will
+know when we get there - we can test a condition (similar to an
+<code>if</code> control structure). In this code we will enter numbers,
+and type in a negative number to exit the loop. This is called a
+<strong>sentinal value</strong>.</p>
+</div>
+<div class="section level1">
+<h1 id="section"></h1>
+</div>
+<div class="section level1">
+<h1 id="num_while-py-read-in-a-list-of-numbers-negative-to-exit-and">num_while.py: Read in a list of numbers (negative to exit) and<a class="anchor" aria-label="anchor" href="#num_while-py-read-in-a-list-of-numbers-negative-to-exit-and"></a>
+</h1>
+</div>
+<div class="section level1">
+<h1 id="give-the-sum-of-the-numbers">give the sum of the numbers<a class="anchor" aria-label="anchor" href="#give-the-sum-of-the-numbers"></a>
+</h1>
+<p>count = 0 total = 0 print(“Enter a list of numbers, negative to
+exit…”) number = int(input()) while number &gt;= 0: count += 1
+#equivalent to count = count + 1 total += number #equivalent to total =
+total + number print(“Next number…”) number = int(input()) print(“Total
+is”, total, ” and count is “, count)</p>
+<p>Save and exit and then run num_while.py. How would you need to change
+the while loop in the code to have it exit on <strong>zero</strong>
+instead of negative numbers?</p>
+<div class="section level3">
+<h3 id="activity-7---and-now-for-something-completely-different">Activity 7 - And Now For Something Completely Different<a class="anchor" aria-label="anchor" href="#activity-7---and-now-for-something-completely-different"></a>
+</h3>
+<p>Now for a simple systems model… Unconstrained Growth and Decay.</p>
+<div id="callout1" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>From the “Introduction to Computational Science” text: “Many
+situations exist where the rate at which an amount is changing is
+proportional to the amount present. Such might be the case for a
+population, say of people, deer, or bacteria. When money is compounded
+continuously, the rate of change of the amount is also proportional to
+the amount present. For a radioactive element, the amount of
+radioactivity decays at a rate proportional to the amount present.”</p>
+</div>
+</div>
+</div>
+<p>So, growth and decay models are common in many domains. We will
+implement algorithm 2 from Module 2.2 of the text book (p25). Chapter 2
+is available for download at <a href="http://press.princeton.edu/titles/10291.html" class="external-link">Computational
+Science</a>, and provides background to these types of models.</p>
+<p>We are going to write Python code for simulating unconstrained growth
+based on the following pseudocode from the text:</p>
+<div id="callout2" class="callout callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="algorithm-2---simulation-of-unconstrained-growth" class="callout-inner">
+<h3 class="callout-title">Algorithm 2 - simulation of unconstrained
+growth<a class="anchor" aria-label="anchor" href="#callout2"></a>
+</h3>
+<div class="callout-content">
+<p>initialise simulation length initialise population initialise growth
+rate initialise (length of) time step number of iterations = simulation
+length / time step growth rate (per step) = growth rate * time step for
+i = 0 to number of iterations-1 do growth = growth rate (per step) *
+population population = population + growth time = i * time step display
+time, growth, population Compare this to the following code. We are
+implementing the scenario which follows the Algorithm on page 25.</p>
+</div>
+</div>
+</div>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># growth.py - simulation of unconstrained growth</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">SIMULATION - Unconstrained Growth</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>growth_rate <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>time_step <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>num_iter <span class="op">=</span> length <span class="op">/</span> time_step</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>growth_step <span class="op">=</span> growth_rate <span class="op">*</span> time_step</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"INITIAL VALUES:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Simulation Length (hours): "</span>, length)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Initial Population: "</span>, population)</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Growth Rate (per hour): "</span>, growth_rate)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time Step (part hour per step): "</span>, time_step)</span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Num iterations (sim length * time step per hour): "</span>,</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>num_iter)</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Growth step (growth rate per time step): "</span>,</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>growth_step)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">RESULTS:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time: "</span>, <span class="dv">0</span>, <span class="st">" </span><span class="ch">\t</span><span class="st">Growth: "</span>, <span class="dv">0</span>, <span class="st">" </span><span class="ch">\t</span><span class="st">Population: "</span>, <span class="dv">100</span>)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">int</span>(num_iter) <span class="op">+</span> <span class="dv">1</span> ):</span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>    growth <span class="op">=</span> growth_step <span class="op">*</span> population</span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>    population <span class="op">=</span> population <span class="op">+</span> growth</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> i <span class="op">*</span> time_step</span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time: "</span>, time, <span class="st">" </span><span class="ch">\t</span><span class="st">Growth: "</span>, growth,</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a>          <span class="st">" </span><span class="ch">\t</span><span class="st">Population: "</span>, population)</span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">PROCESSING COMPLETE.</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
+</div>
+<p>Type in the code and run it. Can you see why the for loop was changed
+from 0 to num_iter to 1 to num_iter+1?</p>
+</div>
+<div class="section level3">
+<h3 id="activity-8---making-and-submitting-a-zip-file">Activity 8 - Making and submitting a zip file<a class="anchor" aria-label="anchor" href="#activity-8---making-and-submitting-a-zip-file"></a>
 </h3>
 <p>This Practical includes a directory structure, so we will use a
 <strong>recursive</strong> option on our zip command. To make a zipped
@@ -1084,7 +1233,7 @@ zip file by typing:</p>
 <pre><code>unzip –l Prac01_&lt;your_student_ID&gt;.zip</code></pre>
 </div>
 <div class="section level3">
-<h3 id="activity-8---submission">Activity 8 - Submission<a class="anchor" aria-label="anchor" href="#activity-8---submission"></a>
+<h3 id="activity-9---submission">Activity 9 - Submission<a class="anchor" aria-label="anchor" href="#activity-9---submission"></a>
 </h3>
 <p>All of your work for this week’s practical should be submitted via
 Blackboard using the Practical 01 link. This should be done as a single
@@ -1169,6 +1318,7 @@ animal/sport/food</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
+</div>
 </div></section>
 </div>
     </main>
