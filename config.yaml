@@ -68,7 +68,7 @@ learners:
 
 # Information for Instructors
 instructors: 
-- setup.md
+- instructor-notes.Rmd
 
 # Learner Profiles
 profiles: 
