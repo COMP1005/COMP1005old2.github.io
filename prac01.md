@@ -168,12 +168,15 @@ print(quest)
 print(colour)
 ```
 
-Run the program a few times to see how it works. The ```input()``` call puts up a prompt for the user to enter text on the keyboard. To store the input in a variable, we assign in using an "=" sign: ```name = input()```. We do similar for the quest and favourite colour.
+Run the program a few times to see how it works. The ```input()``` call puts up a 
+prompt for the user to enter text on the keyboard. To store the input in a variable, 
+we assign in using an "=" sign: ```name = input()```. We do similar for the quest 
+and favourite colour.
 
 We can then ouptut these variables using print statements. 
 
-Once you have that working, we can improve on the code and make it a bit friendlier. Edit the code again and make the 
-changes below:
+Once you have that working, we can improve on the code and make it a bit friendlier. 
+Edit the code again and make the changes below:
 
 ```python
 #
@@ -217,132 +220,135 @@ We always want to use the value collected in an ```input()``` call, so we can co
 into a single line. Also, the ```print()``` calls can be absorbed into the strings being printed out, by 
 including a ```\n``` to give a blank line. More on that in Lecture and Practical 2.
 
-### Activity 3 - Introduction to the Text Editor (vim)
+### Activity 3 - Control Structures (1a) if_elif_else (Bruce)
  
-We are going to use the vim text editor to create your README file for Prac01. Vim
-is an enhanced version of vi – a visual, interactive editor. There is an Introduction to
-Vi document and a “cheat-sheet” on Blackboard, but you should work through this prac before 
-try ing it.
- 
-If you're not already there, change directory into the Prac00 directory and create the README file:
+The previous code ran from the first line to the end, and will do so every time it runs. The if_elif_else
+control structure can choose between different pieces of code. We need to put a Boolean condition into the 
+```if``` or ```elif``` which Python will evaluate and choose a path through the code.
 
-```
-> cd Prac00
-> vim README
-```
- 
-You will now be in the vim text editor with an empty file. Vim has two modes –
-command mode (where you can move around the file and use commands) and insert
-text mode. Type “i” to go into insert mode and type in the following README
-information for Practical 1.
- 
-```
-## Synopsis
-Practical 0 of Fundamentals of Programming COMP1005/5005
- 
-## Contents
-README – readme file for Practical 0
- 
-## Dependencies
-none
- 
-## Version information
-<today’s date> - initial version of Practical 0 programs
-```
- 
-Press ```<esc>``` to exit insert mode, then :wq to save the file (w) and exit vim (q).
-Type:
-
-```
-ls -l
-```
- 
-(-l for long listing) and you will see that you have created a file called README, and it has
-a size and a date. We will make README files for all of our practicals to hold
-information about the files in that directory.
-
-### Activity 4 - Welcome to Python!
- 
-Below is a simple program to get you used to the editor and running python scripts.
-To create a file for the program, type:
- 
-```
-vim hello.py
-```
- 
-Then type in the following code... It is important to type it yourself and not copy/paste
-– this is how you will learn and remember!
+As an example, enter the following code, ```bruces.py```:
 
 ```python
 #
-# hello.py: Print out greetings in various languages
+# bruces.py - let's call everyone "Bruce", to avoid confusion
 #
-print('Hello')
-print("G'day")
-print('Bula')
-print("Kia ora")
+name = input("\nHey cobber, what's your name? ")
+if name != "Bruce":
+   print("Sorry,", name,"- your name's not Bruce?")
+   print("That's goin to cause a little confusion.")
+   print("Mind if we call you 'Bruce' to keep it clear?")
+   name = "Bruce"
+print("G'day", name, "!!!\n")
 ```
 
-To run the program, type:
- 
+We can enhance the program to congratulate anyone who is actually called Bruce... update the code as below.
+
+```python
+name = input("What is your name? ")
+if name != "Bruce":
+   print("Sorry,", name,"- your name's not Bruce?")
+   print("That's going to cause a little confusion.")
+   print("Mind if we call you 'Bruce' to keep it clear?")
+   name = "Bruce"
+else:
+   print("Excellent! That saves a lot of confusion!")
+print("G'day", name)
 ```
-python3 hello.py
+
+::::::::::::::::::::::::::::::::::::: challenge 
+
+## Challenge 2: Testing, testing...
+
+Looking at the above code, what inputs might you use to test it is working correctly?
+:::::::::::::::::::::::: solution 
+
+## Solution
+
+Enter "Bruce" and something other than "Bruce" to test both paths through the code. Note that "Bruce" and "bruce" are not equal. 
+
+:::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::
+
+### Activity 4 - Control Structures (1b) if_elif_else (Guess who?)
+ 
+To work through some more complex if_elif_else code, we'll identify the members of Monty Python:
+
+- Graham Chapman - died 1989, cancer
+- John Cleese - moustached
+- Terry Gilliam - animator, bearded
+- Eric Idle - composer, clean-shaven
+- Terry Jones - died 2020, dementia
+- Michael Palin - traveller, clean-shaven
+
+The indenting indicates the start and end of each ``if_elif_else``` clause. Reducing the indent closes the clause, continuing the indent extends the included block. It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
+
+```python
+#
+# whichone.py - asks questions to find your Python
+#
+print("\nFind the mystery Python!\n")
+print("Enter Y/N to the following questions...")
+male = input("Are you male? ")
+if male != "Y":
+    print("Not *technically* a python, however...")
+    mystery = "Carole Cleveland"
+else:
+    beard = input("Do you have a beard? ")
+    if beard == "Y":
+        mystery = "Terry Gilliam"
+    else:
+        alive = input("Are you still alive? ")
+        if alive != "Y":
+            dementia = input("Did you have dementia? ")
+            if dementia == "Y":
+                mystery = "Terry Jones"
+            else:
+                mystery = "Graham Chapman"
+        else:
+            mo = input("Do you have a moustache? ")
+            traveller = input("Are you a traveller? ")
+            if mo == "Y":
+                mystery = "John Cleese"
+            elif traveller == "Y":
+                mystery = "Michael Palin"
+            else:
+                mystery = "Eric Idle"
+print("\nYour mystery Python is: ", mystery, "\n")
 ```
- 
-You will probably get an error message as a response (unless you typed it in
-perfectly). Don’t worry, check through your code for the error and try running it again.
-Go back into the file and make corrections – use the cursor keys to get to the position
-(<lineno>G). Some handy editing commands are:
- 
-* to delete a character type “x”
-* to delete a line “dd”
-* to delete a word “dw”
-* to change a word “cw”
-* to insert/append after the end of the current line, type “A”
-* to undo the last command, type “u”
-* to redo the last command, type “.”
 
-Save the file and try to run it again. If you’re having trouble, ask your tutor, or even
-the person next to you, to see if they can find what’s wrong. Sometimes it takes
-someone else’s fresh and/or experienced eyes to see an error. This is called
-“debugging” and the reward comes when the code finally runs!
+This one is a bit harder to test - see if you can get to every one of the Pythons.
 
-Try adding some more greetings of your own...
-
- 
-### Activity 5 - Updating the README
+### Activity 5 - Control Structures (2) while loops 
  
 You now have a program and a README in the Prac00 directory. Enter the name of each of them
 along with a description under “Contents” in the README file.
 
 ### Activity 6 - Making and submitting a zip file
  
-To bundle up and compress files we can use zip/unzip. Similar programs are tar
-(Tape Archive) and gzip (GNU zip).
- 
-To make a zipped file for Practical 0, go to the Prac00 directory inside your FOP
+This Practical includes a directory structure, so we will use a **recursive** option
+on our zip command. To make a zipped file for Practical 01, go to FOP
 directory. Type pwd to check that you are in the right place.
  
 Create the zip file by typing:
 
 ```
-zip Prac00_<your_student_ID> *
+zip -r Prac01_<your_student_ID> Prac01
  
-e.g. zip Prac00_12345678 *
+e.g. zip -r Prac01_12345678 Prac01
 ```
  
-This will create a file **Prac00_<your_student_ID>.zip** which includes
-everything in your current directory – four programs and the README. You can check the
+This will create a file **Prac01_<your_student_ID>.zip** which includes
+everything in the Prac01 directory – including the directories, programs and the README. You can check the
 contents of the zip file by typing:
 
 ```
-unzip –l Prac00_<your_student_ID>.zip
+unzip –l Prac01_<your_student_ID>.zip
 ```
  
-### Activity 7 - Submission
+### Activity 8 - Submission
 
 All of your work for this week’s practical should be submitted via Blackboard using
-the Practical 0 link. This should be done as a single "zipped" file.
+the Practical 01 link. This should be done as a single "zipped" file.
 This is the file to submit through Blackboard. 
  
 There are no direct marks for these
@@ -350,15 +356,15 @@ submissions, but they may be taken into account when finalising your mark.
 Go to the Assessment link on Blackboard and click on Practical 0 for the submission
 page.
 
-### And that's the end of Practical 0!
+### And that's the end of Practical 1!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- We will be using Linux as our operating system for this unit
-- You can access Linux through [mydesktop.curtin.edu.au](https://mydesktop.curtin.edu.au) or install Python and a "Linux" shell on your home machine
-- Working on the command line, we will type in commands at the prompt, press enter, and wait for the computer's response
-- To create and edit a text file, we will be using vim - a program for editing text files
-- Once we have entered a Python program as a text file, with a ".py" extension, we can run the program by typing `python3 myprog.py`
+- input
+- if_elif_else
+- while loops
+- for loops
+- nesting control strucures
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -366,11 +372,9 @@ page.
 
 ### Reflection
  
-1. **Knowledge:** What are the two modes in vi / vim?
-2. **Comprehension:** What is the name of the lab machine you are working on?
-Hint: use the hostname command or look at the prompt.
-3. **Application:** What series of commands would you need to go to the directory
-FOP/assignment in your home directory and compress all the files?
+1. **Knowledge:** What are the three control structures we've learned?
+2. **Comprehension:** What is the difference between the control structures?
+3. **Application:** Give an example of where you might use each of the control structures?
 4. **Analysis:** What variable would you change in growth.py to have more
 iterations (steps) per hour?
 5. **Synthesis:** How would you code a for loop to print “Hello World!” 15 times?
@@ -385,9 +389,7 @@ For those who want to explore a bit more of the topics covered in this practical
 
 1. Have a look at other problems from the text book:
 http://press.princeton.edu/titles/10291.html
-2. Work through a Linux tutorial
-3. Work through a vi/vim tutorial
-4. Read some samples of README files for large projects -
-https://github.com/matiassingers/awesome-readme
+2. Write a similar program to whichone.py, to determine a mystery animal/sport/food
+3. How would growth.py change to be calculating compound interest?
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
