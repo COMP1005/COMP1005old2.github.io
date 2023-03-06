@@ -222,7 +222,7 @@ We always want to use the value collected in an ```input()``` call, so we can co
 into a single line. Also, the ```print()``` calls can be absorbed into the strings being printed out, by 
 including a ```\n``` to give a blank line. More on that in Lecture and Practical 2.
 
-### Activity 3 - Control Structures (1a) if_elif_else (Bruce)
+### Activity 3 - Control Structures: if_else
  
 The previous code ran from the first line to the end, and will do so every time it runs. The if_elif_else
 control structure can choose between different pieces of code. We need to put a Boolean condition into the 
@@ -275,18 +275,18 @@ Enter "Bruce" and something other than "Bruce" to test both paths through the co
 
 :::::::::::::::::::::::::::::::::::::
 
-### Activity 4 - Control Structures (1b) if_elif_else (Guess who?)
+### Activity 4 - Control Structures: if_elif_else
  
 To work through some more complex if_elif_else code, we'll identify the members of Monty Python:
 
 | Name           | Description | 
 |----------------|-------------|
 | Graham Chapman | died 1989, cancer |
-| John Cleese | not dead yet, moustached |
-| Terry Gilliam | animator, bearded |
-| Eric Idle | composer, clean-shaven |
-| Terry Jones | died 2020, dementia |
-| Michael Palin | traveller, clean-shaven |
+| John Cleese    | not dead yet, moustached |
+| Terry Gilliam  | animator, not dead yet, bearded |
+| Eric Idle      | composer, not dead yet, clean-shaven |
+| Terry Jones    | died 2020, dementia |
+| Michael Palin  | not dead yet, traveller, clean-shaven |
 
 
 Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
@@ -327,12 +327,130 @@ print("\nYour mystery Python is: ", mystery, "\n")
 
 This one is a bit harder to test - see if you can get to every one of the Pythons.
 
-### Activity 5 - Control Structures (2) while loops 
+### Activity 5 - Control Structures: For loops 
  
-You now have a program and a README in the Prac00 directory. Enter the name of each of them
-along with a description under “Contents” in the README file.
+When we take input from the user, it is read in as a string. These are characters - so we need to convert them to actually use them as numbers. The following code demonstrates this conversion.
 
-### Activity 6 - Making and submitting a zip file
+```python
+#
+# num_convert.py: Read in number and convert to int and float
+#
+print('Enter a number...')
+numstr = input()
+print('Number =', numberstr, ' Type : ', str(type(numberstr)))
+numint = int(numberstr)
+print('Number =', number, ' Type : ', str(type(number)))
+numfloat = float(numberstr)
+print('Number =', number, ' Type : ', str(type(number)))
+
+
+Notice how the two print statements print the same number (well, it looks the same), but their variable types are different? Everything you read in will be a string. If you want a number, you'll need to convert it with the int() or float() functions.
+
+
+Now we are going to read in ten numbers and add up their total. As we know in advance the number of numbers we want, we can use a ```for`` loop.
+ 
+```python
+#
+# num_for.py: Read in ten numbers and give sum of numbers 
+#
+print('Enter ten numbers...')
+total = 0
+ 
+for i in range(10):
+    print('Enter a number (', i, ')...')
+    number = int(input())
+    total = total + number
+print('Total is ', total)
+```
+ 
+Save and exit the file and try running it. What are the values that variable "i" holds each time through the loop? How would you change the for loop in the program to request five numbers be entered.
+
+Have you noticed that the code changes colour as you type? This is syntax highlighting. When you’re in command mode in vim you can type ```:syntax off``` and ```:syntax on``` to turn it off/on.
+
+### Activity 6 - Control Structures: While loops 
+
+Sometimes we don't know how many loops we want to make, but we will know when we get there - we can test a condition (similar to an ```if``` control structure). In this code we will enter numbers, and type in a negative number to exit the loop. This is called a **sentinal value**.
+
+#
+# num_while.py: Read in a list of numbers (negative to exit) and
+#               give the sum of the numbers
+count = 0
+total = 0
+print("Enter a list of numbers, negative to exit...")
+number = int(input())
+while number >= 0:
+    count += 1           #equivalent to count = count + 1
+    total += number      #equivalent to total = total + number
+    print("Next number...")
+    number = int(input())
+print("Total is ", total, " and count is ", count)
+ 
+Save and exit and then run num_while.py. How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
+
+### Activity 7 - And Now For Something Completely Different 
+ 
+Now for a simple systems model... Unconstrained Growth and Decay.
+
+::: callout
+From the "Introduction to Computational Science" text:
+“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”
+:::
+
+So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and provides background to these types of models.
+
+We are going to write Python code for simulating unconstrained growth based on the following pseudocode from the text:
+ 
+::: callout
+
+## Algorithm 2 - simulation of unconstrained growth
+
+initialise simulation length
+initialise population
+initialise growth rate
+initialise (length of) time step
+number of iterations = simulation length / time step growth rate (per step) = growth rate * time step
+for i = 0 to number of iterations-1 do
+growth = growth rate (per step) * population population = population + growth
+time = i * time step
+display time, growth, population
+Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
+:::
+
+```python
+#
+# growth.py - simulation of unconstrained growth
+#
+print("\nSIMULATION - Unconstrained Growth\n")
+length = 10
+population = 100
+growth_rate = 0.1
+time_step = 0.5
+num_iter = length / time_step
+growth_step = growth_rate * time_step
+print("INITIAL VALUES:\n")
+print("Simulation Length (hours): ", length)
+print("Initial Population: ", population)
+print("Growth Rate (per hour): ", growth_rate)
+print("Time Step (part hour per step): ", time_step)
+print("Num iterations (sim length * time step per hour): ",
+num_iter)
+print("Growth step (growth rate per time step): ",
+growth_step)
+print("\nRESULTS:\n")
+print("Time: ", 0, " \tGrowth: ", 0, " \tPopulation: ", 100)
+for i in range(1, int(num_iter) + 1 ):
+    growth = growth_step * population
+    population = population + growth
+    time = i * time_step
+    print("Time: ", time, " \tGrowth: ", growth,
+          " \tPopulation: ", population)
+print("\nPROCESSING COMPLETE.\n")
+```
+
+Type in the code and run it. Can you see why the for loop was changed from 0 to num_iter to 1 to num_iter+1?
+
+
+### Activity 8 - Making and submitting a zip file
  
 This Practical includes a directory structure, so we will use a **recursive** option
 on our zip command. To make a zipped file for Practical 01, go to FOP
@@ -354,7 +472,7 @@ contents of the zip file by typing:
 unzip –l Prac01_<your_student_ID>.zip
 ```
  
-### Activity 8 - Submission
+### Activity 9 - Submission
 
 All of your work for this week’s practical should be submitted via Blackboard using
 the Practical 01 link. This should be done as a single "zipped" file.
