@@ -200,6 +200,18 @@
 </div>
 <!--/div.accordion-flush-->
 
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="prac02.html">3. Prac02: Strings and Lists</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
                 </div>
               </div>
             </div>
@@ -769,7 +781,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>cd The/Holy/Grail</code></pre>
 </div>
@@ -925,7 +937,7 @@ working correctly?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Enter “Bruce” <strong>and then</strong> something other than “Bruce”
 to test both paths through the code. Note that “Bruce” and “bruce” are
@@ -1127,7 +1139,7 @@ exit on <strong>zero</strong> instead of negative numbers?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code>while number != 0:</code></pre>
 </div>
@@ -1248,7 +1260,7 @@ which follows the Algorithm on page 25.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Time step 0 is the initial step, before the loop. Our loop will go
 through num_iter times, starting at one. Loops usually go from 0 to
@@ -1364,6 +1376,434 @@ this practical.</p>
 <li>Write a similar program to whichone.py, to determine a mystery
 animal/sport/food</li>
 <li>How would growth.py change to be calculating compound interest?</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div></section><section id="aio-prac02"><p>Content from <a href="prac02.html">Prac02: Strings and Lists</a></p>
+<hr>
+<p> Last updated on 2023-03-08 | 
+        
+        <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac02.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do I work with string values and variables?</li>
+<li>How do I access the elements of strings and lists?</li>
+<li>How can I use random numbers to simulate real world situations?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ol style="list-style-type: decimal">
+<li>Define and use more complex datatypes (strings and lists) and
+variations on control structures</li>
+<li>Use slicing and indexing to access elements in a list</li>
+<li>Use a supplied Python package to provide random number options</li>
+<li>Understand and implement simple Monte Carlo algorithms</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
+<p>In this practical we will enter and modify programs to work with and
+explore strings and lists. We will then use random numbers to select
+list items without replacement. The final two tasks will implement two
+Monte Carlo algorithms: calculating Pi and tossing coins.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-1---setting-up-for-the-practical">Activity 1 - Setting up for the practical<a class="anchor" aria-label="anchor" href="#activity-1---setting-up-for-the-practical"></a>
+</h3>
+<p>Login to the computers as in Practical 1. Within your home directory
+(/home/student_id) you should have the following structure:</p>
+<pre><code>FOP
+ |-- Prac00
+ |-- Prac01
+ |-- Prac02
+ |-- Prac03
+ |-- Prac04
+ |-- Prac05
+ |-- Prac06
+ |-- Prac07
+ |-- Prac08
+ |-- Prac09
+ |-- Prac10
+ |-- Prac11</code></pre>
+<p>Type <code>ls FOP</code> from your home directory to check your
+directory structure.</p>
+<p>We will be working in the <code>Prac02</code> directory today. If you
+do not have the directory structure correct, your tutor can help you to
+rearrange it.</p>
+<p>Copy the <code>README</code> file from your <code>Prac01</code>
+directory to your <code>Prac02</code> directory. Use
+<code>cp ../Prac01/README .</code> from within the <code>Prac02</code>
+directory, then <code>vim README</code> to edit. Update the
+<code>README</code> to refer to <code>Prac02</code> and include the
+correct date.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-2---everybody-loves-strings">Activity 2 - Everybody loves string(s)!<a class="anchor" aria-label="anchor" href="#activity-2---everybody-loves-strings"></a>
+</h3>
+<p>Strings are very important in Python and the language provides
+powerful options to manipulate strings. The code below shows three
+different approaches to printing out a string in reverse:
+<strong>while</strong> loops; <strong>for</strong> loops and using
+<strong>slicing</strong>.</p>
+<p>Enter the foloowing code as <code>strings1.py</code>…</p>
+<pre><code>#
+# strings1.py: Read in a string and print it in reverse
+#              using a loop and a method call
+
+instring = input('Enter a string... ')
+
+# *** add (2) upper and (3) duplicating code here
+
+# reversing with a while loop
+print('Reversed string is : ', end='')
+index = len(instring)-1
+while index &gt; -1:
+    print(instring[index], end='')
+    index = index - 1
+print()
+
+# reversing with a for-range loop
+print('Reversed string is : ', end='')
+for index in range(len(instring)-1, -1, -1):
+    print(instring[index], end='')
+print()
+
+# reversing with slicing
+print('Reversed string is :', instring[len(instring)-1:-1:-1])</code></pre>
+<p>Test out the code to understand how it works. Note that in each
+case:</p>
+<ul>
+<li>
+<strong>start</strong> value is <code>len(instring)-1</code>
+</li>
+<li>
+<strong>stop</strong> value is <code>-1</code>
+</li>
+<li>
+<strong>step</strong> value is <code>-1</code>
+</li>
+</ul>
+<p>Next, copy <code>strings1.py</code> to <code>strings2.py</code> and
+make the following changes…</p>
+<ol style="list-style-type: decimal">
+<li>Change the <strong>start</strong>, <strong>stop</strong> and
+<strong>step</strong> values in each approach to print the string
+forwards (instead of in reverse).</li>
+<li>Update instring to uppercase (so that ‘abcd’ becomes ‘ABCD’)</li>
+<li>Update instring to duplicate the string (ABCD becomes ABCDABCD)</li>
+<li>Modify each of the three approaches print out every second character
+(ABCDABCD becomes ACAC)</li>
+<li>Modify each of the three approaches print out every second
+character, excluding the first and last (ABCDABCD becomes BDB)</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="activity-3---variables-are-like-buckets">Activity 3 - Variables are like Buckets…<a class="anchor" aria-label="anchor" href="#activity-3---variables-are-like-buckets"></a>
+</h3>
+<p><strong>The Bucket List</strong> is a movie from 2007 where two men
+work through a list of experiences they aim to have in life. This task
+will have you work with their bucket list. The code below defines
+<code>bucket1</code> directly as a list, then appends three values. To
+delete a value we can use the index of the item in the list
+<code>del bucket1[5]</code> or by value
+<code>bucket1.remove("Skydiving")</code>. We then create a second list
+<code>bucket2</code> and make a new list <code>bucket</code> from
+<code>bucket1 + bucket2</code>. Finally we insert a new item and print
+out the buckets.</p>
+<pre><code>#
+# bucket1.py - use a python list for items in a bucket list
+#
+print('\nBUCKET LIST\n')
+bucket1 = ['Witness something truly majestic',
+          'Help a complete stranger',
+          'Laugh until I cry','Drive a Shelby Mustang']
+bucket1.append('Kiss the most beautiful girl in the world')
+bucket1.append('Get a tattoo')
+bucket1.append('Skydiving')
+del bucket1[5]
+bucket2 = ['Visit Stonehenge',
+           'Drive a motorcycle on the Great Wall of China',
+           'Go on a Safari','Visit the Taj Mahal',
+           'Sit on the Great Egyptian Pyramids',
+           'Find the Joy in your life']
+print('Bucket 1: ', bucket1)
+print('Bucket 2: ', bucket2)
+bucket = bucket1 + bucket2
+bucket.insert(5, 'Get a tattoo')
+print('Joined buckets: ', bucket)
+print('\nNicer formatting....\n')
+for item in bucket:
+    print(item)</code></pre>
+<p>We will now create a bucket list builder to interactively create a
+new bucket list…</p>
+<pre><code>#
+# bucket2.py - bucket list builder
+#
+print('\nBUCKET LIST BUILDER\n')
+bucket = []
+choice = input('Enter selection: e(X)it, (A)dd, (L)ist...')
+while choice[0] != 'X':
+    if choice[0] == 'A':
+        print('Enter list item... ')
+        newitem = input()
+        bucket.append(newitem)
+    elif choice[0] == 'L':
+        for item in bucket:
+print(item)
+    else:
+        print('Invalid selection.')
+    choice = input('Enter selection: e(X)it, (A)dd, (L)ist..')
+print('\nGOODBYE!\n')</code></pre>
+<p>Modify the code to:</p>
+<ol style="list-style-type: decimal">
+<li>Accept lowercase as well as uppercase letters as choices (hint:
+convert the inputs to upper())</li>
+<li>Provide an option for deleting items (hint: del
+bucket[int(delitem)])</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="activity-4---assorted-creams">Activity 4 - Assorted Creams<a class="anchor" aria-label="anchor" href="#activity-4---assorted-creams"></a>
+</h3>
+<p>This program generates a list of items then prints out each selected
+item before deleting it. We are using a “without replacement” approach
+as the selected items are no longer part of the pool to be selected.</p>
+<pre><code>#
+# assorted.py - selecting random biscuits from a pack
+#
+import random
+biscuits = []
+biscuits.extend(['Monte Carlo']*7)
+biscuits.extend(['Shortbread Cream']*7)
+biscuits.extend(['Delta Cream']*6)
+biscuits.extend(['Orange Slice']*6)
+biscuits.extend(['Kingston']*5)
+print('\nASSORTED CREAMS\n')
+print('There are ', len(biscuits), ' biscuits in the pack.')
+print('\n', biscuits, '\n')
+more = input('\nWould you like a biscuit (Y/N)... ')
+while more != 'N':
+    choice = random.randint(0,len(biscuits)-1)
+    print('Your biscuit is : ', biscuits[choice])
+    del biscuits[choice]
+    more = input('\nWould you like a biscuit (Y/N)...')
+print('\nThere are ', len(biscuits), ' biscuits left.')
+print('\n', biscuits, '\n')</code></pre>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+</h3>
+<div class="callout-content">
+<p>Modify the code to check if the pack is empty before continuing the
+loop.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">
+  Hint 1
+  </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div class="accordion-body">
+<p>The condition on the <code>while more != 'N':</code> can be extended
+to have a second condition:
+<code>while condition1 and condition2:</code></p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">
+  Hint 2
+  </h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div class="accordion-body">
+<p>Check the length of the biscuit list</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">
+  Answer
+  </h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div class="accordion-body">
+<p><code>while more != 'N' and len(biscuits) &gt; 0:</code></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="activity-5---method-of-darts">Activity 5 - Method of Darts<a class="anchor" aria-label="anchor" href="#activity-5---method-of-darts"></a>
+</h3>
+<p>The lecture slides include code for calculating Pi using the
+<em>Method of Darts</em>.</p>
+<p>Type the code in as <code>darts.py</code> and explore the accuracy
+you can achieve.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-6---tossing-coins">Activity 6 - Tossing Coins<a class="anchor" aria-label="anchor" href="#activity-6---tossing-coins"></a>
+</h3>
+<p>In this program we will toss a coin 1000 times and see how many heads
+or tails we count.</p>
+<pre><code>#
+# cointoss.py - simulate tossing a coin multiple times
+#
+import random
+coin = ['heads','tails']
+heads = 0
+tails = 0
+trials = 1000
+print('\nCOIN TOSS\n')
+for index in range(trials):
+    if random.choice(coin) == 'heads':
+        heads = heads + 1
+    else:
+        tails = tails + 1
+print('\nThere were ', heads, ' heads &amp; ', tails, ' tails.\n')</code></pre>
+<p>Modify the code to ask the user to enter the number of tosses.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-7---practice-debugging-code">Activity 7 - Practice Debugging Code<a class="anchor" aria-label="anchor" href="#activity-7---practice-debugging-code"></a>
+</h3>
+<p>FIXME</p>
+</div>
+<div class="section level3">
+<h3 id="activity-8---scaffolded-challenge">Activity 8 - Scaffolded Challenge<a class="anchor" aria-label="anchor" href="#activity-8---scaffolded-challenge"></a>
+</h3>
+<p>FIXME</p>
+</div>
+<div class="section level3">
+<h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a>
+</h3>
+<p>All of your work for this week’s practical should be submitted via
+Blackboard using the Practical 02 link. This should be done as a single
+“zipped” file. Submit the resulting file through Blackboard. (refer to
+Practical 00 or 01 for instructions on zipping files.</p>
+<p>There are no direct marks for these submissions, but they may be
+taken into account when finalising your mark for the unit. Go to the
+Assessment link on Blackboard and click on Practical 02 for the
+submission page.</p>
+<p><strong>NOTE: when you leave the class you should “logout” through
+the menus. Do not shut down the machine!</strong></p>
+</div>
+<div class="section level3">
+<h3 id="and-thats-the-end-of-practical-02">And that’s the end of Practical 02!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-02"></a>
+</h3>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div id="reflection" class="callout-inner">
+<h3 class="callout-title">Reflection<a class="anchor" aria-label="anchor" href="#checklist1"></a>
+</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>
+<strong>Knowledge:</strong> What is the difference between append
+and extend when working with lists? Use Google and/or the Python
+documentation to find the answer.</li>
+<li>
+<strong>Comprehension</strong>: What random methods would we use to:
+<ol start="4" style="list-style-type: decimal">
+<li>generate floating point numbers?</li>
+<li>generate integers?</li>
+<li>choose between items in a list?</li>
+</ol>
+</li>
+<li>
+<strong>Application</strong>: How would you set up assorted.py to
+hold values to represent a small box of Smarties? There are 24 Smarties
+in a box, colours are yellow, green, pink, orange, blue, red, purple and
+brown. Each equally likely.</li>
+<li>
+<strong>Analysis</strong>: Why is the effect of testing against
+c<code>hoice[0]</code> in bucket2.py, as opposed to <code>choice</code>
+as a whole?</li>
+<li>
+<strong>Synthesis</strong>: How would you modify the
+<code>assorted.py</code> code to make it “with replacement”?</li>
+<li>
+<strong>Evaluation</strong>: Which of the three approaches for
+reversing a string do you recommend, and why?</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>For those who want to explore a bit more of the topics covered in
+this practical. Note that the challenges are not assessed but may form
+part of the prac tests or exam.</p>
+<ol style="list-style-type: decimal">
+<li>Modify <code>cointoss.py</code> to model a six-sided dice being
+thrown.</li>
+<li>Modify <code>assorted.py</code> to have the list represent a pack of
+playing cards (instead of biscuits). Select and print out two 5-card
+hands.</li>
+<li>Modify <code>darts.py</code> to calculate the area of a triangle
+with coords(0,0),(1,0),(0.5,1)</li>
+<li>Consider the image of a bingo card that is attached to the
+practical. Write a program to generate a bingo card. (Note: this wont be
+easy!)</li>
 </ol>
 </div>
 </div>
