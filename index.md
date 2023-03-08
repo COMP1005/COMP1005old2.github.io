@@ -8,7 +8,7 @@ COMP1005 Practical Worksheets are being updated, and will be linked below:
 
 - [Practical 00 - Introduction to Linux](prac00.html)
 - [Practical 01 - Introduction to Python](prac01.html)
-- Practical 02 - Lists and Strings
+- [Practical 02 - Lists and Strings](prac02.html)
 - Practical 03 - Arrays and Plotting
 - Practical 04 - Multi-dimensional Arrays and Functions
 - Practical 05 - Files and Grids
