@@ -306,11 +306,11 @@ Type it in as ```num_convert.py``` in the ```Prac01``` directory.
 #
 print('Enter a number...')
 numstr = input()
-print('Number =', numberstr, ' Type : ', str(type(numberstr)))
-numint = int(numberstr)
-print('Number =', number, ' Type : ', str(type(number)))
-numfloat = float(numberstr)
-print('Number =', number, ' Type : ', str(type(number)))
+print('Number =', numstr, ' Type : ', str(type(numstr)))
+numint = int(numstr)
+print('Number =', numint, ' Type : ', str(type(numint)))
+numfloat = float(numstr)
+print('Number =', numfloat, ' Type : ', str(type(numfloat)))
 ```
 
 Notice how the first two print statements print the same number (well, it looks the same), 
