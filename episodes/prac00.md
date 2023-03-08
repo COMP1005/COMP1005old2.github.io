@@ -248,7 +248,7 @@ e.g. zip Prac00_12345678 *
 ```
  
 This will create a file **Prac00_<your_student_ID>.zip** which includes
-everything in your current directory – four programs and the README. You can check the
+everything in your current directory – one program and the README. You can check the
 contents of the zip file by typing:
 
 ```
