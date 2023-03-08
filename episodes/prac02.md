@@ -104,11 +104,16 @@ Next, copy ```strings1.py``` to ```strings2.py``` and make the following changes
 5. Modify each of the three approaches print out every second character, excluding the first and last (ABCDABCD becomes
 BDB)
 
-### Activity 3 - Bucket List
+### Activity 3 - Variables are like Buckets...
 
-The Bucket List is a movie from 2007 where two men work through a list of things they want to do in life. This task will have you work with their bucket list.
-You will define bucket1 directly as a list, then append three values. Deleting a value uses the index of the item in the list (e.g. del bucket1[5] ) We then create a second list and make a new list bucket fomr bucket1 + bucket2. Finally we insert a new item and print out the buckets.
+**The Bucket List** is a movie from 2007 where two men work through a list of experiences they aim to have in life. 
+This task will have you work with their bucket list. The code below defines ```bucket1``` directly as a list, then appends 
+three values. To delete a value we can use the index of the item in the list ```del bucket1[5]``` 
+or by value ```bucket1.remove("Skydiving")```. We then create a second list ```bucket2``` 
+and make a new list ```bucket``` from ```bucket1 + bucket2```. 
+Finally we insert a new item and print out the buckets.
  
+```
 #
 # bucket1.py - use a python list for items in a bucket list
 #
@@ -133,8 +138,11 @@ print('Joined buckets: ', bucket)
 print('\nNicer formatting....\n')
 for item in bucket:
     print(item)
+```
+
 We will now create a bucket list builder to interactively create a new bucket list...
  
+```
 #
 # bucket2.py - bucket list builder
 #
@@ -153,283 +161,132 @@ print(item)
         print('Invalid selection.')
     choice = input('Enter selection: e(X)it, (A)dd, (L)ist..')
 print('\nGOODBYE!\n')
- Modify the code to:
-1. Acceptlowercaseaswellasuppercaselettersaschoices(hint:upper())
-2. Provideanoptionfordeletingitems(hint:delbucket[int(delitem)])
+```
 
-### Activity 4 - Control Structures: if_elif_else + nesting
+Modify the code to:
+
+1. Accept lowercase as well as uppercase letters as choices (hint: convert the inputs to upper())
+2. Provide an option for deleting items (hint: del bucket[int(delitem)])
+
+### Activity 4 - Assorted Creams
+
+This program generates a list of items then prints out each selected item before deleting it. 
+We are using a “without replacement” approach as the selected items are no longer part of the 
+pool to be selected.
+
+```
+#
+# assorted.py - selecting random biscuits from a pack
+#
+import random
+biscuits = []
+biscuits.extend(['Monte Carlo']*7)
+biscuits.extend(['Shortbread Cream']*7)
+biscuits.extend(['Delta Cream']*6)
+biscuits.extend(['Orange Slice']*6)
+biscuits.extend(['Kingston']*5)
+print('\nASSORTED CREAMS\n')
+print('There are ', len(biscuits), ' biscuits in the pack.')
+print('\n', biscuits, '\n')
+more = input('\nWould you like a biscuit (Y/N)... ')
+while more != 'N':
+    choice = random.randint(0,len(biscuits)-1)
+    print('Your biscuit is : ', biscuits[choice])
+    del biscuits[choice]
+    more = input('\nWould you like a biscuit (Y/N)...')
+print('\nThere are ', len(biscuits), ' biscuits left.')
+print('\n', biscuits, '\n')
+```
+
+:::::: challenge
+
+Modify the code to check if the pack is empty before continuing the loop.
+
+::::: solution
+
+## Hint 1
+
+The condition on the ```while more != 'N':``` can be extended to have a second condition:
+```while condition1 and condition2:```
+
+:::::
+
+::::: solution
+
+## Hint 2
+
+Check the length of the biscuit list
+
+:::::
+
+::::: solution
+
+## Answer
+
+```while more != 'N' and len(biscuits) > 0:```
+
+:::::
+
+::::::
+
+
+### Activity 5 - Method of Darts
+
+The lecture slides include code for calculating Pi using the *Method of Darts*. 
+
+Type the code in as ```darts.py``` and explore the accuracy you can achieve.
+
+### Activity 6 - Tossing Coins
+
+In this program we will toss a coin 1000 times and see how many heads or tails we count.
  
-To work through some more complex if_elif_else code, we'll write a program to identify the members of Monty Python:
-
-| Name           | Description | 
-|----------------|-------------|
-| Graham Chapman | died 1989, cancer |
-| John Cleese    | not dead yet, moustached |
-| Terry Gilliam  | animator, not dead yet, bearded |
-| Eric Idle      | composer, not dead yet, clean-shaven |
-| Terry Jones    | died 2020, dementia |
-| Michael Palin  | not dead yet, traveller, clean-shaven |
-
-
-For this exercise, enter your code as ```which.py``` in the ```Monty/Pythons``` directory. Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
-
-```python
+```
 #
-# which.py - asks questions to find your Python
+# cointoss.py - simulate tossing a coin multiple times
 #
-print("\nFind the mystery Python!\n")
-print("Enter Y/N to the following questions...")
-male = input("Are you male? ")
-if male == "Y":
-    beard = input("Do you have a beard? ")
-    if beard == "Y":
-        mystery = "Terry Gilliam"
+import random
+coin = ['heads','tails']
+heads = 0
+tails = 0
+trials = 1000
+print('\nCOIN TOSS\n')
+for index in range(trials):
+    if random.choice(coin) == 'heads':
+        heads = heads + 1
     else:
-        alive = input("Are you still alive? ")
-        if alive != "Y":
-            dementia = input("Did you have dementia? ")
-            if dementia == "Y":
-                mystery = "Terry Jones"
-            else:
-                mystery = "Graham Chapman"
-        else:
-            mo = input("Do you have a moustache? ")
-            traveller = input("Are you a traveller? ")
-            if mo == "Y":
-                mystery = "John Cleese"
-            elif traveller == "Y":
-                mystery = "Michael Palin"
-            else:
-                mystery = "Eric Idle"
-else:
-    print("Not *technically* a python, however...")
-    mystery = "Carole Cleveland"
-print("\nYour mystery Python is: ", mystery, "\n")
-```
-
-This one is a bit harder to test - see if you can get to every one of the Pythons.
-
-### Activity 5 - Control Structures: For loops 
- 
-When we take input from the user, it is read in as a string. These are characters - so we need to 
-convert them to actually use them as numbers. The following code demonstrates this conversion.
-
-Type it in as ```num_convert.py``` in the ```Prac01``` directory.
-
-```python
-#
-# num_convert.py: Read in number and convert to int and float
-#
-print('Enter a number...')
-numstr = input()
-print('Number =', numstr, ' Type : ', str(type(numstr)))
-numint = int(numstr)
-print('Number =', numint, ' Type : ', str(type(numint)))
-numfloat = float(numstr)
-print('Number =', numfloat, ' Type : ', str(type(numfloat)))
-```
-
-Notice how the first two print statements print the same number (well, it looks the same), 
-but their variable types are different? Everything you read in will be a string. If 
-you want a number, you'll need to convert it with the int() or float() functions.
-
-Testing this code will show you some easy ways to break a program. We'll learn later how to make the code more robust 
-(spoiler - it's exception handling).
-
-Now we are going to read in ten numbers and add up their total. As we know in advance how many 
-of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
- 
-```python
-#
-# num_for.py: Read in ten numbers and give sum of numbers 
-#
-print('Enter ten numbers...')
-total = 0
- 
-for i in range(10):
-    print('Enter a number (', i, ')...')
-    number = int(input())
-    total = total + number
-print('Total is ', total)
+        tails = tails + 1
+print('\nThere were ', heads, ' heads & ', tails, ' tails.\n')
 ```
  
-Save and exit the file and try running it. What are the values that variable "i" holds each time 
-through the loop? How would you change the for loop in the program to request five numbers be entered.
+Modify the code to ask the user to enter the number of tosses.
 
-These ```for``` loops will **start** at zero and go up to, but not including, the **stop** value. 
-
-- ```for i in range(10):``` will give us ```i = 0,1,2,3,4,5,6,7,8,9```
-- ```for i in range(5):``` will give us ```i = 0,1,2,3,4```
-- ```for i in range(1,6):``` will give us ```i = 1,2,3,4,5```
-
-### Activity 6 - Control Structures: While loops 
-
-Sometimes we don't know how many loops we want to make, but we will know when we get there - we can 
-test a condition (similar to an ```if``` control structure). In this code we will enter numbers, and 
-type in a negative number to exit the loop. This is called a **sentinel value**.
-
-Type it in as ```num_while.py``` in the ```Prac01``` directory.
-
-```
-#
-# num_while.py: Read in a list of numbers (negative to exit) and
-#               give the sum of the numbers
-count = 0
-total = 0
-print("Enter a list of numbers, negative to exit...")
-number = int(input())
-while number >= 0:
-    count += 1           # equivalent to count = count + 1
-    total += number      # equivalent to total = total + number
-    print("Next number...")
-    number = int(input())
-print("Total is ", total, " and count is ", count)
-```
-
-Save and exit and then run ```num_while.py```. 
-
-:::::: challenge
-
-How would you need to change the while loop in the code to have it exit on **zero** instead of negative numbers?
-
-::::: solution
-
-```
-while number != 0:
-```
-
-:::::
-
-::::::
-
-### Activity 7 - And Now For Something Completely Different 
+### Activity 7 - Practice Debugging Code
  
-Now for a simple systems model... Unconstrained Growth and Decay.
+FIXME
 
-::::: callout
-
-## From the "Introduction to Computational Science" text:
-
-*“Many situations exist where the rate at which an amount is changing is proportional to the amount present. Such might be the case for a population, say of people, deer, or bacteria. When money is compounded continuously, the rate of change of the amount is also proportional to the amount present. For a radioactive element, the amount of radioactivity decays at a rate proportional to the amount present.”*
-
-:::::
-
-So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). 
-Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and 
-provides background to these types of models.
-
-We are going to write Python code for simulating unconstrained growth based on the following pseudocode from the text:
+### Activity 8 - Scaffolded Challenge
  
-::::: callout
-
-## Algorithm 2 - simulation of unconstrained growth
-
-- initialise simulation length
-- initialise population
-- initialise growth rate
-- initialise (length of) time step
-- number of iterations = simulation length / time step growth rate (per step) = growth rate * time step
-- for i = 0 to number of iterations-1 do
-   - growth = growth rate (per step) * population population = population + growth
-   - time = i * time step
-   - display time, growth, population
-
-:::::
-
-Compare this to the following code. We are implementing the scenario which follows the Algorithm on page 25.
-
-Enter the code as ```growth.py``` in the ```And/Now/for/Something/Completely/Different``` directory.
-
-```python
-#
-# growth.py - simulation of unconstrained growth
-#
-print("\nSIMULATION - Unconstrained Growth\n")
-length = 10
-population = 100
-growth_rate = 0.1
-time_step = 0.5
-num_iter = length / time_step
-growth_step = growth_rate * time_step
-print("INITIAL VALUES:\n")
-print("Simulation Length (hours): ", length)
-print("Initial Population: ", population)
-print("Growth Rate (per hour): ", growth_rate)
-print("Time Step (part hour per step): ", time_step)
-print("Num iterations (sim length * time step per hour): ",
-num_iter)
-print("Growth step (growth rate per time step): ",
-growth_step)
-print("\nRESULTS:\n")
-print("Time: ", 0, " \tGrowth: ", 0, " \tPopulation: ", 100)
-for i in range(1, int(num_iter) + 1 ):
-    growth = growth_step * population
-    population = population + growth
-    time = i * time_step
-    print("Time: ", time, " \tGrowth: ", growth, "\tPopulation: ", population)
-print("\nPROCESSING COMPLETE.\n")
-```
-
-Type in the code and run it. 
-
-:::::: challenge
-
-Can you see why the for loop was changed from ```0``` to ```num_iter``` to ```1``` to ```num_iter+1```?
-
-::::: solution
-
-Time step 0 is the initial step, before the loop. Our loop will go through num_iter times, starting at one. 
-Loops usually go from 0 to maximum-1 to have maximum iterations. If we shift the start up by 1, we also have to 
-shift the stop value by 1.
-
-:::::
-
-::::::
-
-
-### Activity 8 - Making and submitting a zip file
- 
-This Practical includes a directory structure, so we will use a **recursive** option
-on our zip command. To make a zipped file for Practical 01, go to FOP
-directory. Type pwd to check that you are in the right place.
- 
-Create the zip file by typing:
-
-```
-zip -r Prac01_<your_student_ID> Prac01
- 
-e.g. zip -r Prac01_12345678 Prac01
-```
- 
-This will create a file **Prac01_<your_student_ID>.zip** which includes
-everything in the Prac01 directory – including the directories, programs 
-and the README. As before, you can check the contents of the zip file by typing:
-
-```
-unzip –l Prac01_<your_student_ID>.zip
-```
+FIXME
  
 ### Submission
 
 All of your work for this week’s practical should be submitted via Blackboard using
-the Practical 01 link. This should be done as a single "zipped" file.
-This is the file to submit through Blackboard. 
+the Practical 02 link. This should be done as a single "zipped" file.
+Submit the resulting file through Blackboard. (refer to Practical 00 or 01 for instructions
+on zipping files.
  
-There are no direct marks for these
-submissions, but they may be taken into account when finalising your mark.
-Go to the Assessment link on Blackboard and click on Practical 0 for the submission
-page.
+There are no direct marks for these submissions, but they may be taken into account 
+when finalising your mark for the unit. Go to the Assessment link on Blackboard and 
+click on Practical 02 for the submission page.
 
-### And that's the end of Practical 01!
+**NOTE: when you leave the class you should “logout” through the menus. Do not shut 
+down the machine!**
+
+### And that's the end of Practical 02!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- We use ```input()``` to get the user's input from the keyboard, and ```print()``` to output to the screen
-- To choose between parts of the code to run, we can use the ```if_elif_else``` control structure
-- If we want to repeat code, we can use ```for loops``` and ```while loops```
-- ```while loops``` continue until a condition is false - we don't know at the start how many times they will run
-- ```for loops``` repeat a set number of times, so we should use them when we know how many iterations we want
-- We can **nest** control strucures by indenting them inside each other
+- FIXME
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -437,22 +294,31 @@ page.
 
 ### Reflection
  
-1. **Knowledge:** What are the three control structures we've learned?
-2. **Comprehension:** What is the difference between the control structures?
-3. **Application:** Give an example of where you might use each of the control structures?
-4. **Analysis:** What variable would you change in growth.py to have more iterations (steps) per hour?
-5. **Synthesis:** How would you code a for loop to print “Hello World!” 15 times?
-6. **Evaluation:** What part of the prac did you find most challenging? (You can give feedback to the lecturer/tutor...)
+1. **Knowledge:** What is the difference between append and extend when working with 
+lists? Use Google and/or the Python documentation to find the answer.
+3. **Comprehension**: What random methods would we use to:
+   4. generate floating point numbers?
+   5. generate integers?
+   6. choose between items in a list?
+5. **Application**: How would you set up assorted.py to hold values to represent a 
+small box of Smarties? There are 24 Smarties in a box, colours are yellow, green, 
+pink, orange, blue, red, purple and brown. Each equally likely.
+7. **Analysis**: Why is the effect of testing against c```hoice[0]``` in bucket2.py, 
+as opposed to ```choice``` as a whole?
+9. **Synthesis**: How would you modify the ```assorted.py``` code to make it “with replacement”?
+10. **Evaluation**: Which of the three approaches for reversing a string do you recommend, and why?
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-For those who want to explore a bit more of the topics covered in this practical.
+For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
 
-1. Have a look at other problems from the text book:
-http://press.princeton.edu/titles/10291.html
-2. Write a similar program to whichone.py, to determine a mystery animal/sport/food
-3. How would growth.py change to be calculating compound interest?
+1. Modify ```cointoss.py``` to model a six-sided dice being thrown.
+2. Modify ```assorted.py``` to have the list represent a pack of playing cards (instead
+of biscuits). Select and print out two 5-card hands.
+3. Modify ```darts.py``` to calculate the area of a triangle with coords(0,0),(1,0),(0.5,1)
+4. Consider the image of a bingo card that is attached to the practical. Write 
+a program to generate a bingo card. (Note: this wont be easy!)
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
