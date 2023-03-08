@@ -255,7 +255,7 @@ To work through some more complex if_elif_else code, we'll write a program to id
 | Michael Palin  | not dead yet, traveller, clean-shaven |
 
 
-For this exercise, enter your code as ```which.py``` in the ```Monty/Python``` directory. Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
+For this exercise, enter your code as ```which.py``` in the ```Monty/Pythons``` directory. Indenting must be correct for this code to work! It can help to draw a ```flowchart``` to see/plan the flow of logic in your code.
 
 ```python
 #
@@ -350,7 +350,7 @@ These ```for``` loops will **start** at zero and go up to, but not including, th
 
 Sometimes we don't know how many loops we want to make, but we will know when we get there - we can 
 test a condition (similar to an ```if``` control structure). In this code we will enter numbers, and 
-type in a negative number to exit the loop. This is called a **sentinal value**.
+type in a negative number to exit the loop. This is called a **sentinel value**.
 
 Type it in as ```num_while.py``` in the ```Prac01``` directory.
 
