@@ -287,10 +287,11 @@ page.
 Hint: use the hostname command or look at the prompt.
 3. **Application:** What series of commands would you need to go to the directory
 FOP/assignment in your home directory and compress all the files?
-4. **Analysis:** What variable would you change in growth.py to have more
-iterations (steps) per hour?
-5. **Synthesis:** How would you code a for loop to print “Hello World!” 15 times?
-6. **Evaluation:** What part of the prac did you find most challenging? (You can
+4. **Analysis:** The code ```print("G'day")``` uses two types of quotation marks (single and double). 
+What would happen if they were all single quotes?
+5. **Synthesis:** The code in ```hello.py``` is a bit repetitious. What commands in vim can help you
+save time writing such code? (hint: you can copy and paste the common code, then edit it)
+6. **Evaluation/Reflection:** What part of the prac did you find most challenging? (You can
 give feedback to the lecturer/tutor...)
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -299,8 +300,6 @@ give feedback to the lecturer/tutor...)
 
 For those who want to explore a bit more of the topics covered in this practical.
 
-1. Have a look at other problems from the text book:
-http://press.princeton.edu/titles/10291.html
 2. Work through a Linux tutorial
 3. Work through a vi/vim tutorial
 4. Read some samples of README files for large projects -
