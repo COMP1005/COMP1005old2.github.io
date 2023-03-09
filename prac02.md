@@ -60,7 +60,7 @@ Strings are very important in Python and the language provides powerful options 
 strings. The code below shows three different approaches to printing out a string in reverse: 
 **while** loops; **for** loops and using **slicing**. 
 
-Enter the foloowing code as ```strings1.py```...
+Enter the following code as ```strings1.py```...
 
 ```
 #
@@ -98,8 +98,8 @@ Test out the code to understand how it works. Note that in each case:
 Next, copy ```strings1.py``` to ```strings2.py``` and make the following changes...
 
 1. Change the **start**, **stop** and **step** values in each approach to print the string forwards (instead of in reverse).
-2. Update instring to uppercase (so that ‘abcd’ becomes ‘ABCD’)
-3. Update instring to duplicate the string (ABCD becomes ABCDABCD)
+2. Update ```instring``` to uppercase (so that ‘abcd’ becomes ‘ABCD’)
+3. Update ```instring``` to duplicate the string (ABCD becomes ABCDABCD)
 4. Modify each of the three approaches print out every second character (ABCDABCD becomes ACAC)
 5. Modify each of the three approaches print out every second character, excluding the first and last (ABCDABCD becomes
 BDB)
@@ -107,8 +107,10 @@ BDB)
 ### Activity 3 - Variables are like Buckets...
 
 **The Bucket List** is a movie from 2007 where two men work through a list of experiences they aim to have in life. 
-This task will have you work with their bucket list. The code below defines ```bucket1``` directly as a list, then appends 
-three values. To delete a value we can use the index of the item in the list ```del bucket1[5]``` 
+This task will have you work with their bucket list. 
+
+The code below defines ```bucket1``` directly as a list, then appends 
+three values. To delete a value we can use the index of the item in the list ```del bucket1[6]``` 
 or by value ```bucket1.remove("Skydiving")```. We then create a second list ```bucket2``` 
 and make a new list ```bucket``` from ```bucket1 + bucket2```. 
 Finally we insert a new item and print out the buckets.
@@ -121,23 +123,30 @@ print('\nBUCKET LIST\n')
 bucket1 = ['Witness something truly majestic',
           'Help a complete stranger',
           'Laugh until I cry','Drive a Shelby Mustang']
+
 bucket1.append('Kiss the most beautiful girl in the world')
 bucket1.append('Get a tattoo')
 bucket1.append('Skydiving')
 del bucket1[5]
+
 bucket2 = ['Visit Stonehenge',
            'Drive a motorcycle on the Great Wall of China',
            'Go on a Safari','Visit the Taj Mahal',
            'Sit on the Great Egyptian Pyramids',
            'Find the Joy in your life']
+
 print('Bucket 1: ', bucket1)
 print('Bucket 2: ', bucket2)
 bucket = bucket1 + bucket2
 bucket.insert(5, 'Get a tattoo')
-print('Joined buckets: ', bucket)
+
+print('\nThe bucket list is:')
+print('Complete bucket list: ', bucket)
+
 print('\nNicer formatting....\n')
-for item in bucket:
-    print(item)
+
+for item in bucket:      # for-each loop
+    print(item)          # note improved formatting
 ```
 
 We will now create a bucket list builder to interactively create a new bucket list...
