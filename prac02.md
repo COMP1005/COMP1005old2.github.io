@@ -337,8 +337,8 @@ move the fish across the screen?
 
 We can multiply a space character by a number to make some spaces
 
-```
-print(n*" ", end="")
+```python
+print(n*" ")
 ```
 :::
 
@@ -350,7 +350,7 @@ print(n*" ", end="")
 You need a list of strings to represent the left and right fish to allow for the spaces to 
 be varied
 
-```
+```python
 leftfish = ["  /", " /\\/", " \\/\\", "  \\"]
 rightfish = ["  \\", " \\/\\", " /\\/", "  /"]
 ```
@@ -362,7 +362,7 @@ rightfish = ["  \\", " \\/\\", " /\\/", "  /"]
 
 You'll need another loop to work out how many spaces to printbefore the fish
 
-```
+```python
 for s in range(10):
     for i in range(len(rightfish)):
         print(s*" ", rightfish[i])
@@ -429,7 +429,15 @@ down the machine!**
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- The elements of a string are characters
+- We can access characters using their index
+- As we count from zero, the final element with be at length-1
+- There are many functions that we can use on strings, including ```upper()```, ```lower()``` and
+```count()```. See the documentation at [https://docs.python.org/3.11/library/stdtypes.html#text-sequence-type-str](https://docs.python.org/3.11/library/stdtypes.html#text-sequence-type-str) for more details
+- Strings and Lists are both sequences - order is important!
+- The elements of a list can be numbers, Booleans, strings or other lists
+- We can have lists of lists
+- As well as indexing elements, we can use ```slicing``` to access elements using ```[start:stop:step]``` notation. 
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -461,7 +469,5 @@ For those who want to explore a bit more of the topics covered in this practical
 2. Modify ```assorted.py``` to have the list represent a pack of playing cards (instead
 of biscuits). Select and print out two 5-card hands.
 3. Modify ```darts.py``` to calculate the area of a triangle with coords(0,0),(1,0),(0.5,1)
-4. Consider the image of a bingo card that is attached to the practical. Write 
-a program to generate a bingo card. (Note: this wont be easy!)
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
