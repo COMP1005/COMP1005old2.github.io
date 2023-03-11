@@ -269,13 +269,147 @@ print('\nThere were ', heads, ' heads & ', tails, ' tails.\n')
  
 Modify the code to ask the user to enter the number of tosses.
 
-### Activity 7 - Practice Debugging Code
- 
-FIXME
+### Activity 7 - Practice Understanding and Documenting Code
 
-### Activity 8 - Scaffolded Challenge
+The code below is something new, and has many potential **fun** applications. Enter the 
+code and add an introductory comment, and a comment on each line to describe what each 
+part of the code is doing.
+
+The article [Overwrite Previously Printed Lines](https://itnext.io/overwrite-previously-printed-lines-4218a9563527)
+may help.
+
+```python
+import time
+
+LINE_UP = '\033[1A'
+LINE_CLEAR = '\x1b[2K'
+numlines = 3
+
+eyes = ["\n< @ >  < @ >\n",
+        "\n<@  >  <@  >\n",
+        "\n<  @>  <  @>\n"]
+
+for i in range(10):
+    if i % 2 == 0:
+        print(eyes[0])
+    elif i % 4 == 1:
+        print(eyes[1])
+    else:
+        print(eyes[2])
+    time.sleep(0.5)
+    for j in range(numlines):
+        print(LINE_UP, end=LINE_CLEAR)
+```
+
+If you change a few lines, note the change to the output:
+
+```python 
+numlines = 4
+
+eyes = ["\n< @ >  < @ > \n     db\n   \____/",
+        "\n<@  >  <@  >\n     db\n   \____/",
+        "\n<  @>  <  @>\n     db\n   \____/"]
+```
+
+Explore some ASCII art with this code base, e.g. a fish from the [ASCII Art Archive](https://www.asciiart.eu/animals/fish):
+
+```
+Swimming left
+  /
+ /\/
+ \/\
+  \  
  
-FIXME
+ Swimming right
+  \
+ \/\
+ /\/
+  /
+```
+
+:::: challenge
+How would you write code to animate the fish to swimming left and right, adding/removing spaces to
+move the fish across the screen?
+
+::: solution
+
+### Making Spaces
+
+We can multiply a space character by a number to make some spaces
+
+```
+print(n*" ", end="")
+```
+:::
+
+
+::: solution
+
+### Left or Right?
+
+You need a list of strings to represent the left and right fish to allow for the spaces to 
+be varied
+
+```
+leftfish = ["  /", " /\\/", " \\/\\", "  \\"]
+rightfish = ["  \\", " \\/\\", " /\\/", "  /"]
+```
+:::
+
+::: solution
+
+### Move it!
+
+You'll need another loop to work out how many spaces to printbefore the fish
+
+```
+for s in range(10):
+    for i in range(len(rightfish)):
+        print(s*" ", rightfish[i])
+    time.sleep(0.5)
+    for j in range(numlines):
+        print(LINE_UP, end=LINE_CLEAR)
+```
+:::
+
+::: solution
+
+### Full Solution
+
+```python
+import time
+LINE_UP = '\033[1A'
+LINE_CLEAR = '\x1b[2K'
+numlines = 4
+
+leftfish = ["  /", " /\\/", " \\/\\", "  \\"]
+rightfish = ["  \\", " \\/\\", " /\\/", "  /"]
+
+for s in range(10):
+    for i in range(len(rightfish)):
+        print(s*" ", rightfish[i])
+    time.sleep(0.5)
+    for j in range(numlines):
+        print(LINE_UP, end=LINE_CLEAR)
+
+for s in range(10, 0, -1):
+    for i in range(len(leftfish)):
+        print(s*" ", leftfish[i])
+    time.sleep(0.5)
+    for j in range(numlines):
+        print(LINE_UP, end=LINE_CLEAR)
+print()
+```
+
+:::
+
+::::
+
+### Activity 8 - Scaffolded Challenge: Assorted Biscuits
+ 
+In Activity 4, we created a list of biscuits to match the  contents of the Arnotts Cream Favourites
+
+
  
 ### Submission
 
