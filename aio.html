@@ -265,7 +265,7 @@
         
 <section id="aio-prac00"><p>Content from <a href="prac00.html">Prac00: Introduction to Linux</a></p>
 <hr>
-<p> Last updated on 2023-03-08 | 
+<p> Last updated on 2023-03-11 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac00.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -660,7 +660,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-prac01"><p>Content from <a href="prac01.html">Prac01: Introduction to Python</a></p>
 <hr>
-<p> Last updated on 2023-03-08 | 
+<p> Last updated on 2023-03-11 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac01.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1384,7 +1384,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-prac02"><p>Content from <a href="prac02.html">Prac02: Strings and Lists</a></p>
 <hr>
-<p> Last updated on 2023-03-09 | 
+<p> Last updated on 2023-03-11 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac02.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1640,7 +1640,7 @@ loop.</p>
   Hint 1
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The condition on the <code>while more != 'N':</code> can be extended
 to have a second condition:
@@ -1656,7 +1656,7 @@ to have a second condition:
   Hint 2
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Check the length of the biscuit list</p>
 </div>
@@ -1670,7 +1670,7 @@ to have a second condition:
   Answer
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p><code>while more != 'N' and len(biscuits) &gt; 0:</code></p>
 </div>
@@ -1709,14 +1709,171 @@ print('\nThere were ', heads, ' heads &amp; ', tails, ' tails.\n')</code></pre>
 <p>Modify the code to ask the user to enter the number of tosses.</p>
 </div>
 <div class="section level3">
-<h3 id="activity-7---practice-debugging-code">Activity 7 - Practice Debugging Code<a class="anchor" aria-label="anchor" href="#activity-7---practice-debugging-code"></a>
+<h3 id="activity-7---practice-understanding-and-documenting-code">Activity 7 - Practice Understanding and Documenting Code<a class="anchor" aria-label="anchor" href="#activity-7---practice-understanding-and-documenting-code"></a>
 </h3>
-<p>FIXME</p>
+<p>The code below is something new, and has many potential
+<strong>fun</strong> applications. Enter the code and add an
+introductory comment, and a comment on each line to describe what each
+part of the code is doing.</p>
+<p>The article <a href="https://itnext.io/overwrite-previously-printed-lines-4218a9563527" class="external-link">Overwrite
+Previously Printed Lines</a> may help.</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">"</span>]</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">0</span>])</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">1</span>])</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">2</span>])</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
+</div>
+<p>If you change a few lines, note the change to the output:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt; </span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>]</span></code></pre>
+</div>
+<p>Explore some ASCII art with this code base, e.g. a fish from the <a href="https://www.asciiart.eu/animals/fish" class="external-link">ASCII Art Archive</a>:</p>
+<pre><code>Swimming left
+  /
+ /\/
+ \/\
+  \  
+ 
+ Swimming right
+  \
+ \/\
+ /\/
+  /</code></pre>
+<div id="challenge2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+</h3>
+<div class="callout-content">
+<p>How would you write code to animate the fish to swimming left and
+right, adding/removing spaces to move the fish across the screen?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">
+  Making Spaces
+  </h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div class="accordion-body">
+<p>We can multiply a space character by a number to make some spaces</p>
+<pre><code><span><span class="fu">print</span><span class="op">(</span><span class="va">n</span><span class="op">*</span><span class="st">" "</span>, end<span class="op">=</span><span class="st">""</span><span class="op">)</span></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">
+  Left or Right?
+  </h4>
+</button>
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div class="accordion-body">
+<p>You need a list of strings to represent the left and right fish to
+allow for the spaces to be varied</p>
+<pre><code>leftfish = ["  /", " /\\/", " \\/\\", "  \\"]
+rightfish = ["  \\", " \\/\\", " /\\/", "  /"]</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6">
+  Move it!
+  </h4>
+</button>
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div class="accordion-body">
+<p>You’ll need another loop to work out how many spaces to printbefore
+the fish</p>
+<pre><code>for s in range(10):
+    for i in range(len(rightfish)):
+        print(s*" ", rightfish[i])
+    time.sleep(0.5)
+    for j in range(numlines):
+        print(LINE_UP, end=LINE_CLEAR)</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7">
+  Full Solution
+  </h4>
+</button>
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(leftfish)):</span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, leftfish[i])</span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
-<h3 id="activity-8---scaffolded-challenge">Activity 8 - Scaffolded Challenge<a class="anchor" aria-label="anchor" href="#activity-8---scaffolded-challenge"></a>
+<h3 id="activity-8---scaffolded-challenge-assorted-biscuits">Activity 8 - Scaffolded Challenge: Assorted Biscuits<a class="anchor" aria-label="anchor" href="#activity-8---scaffolded-challenge-assorted-biscuits"></a>
 </h3>
-<p>FIXME</p>
+<p>In Activity 4, we created a list of biscuits to match the contents of
+the Arnotts Cream Favourites</p>
 </div>
 <div class="section level3">
 <h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a>
@@ -1844,7 +2001,7 @@ any links that you are not going to use.
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.6" class="external-link">sandpaper (0.11.6)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.8" class="external-link">sandpaper (0.11.8)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.4.3" class="external-link">pegboard (0.4.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.14" class="external-link">varnish (0.2.14)</a>.</p>
 			</div>
@@ -1867,9 +2024,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://COMP1005.github.io/COMP1005.github.io/aio.html",
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/aio.html",
-  "dateCreated": "2023-03-09",
-  "dateModified": "2023-03-09",
-  "datePublished": "2023-03-09"
+  "dateCreated": "2023-03-11",
+  "dateModified": "2023-03-11",
+  "datePublished": "2023-03-11"
 }
 
   </script><script>
