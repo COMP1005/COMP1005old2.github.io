@@ -1384,7 +1384,7 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-prac02"><p>Content from <a href="prac02.html">Prac02: Strings and Lists</a></p>
 <hr>
-<p> Last updated on 2023-03-11 | 
+<p> Last updated on 2023-03-13 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac02.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1491,7 +1491,7 @@ for index in range(len(instring)-1, -1, -1):
 print()
 
 # reversing with slicing
-print('Reversed string is :', instring[len(instring)-1:-1:-1])</code></pre>
+print('Reversed string is :', instring[::-1])</code></pre>
 <p>Test out the code to understand how it works. Note that in each
 case:</p>
 <ul>
@@ -1505,8 +1505,16 @@ case:</p>
 <strong>step</strong> value is <code>-1</code>
 </li>
 </ul>
-<p>Next, copy <code>strings1.py</code> to <code>strings2.py</code> and
-make the following changes…</p>
+<p>Slicing doesn’t quite fit the pattern for start:stop:step, which
+would have the code as follows:</p>
+<pre><code><span><span class="co"># WARNING: THIS WON"T WORK!</span></span>
+<span><span class="fu">print</span><span class="op">(</span><span class="st">'Reversed string is :'</span>, <span class="va">instring</span><span class="op">[</span><span class="fu">len</span><span class="op">(</span><span class="va">instring</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span><span class="op">:</span><span class="op">-</span><span class="fl">1</span><span class="op">:</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code></pre>
+<p>However, the -1 stop value would get interpreted as a negative index.
+Python slicing is smart enough to know that when a negative step is used
+(e.g. -1), the default start and stop should be switched around to the
+values <code>len(instring)-1 &amp; -1</code>.</p>
+<p>Continuing on with the activity, copy <code>strings1.py</code> to
+<code>strings2.py</code> and make the following changes…</p>
 <ol style="list-style-type: decimal">
 <li>Change the <strong>start</strong>, <strong>stop</strong> and
 <strong>step</strong> values in each approach to print the string
@@ -1717,39 +1725,39 @@ introductory comment, and a comment on each line to describe what each
 part of the code is doing.</p>
 <p>The article <a href="https://itnext.io/overwrite-previously-printed-lines-4218a9563527" class="external-link">Overwrite
 Previously Printed Lines</a> may help.</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">"</span>]</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">0</span>])</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">1</span>])</span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">2</span>])</span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
-</div>
-<p>If you change a few lines, note the change to the output:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt; </span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>]</span></code></pre>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">"</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">0</span>])</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">1</span>])</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">2</span>])</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
+</div>
+<p>If you change a few lines, note the change to the output:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt; </span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>]</span></code></pre>
 </div>
 <p>Explore some ASCII art with this code base, e.g. a fish from the <a href="https://www.asciiart.eu/animals/fish" class="external-link">ASCII Art Archive</a>:</p>
 <pre><code>Swimming left
@@ -1786,10 +1794,10 @@ right, adding/removing spaces to move the fish across the screen?</p>
 <div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>We can multiply a space character by a number to make some spaces</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n<span class="op">*</span><span class="st">" "</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n<span class="op">*</span><span class="st">" "</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1806,11 +1814,11 @@ right, adding/removing spaces to move the fish across the screen?</p>
 <div class="accordion-body">
 <p>You need a list of strings to represent the left and right fish to
 allow for the spaces to be varied</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span></code></pre>
 </div>
 </div>
 </div>
@@ -1827,15 +1835,15 @@ allow for the spaces to be varied</p>
 <div class="accordion-body">
 <p>You’ll need another loop to work out how many spaces to printbefore
 the fish</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1850,31 +1858,31 @@ the fish</p>
 </button>
 <div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
-<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(leftfish)):</span>
-<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, leftfish[i])</span>
-<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(leftfish)):</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, leftfish[i])</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
 </div>
 </div>
 </div>
@@ -2045,9 +2053,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://COMP1005.github.io/COMP1005.github.io/aio.html",
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/aio.html",
-  "dateCreated": "2023-03-11",
-  "dateModified": "2023-03-11",
-  "datePublished": "2023-03-11"
+  "dateCreated": "2023-03-13",
+  "dateModified": "2023-03-13",
+  "datePublished": "2023-03-13"
 }
 
   </script><script>
