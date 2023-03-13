@@ -168,7 +168,7 @@ In ```growth.py``` we implemented a simulation of unconstrained growth. We can u
 approach to simulate decay – using negative growth. In this example, we can look at a dosage 
 of a drug, e.g. Aspirin for pain and Dilantin for treating epilepsy.
 
-Download ```dosage.py``` from the Practical 3 area on Blackboard and save it into your ```Prac03``` 
+Download [dosage.py](dosage.py)  [dosage.py](code/dosage.py) and save it into your ```Prac03``` 
 directory. Run the program and see if you can understand what it is doing. Look at Chapter 2 
 of the text for background. The program ```dosage4hr.py``` is a variation of ```dosage.py``` where another 
 two tablets are taken after 4 hours.
