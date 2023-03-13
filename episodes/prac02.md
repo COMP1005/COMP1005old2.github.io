@@ -86,16 +86,26 @@ for index in range(len(instring)-1, -1, -1):
 print()
 
 # reversing with slicing
-print('Reversed string is :', instring[len(instring)-1:-1:-1])
+print('Reversed string is :', instring[::-1])
 ```
-
 Test out the code to understand how it works. Note that in each case:
 
 - **start** value is ```len(instring)-1```
 - **stop** value is ```-1```
 - **step** value is ```-1```
 
-Next, copy ```strings1.py``` to ```strings2.py``` and make the following changes...
+Slicing doesn't quite fit the pattern for start:stop:step, which would have the code as follows:
+
+```
+# WARNING: THIS WON"T WORK!
+print('Reversed string is :', instring[len(instring)-1:-1:-1])
+```
+
+However, the -1 stop value would get interpreted as a negative index. Python slicing 
+is smart enough to know that when a negative step is used (e.g. -1), the default start 
+and stop should be switched around to the values ```len(instring)-1 & -1```.
+
+Continuing on with the activity, copy ```strings1.py``` to ```strings2.py``` and make the following changes...
 
 1. Change the **start**, **stop** and **step** values in each approach to print the string forwards (instead of in reverse).
 2. Update ```instring``` to uppercase (so that ‘abcd’ becomes ‘ABCD’)
