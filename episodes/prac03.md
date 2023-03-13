@@ -7,7 +7,7 @@ title: "Prac03: Arrays and Plotting"
 - How do I process large amounts of data?
 - What support does Python have for manipulating science and engineering datasets?
 - How can I get a quick visualisation (plot) of my data?
-- 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
@@ -21,7 +21,8 @@ title: "Prac03: Arrays and Plotting"
 ### Introduction
 
 In this practical you will be using Numpy arrays to store data. We will 
-then plot data from arrays and lists before using arrays and plotting in some more complex systems dynamics models.
+then plot data from arrays and lists before using arrays and plotting in 
+some more complex systems dynamics models.
 
 ### Additional commands in VIM
 
@@ -29,22 +30,21 @@ VIM – additional useful commands
   
 | Command | Description |
 |--------|------------------|
-| :w | When editing a file, you can save changes so far using “:w” from command mode. Press “esc” to go from insert to command mode. |
-| :w filename | If you want to save a file with a new name from vim command mode, type “:w new_file_name” |
-| :wq | To save the file and quit, type “:wq”, which is equivalent to “ZZ” |
-| :q! | To quit without saving changes, use “:q!” (also good for backing out if you accidentally put the wrong file name in, e.g. vim growth.py) |
-| D | To delete the rest of a line (from current cursor position in command mode), type “D” |
-| R | To replace the rest of a line (from current cursor position in command mode), type “R”, puts you into insert mode|
-| u | To undo a command or change, type “u”, repeat to undo multiple |
-| xG | To go to a line 20 in a file, type “20G”. To go to the last line of a file, type “G’ |
+| :w | When editing a file, you can save changes so far using ```:w``` from command mode. Press ```esc``` to go from insert to command mode. |
+| :w filename | If you want to save a file with a new name from vim command mode, type ```:w new_file_name``` |
+| :q! | To quit without saving changes, use ```:q!``` (also good for backing out if you accidentally put the wrong file name in, e.g. ```vim grwth.py```) |
+| D | To delete the rest of a line (from current cursor position in command mode), type ```D``` |
+| R | To replace the rest of a line (from current cursor position in command mode), type ```R```, puts you into insert mode|
+| u | To undo a command or change, type ```u```, repeat to undo multiple |
+| xG | To go to a line 20 in a file, type ```20G```. To go to the last line of a file, type ```G``` |
 | A | Appends after the end of the current line, puts into insert mode |
 
-On occasion, you may accidentally hit “ctrl-z” when using vim or other programs. This pauses the program, 
+On occasion, you may accidentally hit ```ctrl-z``` when using vim or other programs. This pauses the program, 
 but it is still running in the “background”. Type ```fg``` to bring it back into the foreground. When this happens, 
 or if you close your machine without saving the files, a temporary file that vim creates is left behind (when 
 you save and quit normally, the file is deleted). If you type ```ls -la```, you can see these “hidden” files – 
-they start with a “.”, eg. “.growth.py.swp”. 
-Once you have your file back in order, you can delete the temp files using ```rm .growth.py.swp````.
+they start with a “.”, eg. ```.growth.py.swp```. 
+Once you have your file back in order, you can delete the temp files using ```rm .growth.py.swp```.
 
 ### Activity 1 - Plotting Growth
 
@@ -120,7 +120,8 @@ program to give multiple plots in the same figure.
 
 1. Update the documentation accordingly
 2. Modify the plotting code to do the do the equivalent of the subplot code in the
-lecture slides (shown below). The variable names and labels/titles will need to be changed...
+lecture slides (shown below). When adapting the code, the variable names and 
+labels/titles will need to be changed... this is a **very** common task.
  
 ```python
 plt.figure(1)
@@ -149,11 +150,10 @@ plot a bar chart from a list. We will use similar code to plot the numbers
 entered into ```numbersbar.py```
  
 ```python
-plt.title(Numbers Bar Chart')
+plt.title('Numbers Bar Chart')
 plt.xlabel('Index') 
 plt.ylabel('Number')
-plt.bar([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], numarray, 0.9,
-color='purple')
+plt.bar([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], numarray, 0.9, color='purple')
 plt.show()
 ```
 
@@ -170,15 +170,15 @@ of a drug, e.g. Aspirin for pain and Dilantin for treating epilepsy.
 
 Download ```dosage.py``` from the Practical 3 area on Blackboard and save it into your ```Prac03``` 
 directory. Run the program and see if you can understand what it is doing. Look at Chapter 2 
-of the text for background. The program dosage4hr.py is a variation of ```dosage.py``` where another 
+of the text for background. The program ```dosage4hr.py``` is a variation of ```dosage.py``` where another 
 two tablets are taken after 4 hours.
 
 Next download ```repeatdosage.py``` from Blackboard and run it. MEC and MTC are values for effective 
 and toxic concentrations, respectively. Note how it takes multiple doses to get up to an effective 
 level. Download skipdosage.py and see the impact of skipped pills on the concentration.
 
-For more background information, this exercise is based on p45-50 Chapter 2 of the Shiflet & 
-Shiflet textbook - http://press.princeton.edu/chapters/s2_10291.pdf .
+*For more background information, this exercise is based on p45-50 Chapter 2 of the Shiflet & 
+Shiflet textbook - http://press.princeton.edu/chapters/s2_10291.pdf .*
 
 ### Activity 7 - FIXME
 
@@ -217,7 +217,10 @@ click on Practical 03 for the submission page.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Arrays give compact storage and additional functionality when working with collections of data **of the same type**.
+- Arrays are implemented in the ```numpy``` package, which you ```import``` to be able to use them.
+- Plotting data aids understanding and helps us see trends.
+- We can plot using ```matplotlib```. Other packages will be explored later in the semester
 
 :::::::::::::::::::::::::::::::::::::
 
