@@ -255,8 +255,6 @@
 <li>What support does Python have for manipulating science and
 engineering datasets?</li>
 <li>How can I get a quick visualisation (plot) of my data?</li>
-<li>
-</li>
 </ul></div>
 </div>
 </div>
@@ -285,40 +283,44 @@ plotting in some more complex systems dynamics models.</p>
 <table class="table"><colgroup><col width="30%"><col width="69%"></colgroup><thead><tr class="header"><th>Command</th>
 <th>Description</th>
 </tr></thead><tbody><tr class="odd"><td>:w</td>
-<td>When editing a file, you can save changes so far using “:w” from
-command mode. Press “esc” to go from insert to command mode.</td>
+<td>When editing a file, you can save changes so far using
+<code>:w</code> from command mode. Press <code>esc</code> to go from
+insert to command mode.</td>
 </tr><tr class="even"><td>:w filename</td>
 <td>If you want to save a file with a new name from vim command mode,
-type “:w new_file_name”</td>
-</tr><tr class="odd"><td>:wq</td>
-<td>To save the file and quit, type “:wq”, which is equivalent to
-“ZZ”</td>
-</tr><tr class="even"><td>:q!</td>
-<td>To quit without saving changes, use “:q!” (also good for backing out
-if you accidentally put the wrong file name in, e.g. vim growth.py)</td>
-</tr><tr class="odd"><td>D</td>
+type <code>:w new_file_name</code>
+</td>
+</tr><tr class="odd"><td>:q!</td>
+<td>To quit without saving changes, use <code>:q!</code> (also good for
+backing out if you accidentally put the wrong file name in,
+e.g. <code>vim grwth.py</code>)</td>
+</tr><tr class="even"><td>D</td>
 <td>To delete the rest of a line (from current cursor position in
-command mode), type “D”</td>
-</tr><tr class="even"><td>R</td>
+command mode), type <code>D</code>
+</td>
+</tr><tr class="odd"><td>R</td>
 <td>To replace the rest of a line (from current cursor position in
-command mode), type “R”, puts you into insert mode</td>
-</tr><tr class="odd"><td>u</td>
-<td>To undo a command or change, type “u”, repeat to undo multiple</td>
-</tr><tr class="even"><td>xG</td>
-<td>To go to a line 20 in a file, type “20G”. To go to the last line of
-a file, type “G’</td>
-</tr><tr class="odd"><td>A</td>
+command mode), type <code>R</code>, puts you into insert mode</td>
+</tr><tr class="even"><td>u</td>
+<td>To undo a command or change, type <code>u</code>, repeat to undo
+multiple</td>
+</tr><tr class="odd"><td>xG</td>
+<td>To go to a line 20 in a file, type <code>20G</code>. To go to the
+last line of a file, type <code>G</code>
+</td>
+</tr><tr class="even"><td>A</td>
 <td>Appends after the end of the current line, puts into insert
 mode</td>
-</tr></tbody></table><p>On occasion, you may accidentally hit “ctrl-z” when using vim or
-other programs. This pauses the program, but it is still running in the
-“background”. Type <code>fg</code> to bring it back into the foreground.
-When this happens, or if you close your machine without saving the
-files, a temporary file that vim creates is left behind (when you save
-and quit normally, the file is deleted). If you type
+</tr></tbody></table><p>On occasion, you may accidentally hit <code>ctrl-z</code> when using
+vim or other programs. This pauses the program, but it is still running
+in the “background”. Type <code>fg</code> to bring it back into the
+foreground. When this happens, or if you close your machine without
+saving the files, a temporary file that vim creates is left behind (when
+you save and quit normally, the file is deleted). If you type
 <code>ls -la</code>, you can see these “hidden” files – they start with
-a “.”, eg. “.growth.py.swp”. Once you have your file back in order, you
-can delete the temp files using ```rm .growth.py.swp````.</p>
+a “.”, eg. <code>.growth.py.swp</code>. Once you have your file back in
+order, you can delete the temp files using
+<code>rm .growth.py.swp</code>.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-1---plotting-growth">Activity 1 - Plotting Growth<a class="anchor" aria-label="anchor" href="#activity-1---plotting-growth"></a></h3>
@@ -393,8 +395,9 @@ x-values</li>
 will change this program to give multiple plots in the same figure.</p>
 <ol style="list-style-type: decimal"><li>Update the documentation accordingly</li>
 <li>Modify the plotting code to do the do the equivalent of the subplot
-code in the lecture slides (shown below). The variable names and
-labels/titles will need to be changed…</li>
+code in the lecture slides (shown below). When adapting the code, the
+variable names and labels/titles will need to be changed… this is a
+<strong>very</strong> common task.</li>
 </ol><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -424,12 +427,11 @@ will use similar code to plot the numbers entered into
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.title(Numbers Bar Chart<span class="st">')</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="er">plt.xlabel('Index') </span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="er">plt.ylabel('Number')</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="er">plt.bar([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], numarray, 0.9,</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="er">color='purple')</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="er">plt.show()</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Numbers Bar Chart'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Index'</span>) </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.bar([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>], numarray, <span class="fl">0.9</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Add this code to <code>numbersbar.py</code> to print a purple bar
 chart. Remember to import matplotlib!</p>
@@ -444,16 +446,17 @@ drug, e.g. Aspirin for pain and Dilantin for treating epilepsy.</p>
 <p>Download <code>dosage.py</code> from the Practical 3 area on
 Blackboard and save it into your <code>Prac03</code> directory. Run the
 program and see if you can understand what it is doing. Look at Chapter
-2 of the text for background. The program dosage4hr.py is a variation of
-<code>dosage.py</code> where another two tablets are taken after 4
-hours.</p>
+2 of the text for background. The program <code>dosage4hr.py</code> is a
+variation of <code>dosage.py</code> where another two tablets are taken
+after 4 hours.</p>
 <p>Next download <code>repeatdosage.py</code> from Blackboard and run
 it. MEC and MTC are values for effective and toxic concentrations,
 respectively. Note how it takes multiple doses to get up to an effective
 level. Download skipdosage.py and see the impact of skipped pills on the
 concentration.</p>
-<p>For more background information, this exercise is based on p45-50
-Chapter 2 of the Shiflet &amp; Shiflet textbook - <a href="http://press.princeton.edu/chapters/s2_10291.pdf" class="external-link uri">http://press.princeton.edu/chapters/s2_10291.pdf</a> .</p>
+<p><em>For more background information, this exercise is based on p45-50
+Chapter 2 of the Shiflet &amp; Shiflet textbook - <a href="http://press.princeton.edu/chapters/s2_10291.pdf" class="external-link uri">http://press.princeton.edu/chapters/s2_10291.pdf</a>
+.</em></p>
 </div>
 <div class="section level3">
 <h3 id="activity-7---fixme">Activity 7 - FIXME<a class="anchor" aria-label="anchor" href="#activity-7---fixme"></a></h3>
@@ -496,7 +499,13 @@ submission page.</p>
 <h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>Arrays give compact storage and additional functionality when
+working with collections of data <strong>of the same type</strong>.</li>
+<li>Arrays are implemented in the <code>numpy</code> package, which you
+<code>import</code> to be able to use them.</li>
+<li>Plotting data aids understanding and helps us see trends.</li>
+<li>We can plot using <code>matplotlib</code>. Other packages will be
+explored later in the semester</li>
 </ul></div>
 </div>
 </div>
