@@ -168,14 +168,14 @@ In ```growth.py``` we implemented a simulation of unconstrained growth. We can u
 approach to simulate decay – using negative growth. In this example, we can look at a dosage 
 of a drug, e.g. Aspirin for pain and Dilantin for treating epilepsy.
 
-Download [dosage.py](dosage.py)  [dosage.py](code/dosage.py) [dosage.py](fig/dosage.py) and save it into your ```Prac03``` 
+Download [dosage.py](files/dosage.py) and save it into your ```Prac03``` 
 directory. Run the program and see if you can understand what it is doing. Look at Chapter 2 
-of the text for background. The program ```dosage4hr.py``` is a variation of ```dosage.py``` where another 
+of the text for background. The program [dosage4hr.py](files/dosage4hr.py) is a variation of ```dosage.py``` where another 
 two tablets are taken after 4 hours.
 
-Next download ```repeatdosage.py``` from Blackboard and run it. MEC and MTC are values for effective 
-and toxic concentrations, respectively. Note how it takes multiple doses to get up to an effective 
-level. Download ```skipdosage.py``` and see the impact of skipped pills on the concentration.
+Next download [repeatdosage.py](files/repeatdosage.py) and run it. MEC and MTC are values for **effective** 
+and **toxic** concentrations, respectively. Note how it takes multiple doses to get up to an effective 
+level. Download [skipdosage.py](files/skipdosage.py) and see the impact of skipped pills on the concentration.
 
 *For more background information, this exercise is based on p45-50 Chapter 2 of the Shiflet & 
 Shiflet textbook - http://press.princeton.edu/chapters/s2_10291.pdf .*
