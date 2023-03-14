@@ -230,7 +230,7 @@ click on Practical 03 for the submission page.
  
 1. **Knowledge:** What are the names of the two Python packages we use for arrays and for plotting?
 3. **Comprehension**: What changes if we replace plt.xlabel(‘Count’) with plt.xlabel(‘Time’)
-5. **Application**: What value (??) would you give to plt.subplot(??) to set up the 2nd plot in a 2x2 set of subplots?
+5. **Application**: What value (???) would you give to plt.subplot(???) to set up the 2nd plot in a 2x2 set of subplots?
 7. **Analysis**: What type of file is created when we save a plot?
 9. **Synthesis**: Each week we create a README file for the Prac. How is this file useful?
 10. **Evaluation**: Compare the use of lists and arrays in the growth*.py programs.
@@ -244,7 +244,7 @@ For those who want to explore a bit more of the topics covered in this practical
 
 1. Modify ```growthsubplot.py``` to print four subplots (2x2) – the additional plots should print green squares and black triangles. (hint: subplot 1 is subplot(221))
 2. Modify ```growthsubplot.py``` to print nine subplots (3x3) – the additional plots should print green squares, black triangles, black circles, black squares, blue triangles, blue circles and blue squares. (hint: subplot 1 is subplot(331))
-3. Extend the aspirin simulation length in ```dosage4hr.py``` to see what happens over time with repeated dosages
-4. Modify ```dosage4hr.py``` to see the impact of having doses every 2 hours
+3. Extend the aspirin simulation length in [dosage4hr.py](files/dosage4hr.py) to see what happens over time with repeated dosages
+4. Modify [dosage4hr.py](files/dosage4hr.py) to see the impact of having doses every 2 hours
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
