@@ -175,7 +175,7 @@ while choice[0] != 'X':
         bucket.append(newitem)
     elif choice[0] == 'L':
         for item in bucket:
-print(item)
+            print(item)
     else:
         print('Invalid selection.')
     choice = input('Enter selection: e(X)it, (A)dd, (L)ist..')
