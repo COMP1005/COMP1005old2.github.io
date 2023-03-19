@@ -29,7 +29,7 @@ some more complex systems dynamics models.
 VIM – additional useful commands
   
 | Command | Description |
-|-------------|------------------|
+|-------------|-------------------------------------------------------|
 | :w | When editing a file, you can save changes so far using ```:w``` from command mode. Press ```esc``` to go from insert to command mode. |
 | :w filename | If you want to save a file with a new name from vim command mode, type ```:w new_file_name``` |
 | :q! | To quit without saving changes, use ```:q!``` (also good for backing out if you accidentally put the wrong file name in, e.g. ```vim grwth.py```) |
@@ -211,9 +211,128 @@ of the drug might vary by person, and depend on their overall health.
 
 It is a simpistic model, however, it is incredibly useful in conveying how repat doses of drug accumulate and compund.
 
-### Activity 8 - Scaffolded Challenge: 
+### Activity 8 - Scaffolded Challenge: Rainbows
 
-FIXME
+Given we can draw a line plot in various colours, how might we plot a **rainbow**?
+
+![Rainbows stored in lists](fig/P03RainbowLists.png)
+
+So, where might we start?
+
+::::: challenge
+
+::: hint
+### Single curve based on a parabola
+
+Consider how you might generate a curve. Perhaps an upside-down parabola?
+
+'''python
+
+### rainbow.py - demonstrating plotting
+
+import matplotlib.pyplot as plt
+import math
+
+# Basic Curve
+r = 5
+for i in range(-r,r+1):
+    plt.plot(i,-((abs(i))**2-r**2),"bo")
+plt.title("Basic Curve")
+plt.show()
+```
+
+:::
+
+::: hint
+
+### Single curve based on formula for a circle
+
+A circle gives a more realistic curve...
+
+'''python
+
+### rainbow.py - demonstrating plotting
+
+import matplotlib.pyplot as plt
+import math
+
+# Basic Curve
+r = 5
+for i in range(-r,r+1):
+    plt.plot(i,math.sqrt(r**2 - i**2),color="red", marker="*")
+plt.title("Basic Curve")
+plt.show()
+```
+
+:::
+
+::: hint
+
+### Now repeating the curves in reducing sizes, andprogressive colours
+
+```python
+
+### rainbow.py - demonstrating plotting
+
+import matplotlib.pyplot as plt
+import math
+
+# Many Curves
+for r in range(10,5,-1):
+    for i in range(-r,r+1):
+        if r == 10:
+            colour = "red" 
+        elif r == 9:
+            colour = "orange" 
+        elif r == 8:
+            colour = "yellow" 
+        elif r == 7:
+            colour = "green" 
+        else:
+            colour = "purple" 
+        plt.plot(i,math.sqrt(r**2 - i**2),color=colour, marker="*")
+plt.title("Many Curves")
+plt.show()
+```
+:::
+
+::: hint
+
+### Storing values in arrays 
+
+```python
+# Many Curves - arrays
+import numpy as np
+res = 4
+for r in range(10,3,-1):
+    size = r * res * 2 + 1
+    xarray = np.zeros(size)
+    arcarray = np.zeros(size)
+    if r == 10:
+        colour = "red" 
+    elif r == 9:
+        colour = "orange" 
+    elif r == 8:
+        colour = "yellow" 
+    elif r == 7:
+        colour = "green" 
+    elif r == 6:
+        colour = "blue" 
+    elif r == 5:
+        colour = "indigo" 
+    else:
+        colour = "violet" 
+    for i in range(-res * r, res * r + 1):
+        xarray[i] = i
+        print(r, i)
+        arcarray[i] = math.sqrt((res * r)**2 - i**2)
+    plt.plot(xarray, arcarray ,color=colour, marker="o")
+plt.title("Many Curves - arrays")
+plt.show()
+```
+:::
+ 
+::::::
 
 ### Activity 9 - Update README file
 
@@ -257,7 +376,7 @@ click on Practical 03 for the submission page.
  
 1. **Knowledge:** What are the names of the two Python packages we use for arrays and for plotting?
 3. **Comprehension**: What changes if we replace plt.xlabel(‘Count’) with plt.xlabel(‘Time’)
-5. **Application**: What value (???) would you give to plt.subplot(???) to set up the 2nd plot in a 2x2 set of subplots?
+5. **Application**: What value would you give to plt.subplot(???) to set up the 2nd plot in a 2x2 set of subplots?
 7. **Analysis**: What type of file is created when we save a plot?
 9. **Synthesis**: Each week we create a README file for the Prac. How is this file useful?
 10. **Evaluation**: Compare the use of lists and arrays in the growth*.py programs.
