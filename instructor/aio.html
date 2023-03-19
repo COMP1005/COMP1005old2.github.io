@@ -791,7 +791,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>cd The/Holy/Grail</code></pre>
 </div>
@@ -947,7 +947,7 @@ working correctly?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Enter “Bruce” <strong>and then</strong> something other than “Bruce”
 to test both paths through the code. Note that “Bruce” and “bruce” are
@@ -1149,7 +1149,7 @@ exit on <strong>zero</strong> instead of negative numbers?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code>while number != 0:</code></pre>
 </div>
@@ -1270,7 +1270,7 @@ which follows the Algorithm on page 25.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Time step 0 is the initial step, before the loop. Our loop will go
 through num_iter times, starting at one. Loops usually go from 0 to
@@ -1909,11 +1909,141 @@ track of the different products (name, price and count) and dispenses
 the treat, if available.</p>
 <p>We can write code to give the correct behaviour, then improve its
 presentation to be more interesting and engaging.</p>
-<p>An example of the complete program is below:</p>
-<figure><img src="../fig/P2vending.png" alt="" class="figure mx-auto d-block"><figcaption>Vending machine example</figcaption></figure><p>In Activity 4, we created a list of biscuits to match the contents of
+<p>An example of the complete program is below. Making a mock-up of
+output is one way to specify requirements.</p>
+<figure><img src="../fig/P02vending.png" alt="" class="figure mx-auto d-block"><figcaption>Vending machine example</figcaption></figure><p>In Activity 4, we created a list of biscuits to match the contents of
 the Arnotts Cream Favourites and randomly chose biscuits from the pack…
 refer back to that for inspriation, if needed.</p>
+<p>What can we see in the example output:</p>
+<ul>
+<li>User is prompted for two inputs
+<ul>
+<li>Y/N to choose a treat</li>
+<li>slot # for the treat of choice</li>
+</ul>
+</li>
+<li>All treats and information is output for the user to choose
+between</li>
+<li>A count is kept for the number of each product, so you need to:
+<ul>
+<li>update count for each treat selected</li>
+<li>give error message if there are none left of that product</li>
+</ul>
+</li>
+<li>Prices are neatly formatted
+<ul>
+<li>in this solution, prices are stored in <strong>cents</strong> and
+divided/modded by 100 for dollars and cents</li>
+</ul>
+</li>
+<li>
+<strong>Optional:</strong> output of products is formatted in a
+table
+<ul>
+<li>in this solution, it’s done with <code>|</code>, <code>-</code> and
+<code>+</code> characters</li>
+</ul>
+</li>
+<li>
+<strong>Optional:</strong> colour and bold are used to enhance the
+output (not required)</li>
+</ul>
+<div class="Challenge">
+<p>Here are some tips to help when creating the solution ::: Hint ###
+Logic</p>
+<ul>
+<li>display opening message</li>
+<li>set up variables to hold product list, price and count</li>
+<li>ask user if they want a treat</li>
+<li>while user reponse is not “N”
+<ul>
+<li>display treats</li>
+<li>get user input for treat choice</li>
+<li>if there are none of that item
+<ul>
+<li>print error message</li>
+</ul>
+</li>
+<li>else
+<ul>
+<li>print success message</li>
+<li>reduce count of that item<br>
+</li>
+</ul>
+</li>
+<li>ask user if they want a treat</li>
+</ul>
+</li>
+<li>display closing message</li>
+</ul>
 </div>
+</div>
+<div class="section level3 Hint">
+<h3 id="setting-up-products">Setting up products<a class="anchor" aria-label="anchor" href="#setting-up-products"></a>
+</h3>
+<p>A list of lists can be used:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>treats <span class="op">=</span> [[<span class="dv">1</span>, <span class="st">"Choco Pie"</span>, <span class="dv">100</span>, <span class="dv">5</span>],</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>         [<span class="dv">2</span>, <span class="st">"Hello Panda"</span>, <span class="dv">50</span>, <span class="dv">10</span>],</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>         [<span class="dv">3</span>, <span class="st">"Fortune Cookie"</span>, <span class="dv">30</span>, <span class="dv">10</span>]]</span></code></pre>
+</div>
+</div>
+<div class="section level3 Hint">
+<h3 id="formatted-output">Formatted output<a class="anchor" aria-label="anchor" href="#formatted-output"></a>
+</h3>
+<p>There are many ways to crete formatted output in Python. To stay
+close to what we have already learned, we will use string functions for
+padding out a string with blanks or zeros.</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(treats[i][<span class="dv">1</span>]).ljust(<span class="dv">23</span>,<span class="st">" "</span>) </span></code></pre>
+</div>
+<p>This code prints the name of the treat, left justified, to a
+field-width of 23 characters. If the string is less than 23 characters
+long, spaces are added to fill the rest. There is an equivalent
+<code>str.rjust(width[, pad_char])</code> for right-justification. the
+<code>pad_char</code> can be a space or zeros or any other
+character.</p>
+</div>
+<div class="section level3 Hint">
+<h3 id="colours">Colours!<a class="anchor" aria-label="anchor" href="#colours"></a>
+</h3>
+<p>As with the <code>LINE_UP</code> and <code>LINE_CLEAR</code> codes
+from earlier in the practical, we can use codes for the colours. To make
+sure the colours work on all platforms, we need the following two
+lines.</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># System call to make colours work cross-platform</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>os.system(<span class="st">""</span>)</span></code></pre>
+</div>
+<p>Some sample codes for colours, bold and underline are below. See [<a href="https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal" class="external-link uri">https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal</a>]
+for more information.</p>
+<div class="codewrapper sourceCode" id="cb18">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reset strings for colours</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>BLACK <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[30m'</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>RED <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[31m'</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>GREEN <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[32m'</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>YELLOW <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[33m'</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>BLUE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[34m'</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>MAGENTA <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[35m'</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>CYAN <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[36m'</span></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>WHITE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[37m'</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>UNDERLINE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[4m'</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>BOLD <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1m'</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>RESET <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[0m'</span></span></code></pre>
+</div>
+</div>
+<p>::::::</p>
 <div class="section level3">
 <h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a>
 </h3>
