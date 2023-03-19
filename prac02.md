@@ -423,12 +423,12 @@ You are tasked with writing a vending machine program which keeps track of the d
 We can write code to give the correct behaviour, then improve its presentation to be more interesting
 and engaging.
 
-An example of the complete program is below. Making a mock-up of output is one way to specify requirements.
+An example of the complete program is below. Making a mock-up of output is one way to specify requirements... from there, you can consider the variables and data storage required, and the program logic needed to generate that output. There is also a need for imagination - what would happen if the input was different, or if invalid input was entered?
 
 ![Vending machine example](fig/P02vending.png)
 
 In Activity 4, we created a list of biscuits to match the contents of the Arnotts Cream 
-Favourites and randomly chose biscuits from the pack... refer back to that for inspriation, if needed. 
+Favourites and randomly chose biscuits from the pack... refer back to that for inspiration for this challenge, if needed. 
 
 What can we see in the example output:
 
