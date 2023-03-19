@@ -177,12 +177,18 @@ Next download [repeatdosage.py](files/repeatdosage.py) and run it. MEC and MTC a
 and **toxic** concentrations, respectively. Note how it takes multiple doses to get up to an effective 
 level. Download [skipdosage.py](files/skipdosage.py) and see the impact of skipped pills on the concentration.
 
+
+
 *For more background information, this exercise is based on p45-50 Chapter 2 of the Shiflet & 
 Shiflet textbook - http://press.princeton.edu/chapters/s2_10291.pdf .*
 
-### Activity 7 - FIXME
+### Activity 7 - Aspirin Dosages
 
-FIXME
+We have seen the impact of a single dose of Aspirin, and then a second after 4 hours. Many of these medications can have serious imnpacts if taken regularly for too long a period. An example would be to take the ```dosage4hr.py``` code and repeat the dosage every 4 hours... make the appropriate changes , which should give a result similar to the plot below.
+
+![Four-hourly aspirin dosage](fig/P03aspirin4hr.png)
+
+![Six-hourly aspirin dosage](fig/P03aspirin6hr.png)
 
 ### Activity 8 - Scaffolded Challenge: 
 
