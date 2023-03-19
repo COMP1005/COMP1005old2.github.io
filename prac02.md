@@ -445,11 +445,11 @@ What can we see in the example output:
   - in this solution, it's done with ```|```, ```-```  and ```+``` characters
 - **Optional:** colour and bold are used to enhance the output (not required)
 
-:::::: Challenge
+:::::: challenge
 
 Here are some tips to help when creating the solution
 
-::: Hint
+::: solution
 
 ### Logic
 
@@ -469,7 +469,7 @@ Here are some tips to help when creating the solution
 
 :::
 
-::: Hint
+::: solution
 
 ### Setting up products
 
@@ -482,7 +482,7 @@ treats = [[1, "Choco Pie", 100, 5],
 ```
 :::
 
-::: Hint
+::: solution
 
 ### Formatted output
 
@@ -498,7 +498,7 @@ right-justification. the ```pad_char``` can be a space or zeros or any other cha
 
 :::
 
-::: Hint
+::: solution
 
 ### Colours!
 
