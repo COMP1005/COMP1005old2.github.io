@@ -524,8 +524,15 @@ BOLD = '\033[1m'
 RESET = '\033[0m'
 ```
 
-You should consider the background colour - yellow will show well on black, but not on white. A ```RESET`` 
-at the end of each coloured string will take you back to default colours.
+For example: 
+
+```
+print(RED, "Oh dear! We are all out of", treats[choice][1], RESET)
+```
+
+You should consider the background colour when choosing text colours - yellow will show well on black, but not on white. 
+A ```RESET`` at the end of each coloured string will take you back to default colours. There are also codes for 
+changing background colours, which can be used for creating checkerboard and other interesting patterns.
 
 ![Vending machine example - on white background](fig/P02vending_light.png)
 
