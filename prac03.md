@@ -182,13 +182,34 @@ level. Download [skipdosage.py](files/skipdosage.py) and see the impact of skipp
 *For more background information, this exercise is based on p45-50 Chapter 2 of the Shiflet & 
 Shiflet textbook - http://press.princeton.edu/chapters/s2_10291.pdf .*
 
-### Activity 7 - Aspirin Dosages
+### Activity 7 - Exploring Aspirin Dosages
 
-We have seen the impact of a single dose of Aspirin, and then a second after 4 hours. Many of these medications can have serious imnpacts if taken regularly for too long a period. An example would be to take the ```dosage4hr.py``` code and repeat the dosage every 4 hours... make the appropriate changes , which should give a result similar to the plot below.
+We have seen the impact of a single dose of Aspirin, and then a second after 4 hours. Many of 
+these medications can have serious imnpacts if taken regularly for too long a period. An example 
+would be to take the ```dosage4hr.py``` code and repeat the dosage every 4 hours... make the 
+appropriate changes , which should give a result similar to the plot below.
 
 ![Four-hourly aspirin dosage](fig/P03aspirin4hr.png)
 
+Note that the concentration of Aspirin in the blood plasma is going above the red line, which is 
+dangerous (Mean Toxic Concentration). Also  note that the blood plasma volume has been reduced to 2700ml, to illustrate the 
+impact of changing these values.
+
+Modifying this code to space the dosages further apart (6 hourly), we see the concentration is now always below the red line.
+
 ![Six-hourly aspirin dosage](fig/P03aspirin6hr.png)
+
+Another way to reduce the cumulative impacts of a medication is to not take it in the evening, so there might be 3 6-hourly doses
+and a gap overnight. This can also be an approach where a medication might keep the patient awake, or not be needed while sleeping. The next plot shows how this might impact the concentration of medication in the blood plasma.
+
+![Six-hourly aspirin, skipping the evening dosage](fig/P03aspirin6hrSkip.png)
+
+Note that these are all **models** and we know that models are **WRONG**. There are many assumptions to consider. Blood plasma
+Would vary between people, and could be approximated, perhaps by weight. Drug absorption levels would vary by person, 
+and by the contents of the stomach, or could be bypassed if the drug is given intravenously. Similarly, excretion 
+of the drug might vary by person, and depend on their overall health. 
+
+It is a simpistic model, however, it is incredibly useful in conveying how repat doses of drug accumulate and compund.
 
 ### Activity 8 - Scaffolded Challenge: 
 
