@@ -791,7 +791,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>cd The/Holy/Grail</code></pre>
 </div>
@@ -947,7 +947,7 @@ working correctly?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Enter “Bruce” <strong>and then</strong> something other than “Bruce”
 to test both paths through the code. Note that “Bruce” and “bruce” are
@@ -1149,7 +1149,7 @@ exit on <strong>zero</strong> instead of negative numbers?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code>while number != 0:</code></pre>
 </div>
@@ -1270,7 +1270,7 @@ which follows the Algorithm on page 25.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Time step 0 is the initial step, before the loop. Our loop will go
 through num_iter times, starting at one. Loops usually go from 0 to
@@ -2541,40 +2541,21 @@ conveying how repat doses of drug accumulate and compund.</p>
 <div class="accordion-body">
 <p>Consider how you might generate a curve. Perhaps an upside-down
 parabola?</p>
-<p>’’’python</p>
-<div class="section level3">
-<h3 id="rainbow-py---demonstrating-plotting">rainbow.py - demonstrating plotting<a class="anchor" aria-label="anchor" href="#rainbow-py---demonstrating-plotting"></a>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<p>import matplotlib.pyplot as plt import math</p>
-</div>
-<div class="section level1">
-<h1 id="basic-curve">Basic Curve<a class="anchor" aria-label="anchor" href="#basic-curve"></a>
-</h1>
-<p>r = 5 for i in range(-r,r+1):
-plt.plot(i,-((abs(i))<strong>2-r</strong>2),“bo”) plt.title(“Basic
-Curve”) plt.show()</p>
-<pre><code>
-:::
-
-::: hint
-
-### Single curve based on formula for a circle
-
-A circle gives a more realistic curve...
-
-'''python
-
-### rainbow.py - demonstrating plotting
-
-import matplotlib.pyplot as plt
-import math
-
-# Basic Curve
-r = 5
-for i in range(-r,r+1):
-    plt.plot(i,math.sqrt(r**2 - i**2),color="red", marker="*")
-plt.title("Basic Curve")
-plt.show()</code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">### rainbow.py - demonstrating plotting</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    plt.plot(i,<span class="op">-</span>((<span class="bu">abs</span>(i))<span class="op">**</span><span class="dv">2</span><span class="op">-</span>r<span class="op">**</span><span class="dv">2</span>),<span class="st">"bo"</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 </div>
 </div>
@@ -2584,36 +2565,54 @@ plt.show()</code></pre>
 <div class="accordion-item">
 <button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
   <h4 class="accordion-header" id="headingHint2">
-  Now repeating the curves in reducing sizes, andprogressive colours
+  Single curve based on formula for a circle
   </h4>
 </button>
 <div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<p>A circle gives a more realistic curve…</p>
+<p>’’’python</p>
+<div class="section level3">
+<h3 id="rainbow-py---demonstrating-plotting">rainbow.py - demonstrating plotting<a class="anchor" aria-label="anchor" href="#rainbow-py---demonstrating-plotting"></a>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">### rainbow.py - demonstrating plotting</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Many Curves</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"red"</span> </span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"orange"</span> </span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"green"</span> </span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"purple"</span> </span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>        plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"*"</span>)</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Many Curves"</span>)</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<p>import matplotlib.pyplot as plt import math</p>
+</div>
+<div class="section level1">
+<h1 id="basic-curve">Basic Curve<a class="anchor" aria-label="anchor" href="#basic-curve"></a>
+</h1>
+<p>r = 5 for i in range(-r,r+1): plt.plot(i,math.sqrt(r<strong>2 -
+i</strong>2),color=“red”, marker=“*“) plt.title(”Basic Curve”)
+plt.show()</p>
+<pre><code>
+:::
+
+::: hint
+
+### Now repeating the curves in reducing sizes, andprogressive colours
+
+```python
+
+### rainbow.py - demonstrating plotting
+
+import matplotlib.pyplot as plt
+import math
+
+# Many Curves
+for r in range(10,5,-1):
+    for i in range(-r,r+1):
+        if r == 10:
+            colour = "red" 
+        elif r == 9:
+            colour = "orange" 
+        elif r == 8:
+            colour = "yellow" 
+        elif r == 7:
+            colour = "green" 
+        else:
+            colour = "purple" 
+        plt.plot(i,math.sqrt(r**2 - i**2),color=colour, marker="*")
+plt.title("Many Curves")
+plt.show()</code></pre>
 </div>
 </div>
 </div>
