@@ -29,7 +29,7 @@ some more complex systems dynamics models.
 VIM – additional useful commands
   
 | Command | Description |
-|-------------|-------------------------------------------------------|
+|---------|-------------------------------------------------------|
 | :w | When editing a file, you can save changes so far using ```:w``` from command mode. Press ```esc``` to go from insert to command mode. |
 | :w filename | If you want to save a file with a new name from vim command mode, type ```:w new_file_name``` |
 | :q! | To quit without saving changes, use ```:q!``` (also good for backing out if you accidentally put the wrong file name in, e.g. ```vim grwth.py```) |
