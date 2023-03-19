@@ -425,7 +425,7 @@ and engaging.
 
 An example of the complete program is below:
 
-![Vending machine example](figs/P2vending.png)
+![Vending machine example](fig/P2vending.png)
 
 In Activity 4, we created a list of biscuits to match the contents of the Arnotts Cream 
 Favourites and randomly chose biscuits from the pack... refer back to that for inspriation, if needed. 
