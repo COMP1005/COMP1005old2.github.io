@@ -459,14 +459,35 @@ Chapter 2 of the Shiflet &amp; Shiflet textbook - <a href="http://press.princeto
 .</em></p>
 </div>
 <div class="section level3">
-<h3 id="activity-7---aspirin-dosages">Activity 7 - Aspirin Dosages<a class="anchor" aria-label="anchor" href="#activity-7---aspirin-dosages"></a></h3>
+<h3 id="activity-7---exploring-aspirin-dosages">Activity 7 - Exploring Aspirin Dosages<a class="anchor" aria-label="anchor" href="#activity-7---exploring-aspirin-dosages"></a></h3>
 <p>We have seen the impact of a single dose of Aspirin, and then a
 second after 4 hours. Many of these medications can have serious
 imnpacts if taken regularly for too long a period. An example would be
 to take the <code>dosage4hr.py</code> code and repeat the dosage every 4
 hours… make the appropriate changes , which should give a result similar
 to the plot below.</p>
-<figure><img src="fig/P03aspirin4hr.png" alt="" class="figure mx-auto d-block"><figcaption>Four-hourly aspirin dosage</figcaption></figure><figure><img src="fig/P03aspirin6hr.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin dosage</figcaption></figure></div>
+<figure><img src="fig/P03aspirin4hr.png" alt="" class="figure mx-auto d-block"><figcaption>Four-hourly aspirin dosage</figcaption></figure><p>Note that the concentration of Aspirin in the blood plasma is going
+above the red line, which is dangerous (Mean Toxic Concentration). Also
+note that the blood plasma volume has been reduced to 2700ml, to
+illustrate the impact of changing these values.</p>
+<p>Modifying this code to space the dosages further apart (6 hourly), we
+see the concentration is now always below the red line.</p>
+<figure><img src="fig/P03aspirin6hr.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin dosage</figcaption></figure><p>Another way to reduce the cumulative impacts of a medication is to
+not take it in the evening, so there might be 3 6-hourly doses and a gap
+overnight. This can also be an approach where a medication might keep
+the patient awake, or not be needed while sleeping. The next plot shows
+how this might impact the concentration of medication in the blood
+plasma.</p>
+<figure><img src="fig/P03aspirin6hrSkip.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin, skipping the evening dosage</figcaption></figure><p>Note that these are all <strong>models</strong> and we know that
+models are <strong>WRONG</strong>. There are many assumptions to
+consider. Blood plasma Would vary between people, and could be
+approximated, perhaps by weight. Drug absorption levels would vary by
+person, and by the contents of the stomach, or could be bypassed if the
+drug is given intravenously. Similarly, excretion of the drug might vary
+by person, and depend on their overall health.</p>
+<p>It is a simpistic model, however, it is incredibly useful in
+conveying how repat doses of drug accumulate and compund.</p>
+</div>
 <div class="section level3">
 <h3 id="activity-8---scaffolded-challenge">Activity 8 - Scaffolded Challenge:<a class="anchor" aria-label="anchor" href="#activity-8---scaffolded-challenge"></a></h3>
 <p>FIXME</p>
