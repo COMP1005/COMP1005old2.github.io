@@ -423,13 +423,110 @@ You are tasked with writing a vending machine program which keeps track of the d
 We can write code to give the correct behaviour, then improve its presentation to be more interesting
 and engaging.
 
-An example of the complete program is below:
+An example of the complete program is below. Making a mock-up of output is one way to specify requirements.
 
-![Vending machine example](fig/P2vending.png)
+![Vending machine example](fig/P02vending.png)
 
 In Activity 4, we created a list of biscuits to match the contents of the Arnotts Cream 
 Favourites and randomly chose biscuits from the pack... refer back to that for inspriation, if needed. 
 
+What can we see in the example output:
+
+- User is prompted for two inputs
+  - Y/N to choose a treat
+  - slot # for the treat of choice
+- All treats and information is output for the user to choose between
+- A count is kept for the number of each product, so you need to:
+  - update count for each treat selected
+  - give error message if there are none left of that product
+- Prices are neatly formatted
+  - in this solution, prices are stored in **cents** and divided/modded by 100 for dollars and cents
+- **Optional:** output of products is formatted in a table
+  - in this solution, it's done with ```|```, ```-```  and ```+``` characters
+- **Optional:** colour and bold are used to enhance the output (not required)
+
+:::::: Challenge
+Here are some tips to help when creating the solution
+::: Hint
+### Logic
+
+- display opening message
+- set up variables to hold product list, price and count
+- ask user if they want a treat
+- while user reponse is not "N"
+  - display treats
+  - get user input for treat choice
+  - if there are none of that item
+    - print error message
+  - else
+    - print success message
+    - reduce count of that item     
+  - ask user if they want a treat
+- display closing message  
+
+:::
+
+::: Hint
+### Setting up products
+
+A list of lists can be used:
+
+```python
+treats = [[1, "Choco Pie", 100, 5],
+         [2, "Hello Panda", 50, 10],
+         [3, "Fortune Cookie", 30, 10]]
+```
+:::
+
+::: Hint
+### Formatted output
+
+There are many ways to crete formatted output in Python. To stay close to what we have already learned, we will use 
+string functions for padding out a string with blanks or zeros.
+
+```python
+str(treats[i][1]).ljust(23," ") 
+```
+This code prints the name of the treat, left justified, to a field-width of 23 characters. If the string is less than
+23 characters long, spaces are added to fill the rest. There is an equivalent ```str.rjust(width[, pad_char])``` for 
+right-justification. the ```pad_char``` can be a space or zeros or any other character.
+
+:::
+
+::: Hint
+### Colours!
+
+As with the ```LINE_UP``` and ```LINE_CLEAR``` codes from earlier in the practical, we can use codes
+for the colours. To make sure the colours work on all platforms, we need the following two lines.
+
+```python
+import os
+
+# System call to make colours work cross-platform
+os.system("")
+```
+
+Some sample codes for colours, bold and underline are below. See [https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal] for more information.
+
+```python
+# reset strings for colours
+
+BLACK = '\033[30m'
+RED = '\033[31m'
+GREEN = '\033[32m'
+YELLOW = '\033[33m'
+BLUE = '\033[34m'
+MAGENTA = '\033[35m'
+CYAN = '\033[36m'
+WHITE = '\033[37m'
+UNDERLINE = '\033[4m'
+BOLD = '\033[1m'
+RESET = '\033[0m'
+```
+
+:::
+
+::::::
 
  
 ### Submission
