@@ -524,6 +524,11 @@ BOLD = '\033[1m'
 RESET = '\033[0m'
 ```
 
+You should consider the background colour - yellow will show well on black, but not on white. A ```RESET`` 
+at the end of each coloured string will take you back to default colours.
+
+![Vending machine example - on white background](fig/P02vending_light.png)
+
 :::
 
 ::::::
