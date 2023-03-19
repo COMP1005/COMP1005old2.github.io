@@ -446,8 +446,11 @@ What can we see in the example output:
 - **Optional:** colour and bold are used to enhance the output (not required)
 
 :::::: Challenge
+
 Here are some tips to help when creating the solution
+
 ::: Hint
+
 ### Logic
 
 - display opening message
@@ -467,6 +470,7 @@ Here are some tips to help when creating the solution
 :::
 
 ::: Hint
+
 ### Setting up products
 
 A list of lists can be used:
@@ -479,6 +483,7 @@ treats = [[1, "Choco Pie", 100, 5],
 :::
 
 ::: Hint
+
 ### Formatted output
 
 There are many ways to crete formatted output in Python. To stay close to what we have already learned, we will use 
@@ -494,6 +499,7 @@ right-justification. the ```pad_char``` can be a space or zeros or any other cha
 :::
 
 ::: Hint
+
 ### Colours!
 
 As with the ```LINE_UP``` and ```LINE_CLEAR``` codes from earlier in the practical, we can use codes
