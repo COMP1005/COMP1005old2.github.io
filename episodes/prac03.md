@@ -240,9 +240,11 @@ for i in range(-r,r+1):
 plt.title("Basic Curve")
 plt.show()
 ```
+
 :::
 
 ::: hint
+
 ### Single curve based on formula for a circle
 
 A circle gives a more realistic curve...
@@ -265,6 +267,7 @@ plt.show()
 :::
 
 ::: hint
+
 ### Now repeating the curves in reducing sizes, andprogressive colours
 
 ```python
@@ -294,8 +297,10 @@ plt.show()
 :::
 
 ::: hint
+
 ### Storing values in arrays 
 
+```python
 # Many Curves - arrays
 import numpy as np
 res = 4
@@ -327,6 +332,7 @@ plt.show()
 ```
 :::
  
+::::::
 
 ### Activity 9 - Update README file
 
