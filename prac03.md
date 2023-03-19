@@ -222,14 +222,12 @@ So, where might we start?
 ::::: challenge
 
 ::: hint
+
 ### Single curve based on a parabola
 
 Consider how you might generate a curve. Perhaps an upside-down parabola?
 
 ```python
-
-### rainbow.py - demonstrating plotting
-
 import matplotlib.pyplot as plt
 import math
 
@@ -241,18 +239,18 @@ plt.title("Basic Curve")
 plt.show()
 ```
 
+This code gives one curve of blue circles, but the shape is wrong.
+
 :::
 
 ::: hint
 
 ### Single curve based on formula for a circle
 
-A circle gives a more realistic curve...
+A circle gives a more realistic curve... so we can use the ```x**2 + y**2 = r**2``` formula to find points on the 
+edge of a circle.
 
-'''python
-
-### rainbow.py - demonstrating plotting
-
+```python
 import matplotlib.pyplot as plt
 import math
 
@@ -268,16 +266,15 @@ plt.show()
 
 ::: hint
 
-### Now repeating the curves in reducing sizes, andprogressive colours
+### Repeating the curves in reducing sizes, and progressive colours
+
+We can use the loop index to map to a particular colour, and also to change the radius of the circle.
 
 ```python
-
-### rainbow.py - demonstrating plotting
-
 import matplotlib.pyplot as plt
 import math
 
-# Many Curves
+# Many Curves 10,9,8,7,6
 for r in range(10,5,-1):
     for i in range(-r,r+1):
         if r == 10:
@@ -294,6 +291,7 @@ for r in range(10,5,-1):
 plt.title("Many Curves")
 plt.show()
 ```
+
 :::
 
 ::: hint
@@ -330,6 +328,7 @@ for r in range(10,3,-1):
 plt.title("Many Curves - arrays")
 plt.show()
 ```
+
 :::
  
 ::::::
