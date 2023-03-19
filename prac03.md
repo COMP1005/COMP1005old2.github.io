@@ -326,7 +326,7 @@ for r in range(10,3,-1):
         xarray[i] = i
         print(r, i)
         arcarray[i] = math.sqrt((res * r)**2 - i**2)
-    plt.plot(xarray, arcarray ,color=colour, marker="o")
+    plt.plot(xarray, arcarray, color=colour, marker="o")
 plt.title("Many Curves - arrays")
 plt.show()
 ```
