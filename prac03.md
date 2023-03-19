@@ -226,7 +226,7 @@ So, where might we start?
 
 Consider how you might generate a curve. Perhaps an upside-down parabola?
 
-'''python
+```python
 
 ### rainbow.py - demonstrating plotting
 
