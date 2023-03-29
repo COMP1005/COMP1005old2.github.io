@@ -11,7 +11,7 @@
 carpentry: 'cp'
 
 # Overall title for pages.
-title: 'Fundamentals of Programming - Curtin University'
+title: 'Fundamentals of Programming'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: ~
@@ -63,6 +63,8 @@ episodes:
 - prac01.md
 - prac02.md
 - prac03.md
+- prac04.md
+- prac05.md
 
 # Information for Learners
 learners: 
