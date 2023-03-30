@@ -120,9 +120,8 @@ print("Fahrenheit is ", testF, " Celsius is ", testC) print()
 ```
 
 Extend conversions.py to include all six conversion functions, along with others you might find useful. Extend your test program to test the other conversions.
-To see the docstring for a function, you access the ```__doc__``` attribute. So to print the docstring for fahr2cel, use:
-```print(fahr2cel.__doc__)```
-
+To see the docstring for a function, you access the ```__doc__``` attribute. So to print the docstring for fahr2cel, you could use: ```print(fahr2cel.__doc__)```. This
+is how the IDE's access the information to give you help with usage as you type in a function. 
 
 
 ### Activity 5 - Conversion Machine
