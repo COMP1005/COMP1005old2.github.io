@@ -237,7 +237,7 @@
 <div class="accordion accordion-flush" id="accordionFlush7">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading7">
-        <a href="prac05.html">6. Prac03: Arrays and Plotting INCOMPLETE</a>
+        <a href="prac05.html">6. Prac05: Arrays and Plotting INCOMPLETE</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -815,7 +815,7 @@ directory <strong>with one command</strong>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <pre><code>cd The/Holy/Grail</code></pre>
 </div>
@@ -971,7 +971,7 @@ working correctly?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Enter “Bruce” <strong>and then</strong> something other than “Bruce”
 to test both paths through the code. Note that “Bruce” and “bruce” are
@@ -1173,7 +1173,7 @@ exit on <strong>zero</strong> instead of negative numbers?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code>while number != 0:</code></pre>
 </div>
@@ -1294,7 +1294,7 @@ which follows the Algorithm on page 25.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>Time step 0 is the initial step, before the loop. Our loop will go
 through num_iter times, starting at one. Loops usually go from 0 to
@@ -2972,79 +2972,87 @@ something like the code below, or work with user input.</p>
 with others you might find useful. Extend your test program to test the
 other conversions. To see the docstring for a function, you access the
 <code>__doc__</code> attribute. So to print the docstring for fahr2cel,
-use:</p>
-<pre class="print(fahr2cel.__doc__)```"><code>
-
-
-### Activity 5 - Conversion Machine
-
-Now we can write a program, ```converter.py```, to convert between our temperature formats. Your program should:
-
-1. print starting message
-2. provide a menu of conversions to choose between
-3. take the user input
-4. while the choice is to keep going
-  5. do the conversion, or provide an error message
-  6. ask if they want to do another conversion
-  7. loop back to (4) 
-8. print closing message
-
-This is very similar to the Bucket List Builder, so refer to Practical 02 to see that code.
-
-
-### Activity 6 - Conversion Machine (2)
-
-Create a different version of the conversion machine, converter2.py, that will ask for the 
-conversion type, then will convert a list of numbers into the target unit. The loop should 
-exit when the user enters an empty value (just presses return).
-
-1. print starting message
-2. provide a menu of conversions to choose between
-3. take the user input
-4. while the choice isn't an empty string
-  5. do the conversion, or provide an error message
-  6. ask if they want to do another conversion
-  7. loop back to (4) 
-8. print closing message
-
-
-### Activity 7 - Conversion Machine (3)
-
-Think about the input you are giving to ```converter2.py```. Could you automate that input?
-
-We can redirect input in the same way that we redirected the output of history in the practical 
-test (```history &gt; hist.txt```). Create a file ```temps.txt``` with sample input for your ```converter2.py```
-program, then try:
-</code></pre>
-<p>python3 converter2.py &lt; temps.txt</p>
-<pre><code>
-To capture the results, you can also redirect the output:
-</code></pre>
-<p>python3 converter2.py &lt; temps.txt &gt; tempsout.txt</p>
-<pre><code>
-Make a larger input file to see how easy it is to process data using **standard in** (keyboard input) and **standard out** (screen output).
-
-### Activity 8 - Testing your Module
-
-In the lecture (slide 71), we saw how we can use the ```__main__``` attribute/variable 
-to check if our python code has been run directly (e.g. ```python3 conversions.py```) or indirectly 
-(e.g. ```from conversions import *, temp = fahr2cel(100))```. Using this, we can create test 
-code inside our module.
-
-Modify ```conversions.py``` to include test code by implementing a ```main()``` function and putting the required if statement at the end of the module.
-Test your changes by running the conversions.py from the command line.
-
-```python3 conversions.py```
-
-The additional code for ```conversions.py``` is:
-
-```python 
-def main():
-    print('\nTesting textfun.py ')
-    # put your testing code in here
-    print('Testing complete')
-if __name__ == '__main__':
-    main()</code></pre>
+you could use: <code>print(fahr2cel.__doc__)</code>. This is how the
+IDE’s access the information to give you help with usage as you type in
+a function.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-5---conversion-machine">Activity 5 - Conversion Machine<a class="anchor" aria-label="anchor" href="#activity-5---conversion-machine"></a>
+</h3>
+<p>Now we can write a program, <code>converter.py</code>, to convert
+between our temperature formats. Your program should:</p>
+<ol style="list-style-type: decimal">
+<li>print starting message</li>
+<li>provide a menu of conversions to choose between</li>
+<li>take the user input</li>
+<li>while the choice is to keep going</li>
+<li>do the conversion, or provide an error message</li>
+<li>ask if they want to do another conversion</li>
+<li>loop back to (4)</li>
+<li>print closing message</li>
+</ol>
+<p>This is very similar to the Bucket List Builder, so refer to
+Practical 02 to see that code.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-6---conversion-machine-2">Activity 6 - Conversion Machine (2)<a class="anchor" aria-label="anchor" href="#activity-6---conversion-machine-2"></a>
+</h3>
+<p>Create a different version of the conversion machine, converter2.py,
+that will ask for the conversion type, then will convert a list of
+numbers into the target unit. The loop should exit when the user enters
+an empty value (just presses return).</p>
+<ol style="list-style-type: decimal">
+<li>print starting message</li>
+<li>provide a menu of conversions to choose between</li>
+<li>take the user input</li>
+<li>while the choice isn’t an empty string</li>
+<li>do the conversion, or provide an error message</li>
+<li>ask if they want to do another conversion</li>
+<li>loop back to (4)</li>
+<li>print closing message</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="activity-7---conversion-machine-3">Activity 7 - Conversion Machine (3)<a class="anchor" aria-label="anchor" href="#activity-7---conversion-machine-3"></a>
+</h3>
+<p>Think about the input you are giving to <code>converter2.py</code>.
+Could you automate that input?</p>
+<p>We can redirect input in the same way that we redirected the output
+of history in the practical test (<code>history &gt; hist.txt</code>).
+Create a file <code>temps.txt</code> with sample input for your
+<code>converter2.py</code> program, then try:</p>
+<pre><code>python3 converter2.py &lt; temps.txt</code></pre>
+<p>To capture the results, you can also redirect the output:</p>
+<pre><code>python3 converter2.py &lt; temps.txt &gt; tempsout.txt</code></pre>
+<p>Make a larger input file to see how easy it is to process data using
+<strong>standard in</strong> (keyboard input) and <strong>standard
+out</strong> (screen output).</p>
+</div>
+<div class="section level3">
+<h3 id="activity-8---testing-your-module">Activity 8 - Testing your Module<a class="anchor" aria-label="anchor" href="#activity-8---testing-your-module"></a>
+</h3>
+<p>In the lecture (slide 71), we saw how we can use the
+<code>__main__</code> attribute/variable to check if our python code has
+been run directly (e.g. <code>python3 conversions.py</code>) or
+indirectly
+(e.g. <code>from conversions import *, temp = fahr2cel(100))</code>.
+Using this, we can create test code inside our module.</p>
+<p>Modify <code>conversions.py</code> to include test code by
+implementing a <code>main()</code> function and putting the required if
+statement at the end of the module. Test your changes by running the
+conversions.py from the command line.</p>
+<p><code>python3 conversions.py</code></p>
+<p>The additional code for <code>conversions.py</code> is:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Testing textfun.py '</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># put your testing code in here</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Testing complete'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+</div>
 </div>
 <div class="section level3">
 <h3 id="activity-9---update-readme-file">Activity 9 - Update README file<a class="anchor" aria-label="anchor" href="#activity-9---update-readme-file"></a>
@@ -3133,7 +3141,7 @@ part of the prac tests or exam.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div></section><section id="aio-prac05"><p>Content from <a href="prac05.html">Prac03: Arrays and Plotting INCOMPLETE</a></p>
+</div></section><section id="aio-prac05"><p>Content from <a href="prac05.html">Prac05: Arrays and Plotting INCOMPLETE</a></p>
 <hr>
 <p> Last updated on 2023-03-30 | 
         
@@ -3149,10 +3157,7 @@ any links that you are not going to use.
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>How do I process large amounts of data?</li>
-<li>What support does Python have for manipulating science and
-engineering datasets?</li>
-<li>How can I get a quick visualisation (plot) of my data?</li>
+<li>Use the old prac sheet for now</li>
 </ul>
 </div>
 </div>
@@ -3162,10 +3167,7 @@ engineering datasets?</li>
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
 <ol style="list-style-type: decimal">
-<li>Use Python arrays implemented in Numpy</li>
-<li>Use simple plotting techniques using matplotlib</li>
-<li>Apply arrays and plotting to more complex systems dynamics
-problems</li>
+<li>FIXME</li>
 </ol>
 </div>
 </div>
@@ -3178,68 +3180,6 @@ problems</li>
 <p>In this practical you will be using Numpy arrays to store data. We
 will then plot data from arrays and lists before using arrays and
 plotting in some more complex systems dynamics models.</p>
-</div>
-<div class="section level3">
-<h3 id="additional-commands-in-vim">Additional commands in VIM<a class="anchor" aria-label="anchor" href="#additional-commands-in-vim"></a>
-</h3>
-<p>VIM – additional useful commands</p>
-<table class="table">
-<colgroup>
-<col width="14%">
-<col width="85%">
-</colgroup>
-<thead><tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td>:w</td>
-<td>When editing a file, you can save changes so far using
-<code>:w</code> from command mode. Press <code>esc</code> to go from
-insert to command mode.</td>
-</tr>
-<tr class="even">
-<td>:w filename</td>
-<td>If you want to save a file with a new name from vim command mode,
-type <code>:w new_file_name</code>
-</td>
-</tr>
-<tr class="odd">
-<td>:q!</td>
-<td>To quit without saving changes, use <code>:q!</code> (also good for
-backing out if you accidentally put the wrong file name in,
-e.g. <code>vim grwth.py</code>)</td>
-</tr>
-<tr class="even">
-<td>D</td>
-<td>To delete the rest of a line (from current cursor position in
-command mode), type <code>D</code>
-</td>
-</tr>
-<tr class="odd">
-<td>R</td>
-<td>To replace the rest of a line (from current cursor position in
-command mode), type <code>R</code>, puts you into insert mode</td>
-</tr>
-<tr class="even">
-<td>u</td>
-<td>To undo a command or change, type <code>u</code>, repeat to undo
-multiple</td>
-</tr>
-<tr class="odd">
-<td>xG</td>
-<td>To go to a line 20 in a file, type <code>20G</code>. To go to the
-last line of a file, type <code>G</code>
-</td>
-</tr>
-<tr class="even">
-<td>A</td>
-<td>Appends after the end of the current line, puts into insert
-mode</td>
-</tr>
-</tbody>
-</table>
 <p>On occasion, you may accidentally hit <code>ctrl-z</code> when using
 vim or other programs. This pauses the program, but it is still running
 in the “background”. Type <code>fg</code> to bring it back into the
