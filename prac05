@@ -1,5 +1,5 @@
 ---
-title: "Prac03: Arrays and Plotting"
+title: "Prac03: Arrays and Plotting INCOMPLETE"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -202,7 +202,7 @@ Modifying this code to space the dosages further apart (6 hourly), we see the co
 Another way to reduce the cumulative impacts of a medication is to not take it in the evening, so there might be 3 6-hourly doses
 and a gap overnight. This can also be an approach where a medication might keep the patient awake, or not be needed while sleeping. The next plot shows how this might impact the concentration of medication in the blood plasma.
 
-![Six-hourly aspirin, skipping the evening dosage](fig/P03aspirin6hrSkip.png)
+![Six-hourly aspirin, skipping the evening dosage](fig/P03dosage6hrSkip.png)
 
 Note that these are all **models** and we know that models are **WRONG**. There are many assumptions to consider. Blood plasma
 Would vary between people, and could be approximated, perhaps by weight. Drug absorption levels would vary by person, 
