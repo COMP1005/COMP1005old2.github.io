@@ -1,16 +1,20 @@
 ---
-title: "Prac05: Arrays and Plotting INCOMPLETE"
+title: "Prac03: Arrays and Plotting INCOMPLETE"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Use the old prac sheet for now
+- How do I process large amounts of data?
+- What support does Python have for manipulating science and engineering datasets?
+- How can I get a quick visualisation (plot) of my data?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-1. FIXME
+1. Use Python arrays implemented in Numpy
+2. Use simple plotting techniques using matplotlib
+3. Apply arrays and plotting to more complex systems dynamics problems
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -19,6 +23,21 @@ title: "Prac05: Arrays and Plotting INCOMPLETE"
 In this practical you will be using Numpy arrays to store data. We will 
 then plot data from arrays and lists before using arrays and plotting in 
 some more complex systems dynamics models.
+
+### Additional commands in VIM
+
+VIM – additional useful commands
+  
+| Command | Description |
+|---------|-------------------------------------------------------|
+| :w | When editing a file, you can save changes so far using ```:w``` from command mode. Press ```esc``` to go from insert to command mode. |
+| :w filename | If you want to save a file with a new name from vim command mode, type ```:w new_file_name``` |
+| :q! | To quit without saving changes, use ```:q!``` (also good for backing out if you accidentally put the wrong file name in, e.g. ```vim grwth.py```) |
+| D | To delete the rest of a line (from current cursor position in command mode), type ```D``` |
+| R | To replace the rest of a line (from current cursor position in command mode), type ```R```, puts you into insert mode|
+| u | To undo a command or change, type ```u```, repeat to undo multiple |
+| xG | To go to a line 20 in a file, type ```20G```. To go to the last line of a file, type ```G``` |
+| A | Appends after the end of the current line, puts into insert mode |
 
 On occasion, you may accidentally hit ```ctrl-z``` when using vim or other programs. This pauses the program, 
 but it is still running in the “background”. Type ```fg``` to bring it back into the foreground. When this happens, 
