@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Fundamentals of Programming - Curtin University: All in One View</title>
+<title>Fundamentals of Programming: All in One View</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config">
@@ -65,7 +65,7 @@
       <img class="small-logo" alt="The Carpentries" src="assets/images/carpentries-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Fundamentals of Programming - Curtin University
+      Fundamentals of Programming
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -76,7 +76,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Fundamentals of Programming - Curtin University
+            Fundamentals of Programming
           </span>
         </li>
         <li class="nav-item">
@@ -106,7 +106,7 @@
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
-  Fundamentals of Programming - Curtin University
+  Fundamentals of Programming
 </div>
 
 <aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
@@ -214,6 +214,30 @@
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading5">
         <a href="prac03.html">4. Prac03: Arrays and Plotting</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="prac04.html">5. Prac04: 2-Dimensional Arrays, Functions and Plotting</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="prac05.html">6. Prac03: Arrays and Plotting INCOMPLETE</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -2215,9 +2239,905 @@ any links that you are not going to use.
  -->
 </div></section><section id="aio-prac03"><p>Content from <a href="prac03.html">Prac03: Arrays and Plotting</a></p>
 <hr>
-<p> Last updated on 2023-03-28 | 
+<p> Last updated on 2023-03-30 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac03.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>How do I process large amounts of data?</li>
+<li>What support does Python have for manipulating science and
+engineering datasets?</li>
+<li>How can I get a quick visualisation (plot) of my data?</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ol style="list-style-type: decimal">
+<li>Use Python arrays implemented in Numpy</li>
+<li>Use simple plotting techniques using matplotlib</li>
+<li>Apply arrays and plotting to more complex systems dynamics
+problems</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
+<p>In this practical you will be using Numpy arrays to store data. We
+will then plot data from arrays and lists before using arrays and
+plotting in some more complex systems dynamics models.</p>
+</div>
+<div class="section level3">
+<h3 id="additional-commands-in-vim">Additional commands in VIM<a class="anchor" aria-label="anchor" href="#additional-commands-in-vim"></a>
+</h3>
+<p>VIM – additional useful commands</p>
+<table class="table">
+<colgroup>
+<col width="14%">
+<col width="85%">
+</colgroup>
+<thead><tr class="header">
+<th>Command</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>:w</td>
+<td>When editing a file, you can save changes so far using
+<code>:w</code> from command mode. Press <code>esc</code> to go from
+insert to command mode.</td>
+</tr>
+<tr class="even">
+<td>:w filename</td>
+<td>If you want to save a file with a new name from vim command mode,
+type <code>:w new_file_name</code>
+</td>
+</tr>
+<tr class="odd">
+<td>:q!</td>
+<td>To quit without saving changes, use <code>:q!</code> (also good for
+backing out if you accidentally put the wrong file name in,
+e.g. <code>vim grwth.py</code>)</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>To delete the rest of a line (from current cursor position in
+command mode), type <code>D</code>
+</td>
+</tr>
+<tr class="odd">
+<td>R</td>
+<td>To replace the rest of a line (from current cursor position in
+command mode), type <code>R</code>, puts you into insert mode</td>
+</tr>
+<tr class="even">
+<td>u</td>
+<td>To undo a command or change, type <code>u</code>, repeat to undo
+multiple</td>
+</tr>
+<tr class="odd">
+<td>xG</td>
+<td>To go to a line 20 in a file, type <code>20G</code>. To go to the
+last line of a file, type <code>G</code>
+</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>Appends after the end of the current line, puts into insert
+mode</td>
+</tr>
+</tbody>
+</table>
+<p>On occasion, you may accidentally hit <code>ctrl-z</code> when using
+vim or other programs. This pauses the program, but it is still running
+in the “background”. Type <code>fg</code> to bring it back into the
+foreground. When this happens, or if you close your machine without
+saving the files, a temporary file that vim creates is left behind (when
+you save and quit normally, the file is deleted). If you type
+<code>ls -la</code>, you can see these “hidden” files – they start with
+a “.”, eg. <code>.growth.py.swp</code>. Once you have your file back in
+order, you can delete the temp files using
+<code>rm .growth.py.swp</code>.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-1---plotting-growth">Activity 1 - Plotting Growth<a class="anchor" aria-label="anchor" href="#activity-1---plotting-growth"></a>
+</h3>
+<p>The lectures notes gave modified code for <code>growth.py</code> to
+plot the output. Copy <code>growth.py</code> from your
+<code>Prac01</code> directory into your <code>Prac03</code> directory.
+Rename it <code>growthplot.py</code> and update the documentation at the
+start of the program. Then make the changes as indicated in the lecture
+notes. This includes inserting code for importing matplotlib; creating
+and appending to lists; and plotting the data.</p>
+<p>Run the program and confirm that it plots your data.</p>
+<p>Make the following modifications to your code (do each modification
+and confirm it works before moving onto the next one):</p>
+<ol style="list-style-type: decimal">
+<li>Change the colour of the plotted line from blue to red</li>
+<li>Change the symbol for the plotted line to a triangle. Note that the
+line is formed from many individual data points, these are joined
+together when we use a line in our plot</li>
+<li>Change the simulation time from 10 hour to 100 hours, now we can see
+the exponential growth in the population</li>
+<li>Change the plotting back to a line</li>
+<li>Change the plot title to “Prac 3.1: Unconstrained Growth”</li>
+<li>Save the plot to your <code>Prac03</code> directory</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="activity-2---reading-numbers-with-arrays">Activity 2 - Reading Numbers with Arrays<a class="anchor" aria-label="anchor" href="#activity-2---reading-numbers-with-arrays"></a>
+</h3>
+<p>In <code>Prac01</code> we read in ten numbers and printed their
+total. Copy <code>numbers2.py</code> from <code>Prac01</code> to
+<code>Prac03/numbersarray.py</code>. We will change this file to use
+arrays to store the values and then print some summary data.</p>
+<p>Make the changes below and run the program:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># numbersarray.py: Read ten numbers give sum, min, max &amp; mean </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>numarray <span class="op">=</span> np.zeros(<span class="dv">10</span>)   <span class="co"># create an empty 10 element array </span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter ten numbers...'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numarray)):</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Enter a number ('</span>, i, <span class="st">')...'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    numarray[i] <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total is '</span>, numarray.<span class="bu">sum</span>())</span></code></pre>
+</div>
+<p>Modify the code to:</p>
+<ol style="list-style-type: decimal">
+<li>Print the min and max numbers entered</li>
+<li>Print the average (mean) of the numbers</li>
+<li>Plot the numbers</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="activity-3---plotting-growth-with-arrays">Activity 3 - Plotting Growth with Arrays<a class="anchor" aria-label="anchor" href="#activity-3---plotting-growth-with-arrays"></a>
+</h3>
+<p>Copy <code>growthplot.py</code> to <code>growtharray.py</code>. We
+will change this file to use arrays to store the values and then plot
+the arrays.</p>
+<ol style="list-style-type: decimal">
+<li>First, update the documentation accordingly.</li>
+<li>To use Numpy arrays, we first need to import the numpy package:
+<code>import numpy as np</code>. Add the import line to the start of the
+program.</li>
+<li>Then, create an array of zeros to hold the calculated values</li>
+<li>Modify the loop code to put the values into the array</li>
+<li>Modify the <code>plt.plot</code> call to plot the array</li>
+<li>If you didn’t provide x-values for time (in hours), add code for
+x-values</li>
+</ol>
+</div>
+<div class="section level3">
+<h3 id="activity-4---plotting-subplots">Activity 4 - Plotting Subplots<a class="anchor" aria-label="anchor" href="#activity-4---plotting-subplots"></a>
+</h3>
+<p>Copy <code>growtharray.py</code> to <code>growthsubplot.py</code>. We
+will change this program to give multiple plots in the same figure.</p>
+<ol style="list-style-type: decimal">
+<li>Update the documentation accordingly</li>
+<li>Modify the plotting code to do the do the equivalent of the subplot
+code in the lecture slides (shown below). When adapting the code, the
+variable names and labels/titles will need to be changed… this is a
+<strong>very</strong> common task.</li>
+</ol>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(<span class="dv">1</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">211</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'--'</span>)  <span class="co"># update the xvalues, yvalues and line style</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'March Temperatures'</span>)   <span class="co"># update title</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)         <span class="co"># update y label units</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">212</span>)                  <span class="co"># as above... for second subplot</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'ro'</span>)  <span class="co"># explore different line styles</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.show()                        <span class="co"># display plot</span></span></code></pre>
+</div>
+<p>Save the resulting plot in your <code>Prac03</code> directory.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-5---plotting-a-bar-chart">Activity 5 - Plotting a Bar Chart<a class="anchor" aria-label="anchor" href="#activity-5---plotting-a-bar-chart"></a>
+</h3>
+<p>Copy <code>numbersarray.py</code> to <code>numbersbar.py</code>.
+Update <code>numbersbar.py</code> to print a bar chart of the numbers.
+In the lecture notes, we saw how to plot a bar chart from a list. We
+will use similar code to plot the numbers entered into
+<code>numbersbar.py</code></p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Numbers Bar Chart'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Index'</span>) </span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.bar([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>], numarray, <span class="fl">0.9</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+<p>Add this code to <code>numbersbar.py</code> to print a purple bar
+chart. Remember to import matplotlib!</p>
+<p>Save it to your <code>Prac03</code> directory.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-6---systems-dynamics-revisited">Activity 6 - Systems Dynamics Revisited<a class="anchor" aria-label="anchor" href="#activity-6---systems-dynamics-revisited"></a>
+</h3>
+<p>In <code>growth.py</code> we implemented a simulation of
+unconstrained growth. We can use the same approach to simulate decay –
+using negative growth. In this example, we can look at a dosage of a
+drug, e.g. Aspirin for pain and Dilantin for treating epilepsy.</p>
+<p>Download <a href="files/dosage.py">dosage.py</a> and save it into
+your <code>Prac03</code> directory. Run the program and see if you can
+understand what it is doing. Look at Chapter 2 of the text for
+background. The program <a href="files/dosage4hr.py">dosage4hr.py</a> is
+a variation of <code>dosage.py</code> where another two tablets are
+taken after 4 hours.</p>
+<p>Next download <a href="files/repeatdosage.py">repeatdosage.py</a> and
+run it. MEC and MTC are values for <strong>effective</strong> and
+<strong>toxic</strong> concentrations, respectively. Note how it takes
+multiple doses to get up to an effective level. Download <a href="files/skipdosage.py">skipdosage.py</a> and see the impact of
+skipped pills on the concentration.</p>
+<p><em>For more background information, this exercise is based on p45-50
+Chapter 2 of the Shiflet &amp; Shiflet textbook - <a href="http://press.princeton.edu/chapters/s2_10291.pdf" class="external-link uri">http://press.princeton.edu/chapters/s2_10291.pdf</a>
+.</em></p>
+</div>
+<div class="section level3">
+<h3 id="activity-7---exploring-aspirin-dosages">Activity 7 - Exploring Aspirin Dosages<a class="anchor" aria-label="anchor" href="#activity-7---exploring-aspirin-dosages"></a>
+</h3>
+<p>We have seen the impact of a single dose of Aspirin, and then a
+second after 4 hours. Many of these medications can have serious
+imnpacts if taken regularly for too long a period. An example would be
+to take the <code>dosage4hr.py</code> code and repeat the dosage every 4
+hours… make the appropriate changes , which should give a result similar
+to the plot below.</p>
+<figure><img src="fig/P03aspirin4hr.png" alt="" class="figure mx-auto d-block"><figcaption>Four-hourly aspirin dosage</figcaption></figure><p>Note that the concentration of Aspirin in the blood plasma is going
+above the red line, which is dangerous (Mean Toxic Concentration). Also
+note that the blood plasma volume has been reduced to 2700ml, to
+illustrate the impact of changing these values.</p>
+<p>Modifying this code to space the dosages further apart (6 hourly), we
+see the concentration is now always below the red line.</p>
+<figure><img src="fig/P03aspirin6hr.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin dosage</figcaption></figure><p>Another way to reduce the cumulative impacts of a medication is to
+not take it in the evening, so there might be 3 6-hourly doses and a gap
+overnight. This can also be an approach where a medication might keep
+the patient awake, or not be needed while sleeping. The next plot shows
+how this might impact the concentration of medication in the blood
+plasma.</p>
+<figure><img src="fig/P03aspirin6hrSkip.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin, skipping the evening dosage</figcaption></figure><p>Note that these are all <strong>models</strong> and we know that
+models are <strong>WRONG</strong>. There are many assumptions to
+consider. Blood plasma Would vary between people, and could be
+approximated, perhaps by weight. Drug absorption levels would vary by
+person, and by the contents of the stomach, or could be bypassed if the
+drug is given intravenously. Similarly, excretion of the drug might vary
+by person, and depend on their overall health.</p>
+<p>It is a simpistic model, however, it is incredibly useful in
+conveying how repat doses of drug accumulate and compund.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-8---scaffolded-challenge-rainbows">Activity 8 - Scaffolded Challenge: Rainbows<a class="anchor" aria-label="anchor" href="#activity-8---scaffolded-challenge-rainbows"></a>
+</h3>
+<p>Given we can draw a line plot in various colours, how might we plot a
+<strong>rainbow</strong>?</p>
+<figure><img src="fig/P03RainbowLists.png" alt="" class="figure mx-auto d-block"><figcaption>Rainbows stored in lists</figcaption></figure><p>So, where might we start?</p>
+<div id="challenge1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+</h3>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+<div id="accordionHint1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint1" aria-expanded="false" aria-controls="collapseHint1">
+  <h4 class="accordion-header" id="headingHint1">
+  Single curve based on a parabola
+  </h4>
+</button>
+<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div class="accordion-body">
+<p>Consider how you might generate a curve. Perhaps an upside-down
+parabola?</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(i,<span class="op">-</span>((<span class="bu">abs</span>(i))<span class="op">**</span><span class="dv">2</span><span class="op">-</span>r<span class="op">**</span><span class="dv">2</span>),<span class="st">"bo"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+<p>This code gives one curve of blue circles, but the shape is
+wrong.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint2" aria-expanded="false" aria-controls="collapseHint2">
+  <h4 class="accordion-header" id="headingHint2">
+  Single curve based on formula for a circle
+  </h4>
+</button>
+<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div class="accordion-body">
+<p>A circle gives a more realistic curve… so we can use the
+<code>x**2 + y**2 = r**2</code> formula to find points on the edge of a
+circle.</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span><span class="st">"red"</span>, marker<span class="op">=</span><span class="st">"*"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint3" aria-expanded="false" aria-controls="collapseHint3">
+  <h4 class="accordion-header" id="headingHint3">
+  Repeating the curves in reducing sizes, and progressive colours
+  </h4>
+</button>
+<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div class="accordion-body">
+<p>We can use the loop index to map to a particular colour, and also to
+change the radius of the circle.</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Many Curves 10,9,8,7,6</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"red"</span> </span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"orange"</span> </span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"green"</span> </span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"purple"</span> </span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"*"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Many Curves"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionHint4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button hint-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHint4" aria-expanded="false" aria-controls="collapseHint4">
+  <h4 class="accordion-header" id="headingHint4">
+  Storing values in arrays
+  </h4>
+</button>
+<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div class="accordion-body">
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Many Curves - arrays</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> r <span class="op">*</span> res <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    xarray <span class="op">=</span> np.zeros(size)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    arcarray <span class="op">=</span> np.zeros(size)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"red"</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"orange"</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"green"</span> </span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"blue"</span> </span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"indigo"</span> </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"violet"</span> </span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>res <span class="op">*</span> r, res <span class="op">*</span> r <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        xarray[i] <span class="op">=</span> i</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(r, i)</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        arcarray[i] <span class="op">=</span> math.sqrt((res <span class="op">*</span> r)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    plt.plot(xarray, arcarray, color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Many Curves - arrays"</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="activity-9---update-readme-file">Activity 9 - Update README file<a class="anchor" aria-label="anchor" href="#activity-9---update-readme-file"></a>
+</h3>
+<p>Update the README file to include:</p>
+<ul>
+<li>growthplot.py</li>
+<li>numbersarray.py</li>
+<li>growtharray.py</li>
+<li>growthsubplot.py</li>
+<li>numbersbar.py</li>
+<li>dosage.py</li>
+<li>repeatdosage.py</li>
+</ul>
+<p>along with any additional programs and charts you have created.</p>
+</div>
+<div class="section level3">
+<h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a>
+</h3>
+<p>All of your work for this week’s practical should be submitted via
+Blackboard using the Practical 03 link. This should be done as a single
+“zipped” file. Submit the resulting file through Blackboard. (refer to
+Practical 00 or 01 for instructions on zipping files.</p>
+<p>There are no direct marks for these submissions, but they may be
+taken into account when finalising your mark for the unit. Go to the
+Assessment link on Blackboard and click on Practical 03 for the
+submission page.</p>
+</div>
+<div class="section level3">
+<h3 id="and-thats-the-end-of-practical-03">And that’s the end of Practical 03!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-03"></a>
+</h3>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>Arrays give compact storage and additional functionality when
+working with collections of data <strong>of the same type</strong>.</li>
+<li>Arrays are implemented in the <code>numpy</code> package, which you
+<code>import</code> to be able to use them.</li>
+<li>Plotting data aids understanding and helps us see trends.</li>
+<li>We can plot using <code>matplotlib</code>. Other packages will be
+explored later in the semester</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div id="reflection" class="callout-inner">
+<h3 class="callout-title">Reflection<a class="anchor" aria-label="anchor" href="#checklist1"></a>
+</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>
+<strong>Knowledge:</strong> What are the names of the two Python
+packages we use for arrays and for plotting?</li>
+<li>
+<strong>Comprehension</strong>: What changes if we replace
+plt.xlabel(‘Count’) with plt.xlabel(‘Time’)</li>
+<li>
+<strong>Application</strong>: What value would you give to
+plt.subplot(???) to set up the 2nd plot in a 2x2 set of subplots?</li>
+<li>
+<strong>Analysis</strong>: What type of file is created when we save
+a plot?</li>
+<li>
+<strong>Synthesis</strong>: Each week we create a README file for
+the Prac. How is this file useful?</li>
+<li>
+<strong>Evaluation</strong>: Compare the use of lists and arrays in
+the growth*.py programs. Name two advantages of using lists, and two
+advantages of using arrays</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>For those who want to explore a bit more of the topics covered in
+this practical. Note that the challenges are not assessed but may form
+part of the prac tests or exam.</p>
+<ol style="list-style-type: decimal">
+<li>Modify <code>growthsubplot.py</code> to print four subplots (2x2) –
+the additional plots should print green squares and black triangles.
+(hint: subplot 1 is subplot(221))</li>
+<li>Modify <code>growthsubplot.py</code> to print nine subplots (3x3) –
+the additional plots should print green squares, black triangles, black
+circles, black squares, blue triangles, blue circles and blue squares.
+(hint: subplot 1 is subplot(331))</li>
+<li>Extend the aspirin simulation length in <a href="files/dosage4hr.py">dosage4hr.py</a> to see what happens over time
+with repeated dosages</li>
+<li>Modify <a href="files/dosage4hr.py">dosage4hr.py</a> to see the
+impact of having doses every 2 hours</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div></section><section id="aio-prac04"><p>Content from <a href="prac04.html">Prac04: 2-Dimensional Arrays, Functions and Plotting</a></p>
+<hr>
+<p> Last updated on 2023-03-30 | 
+        
+        <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac04.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
+<div class="text-end">
+          <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
+        </div>
+<div class="overview card">
+<h2 class="card-header">Overview</h2>
+<div class="row g-0">
+<div class="col-md-4">
+<div class="card-body">
+<div class="inner">
+<h3 class="card-title">Questions</h3>
+<ul>
+<li>FIXME - prac is not quite complete</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="col-md-8">
+<div class="card-body">
+<div class="inner bordered">
+<h3 class="card-title">Objectives</h3>
+<ol style="list-style-type: decimal">
+<li>Understand and use multi-dimensional arrays in Python using the
+Numpy library</li>
+<li>Use sub-modules available the Scipy library</li>
+<li>Define and use simple functions</li>
+<li>Apply multi-dimensional arrays to multi-dimensional science
+data</li>
+<li>Use matplotlib to plot multi-dimensional data</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section level3">
+<h3 id="introduction">Introduction<a class="anchor" aria-label="anchor" href="#introduction"></a>
+</h3>
+<p>In this practical you will be exploring the use 2-D arrays. We will
+use the ndimage sub-module of the Scipy package. Arrays are very useful
+for storing the values of variables representing areas. In heat.py we
+will look at a model for heat diffusion. In the final two exercises, we
+will work with functions, firstly on strings and then on the heat
+diffusion calculation.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-1---exploring-2-d-arrays">Activity 1 - Exploring 2-D Arrays<a class="anchor" aria-label="anchor" href="#activity-1---exploring-2-d-arrays"></a>
+</h3>
+<p>Type in the following code, zeros.py, for creating and resizing an
+array. Note that typing in the code helps you to learn python, whereas
+copying and pasting code has no learning value.</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># zeros.py - creating and resizing an array </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">ZERO ARRAY</span><span class="ch">\n</span><span class="st">'</span>) </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>zeroarray <span class="op">=</span> np.zeros((<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array size: '</span>, np.size(zeroarray)) </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>zeroarray.resize((<span class="dv">1</span>,<span class="dv">27</span>))</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Zero array size: '</span>, np.size(zeroarray)) </span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>zeroarray.resize((<span class="dv">3</span>,<span class="dv">9</span>))</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Zero array size: '</span>, np.size(zeroarray)) </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span></code></pre>
+</div>
+<p>Modify the code to set element <code>[0,0,2]</code> to 1, element
+<code>[1,1,1]</code> to 2 and <code>[2,2,0]</code> to 3. Run the code
+and look for where these values sit in each resized array.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-2---ndimage-in-scipy">Activity 2 - Ndimage in Scipy<a class="anchor" aria-label="anchor" href="#activity-2---ndimage-in-scipy"></a>
+</h3>
+<p>Type in the following code, prettyface.py – it’s from the
+lecture…</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># prettyface.py</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> ndimage</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> misc</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>face <span class="op">=</span> misc.face(gray<span class="op">=</span><span class="va">True</span>) </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.imshow(face)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.imshow(face, cmap<span class="op">=</span>plt.cm.gray) </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+</div>
+<p>Go through the lecture slides and add in the code for shifting,
+rotating, cropping and pixelating.</p>
+<p>Look at the documentation for colour maps and try a few of them with
+your code… <a href="http://matplotlib.org/examples/color/colormaps_reference.html" class="external-link uri">http://matplotlib.org/examples/color/colormaps_reference.html</a></p>
+</div>
+<div class="section level3">
+<h3 id="activity-3---specifications-and-pseudocode">Activity 3 - Specifications and Pseudocode<a class="anchor" aria-label="anchor" href="#activity-3---specifications-and-pseudocode"></a>
+</h3>
+<p>The lecture slides included a description and pseudocode
+specification of a program for collecting competition scores.</p>
+<p>Translate and test the first version of the program
+(<code>competition_v1.py</code>) and check how it handles incorrect
+data, and the impact of the dodgy data on the results (e.g. score of
+-100).</p>
+<p>Make a copy of the code as <code>competition_v2.py</code> and adjust
+it to match the second version of the pseudocode from the slides. Test
+it again with bad input to see how it is handled.</p>
+<p>Finally make another copy and modify it to match version three from
+the lecture slides. Try the same tests to check it is working.</p>
+</div>
+<div class="section level3">
+<h3 id="activity-4---functions-for-conversions">Activity 4 - Functions for Conversions<a class="anchor" aria-label="anchor" href="#activity-4---functions-for-conversions"></a>
+</h3>
+<p>In this task we will create some functions to convert values between
+different units. To start, we will convert between Celsius, Fahrenheit
+and Kelvin. Below is a skeleton of how to start your code.</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conversions.py – module with functions to convert between units #</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fahr2cel : Convert from Fahrenheit to Celsius.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fahr2cel(fahr):</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Convert from Fahrenheit to Celsius. Argument:</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    fahr – the temperature in Fahrenheit """</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    celsius <span class="op">=</span> (fahr – <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>) </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius</span></code></pre>
+</div>
+<p>Note that we are using docstrings to document our functions. See the
+related PEP for more about docstrings - <a href="https://www.python.org/dev/peps/pep-0257/" class="external-link uri">https://www.python.org/dev/peps/pep-0257/</a></p>
+<p>Write some test code to test out your functions. You could start with
+something like the code below, or work with user input.</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># testConversions.py - tests the functions in conversions.py </span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> conversions <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">TESTING CONVERSIONS</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>testF <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>testC <span class="op">=</span> fahr2cel(testF)</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fahrenheit is "</span>, testF, <span class="st">" Celsius is "</span>, testC) <span class="bu">print</span>()</span></code></pre>
+</div>
+<p>Extend conversions.py to include all six conversion functions, along
+with others you might find useful. Extend your test program to test the
+other conversions. To see the docstring for a function, you access the
+<code>__doc__</code> attribute. So to print the docstring for fahr2cel,
+use:</p>
+<pre class="print(fahr2cel.__doc__)```"><code>
+
+
+### Activity 5 - Conversion Machine
+
+Now we can write a program, ```converter.py```, to convert between our temperature formats. Your program should:
+
+1. print starting message
+2. provide a menu of conversions to choose between
+3. take the user input
+4. while the choice is to keep going
+  5. do the conversion, or provide an error message
+  6. ask if they want to do another conversion
+  7. loop back to (4) 
+8. print closing message
+
+This is very similar to the Bucket List Builder, so refer to Practical 02 to see that code.
+
+
+### Activity 6 - Conversion Machine (2)
+
+Create a different version of the conversion machine, converter2.py, that will ask for the 
+conversion type, then will convert a list of numbers into the target unit. The loop should 
+exit when the user enters an empty value (just presses return).
+
+1. print starting message
+2. provide a menu of conversions to choose between
+3. take the user input
+4. while the choice isn't an empty string
+  5. do the conversion, or provide an error message
+  6. ask if they want to do another conversion
+  7. loop back to (4) 
+8. print closing message
+
+
+### Activity 7 - Conversion Machine (3)
+
+Think about the input you are giving to ```converter2.py```. Could you automate that input?
+
+We can redirect input in the same way that we redirected the output of history in the practical 
+test (```history &gt; hist.txt```). Create a file ```temps.txt``` with sample input for your ```converter2.py```
+program, then try:
+</code></pre>
+<p>python3 converter2.py &lt; temps.txt</p>
+<pre><code>
+To capture the results, you can also redirect the output:
+</code></pre>
+<p>python3 converter2.py &lt; temps.txt &gt; tempsout.txt</p>
+<pre><code>
+Make a larger input file to see how easy it is to process data using **standard in** (keyboard input) and **standard out** (screen output).
+
+### Activity 8 - Testing your Module
+
+In the lecture (slide 71), we saw how we can use the ```__main__``` attribute/variable 
+to check if our python code has been run directly (e.g. ```python3 conversions.py```) or indirectly 
+(e.g. ```from conversions import *, temp = fahr2cel(100))```. Using this, we can create test 
+code inside our module.
+
+Modify ```conversions.py``` to include test code by implementing a ```main()``` function and putting the required if statement at the end of the module.
+Test your changes by running the conversions.py from the command line.
+
+```python3 conversions.py```
+
+The additional code for ```conversions.py``` is:
+
+```python 
+def main():
+    print('\nTesting textfun.py ')
+    # put your testing code in here
+    print('Testing complete')
+if __name__ == '__main__':
+    main()</code></pre>
+</div>
+<div class="section level3">
+<h3 id="activity-9---update-readme-file">Activity 9 - Update README file<a class="anchor" aria-label="anchor" href="#activity-9---update-readme-file"></a>
+</h3>
+<p>Create a README file for Prac 04. Include the names and descriptions
+of all of your Python programs from this practical.</p>
+<p>All of your work for this week’s practical should be submitted via
+Blackboard using the link under assessments. This should be done as a
+single “zipped” file.</p>
+</div>
+<div class="section level3">
+<h3 id="and-thats-the-end-of-practical-04">And that’s the end of Practical 04!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-04"></a>
+</h3>
+<div id="keypoints1" class="callout keypoints">
+<div class="callout-square">
+<i class="callout-icon" data-feather="key"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
+</h3>
+<div class="callout-content">
+<ul>
+<li>FIXME</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="checklist1" class="callout checklist">
+<div class="callout-square">
+<i class="callout-icon" data-feather="check-square"></i>
+</div>
+<div id="reflection" class="callout-inner">
+<h3 class="callout-title">Reflection<a class="anchor" aria-label="anchor" href="#checklist1"></a>
+</h3>
+<div class="callout-content">
+<ol style="list-style-type: decimal">
+<li>
+<strong>Knowledge:</strong> What are three benefits of using
+functions?</li>
+<li>
+<strong>Comprehension</strong>: What is the purpose of the
+<code>colourmap(cmap=)</code> in Task2?</li>
+<li>
+<strong>Application</strong>: How would you change the plot of the
+critter to be shades of purple and in reverse? (like a negative of a
+photo)</li>
+<li>
+<strong>Analysis</strong>: Task 7 uses the Python variable
+<code>__name__</code> to support testing. What does
+<code>__name__` equal when the module code is run directly (as</code>python
+conversions.py<code>), and what is its value when the module is run as</code>python
+converter2.py```?</li>
+<li>
+<strong>Synthesis</strong>: What happens when we resize an array to
+be smaller than the original? What happens when we make it larger? Does
+the data in the array change?</li>
+<li>
+<strong>Evaluation</strong>: Compare the three versions of the
+competition code from task 3. How has the code improved from</li>
+<li>the user perspective, and</li>
+<li>the programmer perspective.</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="discussion1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+</h3>
+<div class="callout-content">
+<p>For those who want to explore a bit more of the topics covered in
+this practical. Note that the challenges are not assessed but may form
+part of the prac tests or exam.</p>
+<ol style="list-style-type: decimal">
+<li>Create a program to convert an inputted string to Pig Latin</li>
+<li>Find a repetitive song and use functions like
+<code>print_lyrics()</code> to print out the complete song.</li>
+</ol>
+</div>
+</div>
+</div>
+<!-- 
+Place links that you need to refer to multiple times across pages here. Delete
+any links that you are not going to use. 
+ -->
+</div></section><section id="aio-prac05"><p>Content from <a href="prac05.html">Prac03: Arrays and Plotting INCOMPLETE</a></p>
+<hr>
+<p> Last updated on 2023-03-30 | 
+        
+        <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac05.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right"> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -2537,7 +3457,7 @@ conveying how repat doses of drug accumulate and compund.</p>
   Single curve based on a parabola
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Consider how you might generate a curve. Perhaps an upside-down
 parabola?</p>
@@ -2567,7 +3487,7 @@ wrong.</p>
   Single curve based on formula for a circle
   </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>A circle gives a more realistic curve… so we can use the
 <code>x**2 + y**2 = r**2</code> formula to find points on the edge of a
@@ -2596,7 +3516,7 @@ circle.</p>
   Repeating the curves in reducing sizes, and progressive colours
   </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>We can use the loop index to map to a particular colour, and also to
 change the radius of the circle.</p>
@@ -2634,7 +3554,7 @@ change the radius of the circle.</p>
   Storing values in arrays
   </h4>
 </button>
-<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div id="collapseHint4" class="accordion-collapse collapse" data-bs-parent="#accordionHint4" aria-labelledby="headingHint4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2834,9 +3754,9 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://COMP1005.github.io/COMP1005.github.io/aio.html",
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/aio.html",
-  "dateCreated": "2023-03-23",
-  "dateModified": "2023-03-28",
-  "datePublished": "2023-03-28"
+  "dateCreated": "2023-03-30",
+  "dateModified": "2023-03-30",
+  "datePublished": "2023-03-30"
 }
 
   </script><script>
