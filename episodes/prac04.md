@@ -104,7 +104,7 @@ def fahr2cel(fahr):
     return celsius
 ```
 
-Note that we are using docstrings to document our functions. See the related PEP for more about docstrings - [https://www.python.org/dev/peps/pep-0257/ ]
+Note that we are using docstrings to document our functions. See the related PEP for more about docstrings - https://www.python.org/dev/peps/pep-0257/
 
 Write some test code to test out your functions. You could start with something like the code below, or work with user input.
 
@@ -202,7 +202,7 @@ if __name__ == '__main__':
 
 ### Activity 9 - Update README file
 
-Create a README file for Prac 4. Include the names and descriptions of all of your Python programs from this practical.
+Create a README file for Prac 04. Include the names and descriptions of all of your Python programs from this practical.
 
 All of your work for this week’s practical should be submitted via Blackboard using the link under assessments. This 
 should be done as a single "zipped" file.
