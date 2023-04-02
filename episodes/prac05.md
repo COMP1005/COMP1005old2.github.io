@@ -120,7 +120,8 @@ can use use "+" to put the word back together)
 
 ### Activity 5 - Heat Diffusion
 
-Download and run ```heat.py```, available in the practical area on Blackboard
+Download and run ```heat.py```, available in the practical area on Blackboard. There
+have been some changes made over time to improve readability
 
 ```python
 import numpy as np
@@ -138,12 +139,13 @@ nextg = np.zeros((size,size))
 for timestep in range(5):
     for r in range(1, size-1):
         for c in range (1, size-1 ):
+            ### HIGHLIGHTED CODE
             nextg[r,c] = (currg[r-1,c-1]*0.1 + currg[r-1,c]*0.1
                          + currg[r-1,c+1]*0.1 + currg[r,c-1]*0.1
                          + currg[r,c]*0.2 + currg[r,c+1]*0.1
                          + currg[r+1,c-1]*0.1 + currg[r+1,c]*0.1
                          + currg[r+1,c+1]*0.1)
- 
+            ### HIGHLIGHTED CODE
     for i in range(size):
         nextg[i,0] = 10
   
@@ -271,10 +273,11 @@ are used for the states and what do they represent?
 
 ### Activity 9 - Game of Life
 
-Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old- school 
-eb page!) to see how the game of life works. Use your mouse to enter some life into the Game 
-of Life Simulator https://playgameoflife.com/ , then click run to see the outcomes. How long 
-does your population survive?
+Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old-school 
+web page!) to see how the game of life works. 
+
+Use your mouse to enter some life into the Game of Life Simulator https://playgameoflife.com/ , 
+then click run to see the outcomes. How long does your population survive?
 
 ### Submission
 
@@ -289,7 +292,7 @@ There are no direct marks for these submissions, but they may be taken into acco
 when finalising your mark for the unit. Go to the Assessment link on Blackboard and 
 click on Practical 03 for the submission page.
 
-### And that's the end of Practical 03!
+### And that's the end of Practical 05!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
