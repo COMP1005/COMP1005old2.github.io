@@ -401,7 +401,8 @@ words (Hint:you can use use “+” to put the word back together)</li>
 <div class="section level3">
 <h3 id="activity-5---heat-diffusion">Activity 5 - Heat Diffusion<a class="anchor" aria-label="anchor" href="#activity-5---heat-diffusion"></a></h3>
 <p>Download and run <code>heat.py</code>, available in the practical
-area on Blackboard</p>
+area on Blackboard. There have been some changes made over time to
+improve readability</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -420,21 +421,22 @@ area on Blackboard</p>
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> timestep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span>):</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span> ):</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            nextg[r,c] <span class="op">=</span> (currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r,c]<span class="op">*</span><span class="fl">0.2</span> <span class="op">+</span> currg[r,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span>)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size):</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>        nextg[i,<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time step: "</span>, timestep)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(nextg)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>plt.imshow(currg, cmap<span class="op">=</span>plt.cm.hot)</span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">### HIGHLIGHTED CODE</span></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            nextg[r,c] <span class="op">=</span> (currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r,c]<span class="op">*</span><span class="fl">0.2</span> <span class="op">+</span> currg[r,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="co">### HIGHLIGHTED CODE</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size):</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        nextg[i,<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time step: "</span>, timestep)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(nextg)</span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.imshow(currg, cmap<span class="op">=</span>plt.cm.hot)</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Make the following modifications to the code. The first improves
 readability, the second gives the user more information about the
@@ -553,8 +555,8 @@ what do they represent?</p>
 <div class="section level3">
 <h3 id="activity-9---game-of-life">Activity 9 - Game of Life<a class="anchor" aria-label="anchor" href="#activity-9---game-of-life"></a></h3>
 <p>Have a read of <a href="https://web.stanford.edu/class/sts129/Alife/html/Life.htm" class="external-link uri">https://web.stanford.edu/class/sts129/Alife/html/Life.htm</a>
-(a very old- school eb page!) to see how the game of life works. Use
-your mouse to enter some life into the Game of Life Simulator <a href="https://playgameoflife.com/" class="external-link uri">https://playgameoflife.com/</a> , then click run to see the
+(a very old-school web page!) to see how the game of life works.</p>
+<p>Use your mouse to enter some life into the Game of Life Simulator <a href="https://playgameoflife.com/" class="external-link uri">https://playgameoflife.com/</a> , then click run to see the
 outcomes. How long does your population survive?</p>
 </div>
 <div class="section level3">
@@ -571,7 +573,7 @@ Assessment link on Blackboard and click on Practical 03 for the
 submission page.</p>
 </div>
 <div class="section level3">
-<h3 id="and-thats-the-end-of-practical-03">And that’s the end of Practical 03!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-03"></a></h3>
+<h3 id="and-thats-the-end-of-practical-05">And that’s the end of Practical 05!<a class="anchor" aria-label="anchor" href="#and-thats-the-end-of-practical-05"></a></h3>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
