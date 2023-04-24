@@ -4,7 +4,9 @@ title: "Prac06: Modelling the World with Objects"
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Use the old prac sheet for now
+- How can we set up classes to represent real-world objects?
+- How do we write methods to communicate with our objects?
+- How can our code help to maintain a valid state in the object?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
