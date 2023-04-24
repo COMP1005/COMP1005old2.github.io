@@ -312,9 +312,9 @@ using the link in the Week 7 unit materials. This should be done as a single "zi
 
 For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
 
-1. Extending Task 5, add phone numbers to the input file ```people.csv```, then add in code to read in the phone numbers.  
+1. Extending Activity 5, add phone numbers to the input file ```people.csv```, then add in code to read in the phone numbers.  
 2. Add exception handling to the accounts programs from last week. Each numeric input should be protected and checked with try/except clauses.  
-3. Extending Task 2, add in a class to represent rabbits and then write code to test it.  
-4. Extending Task 2, add an instance variable for holding the microchip information for cats and dogs in the animal shelter example. Birds do not have microchips, so it shouldn’t be in (or inherited into) their class definition.
+3. Extending Activity 2, add in a class to represent rabbits and then write code to test it.  
+4. Extending Activity 2, add an instance variable for holding the microchip information for cats and dogs in the animal shelter example. Birds do not have microchips, so it shouldn’t be in (or inherited into) their class definition.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
