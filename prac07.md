@@ -1,298 +1,293 @@
 ---
-title: "Prac05: Grids and Files"
+title: "Prac07: Object Relationships and Exception Handling"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Use the old prac sheet for now
+- How can we work with collections of objects?
+- How can we make use of common state and behaviour to organise objects using a hierarchy of classes?
+- Where can we use exceptions to make our code more robust?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-1. Understand and use text files to store and load data
-2. Develop simple grid-based simulations using 2-dimensional arrays: fire modelling, Game of Life
-3. Apply list comprehensions to simplify code
-4. Experiment with parameters to investigate how they alter the outcomes of simulations
+1. Understand and apply class relationships: composition, aggregation and inheritance
+2. Understand and use exception handling
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Introduction
 
-In this practical you will read and write data using text files. You will also work with some grid-based 
-algorithms – testing out different values to see how their parameters affect outcomes. We will also 
-look at using list comprehensions to simplify our code.
+In this practical we will see how to create relationships between objects. Exceptions are an important concept in OO programming. We will add exceptions to our code.
 
-### Activity 1 - Reading a CSV File
+### Activity 1 - Setting up an animal shelter
 
-Type in the following code, weather.py, for displaying the weather stored in a file:
+The lecture notes outline an implementation of an animal shelter class. This class includes 
+lists of animals – which is an aggregation relationship. The shelter "has" animals.
 
+Type in the code below as ```shelters.py``` and copy and modify ```animals.py``` from Practical 6 as shown
+in the next code snippet. These match the code given in the Lecture 7 slides.
+
+**shelters.py**
 ```python
-#
-# weather.py: Print min and max temps from a file
-# (source: http://www.bom.gov.au/climate/)
+from animals import Dog, Cat, Bird, Shelter 
 
-import matplotlib.pyplot as plt
+print('\n#### Pet shelter program ####\n')
 
-fileobj = open(‘marchweather.csv’, ‘r’) 
+rspca = Shelter('RSPCA', 'Serpentine Meander', '9266000') 
 
-# add file reading code here 
-line1 = ??
-line2 = ??
+rspca.newAnimal('Dog', 'Dude', '1/1/2011', 'Brown', 'Jack Russell') 
+rspca.newAnimal('Dog', 'Brutus', '1/1/1982', 'Brown', 'Rhodesian Ridgeback')
+rspca.newAnimal('Cat', 'Oogie', '1/1/2006', 'Grey', 'Fluffy') 
+rspca.newAnimal('Bird', 'Big Bird', '10/11/1969', 'Yellow', 'Canary') 
+rspca.newAnimal('Bird', 'Dead Parrot', '1/1/2011', 'Dead', 'Parrot')
 
-fileobj.close()
+print('\nAnimals added\n')
 
-mins = # add splitting code here, each stirng value will need to be coverted to float
-maxs = # add splitting code here 
+print('Listing animals for processing...\n') 
 
-dates = range(1,32)
+rspca.displayProcessing()
 
-plt.plot(dates, mins, dates, maxs) 
-plt.show()
+# This code is commented out until you have implemented 
+# the methods in animal.py
+#print('Processing animals...\n')
+#rspca.makeAvailable('Dude') 
+#rspca.makeAvailable('Oogie') 
+#rspca.makeAvailable('Big Bird') 
+#rspca.makeAdopted('Oogie')
+#print('\nPrinting updated list...\n') 
+#rspca.displayAll()
 ```
-
-Modify the code to read the data from the marchweather.csv file – available on Blackboard. 
-You should download it to your Prac5 directory, look at its contents and format, then modify 
-the code accordingly. **Hint:** look at split method, and list comprehensions in lecture slides.
-
-### Activity 2 - Reading another CSV file
-
-This time, go to the Bureau of Meteorology site and download the full list of weather data for 
-March. This time we will plot the min, max, 9am and 3pm temperatures... 
-http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml
-
-You can change the year and month by changing "202303" to another year+month
-
-Save the data by scrolling down to the “Other Formats” section and right-clicking on the plain 
-text version. Save it to your ```Prac05``` directory as ```marchweatherfull.csv```. If you open it in vim 
-you can see all the data, but there are headers describing the data that we don’t need to read 
-in. Remove the first header lines using ``dd`` (in vim's command mode) and then save the file. 
-You now have your dataset.
-
-Write a new program, ```marchweather2.py``` to read in the values and plot them. You will need 
-to pick out columns from each line you read in from the file. First split it into a list, then 
-pick out the values and assign them to the min, max, nine and three lists/arrays.
-
-The code below will help start you off:
- 
+**animals.py**
 ```python
-fileobj = open(‘marchweatherfull.csv’, ‘r’) 
-data = fileobj.readlines()
-fileobj.close()
-
-mins = [] # do the same for maxs, nines and threes
-
-for line in data:
-    splitline = line.split(‘,’) 
-    mins.append(splitline[2]) 
-    maxs.append(splitline[3]) 
-    nines.append(splitline[10]) 
-    threes.append(splitline[16])
-```
-
-Then adjust your ```plt.plot()``` call to plot mins, maxs, nines and threes. Make sure you 
-set up the x values (dates) as in Task 1.
-
-### Activity 3 - Writing to a CSV file
-Take your marchweather2.py and modify it to write the four lists of values into a csv file, 
-four values per line.
- 
-```python
-file2 = open(‘marchout.csv’, ‘w’) 
-for i in range(len(mins)):
-    file2.write(mins[i] + ‘,’ + maxs[i] + ‘,’ + nines[i] + ‘,’ + threes[i] + ‘\n’)
-file2.close()
-```
-
-### Activity 4 - List comprehensions
-
-Using list comprehensions can reduce and simplify your code. In the lecture, we saw some 
-examples of using list comprehensions. Using the lecture slides as a guide, write code to 
-do the following using **both** loops and list comprehensions for each:
-
-1. Make a list ```numbers``` with the numbers from 1 to 5
-2. Write a function ```triple(n)``` and use it to triple each number in numbers
-3. Write code to read in a string and extract all of the numbers (Hint: ```isdigit()```)
-4. Write code to capitalise the first letter of each word in a list of words (Hint:you
-can use use "+" to put the word back together)
-
-
-
-### Activity 5 - Heat Diffusion
-
-Download and run ```heat.py```, available in the practical area on Blackboard. There
-have been some changes made over time to improve readability
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-size = 20
-
-currg = np.zeros((size,size))
-print(currg)
-for i in range(size):
-    currg[i,0] = 10
-
-nextg = np.zeros((size,size))
-
-for timestep in range(5):
-    for r in range(1, size-1):
-        for c in range (1, size-1 ):
-            ### HIGHLIGHTED CODE
-            nextg[r,c] = (currg[r-1,c-1]*0.1 + currg[r-1,c]*0.1
-                         + currg[r-1,c+1]*0.1 + currg[r,c-1]*0.1
-                         + currg[r,c]*0.2 + currg[r,c+1]*0.1
-                         + currg[r+1,c-1]*0.1 + currg[r+1,c]*0.1
-                         + currg[r+1,c+1]*0.1)
-            ### HIGHLIGHTED CODE
-    for i in range(size):
-        nextg[i,0] = 10
-  
-    print("Time step: ", timestep)
-    print(nextg)
-    currg = nextg.copy()
+# Cat, Dog, Bird definitions from Prac 7 should be here 
+class Shelter():
+    def __init__(self, name, address, phone): 
+        self.name = name
+        self.address = address
+        self.phone = phone
+        self.processing = [] 
+        self.available = [] 
+        self.adopted = []
+        
+    def displayProcessing(self): 
+        print('Current processing list:') 
+        for a in self.processing:
+            a.printit() 
+        print()
     
-plt.imshow(currg, cmap=plt.cm.hot)
-plt.show()
+    def displayAvailable(self): 
+        ... # add your code here
+    
+    def displayAdopted(self): 
+        ... # add your code here
+    
+    def displayAll(self): 
+        self.displayProcessing()
+        #self.displayAvailable()
+        #self.displayAdopted()
+    
+    def newAnimal(self, type, name, dob, colour, breed): 
+        temp = None
+        if type == 'Dog':
+            temp = Dog(name, dob, colour, breed) 
+        elif type == 'Cat':
+            temp = Cat(name, dob, colour, breed) 
+        elif type == 'Bird':
+            temp = Bird(name, dob, colour, breed) 
+        else:
+            print('Error, unknown animal type: ', type) 
+        if temp:
+            self.processing.append(temp) 
+            print('Added ', name, ' to processing list') 
+        
+    def makeAvailable(self, name): 
+        ... # add your code here
+
+    def makeAdopted(self, name): 
+        ... # add your code here
 ```
 
-Make the following modifications to the code. The first improves readability, the
-second gives the user more information about the progression of the heat diffusion.
-Make sure you understand what the code does. Re-run the program after each change 
-to see that it still works.
+### Activity 2 - It's a family affair
 
-1. Modify the program to replace the highlighted code with the more readable code below:
-```nextg[r,c] = 0.1 * (currg[r-1:r+2,c-1:c+2].sum() + currg[r,c])```
-2. Modify the code to plot the current grid at the end of each timestep
-
-
-### Activity 6 - Heat Diffusion with Functions
-
-Our ```heat.py``` program has an ugly line of code to calculate the next values for each cell. 
-We used an improved version, but hiding these ugly details in a function will make the code
-more readable.
-
-Copy ```heat.py``` to ```heatfun.py``` and create a function ```calcheat(subarray)``` to factor 
-this calculation out. You can then call the function as:
-
-```python 
-            nextg[r,c] = calcheat(currg[r-1:r+2,c-1:c+2])
-```
-The lines to put in the function is:
-
-``` python
-def calcheat(subarray):
-    result = 0.1 * (subarray.sum() + subarray[1,1])
-    return result
-```
-
-### Activity 7 - Reading (yet another) CSV file
-
-Copy your ```heat.py``` and call the copy ```heatsource.py```. This time we are going to read a heat source in from a file.
-
-Create a file ```heatsource.csv to``` hold the heatsource:
-
-(note, you can copy a line using ```yy``` and ```p``` in vim - *yank and paste*)
-```
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-```
-
-In our original program we had two loops to set up and maintain the heat source:
-
-```
-for i in range (size):
-    currg[i,0]=10
-```
-
-This could also have been done in a more Pythonic way with:
-```
-currg[:,0] = 10
-```
-
-We are going to replace those lines with code to read the heat source from our 
-file and update in each loop from our new h array to maintain the heat source.
-
-Replace the first heat source code instance with the following to read data from a file:
+In the lecture we created a parent (super) class ```Animal``` to factor out the 
+repetition in ```Cat, Dog and Bird```. This is an inheritance relationship – ```Cat``` "is an" ```Animal```.
+Edit ```animals.py``` and add in the modified class definitions for ```Dog``` and ```Bird```. 
+Re-run ```shelters.py``` after making the changes to see that everything still works.
 
 ```python
-# create heat source
-hlist = []
-fileobj = open('heatsource.csv','r') 
-for line in fileobj:
-    line_s = line.strip()
-    ints = [float(x) for x in line_s.split(',')] # list comprehension
-    hlist.append(ints)
-fileobj.close()
+class Animal():
+    myclass = "Animal"
 
-harray = np.array(hlist) 
-currg = harray.copy()
+    def __init__(self, name, dob, colour, breed): 
+        self.name = name
+        self.dob = dob
+        self.colour = colour
+        self.breed = breed
+
+    def __str__(self):
+        return(self.name + '|' + self.dob + '|' + self.colour + '|' + self.breed)
+
+    def printit(self):
+        spacing = 5 - len(self.myclass) 
+        print(self.myclass.upper(), spacing*' ' + ': ', self.name,'\tDOB: ', 
+                self.dob,'\tColour: ', self.colour,'\tBreed: ', self.breed)
+
+class Dog(Animal): 
+    myclass = "Dog"
+    
+class Cat(Animal): 
+    myclass = "Cat"
+
+class Bird(Animal): 
+    myclass = "Bird"
 ```
 
-And in the loop the heat source needs to be updated using the new h array...
+### Activity 3 - People are People
 
+In the lecture we saw the above class diagram for people, students and staff. 
+We will now implement that structure and then read information from files using 
+regular expressions to split out the data.
+
+**people.py**
 ```python
-# Calculate heat diffusion 
-for timestep in range(100):
-    for r in range(1,size-1):
-        for c in range (1, size-1):
-            nextg[r,c]=calcheat(curr[r-1:r+2,c-1:c+2])
+class Address():
+    def __init__(self, number, street, suburb, postcode): 
+        self.number = number
+        self.street = street
+        self.suburb = suburb
+        self.postcode = postcode
+        
+    def __str__(self):
+        return(self.number + ' ' + self.street + ', ' + self.suburb + ', ' + self.postcode)
 
-    for r in range(size):
-        for c in range(size):
-            if harray[r,c] > nextg[r,c]: 
-                nextg[r,c] = harray[r,c]
-    currg = nextg.copy()
+class Person():
+    def __init__(self, name, dob, address): 
+        self.name = name
+        self.dob = dob
+        self.address = address
+        
+    def displayPerson(self):
+        print('Name: ', self.name, '\tDOB: ', self.dob) 
+        print(' Address: ', str(self.address))
+```
+**testPeople.py**
+```python
+from people import Address, Person 
+print('#### People Test Program ###')
+testAdd = Address('10', 'Downing St', 'Carlisle', '6101') 
+testPerson = Person('Winston Churchill', '30/11/1874', testAdd) 
+testPerson.displayPerson()
 ```
 
-Your code should now output the same information as it did before – test it and see.
+Run ```testPeople.py``` to see its output. Add in another test person and re-run the program.
 
-In a similar way to list comprehensions, we can simplify the four lines of code above 
-to one line using ```np.where()```. This will overwrite values in next where the value in 
-harray is larger:
+Now we can add in a sub-class for Staff. We don't want to duplicate code, so, where possible, 
+we will use ```super()``` to call the methods from the parent class. Modify ```people.py```
+and ```testPeople.py``` to include the code below.
 
-Copy ```heatsource.csv``` to  ```heatsource2.csv```, change the values in ```heatsource2.csv```,
-and make the necessary changes to ```heatsource.py``` to see how it changes the output of the program.
+**testPeople.py**
+```python
+from people import Address, Person, Staff 
 
-### Activity 8 - Fireplan
+print('#### People Test Program ###')
+testAdd = Address('10', 'Downing St', 'Carlisle', '6101') 
+testPerson = Person('Winston Churchill', '30/11/1874', testAdd) 
+testPerson.displayPerson()
+print()
+testAdd2 = Address('1', 'Infinite Loop', 'Hillarys', '6025')
+testPerson2 = Staff('Professor Awesome', '1/6/61', testAdd2, '12345J') 
+testPerson2.displayPerson()
+print()
+```
+**people.py**
+```python
+# existing code here 
+class Staff(Person):
+    myclass = 'Staff'
+    def __init__(self, name, dob, address, id): 
+        super().__init__(name, dob, address) 
+        self.id = id
+        
+    def displayPerson(self): 
+        super().displayPerson() 
+        print(' StaffID: ', self.id)
+```
 
-Access the **Interactivate** app at: http://www.shodor.org/interactivate/activities/FireAssessment/
+### Activity 4 - Shower the People
 
-Explore the use of the app and how it is making use of the grid and neighbours. Also look 
-at the use of graphics to represent the different states of a cell. What different graphics 
-are used for the states and what do they represent?
+So, we have People and Staff classes. We can follow the same pattern to create students, 
+postgrad students and undergrad students: (update ```people.py```)
 
-### Activity 9 - Game of Life
+- Student class
+  - extend Person
+  - add a Student ID instance variable
+  -  update the myclass class variable to be 'Student'
+- Postgrad class
+  - extend Student
+- Undergrad class
+  - extend Student
+  -  update the myclass class variable to be 'Undergrad' 
 
-Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old-school 
-web page!) to see how the game of life works. 
+Update ```testPeople.py``` to include values to test the new classes.
 
-Use your mouse to enter some life into the Game of Life Simulator https://playgameoflife.com/ , 
-then click run to see the outcomes. How long does your population survive?
 
+### Activity 5 - Universal People Reader
+
+Now we can connect up some concepts from across the semester to load up 
+a list of people. We will read in people data from a file, split it by a 
+delimiter (':'), extract fields create objects and add them into the list.
+
+What we will need in our code is:
+
+1. Import classes
+2. Create variables (e.g. empty list for the people) 
+3. Open file
+4. For each line in the file
+  - Splitlineintoclass,name,dob,address
+  - Createpersonobjecttomatchfirstfieldintheentry 
+  - Add the new person to the list
+5. Print person list
+
+Here is the sample file – you can copy and paste it into vim: ```people.csv```
+
+**people.csv**
+```
+Staff:Professor Michael Palin:1/6/61:1 Infinity Loop, Balga, 6061:5555J 
+Postgrad:John Cleese:1/9/91:16 Serpentine Meander, Gosnells, 6110:155555 
+Undergrad:Graham Chapman:7/9/97:80 Anaconda Drive, Gosnells, 6110:166666 
+Undergrad:Connie Booth:8/9/98:10a Cobra St, Dubbo, 2830:177777
+```
+
+We can split the input on ':' to separate the class, name, dob, address and ID.
+
+
+### Activity 6 - Exceptional People Reader
+
+As a final part to this practical, we can add exception handling to our program. 
+One of the riskiest areas of code is working with files. We can update the code 
+from Task 5 to add exception handling around the file open/read/close. We should 
+always have exception handling around file input and output.
+
+```
+try:
+    with open('people.csv', 'r') as f: 
+        lines = f.readlines()
+except OSError as err:
+    print('Error with file open: ', err)
+except:
+    print('Unexpected error: ', err)
+```
 ### Submission
 
-Update the README file to include all files created in this practical.
+Create a README file for Practical 7. Include the names and descriptions 
+of all of your files from today.
 
-All of your work for this week’s practical should be submitted via Blackboard using
-the Practical 05 link. This should be done as a single "zipped" file.
-Submit the resulting file through Blackboard. (refer to Practical 00 or 01 for instructions
-on zipping files.
- 
-There are no direct marks for these submissions, but they may be taken into account 
-when finalising your mark for the unit. Go to the Assessment link on Blackboard and 
-click on Practical 03 for the submission page.
+All of your work for this week’s practical should be submitted via Blackboard 
+using the link in the Week 7 unit materials. This should be done as a single "zipped" file.
 
-### And that's the end of Practical 05!
+### And that's the end of Practical 07!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -304,23 +299,22 @@ click on Practical 03 for the submission page.
 
 ### Reflection
  
-1. **Knowledge:** What are the three different read methods we can use on a file? What is the difference between them?
-3. **Comprehension**: What does the line file2.write(...) do in Activity 4?
-5. **Application**: Given the Game of Life rules, what would happen to the centre
-cell in the following cases:
-![fig/P05GOLReviewQ.png](GOL images)
-7. **Analysis**: What variation of “neighbours” does ```heatsource.py``` use? How would the code change if it were to use the other neighbour approach?
-9. **Synthesis**: How would you create a heat source input file with a 4x4 heat source in the centre of the 10x10 grid?
-10. **Evaluation**: Name two advantages to reading initial data from a file as in the updated ```heatsource.py```.
+1. **Knowledge:** Define class variables and instance variables
+3. **Comprehension**: If a class variable is changed, e.g. ```BankAccount.interest_rate
+= 0.02``` in ```accounts.py```, which objects are affected? 
+5. **Application**: How would you setup multiple shelters in ```shelters.py```?
+7. **Analysis**: In Task 2 the method ```__str__``` was added to the ```Animal``` class. What does it do and how does it improve the classes?  
+9. **Synthesis**: Describe what could you do to make your code more robust? (Hint: testing and exceptions)  
+10. **Evaluation**: Two approaches to checking for errors are to check formatting before trying a risky function, or to check for exceptions. Why would the latter be preferred?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
 
 For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
 
-1. Follow the workflow from Activity 3 to process and plot **February** weather data.
-2. For students based in Australia, find another country's weather data sharing site, or an international one
-If you are not in Australia, see if you can find you local government's weather data sharing site. 
-4. Find and download some **Game of Life*** code and get it running.
+1. Extending Task 5, add phone numbers to the input file ```people.csv```, then add in code to read in the phone numbers.  
+2. Add exception handling to the accounts programs from last week. Each numeric input should be protected and checked with try/except clauses.  
+3. Extending Task 2, add in a class to represent rabbits and then write code to test it.  
+4. Extending Task 2, add an instance variable for holding the microchip information for cats and dogs in the animal shelter example. Birds do not have microchips, so it shouldn’t be in (or inherited into) their class definition.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
