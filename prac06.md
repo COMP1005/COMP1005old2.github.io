@@ -1,5 +1,5 @@
 ---
-title: "Prac06: MOdelling the World with Objects"
+title: "Prac06: Modelling the World with Objects"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -64,9 +64,9 @@ More detail of what we will need in our code is:
 1. Import classes 
 2. Create variables 
 3. Open file 
-  4. For each line in the file
-  5. Create animal object using class matching first field in the entry 
-  6. Add it to the animal list
+  - For each line in the file
+  - Create animal object using class matching first field in the entry 
+  - Add it to the animal list
 6. Print animal list
 
 Have a look at ```animals.csv``` (below) to see how you can read in the file.
@@ -162,6 +162,5 @@ For those who want to explore a bit more of the topics covered in this practical
 
 1. Add class variables and methods to ```Dog, Cat and Bird``` to represent how they move (```self.moves```), and to ```getMoves()```. These will be **class** variables as they will apply to all objects of that class.
 3. Extend ```banking.py``` to have three bankaccounts in a list. Modify your code to ask for the account for each transaction
-4. Modify the program from challenge (2) to use a dictionary instead of a list.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
