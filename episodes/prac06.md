@@ -1,5 +1,5 @@
 ---
-title: "Prac06: Object-Orientation"
+title: "Prac06: MOdelling the World with Objects"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
@@ -10,281 +10,119 @@ title: "Prac06: Object-Orientation"
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-1. Understand and use text files to store and load data
-2. Develop simple grid-based simulations using 2-dimensional arrays: fire modelling, Game of Life
-3. Apply list comprehensions to simplify code
-4. Experiment with parameters to investigate how they alter the outcomes of simulations
+1. Understand the main concepts in object- oriented programming and their value
+2. Read and explain object-oriented code
+3. Apply and create simple object-oriented Python code
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Introduction
 
-In this practical you will read and write data using text files. You will also work with some grid-based 
-algorithms – testing out different values to see how their parameters affect outcomes. We will also 
-look at using list comprehensions to simplify our code.
+In this practical you will write Python programs to implement the objects 
+used as examples in the lecture. We will see how to create and manipulate 
+objects, and how to group them in useful ways.
 
-### Activity 1 - Reading a CSV File
+### Activity 1 - Animals as Objects
 
-Type in the following code, weather.py, for displaying the weather stored in a file:
+We will keep our class definitions in separate python files. In your 
+Practical 6 directory, edit ```animals.py``` with vim. Enter the class definition for ```Cat``` into ```animals.py```.
 
-```python
-#
-# weather.py: Print min and max temps from a file
-# (source: http://www.bom.gov.au/climate/)
+If you try to run ```animals.py```, what happens?
 
-import matplotlib.pyplot as plt
-
-fileobj = open(‘marchweather.csv’, ‘r’) 
-
-# add file reading code here 
-line1 = ??
-line2 = ??
-
-fileobj.close()
-
-mins = # add splitting code here, each stirng value will need to be coverted to float
-maxs = # add splitting code here 
-
-dates = range(1,32)
-
-plt.plot(dates, mins, dates, maxs) 
-plt.show()
-```
-
-Modify the code to read the data from the marchweather.csv file – available on Blackboard. 
-You should download it to your Prac5 directory, look at its contents and format, then modify 
-the code accordingly. **Hint:** look at split method, and list comprehensions in lecture slides.
-
-### Activity 2 - Reading another CSV file
-
-This time, go to the Bureau of Meteorology site and download the full list of weather data for 
-March. This time we will plot the min, max, 9am and 3pm temperatures... 
-http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml
-
-You can change the year and month by changing "202303" to another year+month
-
-Save the data by scrolling down to the “Other Formats” section and right-clicking on the plain 
-text version. Save it to your ```Prac05``` directory as ```marchweatherfull.csv```. If you open it in vim 
-you can see all the data, but there are headers describing the data that we don’t need to read 
-in. Remove the first header lines using ``dd`` (in vim's command mode) and then save the file. 
-You now have your dataset.
-
-Write a new program, ```marchweather2.py``` to read in the values and plot them. You will need 
-to pick out columns from each line you read in from the file. First split it into a list, then 
-pick out the values and assign them to the min, max, nine and three lists/arrays.
-
-The code below will help start you off:
- 
-```python
-fileobj = open(‘marchweatherfull.csv’, ‘r’) 
-data = fileobj.readlines()
-fileobj.close()
-
-mins = [] # do the same for maxs, nines and threes
-
-for line in data:
-    splitline = line.split(‘,’) 
-    mins.append(splitline[2]) 
-    maxs.append(splitline[3]) 
-    nines.append(splitline[10]) 
-    threes.append(splitline[16])
-```
-
-Then adjust your ```plt.plot()``` call to plot mins, maxs, nines and threes. Make sure you 
-set up the x values (dates) as in Task 1.
-
-### Activity 3 - Writing to a CSV file
-Take your marchweather2.py and modify it to write the four lists of values into a csv file, 
-four values per line.
- 
-```python
-file2 = open(‘marchout.csv’, ‘w’) 
-for i in range(len(mins)):
-    file2.write(mins[i] + ‘,’ + maxs[i] + ‘,’ + nines[i] + ‘,’ + threes[i] + ‘\n’)
-file2.close()
-```
-
-### Activity 4 - List comprehensions
-
-Using list comprehensions can reduce and simplify your code. In the lecture, we saw some 
-examples of using list comprehensions. Using the lecture slides as a guide, write code to 
-do the following using **both** loops and list comprehensions for each:
-
-1. Make a list ```numbers``` with the numbers from 1 to 5
-2. Write a function ```triple(n)``` and use it to triple each number in numbers
-3. Write code to read in a string and extract all of the numbers (Hint: ```isdigit()```)
-4. Write code to capitalise the first letter of each word in a list of words (Hint:you
-can use use "+" to put the word back together)
-
-
-
-### Activity 5 - Heat Diffusion
-
-Download and run ```heat.py```, available in the practical area on Blackboard. There
-have been some changes made over time to improve readability
+We need a driver program to test out our ```Cat``` class. Edit ```testCat.py``` and enter the following code:
 
 ```python
-import numpy as np
-import matplotlib.pyplot as plt
+from animals import Cat
 
-size = 20
+garfield = Cat(‘Garfield’, ‘1/1/1978’, ‘Orange’, ‘Tabby’)
 
-currg = np.zeros((size,size))
-print(currg)
-for i in range(size):
-    currg[i,0] = 10
+garfield.printit()
 
-nextg = np.zeros((size,size))
-
-for timestep in range(5):
-    for r in range(1, size-1):
-        for c in range (1, size-1 ):
-            ### HIGHLIGHTED CODE
-            nextg[r,c] = (currg[r-1,c-1]*0.1 + currg[r-1,c]*0.1
-                         + currg[r-1,c+1]*0.1 + currg[r,c-1]*0.1
-                         + currg[r,c]*0.2 + currg[r,c+1]*0.1
-                         + currg[r+1,c-1]*0.1 + currg[r+1,c]*0.1
-                         + currg[r+1,c+1]*0.1)
-            ### HIGHLIGHTED CODE
-    for i in range(size):
-        nextg[i,0] = 10
-  
-    print("Time step: ", timestep)
-    print(nextg)
-    currg = nextg.copy()
-    
-plt.imshow(currg, cmap=plt.cm.hot)
-plt.show()
+print(garfield)
 ```
 
-Make the following modifications to the code. The first improves readability, the
-second gives the user more information about the progression of the heat diffusion.
-Make sure you understand what the code does. Re-run the program after each change 
-to see that it still works.
+Note the difference in the output of ```garfield.printit()``` and ```print(garfield)```.
 
-1. Modify the program to replace the highlighted code with the more readable code below:
-```nextg[r,c] = 0.1 * (currg[r-1:r+2,c-1:c+2].sum() + currg[r,c])```
-2. Modify the code to plot the current grid at the end of each timestep
+### Activity 2. More Animals!
 
+Edit animals.py and add in the class definitions for Dog and Bird. Create some test 
+data and code in testAnimals.py to test all three classes. Use testCat.py and the 
+lecture notes as a starting point.
 
-### Activity 6 - Heat Diffusion with Functions
+### Activity 3 - Even more animals!
 
-Our ```heat.py``` program has an ugly line of code to calculate the next values for each cell. 
-We used an improved version, but hiding these ugly details in a function will make the code
-more readable.
+Following the general outline for our programs, we will now create a program to read 
+in animals from a file into a list of animal objects. The file will hold comma-separated 
+values. Our algorithm will be:
 
-Copy ```heat.py``` to ```heatfun.py``` and create a function ```calcheat(subarray)``` to factor 
-this calculation out. You can then call the function as:
+1. Openfile
+1. Read data from file into animal list
+2. Print animal list using printit() method
 
-```python 
-            nextg[r,c] = calcheat(currg[r-1:r+2,c-1:c+2])
-```
-The lines to put in the function is:
+More detail of what we will need in our code is:
 
-``` python
-def calcheat(subarray):
-    result = 0.1 * (subarray.sum() + subarray[1,1])
-    return result
-```
+1. Import classes 
+2. Create variables 
+3. Open file 
+  4. For each line in the file
+  5. Create animal object using class matching first field in the entry 
+  6. Add it to the animal list
+6. Print animal list
 
-### Activity 7 - Reading (yet another) CSV file
-
-Copy your ```heat.py``` and call the copy ```heatsource.py```. This time we are going to read a heat source in from a file.
-
-Create a file ```heatsource.csv to``` hold the heatsource:
-
-(note, you can copy a line using ```yy``` and ```p``` in vim - *yank and paste*)
-```
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-```
-
-In our original program we had two loops to set up and maintain the heat source:
+Have a look at ```animals.csv``` (below) to see how you can read in the file.
 
 ```
-for i in range (size):
-    currg[i,0]=10
+Dog,Dude,1/1/2011,Brown,Jack Russell 
+Cat,Oogie,1/1/2006,Grey,Fluffy 
+Bird,Big Bird,10/11/1969,Yellow,Canary 
+Cat,Garfield,1/1/1978,Orange,Tabby
 ```
 
-This could also have been done in a more Pythonic way with:
-```
-currg[:,0] = 10
-```
+Work through each part of the algorithm and test it out before moving on to the next step.
 
-We are going to replace those lines with code to read the heat source from our 
-file and update in each loop from our new h array to maintain the heat source.
+Extend the ```animals.csv``` file to include animals of your choice, then re-run your code.
 
-Replace the first heat source code instance with the following to read data from a file:
+### Activity 4 - Building bank accounts
 
-```python
-# create heat source
-hlist = []
-fileobj = open('heatsource.csv','r') 
-for line in fileobj:
-    line_s = line.strip()
-    ints = [float(x) for x in line_s.split(',')] # list comprehension
-    hlist.append(ints)
-fileobj.close()
+Type in the code from Version 3 of the Bank Accounts example in the lecture 
+slides. The class definitions should be in ```accounts.py``` and the driver code in 
+```testAccounts.py```. Test (run) the code to see that it works as shown in the lecture.
 
-harray = np.array(hlist) 
-currg = harray.copy()
-```
+### Activity 5 - Simulating bank account transactions
 
-And in the loop the heat source needs to be updated using the new h array...
+We are going write some new code ```banking.py``` to allow the user to choose a transaction, 
+account and optional amount to run transactions on one account. This will be in a 
+loop that also allows for printing all the current balance. We are working towards 
+something similar to the bucketlist builder...
 
-```python
-# Calculate heat diffusion 
-for timestep in range(100):
-    for r in range(1,size-1):
-        for c in range (1, size-1):
-            nextg[r,c]=calcheat(curr[r-1:r+2,c-1:c+2])
+1. Import classes
+2. Create variables
+  2. build bank account object ```(‘Everyday’,‘007’,3000)```
+3. Request transaction selection: ```withdrawal, deposit, interest, balance or exit```. e.g. W for Withdrawal, D for deposit, I for interest, B for balance and X for eXit
+4. While exit is not selected
+  4. If ‘W’ – ask for amount then call withdraw method
+  5. Else if ‘D’ – ask for amount then call deposit method
+  6. Else if ‘I’ – call interest method
+  7. Else if ‘B’ – print balance
+  8. Request transaction selection
 
-    for r in range(size):
-        for c in range(size):
-            if harray[r,c] > nextg[r,c]: 
-                nextg[r,c] = harray[r,c]
-    currg = nextg.copy()
-```
+### Activity 6 - Improving bank account code
 
-Your code should now output the same information as it did before – test it and see.
+The code for requesting the transaction selection is quite cumbersome. Copy ```banking.py``` 
+to ```banking2.py``` and add a new function: ```chooseTrans()``` which will:
 
-In a similar way to list comprehensions, we can simplify the four lines of code above 
-to one line using ```np.where()```. This will overwrite values in next where the value in 
-harray is larger:
+1. Prompt for the transaction selection
+2. Check that it is valid (while not valid, ask again) 
+3. Return the choice
 
-Copy ```heatsource.csv``` to  ```heatsource2.csv```, change the values in ```heatsource2.csv```,
-and make the necessary changes to ```heatsource.py``` to see how it changes the output of the program.
-
-### Activity 8 - Fireplan
-
-Access the **Interactivate** app at: http://www.shodor.org/interactivate/activities/FireAssessment/
-
-Explore the use of the app and how it is making use of the grid and neighbours. Also look 
-at the use of graphics to represent the different states of a cell. What different graphics 
-are used for the states and what do they represent?
-
-### Activity 9 - Game of Life
-
-Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old-school 
-web page!) to see how the game of life works. 
-
-Use your mouse to enter some life into the Game of Life Simulator https://playgameoflife.com/ , 
-then click run to see the outcomes. How long does your population survive?
+Update ```banking2.py``` to use the function in **both** places it is required.
 
 ### Submission
 
 Update the README file to include all files created in this practical.
 
 All of your work for this week’s practical should be submitted via Blackboard using
-the Practical 05 link. This should be done as a single "zipped" file.
+the Practical 06 link. This should be done as a single "zipped" file.
 Submit the resulting file through Blackboard. (refer to Practical 00 or 01 for instructions
 on zipping files.
  
@@ -304,23 +142,26 @@ click on Practical 03 for the submission page.
 
 ### Reflection
  
-1. **Knowledge:** What are the three different read methods we can use on a file? What is the difference between them?
-3. **Comprehension**: What does the line file2.write(...) do in Activity 4?
-5. **Application**: Given the Game of Life rules, what would happen to the centre
-cell in the following cases:
-![fig/P05GOLReviewQ.png](GOL images)
-7. **Analysis**: What variation of “neighbours” does ```heatsource.py``` use? How would the code change if it were to use the other neighbour approach?
-9. **Synthesis**: How would you create a heat source input file with a 4x4 heat source in the centre of the 10x10 grid?
-10. **Evaluation**: Name two advantages to reading initial data from a file as in the updated ```heatsource.py```.
+1. **Knowledge:** What is the difference between a class and an object?
+3. **Comprehension**: What is the difference in the code used to define a class,
+and the code used to define an object?
+5. **Application**: How would you write a new class to represent a rabbit?
+7. **Analysis**: What is the difference between ```garfield.printit()``` and ```print(garfield)```?
+Which would you use and why?
+9. **Synthesis**: How would you modify the pet classes in ```animals.py``` to include a
+microchip number for cats and dogs?
+10. **Evaluation**: Task 5 takes in user input to determine the transactions and
+amounts if required. What parts of this should have validation to make the code 
+more robust? (less likely to crash if given the wrong input)
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
 
 For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
 
-1. Follow the workflow from Activity 3 to process and plot **February** weather data.
-2. For students based in Australia, find another country's weather data sharing site, or an international one
-If you are not in Australia, see if you can find you local government's weather data sharing site. 
-4. Find and download some **Game of Life*** code and get it running.
+1. Add class variables and methods to ```Dog, Cat and Bird``` to represent how they move (```self.moves```), and to ```getMoves()```. These will be **class** variables as they will apply to all objects of that class.
+3. Extend ```banking.py``` to have three bankaccounts in a list. Modify your code to ask for the account for each transaction
+4. Modify the program from challenge (2) to use a dictionary instead of a list.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
