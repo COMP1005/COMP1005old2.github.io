@@ -268,7 +268,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Prac07: Object Relationships and Exception Handling</h1>
-        <p> Last updated on 2023-04-24 | 
+        <p> Last updated on 2023-04-25 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac07.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -552,8 +552,8 @@ the list.</p>
 <li>Create variables (e.g. empty list for the people)</li>
 <li>Open file</li>
 <li>For each line in the file</li>
-</ol><ul><li>Splitlineintoclass,name,dob,address</li>
-<li>Createpersonobjecttomatchfirstfieldintheentry</li>
+</ol><ul><li>Split line into class, name, dob, address</li>
+<li>Create person object to match first field in the entry</li>
 <li>Add the new person to the list</li>
 </ul><ol start="5" style="list-style-type: decimal"><li>Print person list</li>
 </ol><p>Here is the sample file – you can copy and paste it into vim:
@@ -580,6 +580,9 @@ except OSError as err:
     print('Error with file open: ', err)
 except:
     print('Unexpected error: ', err)</code></pre>
+<p>Change the code to request the file name from the user, then test
+what happens if the file does/does not exist. Put this code into a loop
+to keep requesting the filename until it is entered correctly.</p>
 </div>
 <div class="section level3">
 <h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a></h3>
@@ -599,7 +602,14 @@ done as a single “zipped” file.</p>
 <h3 class="callout-title">Keypoints<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>FIXME</li>
+<ul><li>Classes are templates for creating objects</li>
+<li>We can define classes to have objects <em>contain</em> other objects
+or <em>inherit from</em> a class heirarchy</li>
+<li>We should define methods to allow communication with objects, and
+may have multiple levels of methods to work with collections and/or
+inheritance</li>
+<li>Exception handling helps us make our code more robust by adding
+exception handling where errors might occur.</li>
 </ul></div>
 </div>
 </div>
@@ -613,7 +623,8 @@ done as a single “zipped” file.</p>
 <div class="callout-content">
 <ol style="list-style-type: decimal"><li>
 <strong>Knowledge:</strong> Define class variables and instance
-variables</li>
+variables - how are they different? (note that we use specific meanings
+for them in this unit, they are often considered synonyms)</li>
 <li>
 <strong>Comprehension</strong>: If a class variable is changed,
 e.g. <code>BankAccount.interest_rate = 0.02</code> in
@@ -721,8 +732,8 @@ any links that you are not going to use.
   "creativeWorkStatus": "active",
   "url": "https://COMP1005.github.io/COMP1005.github.io/prac07.html",
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/prac07.html",
-  "dateCreated": "2023-04-24",
-  "dateModified": "2023-04-24",
+  "dateCreated": "2023-04-25",
+  "dateModified": "2023-04-25",
   "datePublished": "2023-04-25"
 }
 
