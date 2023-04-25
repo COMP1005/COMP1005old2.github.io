@@ -245,8 +245,8 @@ What we will need in our code is:
 2. Create variables (e.g. empty list for the people) 
 3. Open file
 4. For each line in the file
-  - Splitlineintoclass,name,dob,address
-  - Createpersonobjecttomatchfirstfieldintheentry 
+  - Split line into class, name, dob, address
+  - Create person object to match first field in the entry 
   - Add the new person to the list
 5. Print person list
 
@@ -279,6 +279,10 @@ except OSError as err:
 except:
     print('Unexpected error: ', err)
 ```
+Change the code to request the file name from the user, then test what happens if the 
+file does/does not exist. Put this code into a loop to keep requesting the filename until it 
+is entered correctly.
+
 ### Submission
 
 Create a README file for Practical 7. Include the names and descriptions 
@@ -291,7 +295,10 @@ using the link in the Week 7 unit materials. This should be done as a single "zi
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Classes are templates for creating objects
+- We can define classes to have objects *contain* other objects or *inherit from* a class heirarchy
+- We should define methods to allow communication with objects, and may have multiple levels of methods to work with collections and/or inheritance
+- Exception handling helps us make our code more robust by adding exception handling where errors might occur.
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -299,7 +306,7 @@ using the link in the Week 7 unit materials. This should be done as a single "zi
 
 ### Reflection
  
-1. **Knowledge:** Define class variables and instance variables
+1. **Knowledge:** Define class variables and instance variables - how are they different? (note that we use specific meanings for them in this unit, they are often considered synonyms)
 3. **Comprehension**: If a class variable is changed, e.g. ```BankAccount.interest_rate
 = 0.02``` in ```accounts.py```, which objects are affected? 
 5. **Application**: How would you setup multiple shelters in ```shelters.py```?
