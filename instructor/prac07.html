@@ -587,6 +587,21 @@ what happens if the file does/does not exist. Put this code into a loop
 to keep requesting the filename until it is entered correctly.</p>
 </div>
 <div class="section level3">
+<h3 id="activity-7---extra-exceptional-people-reader">Activity 7: - Extra-exceptional People Reader<a class="anchor" aria-label="anchor" href="#activity-7---extra-exceptional-people-reader"></a></h3>
+<p>Change the code from Activity 6 to raise an invalid value error when
+the date of birth is invalid (there are many ways for it to be invalid -
+choose one). This should be be chacked in the init function of the
+Person class. You will then need to put try/catch around the creation of
+the objects. Print a message to show the user which record(s) are
+incorrect.</p>
+<p>Create a new input file to test this functionality.</p>
+<p>Imagine if this was a very large input file… just printing to the
+screen for each error could give a large and confusing output. Update
+your code to <strong><em>write to</em></strong> a file
+<code>errorLog.txt</code> each time an error occurs from reading in the
+data and creating objects.</p>
+</div>
+<div class="section level3">
 <h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a></h3>
 <p>Create a README file for Practical 7. Include the names and
 descriptions of all of your files from today.</p>
@@ -643,8 +658,9 @@ it improve the classes?<br></li>
 code more robust? (Hint: testing and exceptions)<br></li>
 <li>
 <strong>Evaluation</strong>: Two approaches to checking for errors
-are to check formatting before trying a risky function, or to check for
-exceptions. Why would the latter be preferred?</li>
+when converting a string to an integer are: to check formatting before
+trying a risky function; or to check for exceptions. Why would the
+latter be preferred?</li>
 </ol></div>
 </div>
 </div>
