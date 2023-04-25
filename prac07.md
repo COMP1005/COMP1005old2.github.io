@@ -279,9 +279,23 @@ except OSError as err:
 except:
     print('Unexpected error: ', err)
 ```
-Change the code to request the file name from the user, then test what happens if the 
-file does/does not exist. Put this code into a loop to keep requesting the filename until it 
-is entered correctly.
+
+Change the code to request the file name from the user, then test what happens 
+if the file does/does not exist. Put this code into a loop to keep requesting the 
+filename until it is entered correctly.
+
+### Activity 7: - Extra-exceptional People Reader 
+
+Change the code from Activity 6 to raise an invalid value error when the date of birth 
+is invalid (there are many ways for it to be invalid - choose one). This should be be 
+chacked in the init function of the Person class. You will then need to put try/catch 
+around the creation of the objects. Print a message to show the user which record(s) are incorrect.
+
+Create a new input file to test this functionality.
+
+Imagine if this was a very large input file... just printing to the screen for each error could give 
+a large and confusing output. Update your code to ***write to*** a file ```errorLog.txt``` each time 
+an error occurs from reading in the data and creating objects.
 
 ### Submission
 
@@ -312,7 +326,7 @@ using the link in the Week 7 unit materials. This should be done as a single "zi
 5. **Application**: How would you setup multiple shelters in ```shelters.py```?
 7. **Analysis**: In Task 2 the method ```__str__``` was added to the ```Animal``` class. What does it do and how does it improve the classes?  
 9. **Synthesis**: Describe what could you do to make your code more robust? (Hint: testing and exceptions)  
-10. **Evaluation**: Two approaches to checking for errors are to check formatting before trying a risky function, or to check for exceptions. Why would the latter be preferred?
+10. **Evaluation**: Two approaches to checking for errors when converting a string to an integer are: to check formatting before trying a risky function; or to check for exceptions. Why would the latter be preferred?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
