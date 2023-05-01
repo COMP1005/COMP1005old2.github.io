@@ -14,7 +14,7 @@ COMP1005 Practical Worksheets are being updated, and will be linked below when a
 - [Practical 05 - Files and Grids](prac05.html)
 - [Practical 06 - Modelling the World with Objects](prac06.html)
 - [Practical 07 - Object Relationships and Exception Handling](prac07.html)
-- Practical 08 - Scripts and Automation
-- Practical 09 - Working with Structured Data
+- [Practical 08 - Scripts and Automation](prac08.html)
+- [Practical 09 - Working with Structured Data](prac09.html)
 - Practical 10 - Visualisation
 - Practical 11 - Projects in Python
