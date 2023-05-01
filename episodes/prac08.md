@@ -1,298 +1,235 @@
 ---
-title: "Prac05: Grids and Files"
+title: "Prac08: Scripts and Automation"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Use the old prac sheet for now
+- Newly updated, check the old prac sheet if you find problems
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-1. Understand and use text files to store and load data
-2. Develop simple grid-based simulations using 2-dimensional arrays: fire modelling, Game of Life
-3. Apply list comprehensions to simplify code
-4. Experiment with parameters to investigate how they alter the outcomes of simulations
+1. Understand and use Bash and Python as a scripting languages
+2. Apply Python scripts to implement a parameter sweep using an existing program
+3. Understand and modify supplied code to automate experiments
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Introduction
 
-In this practical you will read and write data using text files. You will also work with some grid-based 
-algorithms – testing out different values to see how their parameters affect outcomes. We will also 
-look at using list comprehensions to simplify our code.
+In this practical you will be writing Bash and Python scripts to automate 
+the process of running experiments. We will start with some simple bash 
+examples, then you will download and modify code, and write scripts to run 
+the programs multiple times with different parameters.
 
-### Activity 1 - Reading a CSV File
+### Activity 1 - The Power of Unix
 
-Type in the following code, weather.py, for displaying the weather stored in a file:
+Each week we have be creating a README file to describe the programs we 
+have written for each practical. So far that's five READMEs in different 
+directories. It might be interesting to list the programs and their descriptions.
 
-```python
-#
-# weather.py: Print min and max temps from a file
-# (source: http://www.bom.gov.au/climate/)
+Begin by creating the directory for Prac6 and changing to that directory. 
+We can start with listing the contents of all our ```Prac*``` directories. That's 
+a level above where we are, so we need to use ```../``` . 
 
-import matplotlib.pyplot as plt
+Try the following commands...
 
-fileobj = open(‘marchweather.csv’, ‘r’) 
-
-# add file reading code here 
-line1 = ??
-line2 = ??
-
-fileobj.close()
-
-mins = # add splitting code here, each stirng value will need to be coverted to float
-maxs = # add splitting code here 
-
-dates = range(1,32)
-
-plt.plot(dates, mins, dates, maxs) 
-plt.show()
+```
+ls ../Prac*
+ls –R ../Prac*
+ls –l ../Prac*/*.py
+ls –l ../Prac*/README*
 ```
 
-Modify the code to read the data from the marchweather.csv file – available on Blackboard. 
-You should download it to your Prac5 directory, look at its contents and format, then modify 
-the code accordingly. **Hint:** look at split method, and list comprehensions in lecture slides.
+What is the difference between the various commands?
 
-### Activity 2 - Reading another CSV file
+If we want to pull information out of a file, we can use grep. Grep matches to 
+the strings within each line of the file, and prints the ones that match.
 
-This time, go to the Bureau of Meteorology site and download the full list of weather data for 
-March. This time we will plot the min, max, 9am and 3pm temperatures... 
-http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml
+```
+grep .py ../Prac*/README*
+grep .py ../Prac*/README* | wc
+grep .py ../Prac*/README* | wc -l
+grep .py ../Prac*/README* > myprogs.txt
+```
 
-You can change the year and month by changing "202303" to another year+month
+Try to work these out:
 
-Save the data by scrolling down to the “Other Formats” section and right-clicking on the plain 
-text version. Save it to your ```Prac05``` directory as ```marchweatherfull.csv```. If you open it in vim 
-you can see all the data, but there are headers describing the data that we don’t need to read 
-in. Remove the first header lines using ``dd`` (in vim's command mode) and then save the file. 
-You now have your dataset.
+1. Find out which programs use matplotlib.pyplot using a grep command.
+2. Calculate how many print statements are in each program (grep & wc).
 
-Write a new program, ```marchweather2.py``` to read in the values and plot them. You will need 
-to pick out columns from each line you read in from the file. First split it into a list, then 
-pick out the values and assign them to the min, max, nine and three lists/arrays.
+### Activity 2 - Using command line arguments
 
-The code below will help start you off:
+In most of our programs, we have hard-coded the values into the variables. 
+That means we have to edit the code to change and experiment with the variables. 
+We may have a few variables we want to work without creating new versions of 
+our program each time. We implement this through command line arguments or input 
+files (as in heatsource.py). In this task we will use command line arguments.
+
+Download ```repeatdosageP.py``` from Blackboard. It is a modified version of our 
+previous program – providing more information about parameters and results. If 
+you look at the min, max and mean values at the end of the program – there are 
+two versions. As what we are really interested in with this experiment is the 
+```drug_in_system``` being between the ```MEC``` and ```MTC``` – a simple minimum and mean 
+don't really help us. The code gives a simple approach to checking when the value 
+first goes above ```MEC```, and calculates the min, max and mean after that. Run the 
+code to confirm what it does.
+
+We will make a new version of the program, ```dosagebase.py``` to use command line 
+arguments. Make the following changes at the start of the program:
+
+```python
+import sys
+# Process command line arguments
+
+if (len(sys.argv) < 3):
+    print('argv too short, usage: python3 <interval> <dosage>') 
+    print('Using default values for interval (8) and dosage (100)')
+    Vinterval = 8 # 8 hours between doses 
+    Vdosage = 100 # dosage 100mg
+else:
+    Vinterval = int(sys.argv[1]) # hours between doses 
+    Vdosage = int(sys.argv[2]) # dosage
+```
+
+Then change the setup of the interval and dosage variables to use Vinterval and Vdosage. 
+Test the program to see that it works. See how the output changes for different dosage 
+and interval values.
+
+Another change we might want is to stop the program plotting to the screen. We can save 
+the plot to a file instead.
+
+```python
+plt.savefig('dosage_' + 'I' + str(Vinterval)+'_D' + str(Vdosage) + '.png')
+```
+
+Now our program is ready to be the base program for a parameter sweep. We'll create the 
+parameter sweep program in the next task.
  
-```python
-fileobj = open(‘marchweatherfull.csv’, ‘r’) 
-data = fileobj.readlines()
-fileobj.close()
+### Activity 3 - Run a parameter sweep
 
-mins = [] # do the same for maxs, nines and threes
+Our base program takes two command line variables: interval and dosage. We 
+want to be able to sweep across a range of values for these two variables, 
+to find workable ways to prescribe the medication. Of course, we could consider 
+changing other variables – but we'll stick to two for now.
 
-for line in data:
-    splitline = line.split(‘,’) 
-    mins.append(splitline[2]) 
-    maxs.append(splitline[3]) 
-    nines.append(splitline[10]) 
-    threes.append(splitline[16])
+A bit like our range statements in Python, we'd like to be able to have a start, stop 
+and step value, for each variable. Thus our script will take six command line arguments: 
+```low_int high_int step_int low_dose hi_dose step_dose```
+
+The driver script, ```dosage_sweep.sh```, below, creates a directory for the experiment, 
+processes the command line arguments and then has two for loops to go through the parameter 
+sweep. Inside the loop it calls the dosagebase.py program and redirects the output to a file. 
+Type in the driver script and see if you can get it working.
+
+```
+#!/bin/bash
+
+exp_dir=dosage`date "+%Y-%m-%d_%H:%M:%S"`
+
+mkdir $exp_dir
+cp dosagebase.py $exp_dir 
+cp dosage_sweep.sh $exp_dir 
+cd $exp_dir
+
+low_int=$1 
+hi_int=$2 
+step_int=$3 
+low_dose=$4 
+hi_dose=$5 
+step_dose=$6
+
+echo "Parameters are: "
+echo "Interval : " $low_int $hi_int $step_int 
+echo "Dosage : " $low_dose $hi_dose $step_dose
+
+for i in `seq $low_int $step_int $hi_int`; 
+do
+    for d in `seq $low_dose $step_dose $hi_dose`; 
+    do
+        echo "Experiment: " $i $d 
+        outfile="dosage_I"$i"_D"$d".txt" 
+        python3 dosagebase.py $i $d > $outfile
+    done 
+done
+
+If you look in the directory after the script has run, you will see the saved 
+png plots and the txt files. You can look at the results using: ```tail –n 3 *.txt```
+
+Run the script with the following values:
+
+```
+sh dosage_sweep.sh 4 12 4 50 300 50
 ```
 
-Then adjust your ```plt.plot()``` call to plot mins, maxs, nines and threes. Make sure you 
-set up the x values (dates) as in Task 1.
+Can you find the extreme results using tail? Look at the graphs to confirm the data.
 
-### Activity 3 - Writing to a CSV file
-Take your marchweather2.py and modify it to write the four lists of values into a csv file, 
-four values per line.
+### Activity 4 - Automatic weather plots
  
-```python
-file2 = open(‘marchout.csv’, ‘w’) 
-for i in range(len(mins)):
-    file2.write(mins[i] + ‘,’ + maxs[i] + ‘,’ + nines[i] + ‘,’ + threes[i] + ‘\n’)
-file2.close()
+In the lecture we looked at a workflow for plotting data. The steps were:
+
+1. Getdata
+2. Extract lines
+3. Extract columns
+4. Plot
+
+Type in the commands from the lecture on the command line to ensure they work. You 
+may need to add a ```–p``` to gnuplot to make the plot stay on the screen:
+
+```
+gnuplot –p plotcmd.txt
 ```
 
-### Activity 4 - List comprehensions
+Use the history command and redirection to put the workflow commands 
+into a file ```weather_workflow.sh```
 
-Using list comprehensions can reduce and simplify your code. In the lecture, we saw some 
-examples of using list comprehensions. Using the lecture slides as a guide, write code to 
-do the following using **both** loops and list comprehensions for each:
+```
+history 20 > weather_workflow.sh
+```
 
-1. Make a list ```numbers``` with the numbers from 1 to 5
-2. Write a function ```triple(n)``` and use it to triple each number in numbers
-3. Write code to read in a string and extract all of the numbers (Hint: ```isdigit()```)
-4. Write code to capitalise the first letter of each word in a list of words (Hint:you
-can use use "+" to put the word back together)
+Add ```#!/bin/bash``` as the first line of the file – this specifies the *shell* to 
+use to run the program. Delete unnecessary lines (dd), remove numbers from the 
+start of liens and make any other changes you need, then you should be able to 
+run the code with:
 
+```
+sh weather_workflow.sh
+```
 
+Once you have this working, add code to the script to
 
-### Activity 5 - Heat Diffusion
+1. Put command line arguments in to take in the year and month
+2. Make a directory based on the year and month: plot_year_month
+3. Copy the script and plotcmd.txt file into the directory
+4. Change to the directory
+5. Download the data – substituting the year and month into the URL
+6. Extract the lines
+7. Extract the columns
+8. Plot the data
 
-Download and run ```heat.py```, available in the practical area on Blackboard. There
-have been some changes made over time to improve readability
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-size = 20
-
-currg = np.zeros((size,size))
-print(currg)
-for i in range(size):
-    currg[i,0] = 10
-
-nextg = np.zeros((size,size))
-
-for timestep in range(5):
-    for r in range(1, size-1):
-        for c in range (1, size-1 ):
-            ### HIGHLIGHTED CODE
-            nextg[r,c] = (currg[r-1,c-1]*0.1 + currg[r-1,c]*0.1
-                         + currg[r-1,c+1]*0.1 + currg[r,c-1]*0.1
-                         + currg[r,c]*0.2 + currg[r,c+1]*0.1
-                         + currg[r+1,c-1]*0.1 + currg[r+1,c]*0.1
-                         + currg[r+1,c+1]*0.1)
-            ### HIGHLIGHTED CODE
-    for i in range(size):
-        nextg[i,0] = 10
+If you want to plot to a file, you need to set the terminal and output file name. See the example below:
   
-    print("Time step: ", timestep)
-    print(nextg)
-    currg = nextg.copy()
-    
-plt.imshow(currg, cmap=plt.cm.hot)
-plt.show()
+```
+gnuplot -e "set terminal png size 400,300; set output 'xyz.png'; plot [-4:4] exp(-x**2 / 2)"
 ```
 
-Make the following modifications to the code. The first improves readability, the
-second gives the user more information about the progression of the heat diffusion.
-Make sure you understand what the code does. Re-run the program after each change 
-to see that it still works.
-
-1. Modify the program to replace the highlighted code with the more readable code below:
-```nextg[r,c] = 0.1 * (currg[r-1:r+2,c-1:c+2].sum() + currg[r,c])```
-2. Modify the code to plot the current grid at the end of each timestep
-
-
-### Activity 6 - Heat Diffusion with Functions
-
-Our ```heat.py``` program has an ugly line of code to calculate the next values for each cell. 
-We used an improved version, but hiding these ugly details in a function will make the code
-more readable.
-
-Copy ```heat.py``` to ```heatfun.py``` and create a function ```calcheat(subarray)``` to factor 
-this calculation out. You can then call the function as:
-
-```python 
-            nextg[r,c] = calcheat(currg[r-1:r+2,c-1:c+2])
-```
-The lines to put in the function is:
-
-``` python
-def calcheat(subarray):
-    result = 0.1 * (subarray.sum() + subarray[1,1])
-    return result
-```
-
-### Activity 7 - Reading (yet another) CSV file
-
-Copy your ```heat.py``` and call the copy ```heatsource.py```. This time we are going to read a heat source in from a file.
-
-Create a file ```heatsource.csv to``` hold the heatsource:
-
-(note, you can copy a line using ```yy``` and ```p``` in vim - *yank and paste*)
-```
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-```
-
-In our original program we had two loops to set up and maintain the heat source:
-
-```
-for i in range (size):
-    currg[i,0]=10
-```
-
-This could also have been done in a more Pythonic way with:
-```
-currg[:,0] = 10
-```
-
-We are going to replace those lines with code to read the heat source from our 
-file and update in each loop from our new h array to maintain the heat source.
-
-Replace the first heat source code instance with the following to read data from a file:
-
-```python
-# create heat source
-hlist = []
-fileobj = open('heatsource.csv','r') 
-for line in fileobj:
-    line_s = line.strip()
-    ints = [float(x) for x in line_s.split(',')] # list comprehension
-    hlist.append(ints)
-fileobj.close()
-
-harray = np.array(hlist) 
-currg = harray.copy()
-```
-
-And in the loop the heat source needs to be updated using the new h array...
-
-```python
-# Calculate heat diffusion 
-for timestep in range(100):
-    for r in range(1,size-1):
-        for c in range (1, size-1):
-            nextg[r,c]=calcheat(curr[r-1:r+2,c-1:c+2])
-
-    for r in range(size):
-        for c in range(size):
-            if harray[r,c] > nextg[r,c]: 
-                nextg[r,c] = harray[r,c]
-    currg = nextg.copy()
-```
-
-Your code should now output the same information as it did before – test it and see.
-
-In a similar way to list comprehensions, we can simplify the four lines of code above 
-to one line using ```np.where()```. This will overwrite values in next where the value in 
-harray is larger:
-
-Copy ```heatsource.csv``` to  ```heatsource2.csv```, change the values in ```heatsource2.csv```,
-and make the necessary changes to ```heatsource.py``` to see how it changes the output of the program.
-
-### Activity 8 - Fireplan
-
-Access the **Interactivate** app at: http://www.shodor.org/interactivate/activities/FireAssessment/
-
-Explore the use of the app and how it is making use of the grid and neighbours. Also look 
-at the use of graphics to represent the different states of a cell. What different graphics 
-are used for the states and what do they represent?
-
-### Activity 9 - Game of Life
-
-Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old-school 
-web page!) to see how the game of life works. 
-
-Use your mouse to enter some life into the Game of Life Simulator https://playgameoflife.com/ , 
-then click run to see the outcomes. How long does your population survive?
+All the plotting commands can be typed in, or put into a file and referred to.
 
 ### Submission
 
 Update the README file to include all files created in this practical.
 
 All of your work for this week’s practical should be submitted via Blackboard using
-the Practical 05 link. This should be done as a single "zipped" file.
+the Practical 08 link. This should be done as a single "zipped" file.
 Submit the resulting file through Blackboard. (refer to Practical 00 or 01 for instructions
 on zipping files.
  
 There are no direct marks for these submissions, but they may be taken into account 
 when finalising your mark for the unit. Go to the Assessment link on Blackboard and 
-click on Practical 03 for the submission page.
+click on Practical 08 for the submission page.
 
-### And that's the end of Practical 05!
+### And that's the end of Practical 08!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
@@ -302,7 +239,7 @@ click on Practical 03 for the submission page.
 
 :::::::::::::::::::::::::::::::::::::::::::::::: checklist
 
-### Reflection
+### Reflection - FIXME
  
 1. **Knowledge:** What are the three different read methods we can use on a file? What is the difference between them?
 3. **Comprehension**: What does the line file2.write(...) do in Activity 4?
@@ -316,11 +253,14 @@ cell in the following cases:
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
+For those who want to explore a bit more of the topics covered in this practical. 
+ Note that the challenges are not assessed but may form part of the prac tests or exam.
 
-1. Follow the workflow from Activity 3 to process and plot **February** weather data.
-2. For students based in Australia, find another country's weather data sharing site, or an international one
-If you are not in Australia, see if you can find you local government's weather data sharing site. 
-4. Find and download some **Game of Life*** code and get it running.
+1. To read about a science project with data processing pipelines, view the 
+ Fireballs in the Sky guest lecture notes and have a look at their website 
+ http://fireballsinthesky.com.au/
+2. Another version of the drug dosage program is available on blackboard. Download 
+ and run it. Consider the differences in implementation. What benefits are there in 
+ the alternative approach?
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
