@@ -286,7 +286,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Prac02: Strings and Lists</h1>
-        <p> Last updated on 2023-07-11 | 
+        <p> Last updated on 2023-08-08 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac02.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -369,30 +369,34 @@ different approaches to printing out a string in reverse:
 <strong>while</strong> loops; <strong>for</strong> loops and using
 <strong>slicing</strong>.</p>
 <p>Enter the following code as <code>strings1.py</code>…</p>
-<pre><code>#
-# strings1.py: Read in a string and print it in reverse
-#              using a loop and a method call
-
-instring = input('Enter a string... ')
-
-# *** add (2) upper and (3) duplicating code here
-
-# reversing with a while loop
-print('Reversed string is : ', end='')
-index = len(instring)-1
-while index &gt; -1:
-    print(instring[index], end='')
-    index = index - 1
-print()
-
-# reversing with a for-range loop
-print('Reversed string is : ', end='')
-for index in range(len(instring)-1, -1, -1):
-    print(instring[index], end='')
-print()
-
-# reversing with slicing
-print('Reversed string is :', instring[::-1])</code></pre>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># strings1.py: Read in a string and print it in reverse</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#              using a loop and a method call</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>instring <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter a string... '</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># *** add (2) upper and (3) duplicating code here</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># reversing with a while loop</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is : '</span>, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> <span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> index <span class="op">&gt;</span> <span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(instring[index], end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> index <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># reversing with a for-range loop</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is : '</span>, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(instring[index], end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># reversing with slicing</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is :'</span>, instring[::<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+</div>
 <p>Test out the code to understand how it works. Note that in each
 case:</p>
 <ul><li>
@@ -406,8 +410,12 @@ case:</p>
 </li>
 </ul><p>Slicing doesn’t quite fit the pattern for start:stop:step, which
 would have the code as follows:</p>
-<pre><code><span><span class="co"># WARNING: THIS WON"T WORK!</span></span>
-<span><span class="fu">print</span><span class="op">(</span><span class="st">'Reversed string is :'</span>, <span class="va">instring</span><span class="op">[</span><span class="fu">len</span><span class="op">(</span><span class="va">instring</span><span class="op">)</span><span class="op">-</span><span class="fl">1</span><span class="op">:</span><span class="op">-</span><span class="fl">1</span><span class="op">:</span><span class="op">-</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span></span></code></pre>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">WARNING</span><span class="co">: THIS WON"T WORK!</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is :'</span>, instring[<span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+</div>
 <p>However, the -1 stop value would get interpreted as a negative index.
 Python slicing is smart enough to know that when a negative step is used
 (e.g. -1), the default start and stop should be switched around to the
@@ -438,57 +446,65 @@ in the list <code>del bucket1[6]</code> or by value
 <code>bucket2</code> and make a new list <code>bucket</code> from
 <code>bucket1 + bucket2</code>. Finally we insert a new item and print
 out the buckets.</p>
-<pre><code>#
-# bucket1.py - use a python list for items in a bucket list
-#
-print('\nBUCKET LIST\n')
-bucket1 = ['Witness something truly majestic',
-          'Help a complete stranger',
-          'Laugh until I cry','Drive a Shelby Mustang']
-
-bucket1.append('Kiss the most beautiful girl in the world')
-bucket1.append('Get a tattoo')
-bucket1.append('Skydiving')
-del bucket1[5]
-
-bucket2 = ['Visit Stonehenge',
-           'Drive a motorcycle on the Great Wall of China',
-           'Go on a Safari','Visit the Taj Mahal',
-           'Sit on the Great Egyptian Pyramids',
-           'Find the Joy in your life']
-
-print('Bucket 1: ', bucket1)
-print('Bucket 2: ', bucket2)
-bucket = bucket1 + bucket2
-bucket.insert(5, 'Get a tattoo')
-
-print('\nThe bucket list is:')
-print('Complete bucket list: ', bucket)
-
-print('\nNicer formatting....\n')
-
-for item in bucket:      # for-each loop
-    print(item)          # note improved formatting</code></pre>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bucket1.py - use a python list for items in a bucket list</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">BUCKET LIST</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>bucket1 <span class="op">=</span> [<span class="st">'Witness something truly majestic'</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">'Help a complete stranger'</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">'Laugh until I cry'</span>,<span class="st">'Drive a Shelby Mustang'</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>bucket1.append(<span class="st">'Kiss the most beautiful girl in the world'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>bucket1.append(<span class="st">'Get a tattoo'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>bucket1.append(<span class="st">'Skydiving'</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> bucket1[<span class="dv">5</span>]</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>bucket2 <span class="op">=</span> [<span class="st">'Visit Stonehenge'</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Drive a motorcycle on the Great Wall of China'</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Go on a Safari'</span>,<span class="st">'Visit the Taj Mahal'</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Sit on the Great Egyptian Pyramids'</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Find the Joy in your life'</span>]</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bucket 1: '</span>, bucket1)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bucket 2: '</span>, bucket2)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>bucket <span class="op">=</span> bucket1 <span class="op">+</span> bucket2</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>bucket.insert(<span class="dv">5</span>, <span class="st">'Get a tattoo'</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">The bucket list is:'</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Complete bucket list: '</span>, bucket)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Nicer formatting....</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> bucket:      <span class="co"># for-each loop</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)          <span class="co"># note improved formatting</span></span></code></pre>
+</div>
 <p>We will now create a bucket list builder to interactively create a
 new bucket list…</p>
-<pre><code>#
-# bucket2.py - bucket list builder
-#
-print('\nBUCKET LIST BUILDER\n')
-bucket = []
-choice = input('Enter selection: e(X)it, (A)dd, (L)ist...')
-while choice[0] != 'X':
-    if choice[0] == 'A':
-        print('Enter list item... ')
-        newitem = input()
-        bucket.append(newitem)
-    elif choice[0] == 'L':
-        for item in bucket:
-            print(item)
-    else:
-        print('Invalid selection.')
-    choice = input('Enter selection: e(X)it, (A)dd, (L)ist..')
-print('\nGOODBYE!\n')</code></pre>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bucket2.py - bucket list builder</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">BUCKET LIST BUILDER</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>bucket <span class="op">=</span> []</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter selection: e(X)it, (A)dd, (L)ist...'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> choice[<span class="dv">0</span>] <span class="op">!=</span> <span class="st">'X'</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> choice[<span class="dv">0</span>] <span class="op">==</span> <span class="st">'A'</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Enter list item... '</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        newitem <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        bucket.append(newitem)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> choice[<span class="dv">0</span>] <span class="op">==</span> <span class="st">'L'</span>:</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> bucket:</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(item)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Invalid selection.'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter selection: e(X)it, (A)dd, (L)ist..'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">GOODBYE!</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
+</div>
 <p>Modify the code to:</p>
 <ol style="list-style-type: decimal"><li>Accept lowercase as well as uppercase letters as choices (hint:
 convert the inputs to upper())</li>
@@ -500,27 +516,31 @@ bucket[int(delitem)])</li>
 <p>This program generates a list of items then prints out each selected
 item before deleting it. We are using a “without replacement” approach
 as the selected items are no longer part of the pool to be selected.</p>
-<pre><code>#
-# assorted.py - selecting random biscuits from a pack
-#
-import random
-biscuits = []
-biscuits.extend(['Monte Carlo']*7)
-biscuits.extend(['Shortbread Cream']*7)
-biscuits.extend(['Delta Cream']*6)
-biscuits.extend(['Orange Slice']*6)
-biscuits.extend(['Kingston']*5)
-print('\nASSORTED CREAMS\n')
-print('There are ', len(biscuits), ' biscuits in the pack.')
-print('\n', biscuits, '\n')
-more = input('\nWould you like a biscuit (Y/N)... ')
-while more != 'N':
-    choice = random.randint(0,len(biscuits)-1)
-    print('Your biscuit is : ', biscuits[choice])
-    del biscuits[choice]
-    more = input('\nWould you like a biscuit (Y/N)...')
-print('\nThere are ', len(biscuits), ' biscuits left.')
-print('\n', biscuits, '\n')</code></pre>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># assorted.py - selecting random biscuits from a pack</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>biscuits <span class="op">=</span> []</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Monte Carlo'</span>]<span class="op">*</span><span class="dv">7</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Shortbread Cream'</span>]<span class="op">*</span><span class="dv">7</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Delta Cream'</span>]<span class="op">*</span><span class="dv">6</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Orange Slice'</span>]<span class="op">*</span><span class="dv">6</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Kingston'</span>]<span class="op">*</span><span class="dv">5</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">ASSORTED CREAMS</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'There are '</span>, <span class="bu">len</span>(biscuits), <span class="st">' biscuits in the pack.'</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, biscuits, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>more <span class="op">=</span> <span class="bu">input</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Would you like a biscuit (Y/N)... '</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> more <span class="op">!=</span> <span class="st">'N'</span>:</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    choice <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="bu">len</span>(biscuits)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Your biscuit is : '</span>, biscuits[choice])</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">del</span> biscuits[choice]</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    more <span class="op">=</span> <span class="bu">input</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Would you like a biscuit (Y/N)...'</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">There are '</span>, <span class="bu">len</span>(biscuits), <span class="st">' biscuits left.'</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, biscuits, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
+</div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -590,21 +610,25 @@ you can achieve.</p>
 <h3 id="activity-6---tossing-coins">Activity 6 - Tossing Coins<a class="anchor" aria-label="anchor" href="#activity-6---tossing-coins"></a></h3>
 <p>In this program we will toss a coin 1000 times and see how many heads
 or tails we count.</p>
-<pre><code>#
-# cointoss.py - simulate tossing a coin multiple times
-#
-import random
-coin = ['heads','tails']
-heads = 0
-tails = 0
-trials = 1000
-print('\nCOIN TOSS\n')
-for index in range(trials):
-    if random.choice(coin) == 'heads':
-        heads = heads + 1
-    else:
-        tails = tails + 1
-print('\nThere were ', heads, ' heads &amp; ', tails, ' tails.\n')</code></pre>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cointoss.py - simulate tossing a coin multiple times</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>coin <span class="op">=</span> [<span class="st">'heads'</span>,<span class="st">'tails'</span>]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>heads <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>tails <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>trials <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">COIN TOSS</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(trials):</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> random.choice(coin) <span class="op">==</span> <span class="st">'heads'</span>:</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        heads <span class="op">=</span> heads <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        tails <span class="op">=</span> tails <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">There were '</span>, heads, <span class="st">' heads &amp; '</span>, tails, <span class="st">' tails.</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
+</div>
 <p>Modify the code to ask the user to enter the number of tosses.</p>
 </div>
 <div class="section level3">
@@ -948,7 +972,11 @@ for more information.</p>
 <span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>RESET <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[0m'</span></span></code></pre>
 </div>
 <p>For example:</p>
-<pre><code><span><span class="fu">print</span><span class="op">(</span><span class="va">RED</span>, <span class="st">"Oh dear! We are all out of"</span>, <span class="va">treats</span><span class="op">[</span><span class="va">choice</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>, <span class="va">RESET</span><span class="op">)</span></span></code></pre>
+<div class="codewrapper sourceCode" id="cb19">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(RED, <span class="st">"Oh dear! We are all out of"</span>, treats[choice][<span class="dv">1</span>], RESET)</span></code></pre>
+</div>
 <p>You should consider the background colour when choosing text colours
 - yellow will show well on black, but not on white. A
 `<code>RESET</code> at the end of each coloured string will take you
@@ -1117,7 +1145,7 @@ any links that you are not going to use.
   "url": "https://COMP1005.github.io/COMP1005.github.io/prac02.html",
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/prac02.html",
   "dateCreated": "2023-08-08",
-  "dateModified": "2023-07-11",
+  "dateModified": "2023-08-08",
   "datePublished": "2023-08-08"
 }
 
