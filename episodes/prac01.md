@@ -399,7 +399,7 @@ Now for a simple systems model... Unconstrained Growth and Decay.
 :::::
 
 So, growth and decay models are common in many domains. We will implement algorithm 2 from Module 2.2 of the text book (p25). 
-Chapter 2 is available for download at [Computational Science](http://press.princeton.edu/titles/10291.html), and 
+Chapter 2 is available for download at [Computational Science](fig/s2_10291.pdf), and 
 provides background to these types of models.
 
 We are going to write Python code for simulating unconstrained growth based on the following pseudocode from the text:
