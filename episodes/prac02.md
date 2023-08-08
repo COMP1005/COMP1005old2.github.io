@@ -62,7 +62,7 @@ strings. The code below shows three different approaches to printing out a strin
 
 Enter the following code as ```strings1.py```...
 
-```
+```python
 #
 # strings1.py: Read in a string and print it in reverse
 #              using a loop and a method call
@@ -96,7 +96,7 @@ Test out the code to understand how it works. Note that in each case:
 
 Slicing doesn't quite fit the pattern for start:stop:step, which would have the code as follows:
 
-```
+```python
 # WARNING: THIS WON"T WORK!
 print('Reversed string is :', instring[len(instring)-1:-1:-1])
 ```
@@ -125,7 +125,7 @@ or by value ```bucket1.remove("Skydiving")```. We then create a second list ```b
 and make a new list ```bucket``` from ```bucket1 + bucket2```. 
 Finally we insert a new item and print out the buckets.
  
-```
+```python
 #
 # bucket1.py - use a python list for items in a bucket list
 #
@@ -161,7 +161,7 @@ for item in bucket:      # for-each loop
 
 We will now create a bucket list builder to interactively create a new bucket list...
  
-```
+```python
 #
 # bucket2.py - bucket list builder
 #
@@ -193,7 +193,7 @@ This program generates a list of items then prints out each selected item before
 We are using a “without replacement” approach as the selected items are no longer part of the 
 pool to be selected.
 
-```
+```python
 #
 # assorted.py - selecting random biscuits from a pack
 #
@@ -259,7 +259,7 @@ Type the code in as ```darts.py``` and explore the accuracy you can achieve.
 
 In this program we will toss a coin 1000 times and see how many heads or tails we count.
  
-```
+```python
 #
 # cointoss.py - simulate tossing a coin multiple times
 #
@@ -532,7 +532,7 @@ RESET = '\033[0m'
 
 For example: 
 
-```
+```python
 print(RED, "Oh dear! We are all out of", treats[choice][1], RESET)
 ```
 
