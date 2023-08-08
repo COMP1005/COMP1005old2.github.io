@@ -321,7 +321,7 @@ Testing this code will show you some easy ways to break a program. We'll learn l
 (spoiler - it's exception handling).
 
 Now we are going to read in ten numbers and add up their total. As we know in advance how many 
-of numbers we want, we can use a ```for`` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
+of numbers we want, we can use a ```for``` loop. Type it in as ```num_for.py``` in the ```Prac01``` directory.
  
 ```python
 #
