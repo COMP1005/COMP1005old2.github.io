@@ -412,9 +412,11 @@ We are going to write Python code for simulating unconstrained growth based on t
 - initialise population
 - initialise growth rate
 - initialise (length of) time step
-- number of iterations = simulation length / time step growth rate (per step) = growth rate * time step
+- number of iterations = simulation length / time step
+- growth rate (per step) = growth rate * time step
 - for i = 0 to number of iterations-1 do
-   - growth = growth rate (per step) * population population = population + growth
+   - growth = growth rate (per step) * population
+   - population = population + growth
    - time = i * time step
    - display time, growth, population
 
@@ -487,12 +489,15 @@ e.g. zip -r Prac01_12345678 Prac01
  
 This will create a file **Prac01_<your_student_ID>.zip** which includes
 everything in the Prac01 directory – including the directories, programs 
-and the README. As before, you can check the contents of the zip file by typing:
+and the README. 
+
+As before, you can check (list) the contents of the zip file by typing:
 
 ```
 unzip –l Prac01_<your_student_ID>.zip
 ```
- 
+To unzip the file, just do the above command without the ```-l```
+
 ### Submission
 
 All of your work for this week’s practical should be submitted via Blackboard using
