@@ -486,7 +486,7 @@ treats = [[1, "Choco Pie", 100, 5],
 
 ### Formatted output
 
-There are many ways to crete formatted output in Python. To stay close to what we have already learned, we will use 
+There are many ways to create formatted output in Python. To stay close to what we have already learned, we will use 
 string functions for padding out a string with blanks or zeros.
 
 ```python
