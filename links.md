@@ -7,4 +7,6 @@ any links that you are not going to use.
 [r-markdown]: https://rmarkdown.rstudio.com/
 [rstudio]: https://www.rstudio.com/
 [carpentries-workbench]: https://carpentries.github.io/sandpaper-docs/
+<script defer data-domain="comp1005.github.io" src="https://plausible.io/js/script.js"></script>
+
 
