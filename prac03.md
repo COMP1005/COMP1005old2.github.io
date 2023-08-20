@@ -70,7 +70,7 @@ exponential growth in the population
 
 ### Activity 2 - Reading Numbers with Arrays
 
-In ```Prac01``` we read in ten numbers and printed their total. Copy ```numbers2.py``` 
+In ```Prac01``` we read in ten numbers and printed their total. Copy ```num_for.py``` 
 from ```Prac01``` to ```Prac03/numbersarray.py```. We will change this file to use arrays to 
 store the values and then print some summary data. 
 
@@ -124,8 +124,6 @@ lecture slides (shown below). When adapting the code, the variable names and
 labels/titles will need to be changed... this is a **very** common task.
  
 ```python
-plt.figure(1)
-
 plt.subplot(211)
 plt.plot(dates, march2017, '--')  # update the xvalues, yvalues and line style
 plt.title('March Temperatures')   # update title
@@ -146,7 +144,7 @@ Save the resulting plot in your ```Prac03``` directory.
 
 Copy ```numbersarray.py``` to ```numbersbar.py```. Update ```numbersbar.py``` 
 to print a bar chart of the numbers. In the lecture notes, we saw how to 
-plot a bar chart from a list. We will use similar code to plot the numbers 
+plot a bar chart from a list. We will use **similar** code to plot the numbers 
 entered into ```numbersbar.py```
  
 ```python
@@ -187,15 +185,18 @@ Shiflet textbook - http://press.princeton.edu/chapters/s2_10291.pdf .*
 We have seen the impact of a single dose of Aspirin, and then a second after 4 hours. Many of 
 these medications can have serious imnpacts if taken regularly for too long a period. An example 
 would be to take the ```dosage4hr.py``` code and repeat the dosage every 4 hours... make the 
-appropriate changes , which should give a result similar to the plot below.
+appropriate changes, which should give a result similar to the plot below.
 
 ![Four-hourly aspirin dosage](fig/P03aspirin4hr.png)
 
 Note that the concentration of Aspirin in the blood plasma is going above the red line, which is 
-dangerous (Mean Toxic Concentration). Also  note that the blood plasma volume has been reduced to 2700ml, to illustrate the 
+dangerous (Mean Toxic Concentration). Also  note that the blood plasma volume has/can been reduced to 2700ml, to illustrate the 
 impact of changing these values.
 
 Modifying this code to space the dosages further apart (6 hourly), we see the concentration is now always below the red line.
+
+Also note that you probably have a double-dose at the start - as shown in the sample plots. This can be corrected by setting the 
+initial aspirin_in_plasma value to zero (not ```dose```).
 
 ![Six-hourly aspirin dosage](fig/P03aspirin6hr.png)
 
@@ -234,7 +235,7 @@ import math
 # Basic Curve
 r = 5
 for i in range(-r,r+1):
-    plt.plot(i,-((abs(i))**2-r**2),"bo")
+    plt.plot(i, r**2 - i**2,"bo")
 plt.title("Basic Curve")
 plt.show()
 ```
@@ -344,6 +345,7 @@ Update the README file to include:
 - numbersbar.py
 - dosage.py 
 - repeatdosage.py
+- rainbows.py
  
 along with any additional programs and charts you have created.
 
