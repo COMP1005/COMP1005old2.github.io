@@ -333,7 +333,7 @@ plt.show()
  
 ::::::
 
-### Activity 9 - Update README file
+### Submission
 
 Update the README file to include:
 
@@ -346,8 +346,6 @@ Update the README file to include:
 - repeatdosage.py
  
 along with any additional programs and charts you have created.
-
-### Submission
 
 All of your work for this week’s practical should be submitted via Blackboard using
 the Practical 03 link. This should be done as a single "zipped" file.
