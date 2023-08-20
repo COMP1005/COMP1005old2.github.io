@@ -4,7 +4,10 @@ title: "Prac04: 2-Dimensional Arrays, Functions and Plotting"
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- FIXME - prac is not quite complete
+- How can I work with data in two or more dimensions (x, y, z)?
+- What are some examples of multi-dimensional data?
+- How can I plot this multi-dimensional data?
+- How do I make and use my own functions?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
