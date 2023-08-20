@@ -2466,7 +2466,7 @@ the exponential growth in the population</li>
 <h3 id="activity-2---reading-numbers-with-arrays">Activity 2 - Reading Numbers with Arrays<a class="anchor" aria-label="anchor" href="#activity-2---reading-numbers-with-arrays"></a>
 </h3>
 <p>In <code>Prac01</code> we read in ten numbers and printed their
-total. Copy <code>numbers2.py</code> from <code>Prac01</code> to
+total. Copy <code>num_for.py</code> from <code>Prac01</code> to
 <code>Prac03/numbersarray.py</code>. We will change this file to use
 arrays to store the values and then print some summary data.</p>
 <p>Make the changes below and run the program:</p>
@@ -2528,19 +2528,17 @@ variable names and labels/titles will need to be changed… this is a
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.figure(<span class="dv">1</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">211</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'--'</span>)  <span class="co"># update the xvalues, yvalues and line style</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'March Temperatures'</span>)   <span class="co"># update title</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)         <span class="co"># update y label units</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">212</span>)                  <span class="co"># as above... for second subplot</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'ro'</span>)  <span class="co"># explore different line styles</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>plt.show()                        <span class="co"># display plot</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">211</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'--'</span>)  <span class="co"># update the xvalues, yvalues and line style</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'March Temperatures'</span>)   <span class="co"># update title</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)         <span class="co"># update y label units</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">212</span>)                  <span class="co"># as above... for second subplot</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'ro'</span>)  <span class="co"># explore different line styles</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.show()                        <span class="co"># display plot</span></span></code></pre>
 </div>
 <p>Save the resulting plot in your <code>Prac03</code> directory.</p>
 </div>
@@ -2550,7 +2548,7 @@ variable names and labels/titles will need to be changed… this is a
 <p>Copy <code>numbersarray.py</code> to <code>numbersbar.py</code>.
 Update <code>numbersbar.py</code> to print a bar chart of the numbers.
 In the lecture notes, we saw how to plot a bar chart from a list. We
-will use similar code to plot the numbers entered into
+will use <strong>similar</strong> code to plot the numbers entered into
 <code>numbersbar.py</code></p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2594,14 +2592,17 @@ Chapter 2 of the Shiflet &amp; Shiflet textbook - <a href="http://press.princeto
 second after 4 hours. Many of these medications can have serious
 imnpacts if taken regularly for too long a period. An example would be
 to take the <code>dosage4hr.py</code> code and repeat the dosage every 4
-hours… make the appropriate changes , which should give a result similar
+hours… make the appropriate changes, which should give a result similar
 to the plot below.</p>
 <figure><img src="../fig/P03aspirin4hr.png" alt="" class="figure mx-auto d-block"><figcaption>Four-hourly aspirin dosage</figcaption></figure><p>Note that the concentration of Aspirin in the blood plasma is going
 above the red line, which is dangerous (Mean Toxic Concentration). Also
-note that the blood plasma volume has been reduced to 2700ml, to
+note that the blood plasma volume has/can been reduced to 2700ml, to
 illustrate the impact of changing these values.</p>
 <p>Modifying this code to space the dosages further apart (6 hourly), we
 see the concentration is now always below the red line.</p>
+<p>Also note that you probably have a double-dose at the start - as
+shown in the sample plots. This can be corrected by setting the initial
+aspirin_in_plasma value to zero (not <code>dose</code>).</p>
 <figure><img src="../fig/P03aspirin6hr.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin dosage</figcaption></figure><p>Another way to reduce the cumulative impacts of a medication is to
 not take it in the evening, so there might be 3 6-hourly doses and a gap
 overnight. This can also be an approach where a medication might keep
@@ -2656,7 +2657,7 @@ parabola?</p>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(i,<span class="op">-</span>((<span class="bu">abs</span>(i))<span class="op">**</span><span class="dv">2</span><span class="op">-</span>r<span class="op">**</span><span class="dv">2</span>),<span class="st">"bo"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(i, r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>,<span class="st">"bo"</span>)</span>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
@@ -2791,6 +2792,7 @@ change the radius of the circle.</p>
 <li>numbersbar.py</li>
 <li>dosage.py</li>
 <li>repeatdosage.py</li>
+<li>rainbows.py</li>
 </ul>
 <p>along with any additional programs and charts you have created.</p>
 <p>All of your work for this week’s practical should be submitted via
