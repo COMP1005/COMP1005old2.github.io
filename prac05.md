@@ -51,7 +51,7 @@ plt.plot(dates, mins, dates, maxs)
 plt.show()
 ```
 
-Modify the code to read the data from the marchweather.csv file – available on Blackboard and [here files/marchweather.csv]. 
+Modify the code to read the data from the marchweather.csv file – available on Blackboard and [here](files/marchweather.csv]. 
 You should download it to your Prac5 directory, look at its contents and format, then modify 
 the code accordingly. **Hint:** look at split method, and list comprehensions in lecture slides.
 
@@ -120,7 +120,7 @@ can use use "+" to put the word back together)
 
 ### Activity 5 - Heat Diffusion
 
-Download and run ```heat.py```, available in the practical area on Blackboard and [here files/heat.py]. There
+Download and run ```heat.py```, available in the practical area on Blackboard and [here](files/heat.py). There
 have been some changes made over time to improve readability
 
 ```python
