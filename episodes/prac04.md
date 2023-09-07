@@ -202,18 +202,24 @@ if __name__ == '__main__':
     main()
 ```
 
-### Activity 9 - Update README file
+### Submission
 
 Create a README file for Prac 04. Include the names and descriptions of all of your Python programs from this practical.
 
 All of your work for this week’s practical should be submitted via Blackboard using the link under assessments. This 
-should be done as a single "zipped" file.
+should be done as a single "zipped" file. A reminder that these are not assessed, but we may look at the submission of practicals as an indicator of your engagement and effort in the unit.
 
 ### And that's the end of Practical 04!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+* Numpy provides multi-dimensional arrays in Python, along with useful functions and operations
+* Indexing and slicing are used in a similar way to other sequences (1-D arrays, strings and lists)
+* The Scipy library extends Numpy with more advanced functionality, including image processing. Images can be manipulated as Numpy arrays.
+* We can improve readibility and reduce repetition by defining and using functions.
+* Once a function has been **tested** - it can be used with confidence, which simplifies your code.
+* Functions can be grouped into modules and imported and reused in multiple programs
+
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -238,5 +244,9 @@ For those who want to explore a bit more of the topics covered in this practical
 assessed but may form part of the prac tests or exam.
 
 1. Create a program to convert an inputted string to Pig Latin
-2. Find a repetitive song and use functions like ```print_lyrics()``` to print out the complete song.
+2. Find a repetitive song and use functions like ```print_lyrics()``` to print out the complete song. Examples include:
+  * 10 Green Bottles
+  * 5 Little Ducks
+  * Bingo
+    
 ::::::::::::::::::::::::::::::::::::::::::::::::
