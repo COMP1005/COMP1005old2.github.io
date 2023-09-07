@@ -79,18 +79,9 @@ Go through the lecture slides and add in the code for shifting, rotating, croppi
 Look at the documentation for colour maps and try a few of them with your code...
 http://matplotlib.org/examples/color/colormaps_reference.html
 
-### Activity 3 - Specifications and Pseudocode
-The lecture slides included a description and pseudocode specification of a program for collecting competition scores.
 
-Translate and test the first version of the program (```competition_v1.py```) and check how it handles incorrect data, 
-and the impact of the dodgy data on the results (e.g. score of -100).
 
-Make a copy of the code as ```competition_v2.py``` and adjust it to match the second version of the pseudocode from the 
-slides. Test it again with bad input to see how it is handled.
-
-Finally make another copy and modify it to match version three from the lecture slides. Try the same tests to check it is working.
-
-### Activity 4 - Functions for Conversions
+### Activity 3 - Functions for Conversions
 
 In this task we will create some functions to convert values between different units. To start, we will convert between 
 Celsius, Fahrenheit and Kelvin. Below is a skeleton of how to start your code.
@@ -127,7 +118,7 @@ To see the docstring for a function, you access the ```__doc__``` attribute. So 
 is how the IDE's access the information to give you help with usage as you type in a function. 
 
 
-### Activity 5 - Conversion Machine
+### Activity 4 - Conversion Machine
 
 Now we can write a program, ```converter.py```, to convert between our temperature formats. Your program should:
 
@@ -143,7 +134,7 @@ Now we can write a program, ```converter.py```, to convert between our temperatu
 This is very similar to the Bucket List Builder, so refer to Practical 02 to see that code.
 
 
-### Activity 6 - Conversion Machine (2)
+### Activity 5 - Conversion Machine (2)
 
 Create a different version of the conversion machine, converter2.py, that will ask for the 
 conversion type, then will convert a list of numbers into the target unit. The loop should 
@@ -159,7 +150,7 @@ exit when the user enters an empty value (just presses return).
 8. print closing message
 
 
-### Activity 7 - Conversion Machine (3)
+### Activity 6 - Conversion Machine (3)
 
 Think about the input you are giving to ```converter2.py```. Could you automate that input?
 
@@ -179,7 +170,7 @@ python3 converter2.py < temps.txt > tempsout.txt
 
 Make a larger input file to see how easy it is to process data using **standard in** (keyboard input) and **standard out** (screen output).
 
-### Activity 8 - Testing your Module
+### Activity 7 - Testing your Module
 
 In the lecture (slide 71), we saw how we can use the ```__main__``` attribute/variable 
 to check if our python code has been run directly (e.g. ```python3 conversions.py```) or indirectly 
@@ -201,6 +192,18 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+### Activity 8 - Specifications and Pseudocode
+The lecture slides included a description and pseudocode specification of a program for collecting competition scores.
+
+Translate and test the first version of the program (```competition_v1.py```) and check how it handles incorrect data, 
+and the impact of the dodgy data on the results (e.g. score of -100).
+
+Make a copy of the code as ```competition_v2.py``` and adjust it to match the second version of the pseudocode from the 
+slides. Test it again with bad input to see how it is handled.
+
+Finally make another copy and modify it to match version three from the lecture slides. Try the same tests to check it is working.
+
 
 ### Submission
 
