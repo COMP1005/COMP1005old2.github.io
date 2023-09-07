@@ -233,8 +233,8 @@ should be done as a single "zipped" file. A reminder that these are not assessed
 7. **Analysis**: Task 7 uses the Python variable ```__name__``` to support testing. What does ```__name__` equal when the module code is run directly (as ```python conversions.py```), and what is its value when the module is run as ```python converter2.py```?
 9. **Synthesis**: What happens when we resize an array to be smaller than the original? What happens when we make it larger? Does the data in the array change?
 10. **Evaluation**: Compare the three versions of the competition code from task 3. How has the code improved from 
-  1. the user perspective, and
-  2. the programmer perspective.
+  * the user perspective, and
+  * the programmer perspective.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
