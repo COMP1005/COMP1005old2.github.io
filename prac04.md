@@ -39,6 +39,8 @@ import numpy as np
 print('\nZERO ARRAY\n') 
 zeroarray = np.zeros((3,3,3))
 
+# update values here
+
 print('Zero array size: ', np.size(zeroarray)) 
 print('Zero array shape: ', np.shape(zeroarray), '\n')
 print(zeroarray)
@@ -54,7 +56,7 @@ print('Zero array shape: ', np.shape(zeroarray), '\n')
 print(zeroarray)
 ```
 
-Modify the code to set element ```[0,0,2]``` to 1, element ```[1,1,1]``` to 2 and ```[2,2,0]``` to 3. Run the code and look for where these values sit in each resized array.
+Modify the code to update the values. Set element ```[0,0,2]``` to 1, element ```[1,1,1]``` to 2 and ```[2,2,0]``` to 3. Run the code and note/understand where these values sit in each resized array.
 
 ### Activity 2 - Ndimage in Scipy
 
@@ -74,7 +76,7 @@ plt.imshow(face, cmap=plt.cm.gray)
 plt.show()
 ```
 
-Go through the lecture slides and add in the code for shifting, rotating, cropping and pixelating.
+Refer to the lecture slides and enter/run the code for shifting, rotating, cropping and pixelating.
 
 Look at the documentation for colour maps and try a few of them with your code...
 http://matplotlib.org/examples/color/colormaps_reference.html
@@ -110,7 +112,8 @@ from conversions import *
 print("\nTESTING CONVERSIONS\n")
 testF = 100
 testC = fahr2cel(testF)
-print("Fahrenheit is ", testF, " Celsius is ", testC) print()
+print("Fahrenheit is ", testF, " Celsius is ", testC)
+print()
 ```
 
 Extend conversions.py to include all six conversion functions, along with others you might find useful. Extend your test program to test the other conversions.
@@ -118,7 +121,7 @@ To see the docstring for a function, you access the ```__doc__``` attribute. So 
 is how the IDE's access the information to give you help with usage as you type in a function. 
 
 
-### Activity 4 - Conversion Machine
+### Activity 4 - Conversion Machine (1)
 
 Now we can write a program, ```converter.py```, to convert between our temperature formats. Your program should:
 
@@ -126,9 +129,9 @@ Now we can write a program, ```converter.py```, to convert between our temperatu
 2. provide a menu of conversions to choose between
 3. take the user input
 4. while the choice is to keep going
-  5. do the conversion, or provide an error message
-  6. ask if they want to do another conversion
-  7. loop back to (4) 
+   1. do the conversion, or provide an error message
+   2. ask if they want to do another conversion
+   3. loop back to (4) 
 8. print closing message
 
 This is very similar to the Bucket List Builder, so refer to Practical 02 to see that code.
@@ -144,9 +147,9 @@ exit when the user enters an empty value (just presses return).
 2. provide a menu of conversions to choose between
 3. take the user input
 4. while the choice isn't an empty string
-  5. do the conversion, or provide an error message
-  6. ask if they want to do another conversion
-  7. loop back to (4) 
+   5. do the conversion, or provide an error message
+   6. ask if they want to do another conversion
+   7. loop back to (4) 
 8. print closing message
 
 
@@ -189,20 +192,22 @@ def main():
     print('\nTesting textfun.py ')
     # put your testing code in here
     print('Testing complete')
+
 if __name__ == '__main__':
     main()
 ```
 
 ### Activity 8 - Specifications and Pseudocode
-The lecture slides included a description and pseudocode specification of a program for collecting competition scores.
+The lecture slides included a description and pseudocode specification of a program for collecting gymnastics competition scores.
 
-Translate and test the first version of the program (```competition_v1.py```) and check how it handles incorrect data, 
-and the impact of the dodgy data on the results (e.g. score of -100).
+Translate the first version of the program to python (call it ```competition_v1.py```) and test it to check how it 
+handles invalid data, and the impact of the dodgy data on the results (e.g. score of -100).
 
-Make a copy of the code as ```competition_v2.py``` and adjust it to match the second version of the pseudocode from the 
-slides. Test it again with bad input to see how it is handled.
+Make a copy of the code as ```competition_v2.py``` and adjust it to match the second version of the 
+pseudocode from the slides. Test it again with bad input to see how it is handled.
 
-Finally make another copy and modify it to match version three from the lecture slides. Try the same tests to check it is working.
+Finally make another copy ```competition_v3.py``` and modify it to match version three from the lecture 
+slides. Try the same tests to check it is working correctly.
 
 
 ### Submission
@@ -247,7 +252,7 @@ For those who want to explore a bit more of the topics covered in this practical
 assessed but may form part of the prac tests or exam.
 
 1. Create a program to convert an inputted string to Pig Latin
-2. Find a repetitive song and use functions like ```print_lyrics()``` to print out the complete song. Examples include:
+2. Find a repetitive song and use functions e.g. ```print_lyrics()``` to print out the complete song. Examples include:
   * 10 Green Bottles
   * 5 Little Ducks
   * Bingo
