@@ -4,15 +4,18 @@ title: "Prac05: Grids and Files"
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Use the old prac sheet for now
+- How can we make data persistent - so that it exists before and/or after our programs run? (spoiler: it's **files**)
+- What are the methods/functions we need to use to work with files?
+- How can list comprehensions simplify our code?
+- How can we work with 2D arrays to create simulations?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
 1. Understand and use text files to store and load data
-2. Develop simple grid-based simulations using 2-dimensional arrays: fire modelling, Game of Life
 3. Apply list comprehensions to simplify code
+2. Develop simple grid-based simulations using 2-dimensional arrays: fire modelling, Game of Life
 4. Experiment with parameters to investigate how they alter the outcomes of simulations
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -52,7 +55,7 @@ plt.show()
 ```
 
 Modify the code to read the data from the marchweather.csv file – available on Blackboard and [here](files/marchweather.csv). 
-You should download it to your Prac5 directory, look at its contents and format, then modify 
+You should download it to your Prac05 directory, look at its contents and format, then modify 
 the code accordingly. **Hint:** look at split method, and list comprehensions in lecture slides.
 
 ### Activity 2 - Reading another CSV file
@@ -61,12 +64,13 @@ This time, go to the Bureau of Meteorology site and download the full list of we
 March. This time we will plot the min, max, 9am and 3pm temperatures... 
 http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml
 
-You can change the year and month by changing "202303" to another year+month
+You can change the year and month by changing "202303" to another year+month (in two places)
 
 Save the data by scrolling down to the “Other Formats” section and right-clicking on the plain 
-text version. Save it to your ```Prac05``` directory as ```marchweatherfull.csv```. If you open it in vim 
+text version. Save it to your ```Desktop``` or ```Prac05``` directory as ```marchweatherfull.csv```. 
+If you open it in vim 
 you can see all the data, but there are headers describing the data that we don’t need to read 
-in. Remove the first header lines using ``dd`` (in vim's command mode) and then save the file. 
+in. Remove the header lines at the top of the file using ``dd`` (in vim's command mode) and then save the file. 
 You now have your dataset.
 
 Write a new program, ```marchweather2.py``` to read in the values and plot them. You will need 
@@ -80,7 +84,10 @@ fileobj = open(‘marchweatherfull.csv’, ‘r’)
 data = fileobj.readlines()
 fileobj.close()
 
-mins = [] # do the same for maxs, nines and threes
+mins = [] # make an empty list to store the mins column on each line of the file 
+          # note that each entry will need to be converted to a float
+
+# do the same for maxs, nines and threes
 
 for line in data:
     splitline = line.split(‘,’) 
@@ -90,12 +97,12 @@ for line in data:
     threes.append(splitline[16])
 ```
 
-Then adjust your ```plt.plot()``` call to plot mins, maxs, nines and threes. Make sure you 
-set up the x values (dates) as in Task 1.
+Then add a ```plt.plot()``` call to plot lines for mins, maxs, nines and threes. Make sure you 
+set up the x values (dates) as in Activity 1.
 
 ### Activity 3 - Writing to a CSV file
-Take your marchweather2.py and modify it to write the four lists of values into a csv file, 
-four values per line.
+Take your ```marchweather2.py``` and modify it to write the four lists of values into a csv file, 
+four values per line. You may have to convert them to strings when building each line to write.
  
 ```python
 file2 = open(‘marchout.csv’, ‘w’) 
@@ -116,7 +123,7 @@ do the following using **both** loops and list comprehensions for each:
 4. Write code to capitalise the first letter of each word in a list of words (Hint:you
 can use use "+" to put the word back together)
 
-
+You may find places in the previous activities where list comprehensions could have been used.
 
 ### Activity 5 - Heat Diffusion
 
@@ -169,9 +176,9 @@ to see that it still works.
 
 ### Activity 6 - Heat Diffusion with Functions
 
-Our ```heat.py``` program has an ugly line of code to calculate the next values for each cell. 
-We used an improved version, but hiding these ugly details in a function will make the code
-more readable.
+Our ```heat.py``` program has an ugly line of code to calculate the next values for each cell - TMI 
+(too much information). We modified it in the previous activity to have cleaner code, but can make 
+the code even more readable by hiding these ugly details in a function.
 
 Copy ```heat.py``` to ```heatfun.py``` and create a function ```calcheat(subarray)``` to factor 
 this calculation out. You can then call the function as:
@@ -187,9 +194,14 @@ def calcheat(subarray):
     return result
 ```
 
+This apporach passes only the **3x3 subgrid** of the array into the function - protecting the rest of 
+the array from accidental changes. We also ```return``` the result - making it clearer what changes are 
+happening to the array.
+
 ### Activity 7 - Reading (yet another) CSV file
 
-Copy your ```heat.py``` and call the copy ```heatsource.py```. This time we are going to read a heat source in from a file.
+Copy your ```heat.py``` and call the copy ```heatsource.py```. This time we are going to read a 
+heat source in from a file.
 
 Create a file ```heatsource.csv to``` hold the heatsource:
 
@@ -234,7 +246,7 @@ for line in fileobj:
     hlist.append(ints)
 fileobj.close()
 
-harray = np.array(hlist) 
+harray = np.array(hlist) # heat source array to maintain the heat generation in the simulation
 currg = harray.copy()
 ```
 
@@ -245,27 +257,28 @@ And in the loop the heat source needs to be updated using the new h array...
 for timestep in range(100):
     for r in range(1,size-1):
         for c in range (1, size-1):
-            nextg[r,c]=calcheat(curr[r-1:r+2,c-1:c+2])
+            nextg[r,c]=calcheat(curr[r-1:r+2,c-1:c+2]) # heat diffusion
 
     for r in range(size):
         for c in range(size):
-            if harray[r,c] > nextg[r,c]: 
+            if harray[r,c] > nextg[r,c]:  # maintaining heat source
                 nextg[r,c] = harray[r,c]
+
     currg = nextg.copy()
 ```
 
 Your code should now output the same information as it did before – test it and see.
 
 In a similar way to list comprehensions, we can simplify the four lines of code above 
-to one line using ```np.where()```. This will overwrite values in next where the value in 
-harray is larger:
+to one line using ```np.where(harray > nextg, harray, nextg)```. This will overwrite values in 
+nextg where the value in harray is larger:
 
 Copy ```heatsource.csv``` to  ```heatsource2.csv```, change the values in ```heatsource2.csv```,
 and make the necessary changes to ```heatsource.py``` to see how it changes the output of the program.
 
 ### Activity 8 - Fireplan
 
-Access the **Interactivate** app at: http://www.shodor.org/interactivate/activities/FireAssessment/
+Access the **Interactivate** app at: [http://www.shodor.org/interactivate/activities/FireAssessment/](http://www.shodor.org/interactivate/activities/FireAssessment/)
 
 Explore the use of the app and how it is making use of the grid and neighbours. Also look 
 at the use of graphics to represent the different states of a cell. What different graphics 
@@ -273,11 +286,14 @@ are used for the states and what do they represent?
 
 ### Activity 9 - Game of Life
 
-Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old-school 
-web page!) to see how the game of life works. 
+Have a read of [https://web.stanford.edu/class/sts129/Alife/html/Life.htm](https://web.stanford.edu/class/sts129/Alife/html/Life.htm) 
+(a very old-school web page!) to see how the **Game of Life** works. 
 
-Use your mouse to enter some life into the Game of Life Simulator https://playgameoflife.com/ , 
-then click run to see the outcomes. How long does your population survive?
+Use your mouse to enter some life into the Game of Life Simulator [https://playgameoflife.com/](https://playgameoflife.com/) , 
+then click run to see the outcomes. How long does your population survive? Try some of the shapes from the Stanford website to see how they behave.
+
+We won't be implementing the Game of Life algorithm, but you could try writing some pseudocode for 
+how you might approach it, or look online for some descriptions of algorithms.
 
 ### Submission
 
@@ -290,13 +306,21 @@ on zipping files.
  
 There are no direct marks for these submissions, but they may be taken into account 
 when finalising your mark for the unit. Go to the Assessment link on Blackboard and 
-click on Practical 03 for the submission page.
+click on Practical 05 for the submission page.
 
 ### And that's the end of Practical 05!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Files can provide persistent data that exists before and/or after our programs run? These files can also
+be used for sharing information, and allow more complex problems
+- We need to **open** files to have an object to represent the state of the files, and let us access input/output (I/O) functions. Files should be **closed** when we've finished reading/writing data.
+- Text files are strings, with three read functions - read(), readline(), readlines() and one write function - write()
+- See https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files for more about files
+- We can reduce the number of lines of code using list comprehensions - creating a new list from an
+- existing list/sequence + transformation + conditions.
+- Gridding algorithms allow us to use 2D+ arrays to create simulations - we just need to define how to calculate
+the next value in each cell on each timestep
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -316,11 +340,12 @@ cell in the following cases:
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
 
-For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
+For those who want to explore a bit more of the topics covered in this practical. Note that the challenges 
+are not assessed but may form part of the prac tests or exam.
 
 1. Follow the workflow from Activity 3 to process and plot **February** weather data.
 2. For students based in Australia, find another country's weather data sharing site, or an international one
-If you are not in Australia, see if you can find you local government's weather data sharing site. 
+3. If you are not in Australia, see if you can find you local government's weather data sharing site. 
 4. Find and download some **Game of Life*** code and get it running.
  
 ::::::::::::::::::::::::::::::::::::::::::::::::
