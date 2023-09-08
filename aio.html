@@ -2681,7 +2681,7 @@ conveying how repat doses of drug accumulate and compund.</p>
   Single curve based on a parabola
   </h4>
 </button>
-<div id="collapseHint1" class="accordion-collapse collapse" aria-labelledby="headingHint1" data-bs-parent="#accordionHint1">
+<div id="collapseHint1" class="accordion-collapse collapse" data-bs-parent="#accordionHint1" aria-labelledby="headingHint1">
 <div class="accordion-body">
 <p>Consider how you might generate a curve. Perhaps an upside-down
 parabola?</p>
@@ -2711,7 +2711,7 @@ wrong.</p>
   Single curve based on formula for a circle
   </h4>
 </button>
-<div id="collapseHint2" class="accordion-collapse collapse" aria-labelledby="headingHint2" data-bs-parent="#accordionHint2">
+<div id="collapseHint2" class="accordion-collapse collapse" data-bs-parent="#accordionHint2" aria-labelledby="headingHint2">
 <div class="accordion-body">
 <p>A circle gives a more realistic curve… so we can use the
 <code>x**2 + y**2 = r**2</code> formula to find points on the edge of a
@@ -2740,7 +2740,7 @@ circle.</p>
   Repeating the curves in reducing sizes, and progressive colours
   </h4>
 </button>
-<div id="collapseHint3" class="accordion-collapse collapse" aria-labelledby="headingHint3" data-bs-parent="#accordionHint3">
+<div id="collapseHint3" class="accordion-collapse collapse" data-bs-parent="#accordionHint3" aria-labelledby="headingHint3">
 <div class="accordion-body">
 <p>We can use the loop index to map to a particular colour, and also to
 change the radius of the circle.</p>
@@ -2778,7 +2778,7 @@ change the radius of the circle.</p>
   Storing values in arrays
   </h4>
 </button>
-<div id="collapseHint4" class="accordion-collapse collapse" aria-labelledby="headingHint4" data-bs-parent="#accordionHint4">
+<div id="collapseHint4" class="accordion-collapse collapse" data-bs-parent="#accordionHint4" aria-labelledby="headingHint4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3320,7 +3320,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 </div></section><section id="aio-prac05"><p>Content from <a href="prac05.html">Prac05: Grids and Files</a></p>
 <hr>
-<p> Last updated on 2023-08-28 | 
+<p> Last updated on 2023-09-08 | 
         
         <a href="https://github.com/COMP1005/COMP1005.github.io/edit/main/episodes/prac05.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -3334,7 +3334,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="inner">
 <h3 class="card-title">Questions</h3>
 <ul>
-<li>Use the old prac sheet for now</li>
+<li>How can we make data persistent - so that it exists before and/or
+after our programs run? (spoiler: it’s <strong>files</strong>)</li>
+<li>What are the methods/functions we need to use to work with
+files?</li>
+<li>How can list comprehensions simplify our code?</li>
+<li>How can we work with 2D arrays to create simulations?</li>
 </ul>
 </div>
 </div>
@@ -3345,9 +3350,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h3 class="card-title">Objectives</h3>
 <ol style="list-style-type: decimal">
 <li>Understand and use text files to store and load data</li>
+<li>Apply list comprehensions to simplify code</li>
 <li>Develop simple grid-based simulations using 2-dimensional arrays:
 fire modelling, Game of Life</li>
-<li>Apply list comprehensions to simplify code</li>
 <li>Experiment with parameters to investigate how they alter the
 outcomes of simulations</li>
 </ol>
@@ -3396,9 +3401,9 @@ stored in a file:</p>
 </div>
 <p>Modify the code to read the data from the marchweather.csv file –
 available on Blackboard and <a href="files/marchweather.csv">here</a>.
-You should download it to your Prac5 directory, look at its contents and
-format, then modify the code accordingly. <strong>Hint:</strong> look at
-split method, and list comprehensions in lecture slides.</p>
+You should download it to your Prac05 directory, look at its contents
+and format, then modify the code accordingly. <strong>Hint:</strong>
+look at split method, and list comprehensions in lecture slides.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-2---reading-another-csv-file">Activity 2 - Reading another CSV file<a class="anchor" aria-label="anchor" href="#activity-2---reading-another-csv-file"></a>
@@ -3407,14 +3412,15 @@ split method, and list comprehensions in lecture slides.</p>
 list of weather data for March. This time we will plot the min, max, 9am
 and 3pm temperatures… <a href="http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml" class="external-link uri">http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml</a></p>
 <p>You can change the year and month by changing “202303” to another
-year+month</p>
+year+month (in two places)</p>
 <p>Save the data by scrolling down to the “Other Formats” section and
 right-clicking on the plain text version. Save it to your
-<code>Prac05</code> directory as <code>marchweatherfull.csv</code>. If
-you open it in vim you can see all the data, but there are headers
-describing the data that we don’t need to read in. Remove the first
-header lines using <code>dd</code> (in vim’s command mode) and then save
-the file. You now have your dataset.</p>
+<code>Desktop</code> or <code>Prac05</code> directory as
+<code>marchweatherfull.csv</code>. If you open it in vim you can see all
+the data, but there are headers describing the data that we don’t need
+to read in. Remove the header lines at the top of the file using
+<code>dd</code> (in vim’s command mode) and then save the file. You now
+have your dataset.</p>
 <p>Write a new program, <code>marchweather2.py</code> to read in the
 values and plot them. You will need to pick out columns from each line
 you read in from the file. First split it into a list, then pick out the
@@ -3427,24 +3433,28 @@ values and assign them to the min, max, nine and three lists/arrays.</p>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fileobj.readlines()</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fileobj.close()</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mins <span class="op">=</span> [] <span class="co"># do the same for maxs, nines and threes</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> data:</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    splitline <span class="op">=</span> line.split(‘,’) </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    mins.append(splitline[<span class="dv">2</span>]) </span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    maxs.append(splitline[<span class="dv">3</span>]) </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    nines.append(splitline[<span class="dv">10</span>]) </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    threes.append(splitline[<span class="dv">16</span>])</span></code></pre>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mins <span class="op">=</span> [] <span class="co"># make an empty list to store the mins column on each line of the file </span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>          <span class="co"># note that each entry will need to be converted to a float</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># do the same for maxs, nines and threes</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> data:</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    splitline <span class="op">=</span> line.split(‘,’) </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    mins.append(splitline[<span class="dv">2</span>]) </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    maxs.append(splitline[<span class="dv">3</span>]) </span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    nines.append(splitline[<span class="dv">10</span>]) </span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    threes.append(splitline[<span class="dv">16</span>])</span></code></pre>
 </div>
-<p>Then adjust your <code>plt.plot()</code> call to plot mins, maxs,
-nines and threes. Make sure you set up the x values (dates) as in Task
-1.</p>
+<p>Then add a <code>plt.plot()</code> call to plot lines for mins, maxs,
+nines and threes. Make sure you set up the x values (dates) as in
+Activity 1.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-3---writing-to-a-csv-file">Activity 3 - Writing to a CSV file<a class="anchor" aria-label="anchor" href="#activity-3---writing-to-a-csv-file"></a>
 </h3>
-<p>Take your marchweather2.py and modify it to write the four lists of
-values into a csv file, four values per line.</p>
+<p>Take your <code>marchweather2.py</code> and modify it to write the
+four lists of values into a csv file, four values per line. You may have
+to convert them to strings when building each line to write.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3470,6 +3480,8 @@ number in numbers</li>
 <li>Write code to capitalise the first letter of each word in a list of
 words (Hint:you can use use “+” to put the word back together)</li>
 </ol>
+<p>You may find places in the previous activities where list
+comprehensions could have been used.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-5---heat-diffusion">Activity 5 - Heat Diffusion<a class="anchor" aria-label="anchor" href="#activity-5---heat-diffusion"></a>
@@ -3530,9 +3542,10 @@ timestep</li>
 <h3 id="activity-6---heat-diffusion-with-functions">Activity 6 - Heat Diffusion with Functions<a class="anchor" aria-label="anchor" href="#activity-6---heat-diffusion-with-functions"></a>
 </h3>
 <p>Our <code>heat.py</code> program has an ugly line of code to
-calculate the next values for each cell. We used an improved version,
-but hiding these ugly details in a function will make the code more
-readable.</p>
+calculate the next values for each cell - TMI (too much information). We
+modified it in the previous activity to have cleaner code, but can make
+the code even more readable by hiding these ugly details in a
+function.</p>
 <p>Copy <code>heat.py</code> to <code>heatfun.py</code> and create a
 function <code>calcheat(subarray)</code> to factor this calculation out.
 You can then call the function as:</p>
@@ -3549,6 +3562,10 @@ You can then call the function as:</p>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> (subarray.<span class="bu">sum</span>() <span class="op">+</span> subarray[<span class="dv">1</span>,<span class="dv">1</span>])</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre>
 </div>
+<p>This apporach passes only the <strong>3x3 subgrid</strong> of the
+array into the function - protecting the rest of the array from
+accidental changes. We also <code>return</code> the result - making it
+clearer what changes are happening to the array.</p>
 </div>
 <div class="section level3">
 <h3 id="activity-7---reading-yet-another-csv-file">Activity 7 - Reading (yet another) CSV file<a class="anchor" aria-label="anchor" href="#activity-7---reading-yet-another-csv-file"></a>
@@ -3592,7 +3609,7 @@ read data from a file:</p>
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    hlist.append(ints)</span>
 <span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>fileobj.close()</span>
 <span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>harray <span class="op">=</span> np.array(hlist) </span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>harray <span class="op">=</span> np.array(hlist) <span class="co"># heat source array to maintain the heat generation in the simulation</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>currg <span class="op">=</span> harray.copy()</span></code></pre>
 </div>
 <p>And in the loop the heat source needs to be updated using the new h
@@ -3604,19 +3621,21 @@ array…</p>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> timestep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,size<span class="op">-</span><span class="dv">1</span>):</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            nextg[r,c]<span class="op">=</span>calcheat(curr[r<span class="op">-</span><span class="dv">1</span>:r<span class="op">+</span><span class="dv">2</span>,c<span class="op">-</span><span class="dv">1</span>:c<span class="op">+</span><span class="dv">2</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            nextg[r,c]<span class="op">=</span>calcheat(curr[r<span class="op">-</span><span class="dv">1</span>:r<span class="op">+</span><span class="dv">2</span>,c<span class="op">-</span><span class="dv">1</span>:c<span class="op">+</span><span class="dv">2</span>]) <span class="co"># heat diffusion</span></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(size):</span>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(size):</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> harray[r,c] <span class="op">&gt;</span> nextg[r,c]: </span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> harray[r,c] <span class="op">&gt;</span> nextg[r,c]:  <span class="co"># maintaining heat source</span></span>
 <span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                nextg[r,c] <span class="op">=</span> harray[r,c]</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span></code></pre>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span></code></pre>
 </div>
 <p>Your code should now output the same information as it did before –
 test it and see.</p>
 <p>In a similar way to list comprehensions, we can simplify the four
-lines of code above to one line using <code>np.where()</code>. This will
-overwrite values in next where the value in harray is larger:</p>
+lines of code above to one line using
+<code>np.where(harray &gt; nextg, harray, nextg)</code>. This will
+overwrite values in nextg where the value in harray is larger:</p>
 <p>Copy <code>heatsource.csv</code> to <code>heatsource2.csv</code>,
 change the values in <code>heatsource2.csv</code>, and make the
 necessary changes to <code>heatsource.py</code> to see how it changes
@@ -3625,7 +3644,7 @@ the output of the program.</p>
 <div class="section level3">
 <h3 id="activity-8---fireplan">Activity 8 - Fireplan<a class="anchor" aria-label="anchor" href="#activity-8---fireplan"></a>
 </h3>
-<p>Access the <strong>Interactivate</strong> app at: <a href="http://www.shodor.org/interactivate/activities/FireAssessment/" class="external-link uri">http://www.shodor.org/interactivate/activities/FireAssessment/</a></p>
+<p>Access the <strong>Interactivate</strong> app at: <a href="http://www.shodor.org/interactivate/activities/FireAssessment/" class="external-link">http://www.shodor.org/interactivate/activities/FireAssessment/</a></p>
 <p>Explore the use of the app and how it is making use of the grid and
 neighbours. Also look at the use of graphics to represent the different
 states of a cell. What different graphics are used for the states and
@@ -3634,10 +3653,16 @@ what do they represent?</p>
 <div class="section level3">
 <h3 id="activity-9---game-of-life">Activity 9 - Game of Life<a class="anchor" aria-label="anchor" href="#activity-9---game-of-life"></a>
 </h3>
-<p>Have a read of <a href="https://web.stanford.edu/class/sts129/Alife/html/Life.htm" class="external-link uri">https://web.stanford.edu/class/sts129/Alife/html/Life.htm</a>
-(a very old-school web page!) to see how the game of life works.</p>
-<p>Use your mouse to enter some life into the Game of Life Simulator <a href="https://playgameoflife.com/" class="external-link uri">https://playgameoflife.com/</a> , then click run to see the
-outcomes. How long does your population survive?</p>
+<p>Have a read of <a href="https://web.stanford.edu/class/sts129/Alife/html/Life.htm" class="external-link">https://web.stanford.edu/class/sts129/Alife/html/Life.htm</a>
+(a very old-school web page!) to see how the <strong>Game of
+Life</strong> works.</p>
+<p>Use your mouse to enter some life into the Game of Life Simulator <a href="https://playgameoflife.com/" class="external-link">https://playgameoflife.com/</a> ,
+then click run to see the outcomes. How long does your population
+survive? Try some of the shapes from the Stanford website to see how
+they behave.</p>
+<p>We won’t be implementing the Game of Life algorithm, but you could
+try writing some pseudocode for how you might approach it, or look
+online for some descriptions of algorithms.</p>
 </div>
 <div class="section level3">
 <h3 id="submission">Submission<a class="anchor" aria-label="anchor" href="#submission"></a>
@@ -3650,7 +3675,7 @@ Blackboard using the Practical 05 link. This should be done as a single
 Practical 00 or 01 for instructions on zipping files.</p>
 <p>There are no direct marks for these submissions, but they may be
 taken into account when finalising your mark for the unit. Go to the
-Assessment link on Blackboard and click on Practical 03 for the
+Assessment link on Blackboard and click on Practical 05 for the
 submission page.</p>
 </div>
 <div class="section level3">
@@ -3665,7 +3690,23 @@ submission page.</p>
 </h3>
 <div class="callout-content">
 <ul>
-<li>FIXME</li>
+<li>Files can provide persistent data that exists before and/or after
+our programs run? These files can also be used for sharing information,
+and allow more complex problems</li>
+<li>We need to <strong>open</strong> files to have an object to
+represent the state of the files, and let us access input/output (I/O)
+functions. Files should be <strong>closed</strong> when we’ve finished
+reading/writing data.</li>
+<li>Text files are strings, with three read functions - read(),
+readline(), readlines() and one write function - write()</li>
+<li>See <a href="https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files" class="external-link uri">https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files</a>
+for more about files</li>
+<li>We can reduce the number of lines of code using list comprehensions
+- creating a new list from an</li>
+<li>existing list/sequence + transformation + conditions.</li>
+<li>Gridding algorithms allow us to use 2D+ arrays to create simulations
+- we just need to define how to calculate the next value in each cell on
+each timestep</li>
 </ul>
 </div>
 </div>
@@ -3718,8 +3759,9 @@ part of the prac tests or exam.</p>
 <li>Follow the workflow from Activity 3 to process and plot
 <strong>February</strong> weather data.</li>
 <li>For students based in Australia, find another country’s weather data
-sharing site, or an international one If you are not in Australia, see
-if you can find you local government’s weather data sharing site.</li>
+sharing site, or an international one</li>
+<li>If you are not in Australia, see if you can find you local
+government’s weather data sharing site.</li>
 <li>Find and download some <strong>Game of Life</strong>* code and get
 it running.</li>
 </ol>
