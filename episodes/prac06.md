@@ -136,7 +136,13 @@ click on Practical 03 for the submission page.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- We can model real world items as objects
+- The template for an object is its **class** - which we can use to make lots of objects
+- Objects know their state (data) and behaviour (methods) and are responsible for choosing who can access their data, and how... we can trust them to maintain a **valid** state
+- The convention is to use a capital letter for the class name, and lowercase for variables (which can hold objects)
+- If we create a dog object ```d1 = Dog("Brutus")```, we call its methods as ```d1.sit()``` and can access data as ```d1.name``` or through a method e.g. ```d1.getName()```. Accessing the data directly is often easier, but can be risky...
+  1. Could alter data and make it invalid
+  2. Requires knowledge of the internal workings of the object - which is against OO principles 
 
 :::::::::::::::::::::::::::::::::::::
 
