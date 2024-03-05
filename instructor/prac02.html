@@ -382,30 +382,30 @@ different approaches to printing out a string in reverse:
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># strings1.py: Read in a string and print it in reverse</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#              using a loop and a method call</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>instring <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter a string... '</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># *** add (2) upper and (3) duplicating code here</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># reversing with a while loop</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is : '</span>, end<span class="op">=</span><span class="st">''</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>index <span class="op">=</span> <span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> index <span class="op">&gt;</span> <span class="op">-</span><span class="dv">1</span>:</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(instring[index], end<span class="op">=</span><span class="st">''</span>)</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    index <span class="op">=</span> index <span class="op">-</span> <span class="dv">1</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co"># reversing with a for-range loop</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is : '</span>, end<span class="op">=</span><span class="st">''</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(instring[index], end<span class="op">=</span><span class="st">''</span>)</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># reversing with slicing</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is :'</span>, instring[::<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># strings1.py: Read in a string and print it in reverse</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#              using a loop and a method call</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>instring <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter a string... '</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># *** add (2) upper and (3) duplicating code here</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># reversing with a while loop</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is : '</span>, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>index <span class="op">=</span> <span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="cf">while</span> index <span class="op">&gt;</span> <span class="op">-</span><span class="dv">1</span>:</span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    <span class="bu">print</span>(instring[index], end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    index <span class="op">=</span> index <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co"># reversing with a for-range loop</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is : '</span>, end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>    <span class="bu">print</span>(instring[index], end<span class="op">=</span><span class="st">''</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a><span class="co"># reversing with slicing</span></span>
+<span id="cb2-24"><a href="#cb2-24" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is :'</span>, instring[::<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
 </div>
 <p>Test out the code to understand how it works. Note that in each
 case:</p>
@@ -423,8 +423,8 @@ would have the code as follows:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># </span><span class="al">WARNING</span><span class="co">: THIS WON"T WORK!</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is :'</span>, instring[<span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co"># </span><span class="al">WARNING</span><span class="co">: THIS WON"T WORK!</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Reversed string is :'</span>, instring[<span class="bu">len</span>(instring)<span class="op">-</span><span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>:<span class="op">-</span><span class="dv">1</span>])</span></code></pre>
 </div>
 <p>However, the -1 stop value would get interpreted as a negative index.
 Python slicing is smart enough to know that when a negative step is used
@@ -459,61 +459,61 @@ out the buckets.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bucket1.py - use a python list for items in a bucket list</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">BUCKET LIST</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>bucket1 <span class="op">=</span> [<span class="st">'Witness something truly majestic'</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>          <span class="st">'Help a complete stranger'</span>,</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>          <span class="st">'Laugh until I cry'</span>,<span class="st">'Drive a Shelby Mustang'</span>]</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>bucket1.append(<span class="st">'Kiss the most beautiful girl in the world'</span>)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>bucket1.append(<span class="st">'Get a tattoo'</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>bucket1.append(<span class="st">'Skydiving'</span>)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> bucket1[<span class="dv">5</span>]</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>bucket2 <span class="op">=</span> [<span class="st">'Visit Stonehenge'</span>,</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Drive a motorcycle on the Great Wall of China'</span>,</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Go on a Safari'</span>,<span class="st">'Visit the Taj Mahal'</span>,</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Sit on the Great Egyptian Pyramids'</span>,</span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>           <span class="st">'Find the Joy in your life'</span>]</span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bucket 1: '</span>, bucket1)</span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bucket 2: '</span>, bucket2)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>bucket <span class="op">=</span> bucket1 <span class="op">+</span> bucket2</span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>bucket.insert(<span class="dv">5</span>, <span class="st">'Get a tattoo'</span>)</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">The bucket list is:'</span>)</span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Complete bucket list: '</span>, bucket)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Nicer formatting....</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> bucket:      <span class="co"># for-each loop</span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(item)          <span class="co"># note improved formatting</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># bucket1.py - use a python list for items in a bucket list</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">BUCKET LIST</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>bucket1 <span class="op">=</span> [<span class="st">'Witness something truly majestic'</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>          <span class="st">'Help a complete stranger'</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>          <span class="st">'Laugh until I cry'</span>,<span class="st">'Drive a Shelby Mustang'</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>bucket1.append(<span class="st">'Kiss the most beautiful girl in the world'</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>bucket1.append(<span class="st">'Get a tattoo'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>bucket1.append(<span class="st">'Skydiving'</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="kw">del</span> bucket1[<span class="dv">5</span>]</span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>bucket2 <span class="op">=</span> [<span class="st">'Visit Stonehenge'</span>,</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>           <span class="st">'Drive a motorcycle on the Great Wall of China'</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>           <span class="st">'Go on a Safari'</span>,<span class="st">'Visit the Taj Mahal'</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>           <span class="st">'Sit on the Great Egyptian Pyramids'</span>,</span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>           <span class="st">'Find the Joy in your life'</span>]</span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bucket 1: '</span>, bucket1)</span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Bucket 2: '</span>, bucket2)</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>bucket <span class="op">=</span> bucket1 <span class="op">+</span> bucket2</span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>bucket.insert(<span class="dv">5</span>, <span class="st">'Get a tattoo'</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">The bucket list is:'</span>)</span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Complete bucket list: '</span>, bucket)</span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Nicer formatting....</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a></span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a><span class="cf">for</span> item <span class="kw">in</span> bucket:      <span class="co"># for-each loop</span></span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a>    <span class="bu">print</span>(item)          <span class="co"># note improved formatting</span></span></code></pre>
 </div>
 <p>We will now create a bucket list builder to interactively create a
 new bucket list…</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bucket2.py - bucket list builder</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">BUCKET LIST BUILDER</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>bucket <span class="op">=</span> []</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter selection: e(X)it, (A)dd, (L)ist...'</span>)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> choice[<span class="dv">0</span>] <span class="op">!=</span> <span class="st">'X'</span>:</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> choice[<span class="dv">0</span>] <span class="op">==</span> <span class="st">'A'</span>:</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Enter list item... '</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>        newitem <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        bucket.append(newitem)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> choice[<span class="dv">0</span>] <span class="op">==</span> <span class="st">'L'</span>:</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> bucket:</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(item)</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Invalid selection.'</span>)</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter selection: e(X)it, (A)dd, (L)ist..'</span>)</span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">GOODBYE!</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># bucket2.py - bucket list builder</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">BUCKET LIST BUILDER</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>bucket <span class="op">=</span> []</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter selection: e(X)it, (A)dd, (L)ist...'</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="cf">while</span> choice[<span class="dv">0</span>] <span class="op">!=</span> <span class="st">'X'</span>:</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    <span class="cf">if</span> choice[<span class="dv">0</span>] <span class="op">==</span> <span class="st">'A'</span>:</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Enter list item... '</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>        newitem <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>        bucket.append(newitem)</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="cf">elif</span> choice[<span class="dv">0</span>] <span class="op">==</span> <span class="st">'L'</span>:</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>        <span class="cf">for</span> item <span class="kw">in</span> bucket:</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>            <span class="bu">print</span>(item)</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Invalid selection.'</span>)</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    choice <span class="op">=</span> <span class="bu">input</span>(<span class="st">'Enter selection: e(X)it, (A)dd, (L)ist..'</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">GOODBYE!</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
 </div>
 <p>Modify the code to:</p>
 <ol style="list-style-type: decimal"><li>Accept lowercase as well as uppercase letters as choices (hint:
@@ -529,27 +529,27 @@ as the selected items are no longer part of the pool to be selected.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># assorted.py - selecting random biscuits from a pack</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>biscuits <span class="op">=</span> []</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Monte Carlo'</span>]<span class="op">*</span><span class="dv">7</span>)</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Shortbread Cream'</span>]<span class="op">*</span><span class="dv">7</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Delta Cream'</span>]<span class="op">*</span><span class="dv">6</span>)</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Orange Slice'</span>]<span class="op">*</span><span class="dv">6</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>biscuits.extend([<span class="st">'Kingston'</span>]<span class="op">*</span><span class="dv">5</span>)</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">ASSORTED CREAMS</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'There are '</span>, <span class="bu">len</span>(biscuits), <span class="st">' biscuits in the pack.'</span>)</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, biscuits, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>more <span class="op">=</span> <span class="bu">input</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Would you like a biscuit (Y/N)... '</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> more <span class="op">!=</span> <span class="st">'N'</span>:</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>    choice <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="bu">len</span>(biscuits)<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Your biscuit is : '</span>, biscuits[choice])</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">del</span> biscuits[choice]</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    more <span class="op">=</span> <span class="bu">input</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Would you like a biscuit (Y/N)...'</span>)</span>
-<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">There are '</span>, <span class="bu">len</span>(biscuits), <span class="st">' biscuits left.'</span>)</span>
-<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, biscuits, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># assorted.py - selecting random biscuits from a pack</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>biscuits <span class="op">=</span> []</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>biscuits.extend([<span class="st">'Monte Carlo'</span>]<span class="op">*</span><span class="dv">7</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>biscuits.extend([<span class="st">'Shortbread Cream'</span>]<span class="op">*</span><span class="dv">7</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>biscuits.extend([<span class="st">'Delta Cream'</span>]<span class="op">*</span><span class="dv">6</span>)</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>biscuits.extend([<span class="st">'Orange Slice'</span>]<span class="op">*</span><span class="dv">6</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>biscuits.extend([<span class="st">'Kingston'</span>]<span class="op">*</span><span class="dv">5</span>)</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">ASSORTED CREAMS</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'There are '</span>, <span class="bu">len</span>(biscuits), <span class="st">' biscuits in the pack.'</span>)</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, biscuits, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>more <span class="op">=</span> <span class="bu">input</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Would you like a biscuit (Y/N)... '</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="cf">while</span> more <span class="op">!=</span> <span class="st">'N'</span>:</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>    choice <span class="op">=</span> random.randint(<span class="dv">0</span>,<span class="bu">len</span>(biscuits)<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Your biscuit is : '</span>, biscuits[choice])</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>    <span class="kw">del</span> biscuits[choice]</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>    more <span class="op">=</span> <span class="bu">input</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Would you like a biscuit (Y/N)...'</span>)</span>
+<span id="cb6-20"><a href="#cb6-20" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">There are '</span>, <span class="bu">len</span>(biscuits), <span class="st">' biscuits left.'</span>)</span>
+<span id="cb6-21"><a href="#cb6-21" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">'</span>, biscuits, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
 </div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
@@ -617,21 +617,21 @@ or tails we count.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cointoss.py - simulate tossing a coin multiple times</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>coin <span class="op">=</span> [<span class="st">'heads'</span>,<span class="st">'tails'</span>]</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>heads <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>tails <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>trials <span class="op">=</span> <span class="dv">1000</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">COIN TOSS</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(trials):</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> random.choice(coin) <span class="op">==</span> <span class="st">'heads'</span>:</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        heads <span class="op">=</span> heads <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        tails <span class="op">=</span> tails <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">There were '</span>, heads, <span class="st">' heads &amp; '</span>, tails, <span class="st">' tails.</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="co"># cointoss.py - simulate tossing a coin multiple times</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>coin <span class="op">=</span> [<span class="st">'heads'</span>,<span class="st">'tails'</span>]</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>heads <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>tails <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>trials <span class="op">=</span> <span class="dv">1000</span></span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">COIN TOSS</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a><span class="cf">for</span> index <span class="kw">in</span> <span class="bu">range</span>(trials):</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>    <span class="cf">if</span> random.choice(coin) <span class="op">==</span> <span class="st">'heads'</span>:</span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>        heads <span class="op">=</span> heads <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>        tails <span class="op">=</span> tails <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">There were '</span>, heads, <span class="st">' heads &amp; '</span>, tails, <span class="st">' tails.</span><span class="ch">\n</span><span class="st">'</span>)</span></code></pre>
 </div>
 <p>Modify the code to ask the user to enter the number of tosses.</p>
 </div>
@@ -646,36 +646,36 @@ Previously Printed Lines</a> may help.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">"</span>]</span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">0</span>])</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">1</span>:</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">1</span>])</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">2</span>])</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">"</span>]</span>
+<span id="cb8-10"><a href="#cb8-10" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb8-12"><a href="#cb8-12" tabindex="-1"></a>    <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb8-13"><a href="#cb8-13" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">0</span>])</span>
+<span id="cb8-14"><a href="#cb8-14" tabindex="-1"></a>    <span class="cf">elif</span> i <span class="op">%</span> <span class="dv">4</span> <span class="op">==</span> <span class="dv">1</span>:</span>
+<span id="cb8-15"><a href="#cb8-15" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">1</span>])</span>
+<span id="cb8-16"><a href="#cb8-16" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb8-17"><a href="#cb8-17" tabindex="-1"></a>        <span class="bu">print</span>(eyes[<span class="dv">2</span>])</span>
+<span id="cb8-18"><a href="#cb8-18" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb8-19"><a href="#cb8-19" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb8-20"><a href="#cb8-20" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
 </div>
 <p>If you change a few lines, note the change to the output:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt; </span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>eyes <span class="op">=</span> [<span class="st">"</span><span class="ch">\n</span><span class="st">&lt; @ &gt;  &lt; @ &gt; </span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;@  &gt;  &lt;@  &gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>        <span class="st">"</span><span class="ch">\n</span><span class="st">&lt;  @&gt;  &lt;  @&gt;</span><span class="ch">\n</span><span class="st">     db</span><span class="ch">\n</span><span class="st">   \____/"</span>]</span></code></pre>
 </div>
 <p>Explore some ASCII art with this code base, e.g. a fish from the <a href="https://www.asciiart.eu/animals/fish" class="external-link">ASCII Art Archive</a>:</p>
 <pre><code>Swimming left
@@ -713,7 +713,7 @@ right, adding/removing spaces to move the fish across the screen?</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(n<span class="op">*</span><span class="st">" "</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="bu">print</span>(n<span class="op">*</span><span class="st">" "</span>)</span></code></pre>
 </div>
 </div>
 </div>
@@ -731,8 +731,8 @@ allow for the spaces to be varied</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span></code></pre>
 </div>
 </div>
 </div>
@@ -750,12 +750,12 @@ the fish</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span></code></pre>
 </div>
 </div>
 </div>
@@ -771,28 +771,28 @@ the fish</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(leftfish)):</span>
-<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, leftfish[i])</span>
-<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
-<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
-<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
-<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>LINE_UP <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1A'</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>LINE_CLEAR <span class="op">=</span> <span class="st">'</span><span class="ch">\x1b</span><span class="st">[2K'</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>numlines <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>leftfish <span class="op">=</span> [<span class="st">"  /"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>]</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>rightfish <span class="op">=</span> [<span class="st">"  </span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" </span><span class="ch">\\</span><span class="st">/</span><span class="ch">\\</span><span class="st">"</span>, <span class="st">" /</span><span class="ch">\\</span><span class="st">/"</span>, <span class="st">"  /"</span>]</span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb14-10"><a href="#cb14-10" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(rightfish)):</span>
+<span id="cb14-11"><a href="#cb14-11" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, rightfish[i])</span>
+<span id="cb14-12"><a href="#cb14-12" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb14-13"><a href="#cb14-13" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb14-14"><a href="#cb14-14" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
+<span id="cb14-15"><a href="#cb14-15" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="#cb14-16" tabindex="-1"></a><span class="cf">for</span> s <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>, <span class="dv">0</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb14-17"><a href="#cb14-17" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(leftfish)):</span>
+<span id="cb14-18"><a href="#cb14-18" tabindex="-1"></a>        <span class="bu">print</span>(s<span class="op">*</span><span class="st">" "</span>, leftfish[i])</span>
+<span id="cb14-19"><a href="#cb14-19" tabindex="-1"></a>    time.sleep(<span class="fl">0.5</span>)</span>
+<span id="cb14-20"><a href="#cb14-20" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(numlines):</span>
+<span id="cb14-21"><a href="#cb14-21" tabindex="-1"></a>        <span class="bu">print</span>(LINE_UP, end<span class="op">=</span>LINE_CLEAR)</span>
+<span id="cb14-22"><a href="#cb14-22" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
 </div>
 </div>
 </div>
@@ -811,7 +811,8 @@ output is one way to specify requirements… from there, you can consider
 the variables and data storage required, and the program logic needed to
 generate that output. There is also a need for imagination - what would
 happen if the input was different, or if invalid input was entered?</p>
-<figure><img src="../fig/P02vending.png" alt="" class="figure mx-auto d-block"><figcaption>Vending machine example</figcaption></figure><p>In Activity 4, we created a list of biscuits to match the contents of
+<figure><img src="../fig/P02vending.png" alt="Vending machine example" class="figure mx-auto d-block"><div class="figcaption">Vending machine example</div>
+</figure><p>In Activity 4, we created a list of biscuits to match the contents of
 the Arnotts Cream Favourites and randomly chose biscuits from the pack…
 refer back to that for inspiration for this challenge, if needed.</p>
 <p>What can we see in the example output:</p>
@@ -888,9 +889,9 @@ output (not required)</li>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>treats <span class="op">=</span> [[<span class="dv">1</span>, <span class="st">"Choco Pie"</span>, <span class="dv">100</span>, <span class="dv">5</span>],</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>         [<span class="dv">2</span>, <span class="st">"Hello Panda"</span>, <span class="dv">50</span>, <span class="dv">10</span>],</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>         [<span class="dv">3</span>, <span class="st">"Fortune Cookie"</span>, <span class="dv">30</span>, <span class="dv">10</span>]]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>treats <span class="op">=</span> [[<span class="dv">1</span>, <span class="st">"Choco Pie"</span>, <span class="dv">100</span>, <span class="dv">5</span>],</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>         [<span class="dv">2</span>, <span class="st">"Hello Panda"</span>, <span class="dv">50</span>, <span class="dv">10</span>],</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>         [<span class="dv">3</span>, <span class="st">"Fortune Cookie"</span>, <span class="dv">30</span>, <span class="dv">10</span>]]</span></code></pre>
 </div>
 </div>
 </div>
@@ -909,7 +910,7 @@ padding out a string with blanks or zeros.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">str</span>(treats[i][<span class="dv">1</span>]).ljust(<span class="dv">23</span>,<span class="st">" "</span>) </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">str</span>(treats[i][<span class="dv">1</span>]).ljust(<span class="dv">23</span>,<span class="st">" "</span>) </span></code></pre>
 </div>
 <p>This code prints the name of the treat, left justified, to a
 field-width of 23 characters. If the string is less than 23 characters
@@ -935,35 +936,35 @@ lines.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># System call to make colours work cross-platform</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>os.system(<span class="st">""</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="co"># System call to make colours work cross-platform</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>os.system(<span class="st">""</span>)</span></code></pre>
 </div>
 <p>Some sample codes for colours, bold and underline are below. See [<a href="https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal" class="external-link uri">https://stackoverflow.com/questions/287871/how-do-i-print-colored-text-to-the-terminal</a>]
 for more information.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># reset strings for colours</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>BLACK <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[30m'</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>RED <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[31m'</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>GREEN <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[32m'</span></span>
-<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>YELLOW <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[33m'</span></span>
-<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>BLUE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[34m'</span></span>
-<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>MAGENTA <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[35m'</span></span>
-<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>CYAN <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[36m'</span></span>
-<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>WHITE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[37m'</span></span>
-<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>UNDERLINE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[4m'</span></span>
-<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>BOLD <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1m'</span></span>
-<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>RESET <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[0m'</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># reset strings for colours</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>BLACK <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[30m'</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>RED <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[31m'</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>GREEN <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[32m'</span></span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>YELLOW <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[33m'</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>BLUE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[34m'</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>MAGENTA <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[35m'</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>CYAN <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[36m'</span></span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>WHITE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[37m'</span></span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>UNDERLINE <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[4m'</span></span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>BOLD <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[1m'</span></span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>RESET <span class="op">=</span> <span class="st">'</span><span class="ch">\033</span><span class="st">[0m'</span></span></code></pre>
 </div>
 <p>For example:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(RED, <span class="st">"Oh dear! We are all out of"</span>, treats[choice][<span class="dv">1</span>], RESET)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="bu">print</span>(RED, <span class="st">"Oh dear! We are all out of"</span>, treats[choice][<span class="dv">1</span>], RESET)</span></code></pre>
 </div>
 <p>You should consider the background colour when choosing text colours
 - yellow will show well on black, but not on white. A
@@ -971,7 +972,9 @@ for more information.</p>
 back to default colours. There are also codes for changing background
 colours, which can be used for creating checkerboard and other
 interesting patterns.</p>
-<figure><img src="../fig/P02vending_light.png" alt="" class="figure mx-auto d-block"><figcaption>Vending machine example - on white background</figcaption></figure></div>
+<figure><img src="../fig/P02vending_light.png" alt="Vending machine example - on white background" class="figure mx-auto d-block"><div class="figcaption">Vending machine example - on white
+background</div>
+</figure></div>
 </div>
 </div>
 </div>
@@ -1149,7 +1152,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/instructor/prac02.html",
   "dateCreated": "2023-09-15",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

@@ -355,28 +355,28 @@ copying and pasting code has no learning value.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># zeros.py - creating and resizing an array </span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">ZERO ARRAY</span><span class="ch">\n</span><span class="st">'</span>) </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>zeroarray <span class="op">=</span> np.zeros((<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># update values here</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array size: '</span>, np.size(zeroarray)) </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>zeroarray.resize((<span class="dv">1</span>,<span class="dv">27</span>))</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Zero array size: '</span>, np.size(zeroarray)) </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>zeroarray.resize((<span class="dv">3</span>,<span class="dv">9</span>))</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Zero array size: '</span>, np.size(zeroarray)) </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># zeros.py - creating and resizing an array </span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">ZERO ARRAY</span><span class="ch">\n</span><span class="st">'</span>) </span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>zeroarray <span class="op">=</span> np.zeros((<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">3</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="co"># update values here</span></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array size: '</span>, np.size(zeroarray)) </span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>zeroarray.resize((<span class="dv">1</span>,<span class="dv">27</span>))</span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Zero array size: '</span>, np.size(zeroarray)) </span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>zeroarray.resize((<span class="dv">3</span>,<span class="dv">9</span>))</span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Zero array size: '</span>, np.size(zeroarray)) </span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Zero array shape: '</span>, np.shape(zeroarray), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="bu">print</span>(zeroarray)</span></code></pre>
 </div>
 <p>Modify the code to update the values. Set element
 <code>[0,0,2]</code> to 1, element <code>[1,1,1]</code> to 2 and
@@ -390,17 +390,17 @@ lecture…</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># prettyface.py</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> ndimage</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> misc</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>face <span class="op">=</span> misc.face(gray<span class="op">=</span><span class="va">True</span>) </span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.imshow(face)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.imshow(face, cmap<span class="op">=</span>plt.cm.gray) </span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="co"># prettyface.py</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> ndimage</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> misc</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>face <span class="op">=</span> misc.face(gray<span class="op">=</span><span class="va">True</span>) </span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>plt.imshow(face)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>plt.imshow(face, cmap<span class="op">=</span>plt.cm.gray) </span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Refer to the lecture slides and enter/run the code for shifting,
 rotating, cropping and pixelating.</p>
@@ -415,15 +415,15 @@ and Kelvin. Below is a skeleton of how to start your code.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conversions.py – module with functions to convert between units #</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># fahr2cel : Convert from Fahrenheit to Celsius.</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fahr2cel(fahr):</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Convert from Fahrenheit to Celsius. Argument:</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    fahr – the temperature in Fahrenheit """</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    celsius <span class="op">=</span> (fahr – <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>) </span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> celsius</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># conversions.py – module with functions to convert between units #</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># fahr2cel : Convert from Fahrenheit to Celsius.</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">def</span> fahr2cel(fahr):</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="co">"""Convert from Fahrenheit to Celsius. Argument:</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">    fahr – the temperature in Fahrenheit """</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    celsius <span class="op">=</span> (fahr – <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>) </span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    <span class="cf">return</span> celsius</span></code></pre>
 </div>
 <p>Note that we are using docstrings to document our functions. See the
 related PEP for more about docstrings - <a href="https://www.python.org/dev/peps/pep-0257/" class="external-link uri">https://www.python.org/dev/peps/pep-0257/</a></p>
@@ -432,15 +432,15 @@ something like the code below, or work with user input.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># testConversions.py - tests the functions in conversions.py </span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> conversions <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">TESTING CONVERSIONS</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>testF <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>testC <span class="op">=</span> fahr2cel(testF)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fahrenheit is "</span>, testF, <span class="st">" Celsius is "</span>, testC)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="co"># testConversions.py - tests the functions in conversions.py </span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="im">from</span> conversions <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">TESTING CONVERSIONS</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>testF <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>testC <span class="op">=</span> fahr2cel(testF)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Fahrenheit is "</span>, testF, <span class="st">" Celsius is "</span>, testC)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
 </div>
 <p>Extend conversions.py to include all six conversion functions, along
 with others you might find useful. Extend your test program to test the
@@ -514,13 +514,13 @@ conversions.py from the command line.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> main():</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Testing textfun.py '</span>)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># put your testing code in here</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Testing complete'</span>)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    main()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">def</span> main():</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'</span><span class="ch">\n</span><span class="st">Testing textfun.py '</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>    <span class="co"># put your testing code in here</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Testing complete'</span>)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    main()</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -709,7 +709,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/instructor/prac04.html",
   "dateCreated": "2023-09-15",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

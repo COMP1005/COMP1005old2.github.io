@@ -353,27 +353,27 @@ stored in a file:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># weather.py: Print min and max temps from a file</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># (source: http://www.bom.gov.au/climate/)</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>fileobj <span class="op">=</span> <span class="bu">open</span>(‘marchweather.csv’, ‘r’) </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># add file reading code here </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>line1 <span class="op">=</span> ??</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>line2 <span class="op">=</span> ??</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>fileobj.close()</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>mins <span class="op">=</span> <span class="co"># add splitting code here, each stirng value will need to be coverted to float</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>maxs <span class="op">=</span> <span class="co"># add splitting code here </span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>dates <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">32</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, mins, dates, maxs) </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># weather.py: Print min and max temps from a file</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co"># (source: http://www.bom.gov.au/climate/)</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>fileobj <span class="op">=</span> <span class="bu">open</span>(‘marchweather.csv’, ‘r’) </span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co"># add file reading code here </span></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>line1 <span class="op">=</span> ??</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>line2 <span class="op">=</span> ??</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>fileobj.close()</span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>mins <span class="op">=</span> <span class="co"># add splitting code here, each stirng value will need to be coverted to float</span></span>
+<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>maxs <span class="op">=</span> <span class="co"># add splitting code here </span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>dates <span class="op">=</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">32</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>plt.plot(dates, mins, dates, maxs) </span>
+<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Modify the code to read the data from the marchweather.csv file –
 available on Blackboard and <a href="../files/marchweather.csv">here</a>.
@@ -404,21 +404,21 @@ values and assign them to the min, max, nine and three lists/arrays.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fileobj <span class="op">=</span> <span class="bu">open</span>(‘marchweatherfull.csv’, ‘r’) </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fileobj.readlines()</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>fileobj.close()</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>mins <span class="op">=</span> [] <span class="co"># make an empty list to store the mins column on each line of the file </span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>          <span class="co"># note that each entry will need to be converted to a float</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># do the same for maxs, nines and threes</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> data:</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    splitline <span class="op">=</span> line.split(‘,’) </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    mins.append(splitline[<span class="dv">2</span>]) </span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    maxs.append(splitline[<span class="dv">3</span>]) </span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    nines.append(splitline[<span class="dv">10</span>]) </span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    threes.append(splitline[<span class="dv">16</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>fileobj <span class="op">=</span> <span class="bu">open</span>(‘marchweatherfull.csv’, ‘r’) </span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>data <span class="op">=</span> fileobj.readlines()</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>fileobj.close()</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>mins <span class="op">=</span> [] <span class="co"># make an empty list to store the mins column on each line of the file </span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>          <span class="co"># note that each entry will need to be converted to a float</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co"># do the same for maxs, nines and threes</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> data:</span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>    splitline <span class="op">=</span> line.split(‘,’) </span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    mins.append(splitline[<span class="dv">2</span>]) </span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    maxs.append(splitline[<span class="dv">3</span>]) </span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>    nines.append(splitline[<span class="dv">10</span>]) </span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>    threes.append(splitline[<span class="dv">16</span>])</span></code></pre>
 </div>
 <p>Then add a <code>plt.plot()</code> call to plot lines for mins, maxs,
 nines and threes. Make sure you set up the x values (dates) as in
@@ -432,10 +432,10 @@ to convert them to strings when building each line to write.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>file2 <span class="op">=</span> <span class="bu">open</span>(‘marchout.csv’, ‘w’) </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(mins)):</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    file2.write(mins[i] <span class="op">+</span> ‘,’ <span class="op">+</span> maxs[i] <span class="op">+</span> ‘,’ <span class="op">+</span> nines[i] <span class="op">+</span> ‘,’ <span class="op">+</span> threes[i] <span class="op">+</span> ‘\n’)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>file2.close()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>file2 <span class="op">=</span> <span class="bu">open</span>(‘marchout.csv’, ‘w’) </span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(mins)):</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>    file2.write(mins[i] <span class="op">+</span> ‘,’ <span class="op">+</span> maxs[i] <span class="op">+</span> ‘,’ <span class="op">+</span> nines[i] <span class="op">+</span> ‘,’ <span class="op">+</span> threes[i] <span class="op">+</span> ‘\n’)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>file2.close()</span></code></pre>
 </div>
 </div>
 <div class="section level3">
@@ -462,37 +462,37 @@ some changes made over time to improve readability</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="dv">20</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>currg <span class="op">=</span> np.zeros((size,size))</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(currg)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size):</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    currg[i,<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>nextg <span class="op">=</span> np.zeros((size,size))</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> timestep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span> ):</span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>            <span class="co">### HIGHLIGHTED CODE</span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            nextg[r,c] <span class="op">=</span> (currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r,c]<span class="op">*</span><span class="fl">0.2</span> <span class="op">+</span> currg[r,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span>)</span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>            <span class="co">### HIGHLIGHTED CODE</span></span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size):</span>
-<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>        nextg[i,<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time step: "</span>, timestep)</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(nextg)</span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>plt.imshow(currg, cmap<span class="op">=</span>plt.cm.hot)</span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>size <span class="op">=</span> <span class="dv">20</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>currg <span class="op">=</span> np.zeros((size,size))</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="bu">print</span>(currg)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size):</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    currg[i,<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a>nextg <span class="op">=</span> np.zeros((size,size))</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="cf">for</span> timestep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5</span>):</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span> ):</span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a>            <span class="co">### HIGHLIGHTED CODE</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a>            nextg[r,c] <span class="op">=</span> (currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">-</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a>                         <span class="op">+</span> currg[r,c]<span class="op">*</span><span class="fl">0.2</span> <span class="op">+</span> currg[r,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">-</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span> <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c]<span class="op">*</span><span class="fl">0.1</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a>                         <span class="op">+</span> currg[r<span class="op">+</span><span class="dv">1</span>,c<span class="op">+</span><span class="dv">1</span>]<span class="op">*</span><span class="fl">0.1</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a>            <span class="co">### HIGHLIGHTED CODE</span></span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(size):</span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a>        nextg[i,<span class="dv">0</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a>  </span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time step: "</span>, timestep)</span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a>    <span class="bu">print</span>(nextg)</span>
+<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span>
+<span id="cb4-29"><a href="#cb4-29" tabindex="-1"></a>    </span>
+<span id="cb4-30"><a href="#cb4-30" tabindex="-1"></a>plt.imshow(currg, cmap<span class="op">=</span>plt.cm.hot)</span>
+<span id="cb4-31"><a href="#cb4-31" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Make the following modifications to the code. The first improves
 readability, the second gives the user more information about the
@@ -519,15 +519,15 @@ You can then call the function as:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>            nextg[r,c] <span class="op">=</span> calcheat(currg[r<span class="op">-</span><span class="dv">1</span>:r<span class="op">+</span><span class="dv">2</span>,c<span class="op">-</span><span class="dv">1</span>:c<span class="op">+</span><span class="dv">2</span>])</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>            nextg[r,c] <span class="op">=</span> calcheat(currg[r<span class="op">-</span><span class="dv">1</span>:r<span class="op">+</span><span class="dv">2</span>,c<span class="op">-</span><span class="dv">1</span>:c<span class="op">+</span><span class="dv">2</span>])</span></code></pre>
 </div>
 <p>The lines to put in the function is:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calcheat(subarray):</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> (subarray.<span class="bu">sum</span>() <span class="op">+</span> subarray[<span class="dv">1</span>,<span class="dv">1</span>])</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">def</span> calcheat(subarray):</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>    result <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> (subarray.<span class="bu">sum</span>() <span class="op">+</span> subarray[<span class="dv">1</span>,<span class="dv">1</span>])</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>    <span class="cf">return</span> result</span></code></pre>
 </div>
 <p>This apporach passes only the <strong>3x3 subgrid</strong> of the
 array into the function - protecting the rest of the array from
@@ -566,35 +566,35 @@ read data from a file:</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create heat source</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>hlist <span class="op">=</span> []</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>fileobj <span class="op">=</span> <span class="bu">open</span>(<span class="st">'heatsource.csv'</span>,<span class="st">'r'</span>) </span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> fileobj:</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    line_s <span class="op">=</span> line.strip()</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    ints <span class="op">=</span> [<span class="bu">float</span>(x) <span class="cf">for</span> x <span class="kw">in</span> line_s.split(<span class="st">','</span>)] <span class="co"># list comprehension</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    hlist.append(ints)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>fileobj.close()</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>harray <span class="op">=</span> np.array(hlist) <span class="co"># heat source array to maintain the heat generation in the simulation</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>currg <span class="op">=</span> harray.copy()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># create heat source</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>hlist <span class="op">=</span> []</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>fileobj <span class="op">=</span> <span class="bu">open</span>(<span class="st">'heatsource.csv'</span>,<span class="st">'r'</span>) </span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> fileobj:</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>    line_s <span class="op">=</span> line.strip()</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>    ints <span class="op">=</span> [<span class="bu">float</span>(x) <span class="cf">for</span> x <span class="kw">in</span> line_s.split(<span class="st">','</span>)] <span class="co"># list comprehension</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>    hlist.append(ints)</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>fileobj.close()</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a>harray <span class="op">=</span> np.array(hlist) <span class="co"># heat source array to maintain the heat generation in the simulation</span></span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>currg <span class="op">=</span> harray.copy()</span></code></pre>
 </div>
 <p>And in the loop the heat source needs to be updated using the new h
 array…</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate heat diffusion </span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> timestep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,size<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>            nextg[r,c]<span class="op">=</span>calcheat(curr[r<span class="op">-</span><span class="dv">1</span>:r<span class="op">+</span><span class="dv">2</span>,c<span class="op">-</span><span class="dv">1</span>:c<span class="op">+</span><span class="dv">2</span>]) <span class="co"># heat diffusion</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(size):</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(size):</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> harray[r,c] <span class="op">&gt;</span> nextg[r,c]:  <span class="co"># maintaining heat source</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>                nextg[r,c] <span class="op">=</span> harray[r,c]</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># Calculate heat diffusion </span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="cf">for</span> timestep <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,size<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span> (<span class="dv">1</span>, size<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>            nextg[r,c]<span class="op">=</span>calcheat(curr[r<span class="op">-</span><span class="dv">1</span>:r<span class="op">+</span><span class="dv">2</span>,c<span class="op">-</span><span class="dv">1</span>:c<span class="op">+</span><span class="dv">2</span>]) <span class="co"># heat diffusion</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>    <span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(size):</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>        <span class="cf">for</span> c <span class="kw">in</span> <span class="bu">range</span>(size):</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>            <span class="cf">if</span> harray[r,c] <span class="op">&gt;</span> nextg[r,c]:  <span class="co"># maintaining heat source</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>                nextg[r,c] <span class="op">=</span> harray[r,c]</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>    currg <span class="op">=</span> nextg.copy()</span></code></pre>
 </div>
 <p>Your code should now output the same information as it did before –
 test it and see.</p>
@@ -800,7 +800,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/instructor/prac05.html",
   "dateCreated": "2023-09-15",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

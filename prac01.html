@@ -386,8 +386,9 @@ mkdir The/Holy
 mkdir The/Holy/Grail</code></pre>
 <p>To see the overall directory structure, type <code>ls -R</code> and
 you should have the output shown below:</p>
-<figure><img src="fig/P01directories.png" title="Directory structure" alt="" class="figure mx-auto d-block"><figcaption>Output of ls -R on the Activity 1 directory
-structure</figcaption></figure><p>If you make a mistake, you can delete a directory with
+<figure><img src="fig/P01directories.png" title="Directory structure" alt="Output of ls -R on the Activity 1 directory structure" class="figure mx-auto d-block"><div class="figcaption">Output of ls -R on the Activity 1 directory
+structure</div>
+</figure><p>If you make a mistake, you can delete a directory with
 <code>rmdir &lt;dir_name&gt;</code>. Note that directories have to be
 empty before they can be deleted - so work from the “leaf” of the
 directory tree, back to the “root”.</p>
@@ -430,19 +431,19 @@ write a program matching a scene from the movie “The Holy Grail”.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bridge.py - a scene from The Holy Grail</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to the Bridge of Death"</span>)</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your name?"</span>)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your quest?"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>quest <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your favourite colour?"</span>)</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>colour <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(quest)</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(colour)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="co"># bridge.py - a scene from The Holy Grail</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to the Bridge of Death"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your name?"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your quest?"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>quest <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your favourite colour?"</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>colour <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a><span class="bu">print</span>(name)</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a><span class="bu">print</span>(quest)</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a><span class="bu">print</span>(colour)</span></code></pre>
 </div>
 <p>Run the program a few times to see how it works. The
 <code>input()</code> call puts up a prompt for the user to enter text on
@@ -459,22 +460,22 @@ bit friendlier. Edit the code again and make the changes below:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bridge.py - a scene from The Holy Grail</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to the Bridge of Death"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your name?"</span>)</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your quest?"</span>)</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>quest <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your favourite colour?"</span>)</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>colour <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello,"</span>, name, <span class="st">"good luck with your"</span>, quest, <span class="st">"quest!"</span>)</span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perhaps wearing"</span>, colour, <span class="st">"socks would help :)"</span>)</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="co"># bridge.py - a scene from The Holy Grail</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Welcome to the Bridge of Death"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your name?"</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your quest?"</span>)</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>quest <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"What is your favourite colour?"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>colour <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello,"</span>, name, <span class="st">"good luck with your"</span>, quest, <span class="st">"quest!"</span>)</span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perhaps wearing"</span>, colour, <span class="st">"socks would help :)"</span>)</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a><span class="bu">print</span>()</span></code></pre>
 </div>
 <p>There are many ways to solve a coding problem. Copy your code
 <code>bridge.py</code> to <code>bridge2.py</code> and then change the
@@ -484,15 +485,15 @@ vim bridge2.py</code></pre>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bridge2.py - a scene from The Holy Grail, re-coded</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Welcome to the Bridge of Death</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your name?"</span>)</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>quest <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your quest?"</span>)</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>colour <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your favourite colour?"</span>)</span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hello,"</span>, name, <span class="st">"good luck with your"</span>, quest, <span class="st">"quest!"</span>)</span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perhaps wearing"</span>, colour, <span class="st">"socks would help :)</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># bridge2.py - a scene from The Holy Grail, re-coded</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Welcome to the Bridge of Death</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your name?"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>quest <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your quest?"</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a>colour <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your favourite colour?"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hello,"</span>, name, <span class="st">"good luck with your"</span>, quest, <span class="st">"quest!"</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perhaps wearing"</span>, colour, <span class="st">"socks would help :)</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
 </div>
 <p>We always want to make use of the value collected in an
 <code>input()</code> call, so we can combine the <code>print</code> and
@@ -517,34 +518,34 @@ the directory <code>Monty/Pythons/Flying/Circus</code>:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bruces.py - let's call everyone "Bruce", to avoid confusion</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hey cobber, what's your name? "</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">!=</span> <span class="st">"Bruce"</span>:</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Sorry,"</span>, name,<span class="st">"- your name's not Bruce?"</span>)</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"That's goin to cause a little confusion."</span>)</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Mind if we call you 'Bruce' to keep it clear?"</span>)</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>   name <span class="op">=</span> <span class="st">"Bruce"</span></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name, <span class="st">"!!!</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co"># bruces.py - let's call everyone "Bruce", to avoid confusion</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Hey cobber, what's your name? "</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="cf">if</span> name <span class="op">!=</span> <span class="st">"Bruce"</span>:</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Sorry,"</span>, name,<span class="st">"- your name's not Bruce?"</span>)</span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"That's goin to cause a little confusion."</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Mind if we call you 'Bruce' to keep it clear?"</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>   name <span class="op">=</span> <span class="st">"Bruce"</span></span>
+<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name, <span class="st">"!!!</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
 </div>
 <p>We can enhance the program to congratulate anyone who is actually
 called Bruce… update the code as below.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># bruces.py - let's call everyone "Bruce", to avoid confusion</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your name? "</span>)</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> name <span class="op">!=</span> <span class="st">"Bruce"</span>:</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Sorry,"</span>, name,<span class="st">"- your name's not Bruce?"</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"That's going to cause a little confusion."</span>)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Mind if we call you 'Bruce' to keep it clear?"</span>)</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>   name <span class="op">=</span> <span class="st">"Bruce"</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Excellent! That saves a lot of confusion!"</span>)</span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># bruces.py - let's call everyone "Bruce", to avoid confusion</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>name <span class="op">=</span> <span class="bu">input</span>(<span class="st">"What is your name? "</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="cf">if</span> name <span class="op">!=</span> <span class="st">"Bruce"</span>:</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Sorry,"</span>, name,<span class="st">"- your name's not Bruce?"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"That's going to cause a little confusion."</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Mind if we call you 'Bruce' to keep it clear?"</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a>   name <span class="op">=</span> <span class="st">"Bruce"</span></span>
+<span id="cb10-10"><a href="#cb10-10" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb10-11"><a href="#cb10-11" tabindex="-1"></a>   <span class="bu">print</span>(<span class="st">"Excellent! That saves a lot of confusion!"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"G'day"</span>, name)</span></code></pre>
 </div>
 <div id="challenge-2-testing-testing" class="callout challenge">
 <div class="callout-square">
@@ -600,37 +601,37 @@ the flow of logic in your code.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># which.py - asks questions to find your Python</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Find the mystery Python!</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter Y/N to the following questions..."</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>male <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you male? "</span>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> male <span class="op">==</span> <span class="st">"Y"</span>:</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    beard <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Do you have a beard? "</span>)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> beard <span class="op">==</span> <span class="st">"Y"</span>:</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>        mystery <span class="op">=</span> <span class="st">"Terry Gilliam"</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>        alive <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you still alive? "</span>)</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> alive <span class="op">!=</span> <span class="st">"Y"</span>:</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>            dementia <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Did you have dementia? "</span>)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> dementia <span class="op">==</span> <span class="st">"Y"</span>:</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Terry Jones"</span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Graham Chapman"</span></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>            mo <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Do you have a moustache? "</span>)</span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>            traveller <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you a traveller? "</span>)</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> mo <span class="op">==</span> <span class="st">"Y"</span>:</span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"John Cleese"</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>            <span class="cf">elif</span> traveller <span class="op">==</span> <span class="st">"Y"</span>:</span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Michael Palin"</span></span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>            <span class="cf">else</span>:</span>
-<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Eric Idle"</span></span>
-<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not *technically* a python, however..."</span>)</span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    mystery <span class="op">=</span> <span class="st">"Carole Cleveland"</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Your mystery Python is: "</span>, mystery, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co"># which.py - asks questions to find your Python</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Find the mystery Python!</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Enter Y/N to the following questions..."</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>male <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you male? "</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="cf">if</span> male <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>    beard <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Do you have a beard? "</span>)</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>    <span class="cf">if</span> beard <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a>        mystery <span class="op">=</span> <span class="st">"Terry Gilliam"</span></span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>        alive <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you still alive? "</span>)</span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a>        <span class="cf">if</span> alive <span class="op">!=</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a>            dementia <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Did you have dementia? "</span>)</span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a>            <span class="cf">if</span> dementia <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Terry Jones"</span></span>
+<span id="cb11-17"><a href="#cb11-17" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb11-18"><a href="#cb11-18" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Graham Chapman"</span></span>
+<span id="cb11-19"><a href="#cb11-19" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb11-20"><a href="#cb11-20" tabindex="-1"></a>            mo <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Do you have a moustache? "</span>)</span>
+<span id="cb11-21"><a href="#cb11-21" tabindex="-1"></a>            traveller <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Are you a traveller? "</span>)</span>
+<span id="cb11-22"><a href="#cb11-22" tabindex="-1"></a>            <span class="cf">if</span> mo <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-23"><a href="#cb11-23" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"John Cleese"</span></span>
+<span id="cb11-24"><a href="#cb11-24" tabindex="-1"></a>            <span class="cf">elif</span> traveller <span class="op">==</span> <span class="st">"Y"</span>:</span>
+<span id="cb11-25"><a href="#cb11-25" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Michael Palin"</span></span>
+<span id="cb11-26"><a href="#cb11-26" tabindex="-1"></a>            <span class="cf">else</span>:</span>
+<span id="cb11-27"><a href="#cb11-27" tabindex="-1"></a>                mystery <span class="op">=</span> <span class="st">"Eric Idle"</span></span>
+<span id="cb11-28"><a href="#cb11-28" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb11-29"><a href="#cb11-29" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Not *technically* a python, however..."</span>)</span>
+<span id="cb11-30"><a href="#cb11-30" tabindex="-1"></a>    mystery <span class="op">=</span> <span class="st">"Carole Cleveland"</span></span>
+<span id="cb11-31"><a href="#cb11-31" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Your mystery Python is: "</span>, mystery, <span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
 </div>
 <p>This one is a bit harder to test - see if you can get to every one of
 the Pythons.</p>
@@ -645,16 +646,16 @@ directory.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># num_convert.py: Read in number and convert to int and float</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter a number...'</span>)</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>numstr <span class="op">=</span> <span class="bu">input</span>()</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numstr, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numstr)))</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>numint <span class="op">=</span> <span class="bu">int</span>(numstr)</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numint, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numint)))</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>numfloat <span class="op">=</span> <span class="bu">float</span>(numstr)</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numfloat, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numfloat)))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="co"># num_convert.py: Read in number and convert to int and float</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter a number...'</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>numstr <span class="op">=</span> <span class="bu">input</span>()</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numstr, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numstr)))</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>numint <span class="op">=</span> <span class="bu">int</span>(numstr)</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numint, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numint)))</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>numfloat <span class="op">=</span> <span class="bu">float</span>(numstr)</span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number ='</span>, numfloat, <span class="st">' Type : '</span>, <span class="bu">str</span>(<span class="bu">type</span>(numfloat)))</span></code></pre>
 </div>
 <p>Notice how the first two print statements print the same number
 (well, it looks the same), but their variable types are different?
@@ -670,17 +671,17 @@ know in advance how many of numbers we want, we can use a
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># num_for.py: Read in ten numbers and give sum of numbers </span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter ten numbers...'</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Enter a number ('</span>, i, <span class="st">')...'</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    number <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> number</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total is '</span>, total)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co"># num_for.py: Read in ten numbers and give sum of numbers </span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter ten numbers...'</span>)</span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a> </span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Enter a number ('</span>, i, <span class="st">')...'</span>)</span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a>    number <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>    total <span class="op">=</span> total <span class="op">+</span> number</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total is '</span>, total)</span></code></pre>
 </div>
 <p>Save and exit the file and try running it. What are the values that
 variable “i” holds each time through the loop? How would you change the
@@ -752,14 +753,13 @@ exit on <strong>zero</strong> instead of negative numbers?</p>
 <div class="section level3">
 <h3 id="activity-7---and-now-for-something-completely-different">Activity 7 - And Now For Something Completely Different<a class="anchor" aria-label="anchor" href="#activity-7---and-now-for-something-completely-different"></a></h3>
 <p>Now for a simple systems model… Unconstrained Growth and Decay.</p>
-<div id="from-the-introduction-to-computational-science-text" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="from-the-introduction-to-computational-science-text" class="callout-inner">
-<h3 class="callout-title">From the “Introduction to Computational
-Science” text:<a class="anchor" aria-label="anchor" href="#from-the-introduction-to-computational-science-text"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="from-the-introduction-to-computational-science-text">From the “Introduction to Computational
+Science” text:<a class="anchor" aria-label="anchor" href="#from-the-introduction-to-computational-science-text"></a></h3>
 <div class="callout-content">
 <p><em>“Many situations exist where the rate at which an amount is
 changing is proportional to the amount present. Such might be the case
@@ -777,14 +777,13 @@ is available for download at <a href="files/s2_10291.pdf">Computational
 Science</a>, and provides background to these types of models.</p>
 <p>We are going to write Python code for simulating unconstrained growth
 based on the following pseudocode from the text:</p>
-<div id="algorithm-2---simulation-of-unconstrained-growth" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="algorithm-2---simulation-of-unconstrained-growth" class="callout-inner">
-<h3 class="callout-title">Algorithm 2 - simulation of unconstrained
-growth<a class="anchor" aria-label="anchor" href="#algorithm-2---simulation-of-unconstrained-growth"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="algorithm-2---simulation-of-unconstrained-growth">Algorithm 2 - simulation of unconstrained
+growth<a class="anchor" aria-label="anchor" href="#algorithm-2---simulation-of-unconstrained-growth"></a></h3>
 <div class="callout-content">
 <ul><li>initialise simulation length</li>
 <li>initialise population</li>
@@ -808,33 +807,33 @@ which follows the Algorithm on page 25.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co"># growth.py - simulation of unconstrained growth</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">SIMULATION - Unconstrained Growth</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>length <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>population <span class="op">=</span> <span class="dv">100</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>growth_rate <span class="op">=</span> <span class="fl">0.1</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>time_step <span class="op">=</span> <span class="fl">0.5</span></span>
-<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>num_iter <span class="op">=</span> length <span class="op">/</span> time_step</span>
-<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>growth_step <span class="op">=</span> growth_rate <span class="op">*</span> time_step</span>
-<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"INITIAL VALUES:</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Simulation Length (hours): "</span>, length)</span>
-<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Initial Population: "</span>, population)</span>
-<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Growth Rate (per hour): "</span>, growth_rate)</span>
-<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time Step (part hour per step): "</span>, time_step)</span>
-<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Num iterations (sim length * time step per hour): "</span>,</span>
-<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>num_iter)</span>
-<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Growth step (growth rate per time step): "</span>,</span>
-<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>growth_step)</span>
-<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">RESULTS:</span><span class="ch">\n</span><span class="st">"</span>)</span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time: "</span>, <span class="dv">0</span>, <span class="st">" </span><span class="ch">\t</span><span class="st">Growth: "</span>, <span class="dv">0</span>, <span class="st">" </span><span class="ch">\t</span><span class="st">Population: "</span>, <span class="dv">100</span>)</span>
-<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">int</span>(num_iter) <span class="op">+</span> <span class="dv">1</span> ):</span>
-<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>    growth <span class="op">=</span> growth_step <span class="op">*</span> population</span>
-<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>    population <span class="op">=</span> population <span class="op">+</span> growth</span>
-<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>    time <span class="op">=</span> i <span class="op">*</span> time_step</span>
-<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time: "</span>, time, <span class="st">" </span><span class="ch">\t</span><span class="st">Growth: "</span>, growth, <span class="st">"</span><span class="ch">\t</span><span class="st">Population: "</span>, population)</span>
-<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">PROCESSING COMPLETE.</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="co"># growth.py - simulation of unconstrained growth</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">SIMULATION - Unconstrained Growth</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>length <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>population <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a>growth_rate <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>time_step <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>num_iter <span class="op">=</span> length <span class="op">/</span> time_step</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a>growth_step <span class="op">=</span> growth_rate <span class="op">*</span> time_step</span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"INITIAL VALUES:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Simulation Length (hours): "</span>, length)</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Initial Population: "</span>, population)</span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Growth Rate (per hour): "</span>, growth_rate)</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time Step (part hour per step): "</span>, time_step)</span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Num iterations (sim length * time step per hour): "</span>,</span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a>num_iter)</span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Growth step (growth rate per time step): "</span>,</span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a>growth_step)</span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">RESULTS:</span><span class="ch">\n</span><span class="st">"</span>)</span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Time: "</span>, <span class="dv">0</span>, <span class="st">" </span><span class="ch">\t</span><span class="st">Growth: "</span>, <span class="dv">0</span>, <span class="st">" </span><span class="ch">\t</span><span class="st">Population: "</span>, <span class="dv">100</span>)</span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">int</span>(num_iter) <span class="op">+</span> <span class="dv">1</span> ):</span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a>    growth <span class="op">=</span> growth_step <span class="op">*</span> population</span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a>    population <span class="op">=</span> population <span class="op">+</span> growth</span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a>    time <span class="op">=</span> i <span class="op">*</span> time_step</span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Time: "</span>, time, <span class="st">" </span><span class="ch">\t</span><span class="st">Growth: "</span>, growth, <span class="st">"</span><span class="ch">\t</span><span class="st">Population: "</span>, population)</span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">PROCESSING COMPLETE.</span><span class="ch">\n</span><span class="st">"</span>)</span></code></pre>
 </div>
 <p>Type in the code and run it.</p>
 <div id="challenge4" class="callout challenge">
@@ -1046,7 +1045,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/prac01.html",
   "dateCreated": "2023-09-15",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

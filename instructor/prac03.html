@@ -418,20 +418,20 @@ arrays to store the values and then print some summary data.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># numbersarray.py: Read ten numbers give sum, min, max &amp; mean </span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>numarray <span class="op">=</span> np.zeros(<span class="dv">10</span>)   <span class="co"># create an empty 10 element array </span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter ten numbers...'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numarray)):</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Enter a number ('</span>, i, <span class="st">')...'</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    numarray[i] <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total is '</span>, numarray.<span class="bu">sum</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="co"># numbersarray.py: Read ten numbers give sum, min, max &amp; mean </span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>numarray <span class="op">=</span> np.zeros(<span class="dv">10</span>)   <span class="co"># create an empty 10 element array </span></span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Enter ten numbers...'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(numarray)):</span>
+<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Enter a number ('</span>, i, <span class="st">')...'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    numarray[i] <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>())</span>
+<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    </span>
+<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Total is '</span>, numarray.<span class="bu">sum</span>())</span></code></pre>
 </div>
 <p>Modify the code to:</p>
 <ol style="list-style-type: decimal"><li>Print the min and max numbers entered</li>
@@ -465,17 +465,17 @@ variable names and labels/titles will need to be changed… this is a
 </ol><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">211</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'--'</span>)  <span class="co"># update the xvalues, yvalues and line style</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'March Temperatures'</span>)   <span class="co"># update title</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)         <span class="co"># update y label units</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">212</span>)                  <span class="co"># as above... for second subplot</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'ro'</span>)  <span class="co"># explore different line styles</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.show()                        <span class="co"># display plot</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>plt.subplot(<span class="dv">211</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'--'</span>)  <span class="co"># update the xvalues, yvalues and line style</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>plt.title(<span class="st">'March Temperatures'</span>)   <span class="co"># update title</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)         <span class="co"># update y label units</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>plt.subplot(<span class="dv">212</span>)                  <span class="co"># as above... for second subplot</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>plt.plot(dates, march2017, <span class="st">'ro'</span>)  <span class="co"># explore different line styles</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>plt.ylabel(<span class="st">'Temperature'</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>plt.xlabel(<span class="st">'Date'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a>plt.show()                        <span class="co"># display plot</span></span></code></pre>
 </div>
 <p>Save the resulting plot in your <code>Prac03</code> directory.</p>
 </div>
@@ -489,11 +489,11 @@ will use <strong>similar</strong> code to plot the numbers entered into
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Numbers Bar Chart'</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Index'</span>) </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Number'</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.bar([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>], numarray, <span class="fl">0.9</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>plt.title(<span class="st">'Numbers Bar Chart'</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>plt.xlabel(<span class="st">'Index'</span>) </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>plt.ylabel(<span class="st">'Number'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>plt.bar([<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>], numarray, <span class="fl">0.9</span>, color<span class="op">=</span><span class="st">'purple'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>Add this code to <code>numbersbar.py</code> to print a purple bar
 chart. Remember to import matplotlib!</p>
@@ -528,7 +528,8 @@ imnpacts if taken regularly for too long a period. An example would be
 to take the <code>dosage4hr.py</code> code and repeat the dosage every 4
 hours… make the appropriate changes, which should give a result similar
 to the plot below.</p>
-<figure><img src="../fig/P03aspirin4hr.png" alt="" class="figure mx-auto d-block"><figcaption>Four-hourly aspirin dosage</figcaption></figure><p>Note that the concentration of Aspirin in the blood plasma is going
+<figure><img src="../fig/P03aspirin4hr.png" alt="Four-hourly aspirin dosage" class="figure mx-auto d-block"><div class="figcaption">Four-hourly aspirin dosage</div>
+</figure><p>Note that the concentration of Aspirin in the blood plasma is going
 above the red line, which is dangerous (Mean Toxic Concentration). Also
 note that the blood plasma volume has/can been reduced to 2700ml, to
 illustrate the impact of changing these values.</p>
@@ -537,13 +538,16 @@ see the concentration is now always below the red line.</p>
 <p>Also note that you probably have a double-dose at the start - as
 shown in the sample plots. This can be corrected by setting the initial
 aspirin_in_plasma value to zero (not <code>dose</code>).</p>
-<figure><img src="../fig/P03aspirin6hr.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin dosage</figcaption></figure><p>Another way to reduce the cumulative impacts of a medication is to
+<figure><img src="../fig/P03aspirin6hr.png" alt="Six-hourly aspirin dosage" class="figure mx-auto d-block"><div class="figcaption">Six-hourly aspirin dosage</div>
+</figure><p>Another way to reduce the cumulative impacts of a medication is to
 not take it in the evening, so there might be 3 6-hourly doses and a gap
 overnight. This can also be an approach where a medication might keep
 the patient awake, or not be needed while sleeping. The next plot shows
 how this might impact the concentration of medication in the blood
 plasma.</p>
-<figure><img src="../fig/P03aspirin6hrSkip.png" alt="" class="figure mx-auto d-block"><figcaption>Six-hourly aspirin, skipping the evening dosage</figcaption></figure><p>Note that these are all <strong>models</strong> and we know that
+<figure><img src="../fig/P03aspirin6hrSkip.png" alt="Six-hourly aspirin, skipping the evening dosage" class="figure mx-auto d-block"><div class="figcaption">Six-hourly aspirin, skipping the evening
+dosage</div>
+</figure><p>Note that these are all <strong>models</strong> and we know that
 models are <strong>WRONG</strong>. There are many assumptions to
 consider. Blood plasma Would vary between people, and could be
 approximated, perhaps by weight. Drug absorption levels would vary by
@@ -557,7 +561,8 @@ conveying how repat doses of drug accumulate and compund.</p>
 <h3 id="activity-8---scaffolded-challenge-rainbows">Activity 8 - Scaffolded Challenge: Rainbows<a class="anchor" aria-label="anchor" href="#activity-8---scaffolded-challenge-rainbows"></a></h3>
 <p>Given we can draw a line plot in various colours, how might we plot a
 <strong>rainbow</strong>?</p>
-<figure><img src="../fig/P03RainbowLists.png" alt="" class="figure mx-auto d-block"><figcaption>Rainbows stored in lists</figcaption></figure><p>So, where might we start?</p>
+<figure><img src="../fig/P03RainbowLists.png" alt="Rainbows stored in lists" class="figure mx-auto d-block"><div class="figcaption">Rainbows stored in lists</div>
+</figure><p>So, where might we start?</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -582,15 +587,15 @@ parabola?</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(i, r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>,<span class="st">"bo"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    plt.plot(i, r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>,<span class="st">"bo"</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 <p>This code gives one curve of blue circles, but the shape is
 wrong.</p>
@@ -611,15 +616,15 @@ circle.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span><span class="st">"red"</span>, marker<span class="op">=</span><span class="st">"*"</span>)</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="co"># Basic Curve</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span><span class="st">"red"</span>, marker<span class="op">=</span><span class="st">"*"</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>plt.title(<span class="st">"Basic Curve"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 </div>
 </div>
@@ -637,25 +642,25 @@ change the radius of the circle.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Many Curves 10,9,8,7,6</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"red"</span> </span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"orange"</span> </span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"green"</span> </span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"purple"</span> </span>
-<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>        plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"*"</span>)</span>
-<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Many Curves"</span>)</span>
-<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="co"># Many Curves 10,9,8,7,6</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">5</span>,<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>r,r<span class="op">+</span><span class="dv">1</span>):</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a>        <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"red"</span> </span>
+<span id="cb6-9"><a href="#cb6-9" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
+<span id="cb6-10"><a href="#cb6-10" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"orange"</span> </span>
+<span id="cb6-11"><a href="#cb6-11" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
+<span id="cb6-12"><a href="#cb6-12" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
+<span id="cb6-13"><a href="#cb6-13" tabindex="-1"></a>        <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb6-14"><a href="#cb6-14" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"green"</span> </span>
+<span id="cb6-15"><a href="#cb6-15" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb6-16"><a href="#cb6-16" tabindex="-1"></a>            colour <span class="op">=</span> <span class="st">"purple"</span> </span>
+<span id="cb6-17"><a href="#cb6-17" tabindex="-1"></a>        plt.plot(i,math.sqrt(r<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>),color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"*"</span>)</span>
+<span id="cb6-18"><a href="#cb6-18" tabindex="-1"></a>plt.title(<span class="st">"Many Curves"</span>)</span>
+<span id="cb6-19"><a href="#cb6-19" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 </div>
 </div>
@@ -671,34 +676,34 @@ change the radius of the circle.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Many Curves - arrays</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>):</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    size <span class="op">=</span> r <span class="op">*</span> res <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    xarray <span class="op">=</span> np.zeros(size)</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    arcarray <span class="op">=</span> np.zeros(size)</span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"red"</span> </span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"orange"</span> </span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"green"</span> </span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">6</span>:</span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"blue"</span> </span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">5</span>:</span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"indigo"</span> </span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"violet"</span> </span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>res <span class="op">*</span> r, res <span class="op">*</span> r <span class="op">+</span> <span class="dv">1</span>):</span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>        xarray[i] <span class="op">=</span> i</span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(r, i)</span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>        arcarray[i] <span class="op">=</span> math.sqrt((res <span class="op">*</span> r)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>)</span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    plt.plot(xarray, arcarray, color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"o"</span>)</span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Many Curves - arrays"</span>)</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># Many Curves - arrays</span></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>res <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>,<span class="dv">3</span>,<span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>    size <span class="op">=</span> r <span class="op">*</span> res <span class="op">*</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>    xarray <span class="op">=</span> np.zeros(size)</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a>    arcarray <span class="op">=</span> np.zeros(size)</span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a>    <span class="cf">if</span> r <span class="op">==</span> <span class="dv">10</span>:</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"red"</span> </span>
+<span id="cb7-10"><a href="#cb7-10" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">9</span>:</span>
+<span id="cb7-11"><a href="#cb7-11" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"orange"</span> </span>
+<span id="cb7-12"><a href="#cb7-12" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">8</span>:</span>
+<span id="cb7-13"><a href="#cb7-13" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"yellow"</span> </span>
+<span id="cb7-14"><a href="#cb7-14" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">7</span>:</span>
+<span id="cb7-15"><a href="#cb7-15" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"green"</span> </span>
+<span id="cb7-16"><a href="#cb7-16" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">6</span>:</span>
+<span id="cb7-17"><a href="#cb7-17" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"blue"</span> </span>
+<span id="cb7-18"><a href="#cb7-18" tabindex="-1"></a>    <span class="cf">elif</span> r <span class="op">==</span> <span class="dv">5</span>:</span>
+<span id="cb7-19"><a href="#cb7-19" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"indigo"</span> </span>
+<span id="cb7-20"><a href="#cb7-20" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb7-21"><a href="#cb7-21" tabindex="-1"></a>        colour <span class="op">=</span> <span class="st">"violet"</span> </span>
+<span id="cb7-22"><a href="#cb7-22" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span>res <span class="op">*</span> r, res <span class="op">*</span> r <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb7-23"><a href="#cb7-23" tabindex="-1"></a>        xarray[i] <span class="op">=</span> i</span>
+<span id="cb7-24"><a href="#cb7-24" tabindex="-1"></a>        <span class="bu">print</span>(r, i)</span>
+<span id="cb7-25"><a href="#cb7-25" tabindex="-1"></a>        arcarray[i] <span class="op">=</span> math.sqrt((res <span class="op">*</span> r)<span class="op">**</span><span class="dv">2</span> <span class="op">-</span> i<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb7-26"><a href="#cb7-26" tabindex="-1"></a>    plt.plot(xarray, arcarray, color<span class="op">=</span>colour, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb7-27"><a href="#cb7-27" tabindex="-1"></a>plt.title(<span class="st">"Many Curves - arrays"</span>)</span>
+<span id="cb7-28"><a href="#cb7-28" tabindex="-1"></a>plt.show()</span></code></pre>
 </div>
 </div>
 </div>
@@ -878,7 +883,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/instructor/prac03.html",
   "dateCreated": "2023-09-15",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

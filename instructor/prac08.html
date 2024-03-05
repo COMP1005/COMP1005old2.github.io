@@ -393,17 +393,17 @@ of the program:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Process command line arguments</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="bu">len</span>(sys.argv) <span class="op">&lt;</span> <span class="dv">3</span>):</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'argv too short, usage: python3 &lt;interval&gt; &lt;dosage&gt;'</span>) </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Using default values for interval (8) and dosage (100)'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    Vinterval <span class="op">=</span> <span class="dv">8</span> <span class="co"># 8 hours between doses </span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    Vdosage <span class="op">=</span> <span class="dv">100</span> <span class="co"># dosage 100mg</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    Vinterval <span class="op">=</span> <span class="bu">int</span>(sys.argv[<span class="dv">1</span>]) <span class="co"># hours between doses </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    Vdosage <span class="op">=</span> <span class="bu">int</span>(sys.argv[<span class="dv">2</span>]) <span class="co"># dosage</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co"># Process command line arguments</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="cf">if</span> (<span class="bu">len</span>(sys.argv) <span class="op">&lt;</span> <span class="dv">3</span>):</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'argv too short, usage: python3 &lt;interval&gt; &lt;dosage&gt;'</span>) </span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">'Using default values for interval (8) and dosage (100)'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>    Vinterval <span class="op">=</span> <span class="dv">8</span> <span class="co"># 8 hours between doses </span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>    Vdosage <span class="op">=</span> <span class="dv">100</span> <span class="co"># dosage 100mg</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    Vinterval <span class="op">=</span> <span class="bu">int</span>(sys.argv[<span class="dv">1</span>]) <span class="co"># hours between doses </span></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a>    Vdosage <span class="op">=</span> <span class="bu">int</span>(sys.argv[<span class="dv">2</span>]) <span class="co"># dosage</span></span></code></pre>
 </div>
 <p>Then change the setup of the interval and dosage variables to use
 Vinterval and Vdosage. Test the program to see that it works. See how
@@ -413,7 +413,7 @@ screen. We can save the plot to a file instead.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'dosage_'</span> <span class="op">+</span> <span class="st">'I'</span> <span class="op">+</span> <span class="bu">str</span>(Vinterval)<span class="op">+</span><span class="st">'_D'</span> <span class="op">+</span> <span class="bu">str</span>(Vdosage) <span class="op">+</span> <span class="st">'.png'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>plt.savefig(<span class="st">'dosage_'</span> <span class="op">+</span> <span class="st">'I'</span> <span class="op">+</span> <span class="bu">str</span>(Vinterval)<span class="op">+</span><span class="st">'_D'</span> <span class="op">+</span> <span class="bu">str</span>(Vdosage) <span class="op">+</span> <span class="st">'.png'</span>)</span></code></pre>
 </div>
 <p>Now our program is ready to be the base program for a parameter
 sweep. We’ll create the parameter sweep program in the next task.</p>
@@ -673,7 +673,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "identifier": "https://COMP1005.github.io/COMP1005.github.io/instructor/prac08.html",
   "dateCreated": "2023-09-15",
   "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
