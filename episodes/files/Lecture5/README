@@ -1,1 +1,17 @@
+## Synopsis
+Lecture 5 of Fundamentals of Programming COMP1005/5005 - code examples
+ 
+## Contents
+README – readme file for Lecture 5
 
+### Exception Handling
+errorful.py - code with errors needing correction
+errorfree.py - code with errors corrected
+workfile.csv - csv file for the above example
+myfile.txt - text file for the above example
+ 
+## Dependencies
+none
+ 
+## Version information
+25/3/24 - initial version of Lecture 5 programs
