@@ -256,7 +256,7 @@ click on Practical 08 for the submission page.
 3. **Comprehension**: What does the line file2.write(...) do in Activity 4?
 5. **Application**: Given the Game of Life rules, what would happen to the centre
 cell in the following cases:
-![fig/P05GOLReviewQ.png](GOL images)
+![GOL images](fig/P05GOLReviewQ.png)
 7. **Analysis**: What variation of “neighbours” does ```heatsource.py``` use? How would the code change if it were to use the other neighbour approach?
 9. **Synthesis**: How would you create a heat source input file with a 4x4 heat source in the centre of the 10x10 grid?
 10. **Evaluation**: Name two advantages to reading initial data from a file as in the updated ```heatsource.py```.
