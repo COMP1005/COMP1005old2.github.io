@@ -1,302 +1,194 @@
 ---
-title: "Prac05: Grids and Files"
+title: "Prac10: Data Processing and Analytics"
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- Use the old prac sheet for now
+- How can we make use of headers and other information in data files?
+- Can we use python to focus more on analytics, and not so much on coding everything from scratch?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-1. Understand and use text files to store and load data
-2. Develop simple grid-based simulations using 2-dimensional arrays: fire modelling, Game of Life
-3. Apply list comprehensions to simplify code
-4. Experiment with parameters to investigate how they alter the outcomes of simulations
+1. Understand and implement structured data processing in Python using the pandas library
+2. Understand and critique the value of reproducible research
+3. Apply and create Python notebooks to support exploratory research
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Introduction
 
-In this practical you will read and write data using text files. You will also work with some grid-based 
-algorithms – testing out different values to see how their parameters affect outcomes. We will also 
-look at using list comprehensions to simplify our code.
+We will be using python notebooks for this practical to keep track of our steps and get use to how they work. The activities will surround the use of pandas to work with structured data.
 
-### Activity 1 - Reading a CSV File
+### Activity 1 - Running a Jupyter notebook
 
-Type in the following code, weather.py, for displaying the weather stored in a file:
+Create a Prac10 directory for this practical and change into it.
 
+Type: jupyter notebook at the command line to start the jupyter notebook in your browser.
+
+Once in the dashboard for jupyter, create a new notebook with the default kernel and call 
+it "tuple" (creates the file "tuple.ipynb")
+
+Create a markdown cell to give a short description: "Testing out jupyter notebook with Tuple task"
+
+Create a code cell and type in the following:
 ```python
-#
-# weather.py: Print min and max temps from a file
-# (source: http://www.bom.gov.au/climate/)
-
-import matplotlib.pyplot as plt
-
-fileobj = open(‘marchweather.csv’, ‘r’) 
-
-# add file reading code here 
-line1 = ??
-line2 = ??
-
-fileobj.close()
-
-mins = # add splitting code here, each stirng value will need to be coverted to float
-maxs = # add splitting code here 
-
-dates = range(1,32)
-
-plt.plot(dates, mins, dates, maxs) 
-plt.show()
+tup1 = ('spam', 'eggs', 42) 
+tup2 = (1, 4, 9, 16, 25 ) 
+tup3 = "yes", "oui", "ja", "si" 
+print(tup1)
+print(tup2) 
+print(tup3)
 ```
 
-Modify the code to read the data from the marchweather.csv file – available on Blackboard. 
-You should download it to your Prac5 directory, look at its contents and format, then modify 
-the code accordingly. **Hint:** look at split method, and list comprehensions in lecture slides.
+Modify the code to:
 
-### Activity 2 - Reading another CSV file
+• Create tup4 as tup2 and tup3 added together
+• Print out the length of tup4
+• Print out the values in tup4, omitting the first and last values
+• Create a new tuple, tup5. It should be similar to tup2 – this time holding the 
+squares of numbers from 1-10 inclusive.
 
-This time, go to the Bureau of Meteorology site and download the full list of weather data for 
-March. This time we will plot the min, max, 9am and 3pm temperatures... 
-http://www.bom.gov.au/climate/dwo/202303/html/IDCJDW6111.202303.shtml
+**Hints:** look at the lecture slides for similar operations. For tup5, you can 
+create a list and convert to a tuple with tup5 = tuple(tuplelist)
 
-You can change the year and month by changing "202303" to another year+month
+Save the notebook using the save button, then close and halt the notebook (File menu).
 
-Save the data by scrolling down to the “Other Formats” section and right-clicking on the plain 
-text version. Save it to your ```Prac05``` directory as ```marchweatherfull.csv```. If you open it in vim 
-you can see all the data, but there are headers describing the data that we don’t need to read 
-in. Remove the first header lines using ``dd`` (in vim's command mode) and then save the file. 
-You now have your dataset.
+Go to the command line and do an ls in the directory to see that the notebook file is there – tuple.ipynb.
 
-Write a new program, ```marchweather2.py``` to read in the values and plot them. You will need 
-to pick out columns from each line you read in from the file. First split it into a list, then 
-pick out the values and assign them to the min, max, nine and three lists/arrays.
+### Activity 2 - Movie Sets
 
-The code below will help start you off:
+Extending on the sets example in the lecture notes, we will make sets of actors to compare using set operations.
+
+* **Pythons:** Eric, John, Terry, Michael, Terry, Graham
+* **Goodies:** Bill, Tim, Graham
+* **Wandas:** John, Jamie, Kevin, Michael
+* **Yellowbeards:** Graham, Peter, Marty, Eric, Martin, Madeline, John Yorkshiremen: Tim, John, Graham, Marty
+* **Yorkshiremen2:** Terry, Michael, Eric, Graham, Graham
+
+In Jupyter notebook create six sets based on the movies and actors above. Then do the 
+following, checking the output matches your understanding:
+
+• Print each of the sets
+• Print the intersection of (Pythons and Yellowbeards) & (Goodies and Yorkshiremen)
+• Print the union of (Goodies and Yorkshiremen) & (Pythons and Wandas)
+• Print the difference between (Yellowbeards and Wandas) & (Yorkshiremen and Yorkshiremen2)
+
+The original Four Yorkshiremen Sketch: https://www.youtube.com/watch?v=VKHFZBUTA4k
+
+### Activity 3 - Rolling Dice
+
+Go to the jupyter dashboard and create a new notebook called "dice". Type the program 
+for rolling dice from the Lecture 8 slides into your notebook.
+
+When you have executed the code, check that your plot of the dice rolls looks correct. 
+Next, enter the commands to do the following (put a comment before each one to describe 
+what you are doing):
+
+• add a plot title "Dice Rolls (1000)"
+• add an x-axis label "Number"
+• add a y-axis label "Count"
+• change the plot colour to green
+• use plt.savefig() to save your plot
+• plot the file in the notebook again
+
+Notice how the notebook keeps the status so far so you don't need to repeat the 
+imports and early code to redo the plotting parts.
+
+### Activity 4 - Dictionaries
+
+Dictionaries or maps let us connect a key to a value, using key-value pairs. We can 
+then manipulate these dictionaries to gain additional information. Type in the code 
+for state populations in the lecture notes, calling the program pops.py.
+
+Extend pops.py to do the following:
+
+• Print the populations of each state
+• Print the total population across all states
+• Print the states and populations where the population is less than 3,000,000
+
+Test if "New Zealand" is a state and print the result (remember that a dictionary is a set – so use set operations)
+
+### Activity 5 - Running a Python Script in Jupyter
+
+In your notebook (dice.ipynb should still be open) run pops.py by typing: 
+
+```
+%run pops.py
+```
+
+You can also run it in a different directory: 
+
+```
+%run ../Prac10/pops.py
+```
+
+Type "pops" into a code cell and execute it. Notice that you can get the values 
+of any variables that have previously been used in your notebook – they're all 
+still there. Try typing "dicecount" into a code cell – it's still there.
+
+Make sure that your notebook is saved, then switch to the terminal window and 
+type "ctrl-C" and then "y" to clode down the notebook.
+
+### Activity 6 - Storytime
+
+Project Gutenberg offers over 50,000 books in electronic format. They are available 
+as text files – which means we can use Python scripts to process them. Go to the 
+Project Gutenberg website (http://www.gutenberg.org/) and then scroll down to the 
+Site Map and click through on Most Downloaded Books. You can access any of these 
+books through these links.
+
+Click on Grimms' Fairy Tales and see the different file types available. Download 
+the text file version to your Prac8 directory. We just want to work with Rumpelstiltskin, 
+so follow these steps:
+
+1. Copy the grimm text file to rumple.txt
+2. Open rumple.txt in vim
+3. If you don't have line numbers showing, type ":setnumber" (and "set nonumber" to turn them off)
+4. Find the start of Rumpelstiltskin by typing "/RUMPEL" (type n to go to the next
+occurrence if you're at the contents page)
+5. Take note of the line number before the opening title
+6. Go to the first line of the file using "1G"
+7. Delete the lines up to the start of the story by typing "<lineNo>dd" – so if the
+line before the story was 3634, type "3634dd"
+8. Find the end of the story by typing "/RUMPEL" again
+9. Go to the next line after the end of the story and type "dG" 
+10. You should have a file about 113 lines long
+11. Save and exit the file
+
+ The lecture notes included code to count words in a text file. Type in that code 
+ and analyse the rumpel.txt file. See if your answers match the slides.
+
+### Activity 7 - Hello Pandas
  
-```python
-fileobj = open(‘marchweatherfull.csv’, ‘r’) 
-data = fileobj.readlines()
-fileobj.close()
+Download surveys.csv from the unit website into the Prac08 directory. This file is from the 
+Data Carpentry tutorial, which is highly recommended - http://www.datacarpentry.org/python-ecology-lesson/ .
 
-mins = [] # do the same for maxs, nines and threes
-
-for line in data:
-    splitline = line.split(‘,’) 
-    mins.append(splitline[2]) 
-    maxs.append(splitline[3]) 
-    nines.append(splitline[10]) 
-    threes.append(splitline[16])
-```
-
-Then adjust your ```plt.plot()``` call to plot mins, maxs, nines and threes. Make sure you 
-set up the x values (dates) as in Task 1.
-
-### Activity 3 - Writing to a CSV file
-Take your marchweather2.py and modify it to write the four lists of values into a csv file, 
-four values per line.
- 
-```python
-file2 = open(‘marchout.csv’, ‘w’) 
-for i in range(len(mins)):
-    file2.write(mins[i] + ‘,’ + maxs[i] + ‘,’ + nines[i] + ‘,’ + threes[i] + ‘\n’)
-file2.close()
-```
-
-### Activity 4 - List comprehensions
-
-Using list comprehensions can reduce and simplify your code. In the lecture, we saw some 
-examples of using list comprehensions. Using the lecture slides as a guide, write code to 
-do the following using **both** loops and list comprehensions for each:
-
-1. Make a list ```numbers``` with the numbers from 1 to 5
-2. Write a function ```triple(n)``` and use it to triple each number in numbers
-3. Write code to read in a string and extract all of the numbers (Hint: ```isdigit()```)
-4. Write code to capitalise the first letter of each word in a list of words (Hint:you
-can use use "+" to put the word back together)
-
-
-
-### Activity 5 - Heat Diffusion
-
-Download and run ```heat.py```, available in the practical area on Blackboard. There
-have been some changes made over time to improve readability
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-size = 20
-
-currg = np.zeros((size,size))
-print(currg)
-for i in range(size):
-    currg[i,0] = 10
-
-nextg = np.zeros((size,size))
-
-for timestep in range(5):
-    for r in range(1, size-1):
-        for c in range (1, size-1 ):
-            ### HIGHLIGHTED CODE
-            nextg[r,c] = (currg[r-1,c-1]*0.1 + currg[r-1,c]*0.1
-                         + currg[r-1,c+1]*0.1 + currg[r,c-1]*0.1
-                         + currg[r,c]*0.2 + currg[r,c+1]*0.1
-                         + currg[r+1,c-1]*0.1 + currg[r+1,c]*0.1
-                         + currg[r+1,c+1]*0.1)
-            ### HIGHLIGHTED CODE
-    for i in range(size):
-        nextg[i,0] = 10
-  
-    print("Time step: ", timestep)
-    print(nextg)
-    currg = nextg.copy()
-    
-plt.imshow(currg, cmap=plt.cm.hot)
-plt.show()
-```
-
-Make the following modifications to the code. The first improves readability, the
-second gives the user more information about the progression of the heat diffusion.
-Make sure you understand what the code does. Re-run the program after each change 
-to see that it still works.
-
-1. Modify the program to replace the highlighted code with the more readable code below:
-```nextg[r,c] = 0.1 * (currg[r-1:r+2,c-1:c+2].sum() + currg[r,c])```
-2. Modify the code to plot the current grid at the end of each timestep
-
-
-### Activity 6 - Heat Diffusion with Functions
-
-Our ```heat.py``` program has an ugly line of code to calculate the next values for each cell. 
-We used an improved version, but hiding these ugly details in a function will make the code
-more readable.
-
-Copy ```heat.py``` to ```heatfun.py``` and create a function ```calcheat(subarray)``` to factor 
-this calculation out. You can then call the function as:
-
-```python 
-            nextg[r,c] = calcheat(currg[r-1:r+2,c-1:c+2])
-```
-The lines to put in the function is:
-
-``` python
-def calcheat(subarray):
-    result = 0.1 * (subarray.sum() + subarray[1,1])
-    return result
-```
-
-### Activity 7 - Reading (yet another) CSV file
-
-Copy your ```heat.py``` and call the copy ```heatsource.py```. This time we are going to read a heat source in from a file.
-
-Create a file ```heatsource.csv to``` hold the heatsource:
-
-(note, you can copy a line using ```yy``` and ```p``` in vim - *yank and paste*)
-```
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0 
-10,0,0,0,0,0,0,0,0,0
-10,0,0,0,0,0,0,0,0,0
-```
-
-In our original program we had two loops to set up and maintain the heat source:
-
-```
-for i in range (size):
-    currg[i,0]=10
-```
-
-This could also have been done in a more Pythonic way with:
-```
-currg[:,0] = 10
-```
-
-We are going to replace those lines with code to read the heat source from our 
-file and update in each loop from our new h array to maintain the heat source.
-
-Replace the first heat source code instance with the following to read data from a file:
-
-```python
-# create heat source
-hlist = []
-fileobj = open('heatsource.csv','r') 
-for line in fileobj:
-    line_s = line.strip()
-    ints = [float(x) for x in line_s.split(',')] # list comprehension
-    hlist.append(ints)
-fileobj.close()
-
-harray = np.array(hlist) 
-currg = harray.copy()
-```
-
-And in the loop the heat source needs to be updated using the new h array...
-
-```python
-# Calculate heat diffusion 
-for timestep in range(100):
-    for r in range(1,size-1):
-        for c in range (1, size-1):
-            nextg[r,c]=calcheat(curr[r-1:r+2,c-1:c+2])
-
-    for r in range(size):
-        for c in range(size):
-            if harray[r,c] > nextg[r,c]: 
-                nextg[r,c] = harray[r,c]
-    currg = nextg.copy()
-```
-
-Your code should now output the same information as it did before – test it and see.
-
-In a similar way to list comprehensions, we can simplify the four lines of code above 
-to one line using ```np.where()```. This will overwrite values in next where the value in 
-harray is larger:
-
-Copy ```heatsource.csv``` to  ```heatsource2.csv```, change the values in ```heatsource2.csv```,
-and make the necessary changes to ```heatsource.py``` to see how it changes the output of the program.
-
-### Activity 8 - Fireplan
-
-Access the **Interactivate** app at: http://www.shodor.org/interactivate/activities/FireAssessment/
-
-Explore the use of the app and how it is making use of the grid and neighbours. Also look 
-at the use of graphics to represent the different states of a cell. What different graphics 
-are used for the states and what do they represent?
-
-### Activity 9 - Game of Life
-
-Have a read of https://web.stanford.edu/class/sts129/Alife/html/Life.htm (a very old-school 
-web page!) to see how the game of life works. 
-
-Use your mouse to enter some life into the Game of Life Simulator https://playgameoflife.com/ , 
-then click run to see the outcomes. How long does your population survive?
+Start jupyter again from the Prac08 directory. Create a new notebook called "pandasurvey". 
+ Go through the slides from the lecture and run all the commands in your notebook. Check 
+ that your results match those in the lecture slides.
 
 ### Submission
 
 Update the README file to include all files created in this practical.
 
 All of your work for this week’s practical should be submitted via Blackboard using
-the Practical 05 link. This should be done as a single "zipped" file.
+the Practical 10 link. This should be done as a single "zipped" file.
 Submit the resulting file through Blackboard. (refer to Practical 00 or 01 for instructions
 on zipping files.
  
 There are no direct marks for these submissions, but they may be taken into account 
 when finalising your mark for the unit. Go to the Assessment link on Blackboard and 
-click on Practical 03 for the submission page.
+click on Practical 10 for the submission page.
 
-### And that's the end of Practical 05!
+### And that's the end of Practical 10!
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Pandas is an easy to use packages for data analytics
+- It is built on dictionaries and concepts from sets
+- Sets and dictionaries can speed up some common tasks
 
 :::::::::::::::::::::::::::::::::::::
 
@@ -304,23 +196,28 @@ click on Practical 03 for the submission page.
 
 ### Reflection
  
-1. **Knowledge:** What are the three different read methods we can use on a file? What is the difference between them?
-3. **Comprehension**: What does the line file2.write(...) do in Activity 4?
-5. **Application**: Given the Game of Life rules, what would happen to the centre
-cell in the following cases:
-![fig/P05GOLReviewQ.png](GOL images)
-7. **Analysis**: What variation of “neighbours” does ```heatsource.py``` use? How would the code change if it were to use the other neighbour approach?
-9. **Synthesis**: How would you create a heat source input file with a 4x4 heat source in the centre of the 10x10 grid?
-10. **Evaluation**: Name two advantages to reading initial data from a file as in the updated ```heatsource.py```.
+1. **Knowledge:** What is the language used for formatting an Jupyter Notebook?
+3. **Comprehension**: Why did we need to use ```../Prac07``` to run the file in Activity 3?
+5. **Application**: How would you do the following in Jupyter Notebook?
+ 1. Execute the current cell
+ 2. Clear all the output for all cells
+ 3. Run all cells
+ 4. Change a cell from coe to markdown
+7. **Analysis**: Pandas lets us easily create a new column in a dataframe e.g. ```df = df.assign(temprange = df["Maxtemp"] - df["Mintemp"]). What code would you write to:
+  1. Print the values in the new column
+  2. Give descriptive information for the new column
+  3. Plot only the new column's data
+9. **Synthesis**: We went through a workflow in Activity 4 to count words in the story Rumplestiltskin. What parts of the workflow would change to analyse "THE ELVES AND THE SHOEMAKER", also in Grimm's Fairytales
+10. **Evaluation**: Compare the datatypes: Pandas Dataframes, Numpy arrays and lists
+  1. What are the features of each?
+  2. When would you choose to use each of these datatypes?
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::::::::: challenge
 
 For those who want to explore a bit more of the topics covered in this practical. Note that the challenges are not assessed but may form part of the prac tests or exam.
 
-1. Follow the workflow from Activity 3 to process and plot **February** weather data.
-2. For students based in Australia, find another country's weather data sharing site, or an international one
-If you are not in Australia, see if you can find you local government's weather data sharing site. 
-4. Find and download some **Game of Life*** code and get it running.
- 
+1. Visit Software Carpentry and Data Carpentry for a range of tutorials
+2. Sign up for Research Bazaar (ResBaz) when it is available locally - this provides 1-2 days of data analytics training.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
