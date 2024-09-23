@@ -153,6 +153,7 @@ do
         python3 dosagebase.py $i $d > $outfile
     done 
 done
+```
 
 If you look in the directory after the script has run, you will see the saved 
 png plots and the txt files. You can look at the results using: ```tail –n 3 *.txt```
@@ -169,16 +170,22 @@ Can you find the extreme results using tail? Look at the graphs to confirm the d
  
 In the lecture we looked at a workflow for plotting data. The steps were:
 
-1. Getdata
-2. Extract lines
-3. Extract columns
-4. Plot
+1. Get data: wget
+2. Extract lines: grep
+3. Extract columns: awk
+4. Plot: gnuplot
 
 Type in the commands from the lecture on the command line to ensure they work. You 
 may need to add a ```–p``` to gnuplot to make the plot stay on the screen:
 
 ```
 gnuplot –p plotcmd.txt
+```
+
+Also, downloading from the BOM website may be blocked. This command will pretend to be a web browser and should work:
+
+```
+wget --user-agent="Mozilla" http://www.bom.gov.au/climate/dwo/202402/text/IDCJDW6111.202402.csv
 ```
 
 Use the history command and redirection to put the workflow commands 
@@ -233,7 +240,11 @@ click on Practical 08 for the submission page.
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- FIXME
+- Our python programs so far have been applications working on data files
+- With scripting, we can also work with the operating system to create and move files, navigate the filesystem (ls, cd, mkdir etc.)
+- Using command line arguments lets us change parameters into a script/program - a bit like arguments into a function
+- Command line arguments help us make flexible code, avoiding entering data at prompts or editing files directly - both of which cna introduce errors
+- Using Unix utilities and our own programs as reusable steps in a workflow makes it possible to automate our processing
 
 :::::::::::::::::::::::::::::::::::::
 
